@@ -8588,3 +8588,9 @@ section,
 .leadership.division-of-learning .team-card:hover .card-back ul{
   text-align: left;
 }
+.home-grey-bg{
+  background-image: url(../img/grey-bg.svg);
+}
+.alumni.home-embedded{
+  background-color: #d9d9d9;
+}

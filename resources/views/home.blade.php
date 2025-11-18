@@ -433,9 +433,6 @@
             {
               "loop": true,
               "speed": 600,
-              "autoplay": {
-                "delay": 4000
-              },
               "slidesPerView": 1,
               "spaceBetween": 30,
               "navigation": {
@@ -447,7 +444,7 @@
                   "slidesPerView": 2
                 },
                 "1200": {
-                  "slidesPerView": 3
+                  "slidesPerView": 1
                 }
               }
             }
@@ -455,87 +452,74 @@
 
           <div class="swiper-wrapper">
 
-            <!-- Testimonial Slide 1 -->
+            <!-- Video Slide 1 -->
             <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="200">
-                <div class="testimonial-header">
-                  <img src="assets/img/person/person-f-12.webp" alt="Client" class="img-fluid" loading="lazy">
+              <div data-aos="zoom-in" data-aos-delay="200">
+                  <iframe width="100%" height="500" 
+                    src="https://www.youtube.com/embed/uqbY-uwcIkQ" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="testimonial-body">
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit sed eiusmod tempor.</p>
-                </div>
-                <div class="testimonial-footer">
-                  <h5>Jessica Martinez</h5>
-                  <span>UX Designer</span>
-                </div>
-              </div>
-            </div><!-- End Testimonial Slide -->
+            </div>
 
-            <!-- Testimonial Slide 2 -->
+            <!-- Video Slide 2 -->
             <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="300">
-                <div class="testimonial-header">
-                  <img src="assets/img/person/person-m-8.webp" alt="Client" class="img-fluid" loading="lazy">
+              <div data-aos="zoom-in" data-aos-delay="300">
+                  <iframe width="100%" height="500" 
+                    src="https://www.youtube.com/embed/N581ErKKz8I" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="testimonial-body">
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa.</p>
-                </div>
-                <div class="testimonial-footer">
-                  <h5>David Rodriguez</h5>
-                  <span>Software Engineer</span>
-                </div>
-              </div>
-            </div><!-- End Testimonial Slide -->
+            </div>
 
-            <!-- Testimonial Slide 3 -->
+            <!-- Video Slide 3 -->
             <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="400">
-                <div class="testimonial-header">
-                  <img src="assets/img/person/person-f-6.webp" alt="Client" class="img-fluid" loading="lazy">
+              <div data-aos="zoom-in" data-aos-delay="400">
+                  <iframe width="100%" height="500" 
+                    src="https://www.youtube.com/embed/6baO9pc0_RE" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="testimonial-body">
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
-                </div>
-                <div class="testimonial-footer">
-                  <h5>Amanda Wilson</h5>
-                  <span>Creative Director</span>
-                </div>
-              </div>
-            </div><!-- End Testimonial Slide -->
+            </div>
 
-            <!-- Testimonial Slide 4 -->
+            <!-- Video Slide 4 -->
             <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="500">
-                <div class="testimonial-header">
-                  <img src="assets/img/person/person-m-12.webp" alt="Client" class="img-fluid" loading="lazy">
+              <div data-aos="zoom-in" data-aos-delay="500">
+                  <iframe width="100%" height="500" 
+                    src="https://www.youtube.com/embed/tLUb8ze5aJM" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="testimonial-body">
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
-                </div>
-                <div class="testimonial-footer">
-                  <h5>Ryan Thompson</h5>
-                  <span>Business Analyst</span>
-                </div>
-              </div>
-            </div><!-- End Testimonial Slide -->
+            </div>
 
-            <!-- Testimonial Slide 5 -->
+            <!-- Video Slide 5 -->
             <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="600">
-                <div class="testimonial-header">
-                  <img src="assets/img/person/person-f-10.webp" alt="Client" class="img-fluid" loading="lazy">
+              <div data-aos="zoom-in" data-aos-delay="600">
+                  <iframe width="100%" height="500" 
+                    src="https://www.youtube.com/embed/Cv-LW8i57HA" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="testimonial-body">
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
+            </div>
+
+            <!-- Video Slide 6 -->
+            <div class="swiper-slide">
+              <div data-aos="zoom-in" data-aos-delay="700">
+                  <iframe width="100%" height="500" 
+                    src="https://www.youtube.com/embed/LAxrIqtau_w" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="testimonial-footer">
-                  <h5>Rachel Chen</h5>
-                  <span>Project Manager</span>
-                </div>
-              </div>
-            </div><!-- End Testimonial Slide -->
+            </div>
 
           </div>
+
 
           <div class="swiper-navigation">
             <div class="swiper-button-prev"></div>
@@ -547,537 +531,49 @@
       </div>
 
     </section><!-- /Testimonials Section -->
-
+    
+    <section class="section home-grey-bg pb-0">
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-6 aos-init aos-animate">
+            <img src="assets/img/texture-img.png" class="img-fluid mb-4">
+          </div>
+          <div class="col-lg-6 aos-init aos-animate"></div>
+        </div>
+      </div>
+    </section>
+        
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section id="alumni" class="alumni section home-embedded pt-0">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <div class="intro-content" data-aos="fade-up" data-aos-delay="200">
-              <h2 class="section-heading">Transforming Lives Through Quality Education</h2>
-              <p class="section-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-4 mt-4">
-          <div class="col-xl-3 col-lg-6 col-md-6">
-            <div class="metric-card" data-aos="flip-left" data-aos-delay="300">
-              <div class="metric-header">
-                <div class="metric-icon-wrapper">
-                  <i class="bi bi-mortarboard-fill"></i>
-                </div>
-                <div class="metric-value">
-                  <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1" class="purecounter"></span>%
-                </div>
-              </div>
-              <div class="metric-info">
-                <h4>Success Rate</h4>
-                <p>Alumni employment within 6 months</p>
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row mb-5">
+          <div class="col-lg-6 aos-init aos-animate mb-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="alumni-video">
+              <div class="ratio ratio-16x9">
+                <iframe 
+                  src="https://www.youtube.com/embed/I6ja642TOLo" 
+                  title="YouTube video" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
               </div>
             </div>
           </div>
-
-          <div class="col-xl-3 col-lg-6 col-md-6">
-            <div class="metric-card" data-aos="flip-left" data-aos-delay="400">
-              <div class="metric-header">
-                <div class="metric-icon-wrapper">
-                  <i class="bi bi-building"></i>
-                </div>
-                <div class="metric-value">
-                  <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
-                </div>
-              </div>
-              <div class="metric-info">
-                <h4>Campus Locations</h4>
-                <p>Across the country serving students</p>
-              </div>
+          <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div class="alumni-intro">
+              <h2>How to Include Everyone in Education</h2>
+              <p>Who really gets to participate meaningfully in the classroom? Not just who's physically there but whose stories, ideas and perspectives actually shape the learning? By thoughtfully including the histories, knowledge and contributions of Black and African communities, we create richer, more complete learning environments for everyone. All curriculum should prepare students for a world that values truth, excellence and shared humanity.</p>
             </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-md-6">
-            <div class="metric-card" data-aos="flip-left" data-aos-delay="500">
-              <div class="metric-header">
-                <div class="metric-icon-wrapper">
-                  <i class="bi bi-trophy-fill"></i>
-                </div>
-                <div class="metric-value">
-                  <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>+
-                </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-primary">Say Hi!</a>
               </div>
-              <div class="metric-info">
-                <h4>Awards Received</h4>
-                <p>Recognition for educational excellence</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-6 col-md-6">
-            <div class="metric-card" data-aos="flip-left" data-aos-delay="600">
-              <div class="metric-header">
-                <div class="metric-icon-wrapper">
-                  <i class="bi bi-globe"></i>
-                </div>
-                <div class="metric-value">
-                  <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1" class="purecounter"></span>+
-                </div>
-              </div>
-              <div class="metric-info">
-                <h4>Countries Represented</h4>
-                <p>Diverse international student body</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-lg-12">
-            <div class="highlights-section" data-aos="fade-up" data-aos-delay="700">
-              <div class="row align-items-center">
-                <div class="col-lg-6">
-                  <div class="highlights-content">
-                    <h3 class="highlights-title">Building Tomorrow's Leaders Today</h3>
-                    <p class="highlights-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-                    <div class="highlights-features">
-                      <div class="feature-item" data-aos="fade-right" data-aos-delay="800">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Innovative curriculum design</span>
-                      </div>
-                      <div class="feature-item" data-aos="fade-right" data-aos-delay="900">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>World-class faculty expertise</span>
-                      </div>
-                      <div class="feature-item" data-aos="fade-right" data-aos-delay="1000">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Comprehensive student support</span>
-                      </div>
-                    </div>
-                    <div class="highlights-cta">
-                      <a href="#" class="cta-btn primary">Explore Programs</a>
-                      <a href="#" class="cta-btn secondary">Download Brochure</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="highlights-gallery">
-                    <div class="gallery-grid">
-                      <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="800">
-                        <img src="assets/img/education/campus-3.webp" alt="Campus Life" class="img-fluid" loading="lazy">
-                        <div class="gallery-overlay">
-                          <h5>Modern Campus</h5>
-                        </div>
-                      </div>
-                      <div class="gallery-item small" data-aos="zoom-in" data-aos-delay="900">
-                        <img src="assets/img/education/students-5.webp" alt="Students" class="img-fluid" loading="lazy">
-                        <div class="gallery-overlay">
-                          <h6>Student Life</h6>
-                        </div>
-                      </div>
-                      <div class="gallery-item small" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="assets/img/education/teacher-7.webp" alt="Faculty" class="img-fluid" loading="lazy">
-                        <div class="gallery-overlay">
-                          <h6>Expert Faculty</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Stats Section -->
-
-    <!-- Recent News Section -->
-    <section id="recent-news" class="recent-news section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Recent News</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="100">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-1.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Design</a>
-
-                <h2 class="post-title">
-                  <a href="#">Sed ut perspiciatis unde omnis</a>
-                </h2>
-
-                <p class="post-description">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-f-12.webp" alt="" class="img-fluid">
-                    <span class="author-name">Lina Chen</span>
-                  </div>
-                  <span class="post-date">Mar 15, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-2.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Product</a>
-
-                <h2 class="post-title">
-                  <a href="#">At vero eos et accusamus</a>
-                </h2>
-
-                <p class="post-description">
-                  Et harum quidem rerum facilis est et expedita distinctio nam libero tempore, cum soluta nobis est eligendi.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-f-13.webp" alt="" class="img-fluid">
-                    <span class="author-name">Sofia Rodriguez</span>
-                  </div>
-                  <span class="post-date">Apr 22, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-3.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Software Engineering</a>
-
-                <h2 class="post-title">
-                  <a href="#">Temporibus autem quibusdam</a>
-                </h2>
-
-                <p class="post-description">
-                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-m-10.webp" alt="" class="img-fluid">
-                    <span class="author-name">Lucas Thompson</span>
-                  </div>
-                  <span class="post-date">May 8, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="400">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-4.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Creative</a>
-
-                <h2 class="post-title">
-                  <a href="#">Nam libero tempore soluta</a>
-                </h2>
-
-                <p class="post-description">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-f-14.webp" alt="" class="img-fluid">
-                    <span class="author-name">Emma Patel</span>
-                  </div>
-                  <span class="post-date">Jun 30, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Recent News Section -->
-
-    <!-- Events Section -->
-    <section id="events" class="events section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Events</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="assets/img/education/events-3.webp" alt="Workshop" class="img-fluid">
-                <div class="event-date-overlay">
-                  <span class="date">MAR<br>18</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge academic">Academic</span>
-                  <span class="event-time">2:00 PM</span>
-                </div>
-                <h3>Advanced Mathematics Workshop</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Room 205, Science Building</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>25 Participants</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="assets/img/education/events-5.webp" alt="Tournament" class="img-fluid">
-                <div class="event-date-overlay">
-                  <span class="date">APR<br>05</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge sports">Sports</span>
-                  <span class="event-time">9:00 AM</span>
-                </div>
-                <h3>Inter-School Basketball Championship</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Sports Complex Gym</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>8 Teams</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="assets/img/education/events-7.webp" alt="Art Exhibition" class="img-fluid">
-                <div class="event-date-overlay">
-                  <span class="date">APR<br>12</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge arts">Arts</span>
-                  <span class="event-time">6:00 PM</span>
-                </div>
-                <h3>Student Art Exhibition Opening</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Art Gallery, First Floor</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>Open to All</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="assets/img/education/events-2.webp" alt="Science Fair" class="img-fluid">
-                <div class="event-date-overlay">
-                  <span class="date">MAY<br>03</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge academic">Academic</span>
-                  <span class="event-time">10:00 AM</span>
-                </div>
-                <h3>Annual Science Fair Competition</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Main Auditorium Hall</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>45 Projects</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="assets/img/education/events-8.webp" alt="Community Event" class="img-fluid">
-                <div class="event-date-overlay">
-                  <span class="date">MAY<br>15</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge community">Community</span>
-                  <span class="event-time">3:00 PM</span>
-                </div>
-                <h3>Family Fun Day Celebration</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>School Playground Area</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>All Families</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="assets/img/education/events-6.webp" alt="Music Concert" class="img-fluid">
-                <div class="event-date-overlay">
-                  <span class="date">JUN<br>02</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge arts">Arts</span>
-                  <span class="event-time">7:30 PM</span>
-                </div>
-                <h3>Summer Music Concert Finale</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Music Hall Theater</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>300 Seats</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="events-navigation" data-aos="fade-up" data-aos-delay="500">
-          <div class="row align-items-center">
-            <div class="col-md-8">
-              <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">All Events</button>
-                <button class="filter-tab" data-filter="academic">Academic</button>
-                <button class="filter-tab" data-filter="sports">Sports</button>
-                <button class="filter-tab" data-filter="arts">Arts</button>
-                <button class="filter-tab" data-filter="community">Community</button>
-              </div>
-            </div>
-            <div class="col-md-4 text-end">
-              <a href="#" class="view-calendar-btn">
-                <i class="bi bi-calendar3"></i>
-                View Calendar
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Events Section -->
+    </section>
 
   </main>
 
