@@ -14,28 +14,13 @@
           <div class="row align-items-center">
             <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
               <h1>Inspiring Excellence Through Education</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus id tortor facilisis tincidunt. Donec gravida risus at sollicitudin luctus.</p>
-              <div class="stats-row">
-                <div class="stat-item">
-                  <span class="stat-number">96%</span>
-                  <span class="stat-label">Employment Rate</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">12:1</span>
-                  <span class="stat-label">Student-Teacher Ratio</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">50+</span>
-                  <span class="stat-label">Programs</span>
-                </div>
-              </div>
+              <p>At My Place in This World, we believe education is the key to unlocking potential and fostering a future where every student thrives. Our carefully crafted programs emphasize equity, diversity, and inclusion, aiming to empower students from all backgrounds to achieve academic success and personal growth.</p>
               <div class="action-buttons">
                 <a href="#" class="btn-primary">Start Your Journey</a>
-                <a href="#" class="btn-secondary">Virtual Tour</a>
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/img/education/showcase-6.webp" alt="Education" class="img-fluid main-image">
+              <img src="assets/img/banner-imgs/slide3.svg" alt="Education" class="img-fluid main-image">
               <div class="image-overlay">
                 <div class="badge-accredited">
                   <i class="bi bi-patch-check-fill"></i>
