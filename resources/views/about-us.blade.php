@@ -11,6 +11,10 @@
 
 @section('content')
 <style>
+  /* Page reset: remove default page margin/padding and use border-box sizing */
+  html, body { margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
+
   .bg-cream { background-color: #FCEDCB; }
 
   /* Smooth width animation for accordion */
@@ -115,11 +119,10 @@
     <img src="{{ asset('assets/img/imgborder2-1024x74.png') }}" alt="" class="img-fluid w-100 d-block m-0">
   </div>
 <!-- Lorraine Harris Section -->
-<section class="py-5 px-3 bg-white">
-  <div class="container">
+<section class="py-5 px-2 bg-white">
+  <div class="container-fluid px-4">
     <div class="d-flex flex-column flex-lg-row align-items-center align-items-lg-stretch justify-content-between gap-5 profile-row">
       
-      <!-- Text Column -->
       <div class="flex-grow-1">
         <h2 class="h2 fw-bold mb-3">Lorraine Harris</h2>
         <h3 class="h5 fw-semibold mb-3 text-success">Co-Founder and Co-Creator of My Place In This World</h3>
@@ -139,17 +142,17 @@
         </p>
       </div>
 
-      <!-- Image Column -->
       <div class="flex-shrink-0 text-center">
         <img src="{{ asset('assets/img/about/lorraine.png') }}" 
              alt="Lorraine Harris" 
              class="rounded" 
-             style="width: 100%; max-width: 600px; height: auto; object-fit: cover border: 3px solid #ccc ;">
+             style="width: 100%; max-width: 600px; height: auto; object-fit: cover; border: 3px solid #ccc;">
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- Divider -->
 <div class="bg-white p-0 m-0 lh-0">
@@ -157,19 +160,17 @@
 </div>
 
 <!-- Michael Harris Section -->
-<section class="py-5 px-3 bg-white">
-  <div class="container">
+<section class="py-5 px-2 bg-white">
+  <div class="container-fluid px-3">
     <div class="d-flex flex-column flex-lg-row align-items-center align-items-lg-stretch justify-content-between gap-5 profile-row">
       
-      <!-- Image Column -->
       <div class="flex-shrink-0 text-center">
         <img src="{{ asset('assets/img/about/michael.png') }}" 
              alt="Michael Harris" 
              class="rounded" 
-             style="width: 100%; max-width: 600px; height: auto; object-fit: cover; border: 3px solid #ccc; border-radius: 20px;">
+             style="width: 100%; max-width: 600px; height: auto; object-fit: cover; border:10px solid #ccc; border-radius:30px;">
       </div>
 
-      <!-- Text Column -->
       <div class="flex-grow-1">
         <h2 class="h2 fw-bold mb-3">Michael Harris</h2>
         <h3 class="h5 fw-semibold mb-3 text-success">Co-Founder and Co-Creator of My Place In This World</h3>
@@ -196,8 +197,6 @@
     </div>
   </div>
 </section>
-
-
 
   <!-- CTA Section -->
   <section class="text-center py-5 bg-dark text-white">
