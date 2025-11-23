@@ -119,22 +119,29 @@
     <img src="{{ asset('assets/img/imgborder2-1024x74.png') }}" alt="" class="img-fluid w-100 d-block m-0">
   </div>
 <!-- Lorraine Harris Section -->
-<section class="py-5 px-2 bg-white">
+<!-- Lorraine Harris Section with Background -->
+<section class="py-5 px-2" 
+         style="background-color:#E6E5E5;
+                background-image: url('{{ asset('assets/img/about/img6.png') }}');
+                background-position: top left;
+                background-repeat: no-repeat;
+                background-size: 25% auto;">
   <div class="container-fluid px-4">
     <div class="d-flex flex-column flex-lg-row align-items-center align-items-lg-stretch justify-content-between gap-5 profile-row">
       
+      <!-- Text Column -->
       <div class="flex-grow-1">
         <h2 class="h2 fw-bold mb-3">Lorraine Harris</h2>
         <h3 class="h5 fw-semibold mb-3 text-success">Co-Founder and Co-Creator of My Place In This World</h3>
         <p class="fw-semibold text-secondary mb-3">Forward Thinking, Visionary, Innovator, Authentic, Risk Taker, Resilient</p>
-        <img src="{{ asset('assets/img/about/hr.png') }}" alt="" class="img-fluid mb-4" style="max-width: 200px;">
+        <img src="{{ asset('assets/img/about/hr.png') }}" alt="" class="img-fluid mb-4 w-25">
 
         <p class="mb-3 lh-lg">
           Co-Founder and co-creator of My Place in This World, administrator Lorraine Harris has been working in the field of education for over 25 years. Lorraine is a wife and mother. She holds degrees in Education, Music, and Psychology. Lorraine has been the recipient of many awards, both locally and provincially, for her participation in various community outreach projects, sharing her gifts, time, and talents in the performing arts. Most recently she was the recipient of the Ontario Volunteer Service Award for 2020 in her region.
         </p>
 
         <p class="mb-3 lh-lg">
-          Lorraine’s experience working at the elementary, secondary, and university levels has equipped her with a diverse skill set. Lorraine has supported multiple schools and served diverse student populations. She has demonstrated an excellent ability to lead, support, and collaborate with teachers to ensure strategies are in place to support equity in student learning. She’s a visionary with a keen ability to create engaging activities to help students grasp key curriculum content. Lorraine has created both published and unpublished resources currently being used in her board.
+          Lorraine's experience working at the elementary, secondary, and university levels has equipped her with a diverse skill set. Lorraine has supported multiple schools and served diverse student populations. She has demonstrated an excellent ability to lead, support, and collaborate with teachers to ensure strategies are in place to support equity in student learning. She's a visionary with a keen ability to create engaging activities to help students grasp key curriculum content. Lorraine has created both published and unpublished resources currently being used in her board.
         </p>
 
         <p class="lh-lg">
@@ -142,16 +149,19 @@
         </p>
       </div>
 
+      <!-- Image Column -->
       <div class="flex-shrink-0 text-center">
-        <img src="{{ asset('assets/img/about/lorraine.png') }}" 
-             alt="Lorraine Harris" 
-             class="rounded" 
-             style="width: 100%; max-width: 600px; height: auto; object-fit: cover; border: 3px solid #ccc;">
+        <div class="border border-5 border-gray rounded-4 overflow-hidden d-inline-block" style="max-width: 500px;">
+          <img src="{{ asset('assets/img/about/lorraine.png') }}" 
+               alt="Lorraine Harris" 
+               class="img-fluid rounded-3 d-block w-100">
+        </div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 <!-- Divider -->
@@ -159,44 +169,52 @@
   <img src="{{ asset('assets/img/about/imgborder2-1024x74.png') }}" alt="" class="img-fluid w-100 d-block m-0">
 </div>
 
-<!-- Michael Harris Section -->
-<section class="py-5 px-2 bg-white">
+<!-- Michael Harris Section with Background -->
+<section class="py-5 px-2" 
+         style="background-color:#E6E5E5;
+                background-image: url('{{ asset('assets/img/about/img6.png') }}');
+                background-position: top left;
+                background-repeat: no-repeat;
+                background-size: 25% auto;">
   <div class="container-fluid px-3">
     <div class="d-flex flex-column flex-lg-row align-items-center align-items-lg-stretch justify-content-between gap-5 profile-row">
       
+      <!-- Image Wrapper with Frame -->
       <div class="flex-shrink-0 text-center">
-        <img src="{{ asset('assets/img/about/michael.png') }}" 
-             alt="Michael Harris" 
-             class="rounded" 
-             style="width: 100%; max-width: 600px; height: auto; object-fit: cover; border:10px solid #ccc; border-radius:30px;">
+        <div class="border border-5 border-gray rounded-4 overflow-hidden d-inline-block" style="max-width: 500px;">
+          <img src="{{ asset('assets/img/about/michael.png') }}"
+               alt="Michael Harris"
+               class="img-fluid rounded-3 d-block w-100">
+        </div>
       </div>
 
+      <!-- Text Column -->
       <div class="flex-grow-1">
         <h2 class="h2 fw-bold mb-3">Michael Harris</h2>
         <h3 class="h5 fw-semibold mb-3 text-success">Co-Founder and Co-Creator of My Place In This World</h3>
         <p class="fw-semibold text-secondary mb-3">Visionary, Purpose-Driven, Strategic, Grounded in Heritage, Mentor, Cultural Architect</p>
-        <img src="{{ asset('assets/img/about/hr.png') }}" alt="" class="img-fluid mb-4" style="max-width: 200px;">
+        <img src="{{ asset('assets/img/about/hr.png') }}" alt="" class="img-fluid mb-4 w-25">
 
         <p class="mb-3 lh-lg">
           Michael Harris is a co-founder and co-creator of My Place In This World– and the conceiver of its central concept, blueprint, direction and message. With a successful career in business and financial services, and a background in communication, Michael used his strategic expertise to ensure the curriculum would be both culturally impactful and systematically strong.
         </p>
 
         <p class="mb-3 lh-lg">
-          The idea for <em>My Place</em> came about during a conversation with Lorraine Harris, who was lamenting the plight of Black youth in schools; how so many felt detached and alienated from the idea of success. Michael asked her, <em>“What if we can build a resource that would connect the children to their heritage of success and achievement before slavery and colonization?”</em> Lorraine, a brilliant resource writer, immediately began crafting the curriculum, bringing their vision to life.
+          The idea for <em>My Place</em> came about during a conversation with Lorraine Harris, who was lamenting the plight of Black youth in schools; how so many felt detached and alienated from the idea of success. Michael asked her, <em>"What if we can build a resource that would connect the children to their heritage of success and achievement before slavery and colonization?"</em> Lorraine, a brilliant resource writer, immediately began crafting the curriculum, bringing their vision to life.
         </p>
 
         <p class="mb-3 lh-lg">
-          From the beginning, Michael believed that Black history must be presented as a narrative of excellence, innovation and leadership, not confined to stories of oppression. His aim was to inspire a “can do” mindset that rejects glass ceilings and connects youth to a lineage of limitless achievement. He also sought to create allyship between Black and non-Black youth rooted in mutual respect and shared learning.
+          From the beginning, Michael believed that Black history must be presented as a narrative of excellence, innovation and leadership, not confined to stories of oppression. His aim was to inspire a "can do" mindset that rejects glass ceilings and connects youth to a lineage of limitless achievement. He also sought to create allyship between Black and non-Black youth rooted in mutual respect and shared learning.
         </p>
 
         <p class="lh-lg">
           Under his direction, <em>My Place In This World</em> has grown into a resource recognized by numerous organizations– including the Government of Ontario– for its outstanding contribution to education in the province. Michael's vision continues to guide the program's mission: to strengthen character, grow self-esteem and link expectations to outcomes rooted in the glorious heritage of African and diasporic achievement.
         </p>
       </div>
-
     </div>
   </div>
 </section>
+
 
   <!-- CTA Section -->
   <section class="text-center py-5 bg-dark text-white">
