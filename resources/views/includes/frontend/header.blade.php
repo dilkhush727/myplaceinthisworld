@@ -10,9 +10,10 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ url('/') }}" class="active">Home</a></li>
+          <li><a href="{{ route('about') }}">About</a></li>
           <li><a href="students-life.html">Membership</a></li>
           <li><a href="news.html">Gallery of Growth</a></li>
-          <li><a href="events.html">division</a></li>
+          <li><a href="events.html">Division</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

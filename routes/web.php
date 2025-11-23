@@ -5,10 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\School\SchoolDashboardController;
 use App\Http\Controllers\Teacher\TeacherDashboardController;
+use App\Http\Controllers\AboutUsController;
 
 Route::get('/', function () {
     return view('home');
 });
+
+// About page (controller)
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -23,7 +27,7 @@ Route::middleware(['auth', 'role:school'])->prefix('school')->group(function () 
 
      // Upgrade membership page
     Route::get('/membership/upgrade', 
-        [\App\Http\Controllers\School\MembershipController::class, 'upgrade'])
+        [MembershipController::class, 'upgrade'])
         ->name('school.memberships.upgrade');
 
     Route::post('/membership/purchase', [MembershipController::class, 'purchase'])->name('school.memberships.purchase');
