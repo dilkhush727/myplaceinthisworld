@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\School\SchoolDashboardController;
 use App\Http\Controllers\Teacher\TeacherDashboardController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ChatController;
 
 Route::get('/', function () {
     return view('home');
@@ -51,6 +52,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+
+// Local preview route for the chat view
+Route::get('/chat-preview', [ChatController::class, 'index'])->name('chat.preview');
+
+Route::post('/chat/message', [ChatController::class, 'sendMessage'])->name('chat.message');
+
+
 Route::get('/redirect', function () {
     $user = auth()->user();
 
@@ -71,3 +80,4 @@ Route::get('/redirect', function () {
 
 
 require __DIR__.'/auth.php';
+
