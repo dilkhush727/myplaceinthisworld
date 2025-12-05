@@ -38,6 +38,13 @@
           </a>
         </li>
 
+        <li class="pc-item">
+          <a href="{{ route('admin.tickets.index') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-mail"></i></span>
+            <span class="pc-mtext">Tickets</span>
+          </a>
+        </li>
+
           <li class="pc-item pc-hasmenu">
             <a href="#!" class="pc-link">
               <span class="pc-micon"><i class="ti ti-settings"></i></span>
@@ -93,6 +100,13 @@
             <li class="pc-item"><a href="{{ route('school.memberships.upgrade') }}" class="pc-link">Upgrade</a></li>
           </ul>
         </li>
+        
+        <li class="pc-item {{ request()->routeIs('school.tickets.*') ? 'active' : '' }}">
+          <a href="{{ route('school.tickets.index') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-mail"></i></span>
+            <span class="pc-mtext">Support Tickets</span>
+          </a>
+        </li>
 
         @endif
 
@@ -126,6 +140,13 @@
               <span class="pc-mtext">My Courses</span>
             </a>
           </li>
+
+        <li class="pc-item">
+          <a href="{{ route('teacher.tickets.index') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-mail"></i></span>
+            <span class="pc-mtext">Tickets</span>
+          </a>
+        </li>
 
           <li class="pc-item">
             <a href="#" class="pc-link">

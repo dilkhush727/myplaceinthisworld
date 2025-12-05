@@ -29,4 +29,22 @@ class ContactMessage extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Any row flagged as a ticket
+    public function scopeTickets($query)
+    {
+        return $query
+            ->where('is_ticket', true)
+            ->whereNotNull('ticket_number');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(TicketReply::class);
+    }
+
+    public function creator()   // optional – link to School/Teacher user
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

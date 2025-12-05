@@ -10,6 +10,10 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\School\TeacherController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\TicketController;
+use App\Http\Controllers\School\TicketController as SchoolTicketController;
+use App\Http\Controllers\Teacher\TicketController as TeacherTicketController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -33,6 +37,12 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     // ⭐ Approval Routes
     Route::post('/galleries/{gallery}/approve', [App\Http\Controllers\Admin\GalleryController::class, 'approve'])->name('admin.gallery.approve');
     Route::post('/galleries/{gallery}/reject', [App\Http\Controllers\Admin\GalleryController::class, 'reject'])->name('admin.gallery.reject');
+
+    // ⭐ Tickets Routes
+    Route::get('/tickets', [TicketController::class, 'index'])->name('admin.tickets.index');
+    Route::get('/tickets/{ticket}', [TicketController::class, 'show'])->name('admin.tickets.show');
+    Route::post('/tickets/{ticket}/reply', [TicketController::class, 'reply'])->name('admin.tickets.reply');
+    Route::patch('/tickets/{ticket}/status', [TicketController::class, 'updateStatus'])->name('admin.tickets.updateStatus');
 });
 
 Route::middleware(['auth', 'role:school'])->prefix('school')->group(function () {
@@ -99,6 +109,11 @@ Route::middleware(['auth', 'role:school'])->prefix('school')->group(function () 
 
     Route::delete('/galleries/{gallery}', [App\Http\Controllers\School\GalleryController::class, 'destroy'])
         ->name('school.gallery.destroy');
+
+    // ⭐ SCHOOL TICKETS ROUTES
+    Route::get('/tickets', [SchoolTicketController::class, 'index'])->name('school.tickets.index');
+    Route::get('/tickets/{ticket}', [SchoolTicketController::class, 'show'])->name('school.tickets.show');
+    Route::post('/tickets/{ticket}/reply', [SchoolTicketController::class, 'reply'])->name('school.tickets.reply');
 });
 
 // Route::post('/membership/purchase', 
@@ -125,6 +140,11 @@ Route::middleware(['auth', 'role:teacher'])->prefix('teacher')->group(function (
 
     Route::delete('/gallery/{gallery}', [App\Http\Controllers\Teacher\GalleryController::class, 'destroy'])
         ->name('teacher.gallery.destroy');
+
+    // ⭐ TEACHER TICKETS ROUTES
+    Route::get('/tickets', [TeacherTicketController::class, 'index'])->name('teacher.tickets.index');
+    Route::get('/tickets/{ticket}', [TeacherTicketController::class, 'show'])->name('teacher.tickets.show');
+    Route::post('/tickets/{ticket}/reply', [TeacherTicketController::class, 'reply'])->name('teacher.tickets.reply');
 });
 
 Route::middleware('auth')->group(function () {
