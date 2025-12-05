@@ -29,19 +29,21 @@
           <div>
             <h3 class="mb-2">Follow us:</h3>
             <div class="social-links d-flex mt-2">
-              <a href=""><i class="bi bi-linkedin"></i></a>
-              <a href=""><i class="bi bi-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/my-place-in-this-world-3892b42b3/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.youtube.com/@myplaceinthisworld5850/featured" target="_blank"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
   
-          <a href="#" class="btn btn-cta btn-danger mt-3">Contact Us</a>
+          <a href="{{ route('contact.show') }}" class="btn btn-cta btn-danger mt-3">Contact Us</a>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <strong class="px-1 sitename">2021 MyPlaceinthisWorld</strong> <span>All Rights Reserved.</span></p>
+      <p>© <strong class="px-1 sitename">2021 MyPlaceinthisWorld</strong> <span>All Rights Reserved.</span>
+        | <a href="{{ route(name:'terms-and-conditions') }}" class="text-white">Terms and Conditions</a>
+      </p>
     </div>
 
   </footer>

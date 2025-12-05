@@ -27,6 +27,10 @@
   --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+    --theme-danger: #c42420;
+    --theme-success: #369774;
+    --theme-warning: #fcc43d;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -89,9 +93,13 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.bg-warning{  background-color: var(--theme-warning) !important;}
+.bg-danger{  background-color: var(--theme-danger) !important;}
+.bg-success{  background-color: var(--theme-success) !important;}
+
 /* PHP Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
+.contact-form .error-message {
   display: none;
   background: #df1529;
   color: #ffffff;
@@ -101,7 +109,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .sent-message {
+.contact-form .sent-message {
   display: none;
   color: #ffffff;
   background: #059652;
@@ -111,27 +119,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
+@keyframes contact-form-loading {
   0% {
     transform: rotate(0deg);
   }
@@ -139,6 +127,17 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.contact-form-header{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: #c0c0c0 0px 2px 4px 0px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 5px 10px;
 }
 
 /*--------------------------------------------------------------
@@ -487,7 +486,7 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-right: 10px;
@@ -495,7 +494,7 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
+  color: var(--contrast-color);
   border-color: var(--accent-color);
 }
 
@@ -1197,7 +1196,6 @@ section,
 
 .about .about-image .mission-vision .mission,
 .about .about-image .mission-vision .vision {
-  background-color: var(--surface-color);
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
@@ -1634,18 +1632,23 @@ section,
   line-height: 1.6;
 }
 
-.students-life-block .info-grid {
+.info-grid {
   margin-bottom: 2.5rem;
 }
 
-.students-life-block .info-grid .info-item {
+.info-grid .info-item {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.students-life-block .info-grid .info-item .info-icon {
+#history .info-grid .info-item .info-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.info-grid .info-item .info-icon {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 85%), color-mix(in srgb, var(--accent-color), transparent 95%));
@@ -1656,23 +1659,23 @@ section,
   flex-shrink: 0;
 }
 
-.students-life-block .info-grid .info-item .info-icon i {
+.info-grid .info-item .info-icon i {
   font-size: 1.5rem;
   color: var(--accent-color);
 }
 
-.students-life-block .info-grid .info-item .info-text {
+.info-grid .info-item .info-text {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
-.students-life-block .info-grid .info-item .info-text strong {
+.info-grid .info-item .info-text strong {
   font-weight: 600;
   color: var(--heading-color);
 }
 
-.students-life-block .info-grid .info-item .info-text span {
+.info-grid .info-item .info-text span {
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
@@ -5095,7 +5098,7 @@ section,
 }
 
 .campus-facilities .campus-tour-section .tour-content>p {
-  font-size: 1.1rem;
+  font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   margin-bottom: 2.5rem;
 }
@@ -7475,21 +7478,6 @@ section,
   }
 }
 
-.contact .map-wrapper {
-  height: 300px;
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-@media (min-width: 992px) {
-  .contact .map-wrapper {
-    height: 100%;
-    position: sticky;
-    top: 100px;
-  }
-}
-
 .contact .contact-content {
   display: flex;
   flex-direction: column;
@@ -7500,12 +7488,6 @@ section,
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
-}
-
-@media (min-width: 576px) {
-  .contact .contact-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .contact .contact-card {
@@ -7561,7 +7543,7 @@ section,
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.contact .contact-form-container h3 {
+.contact .contact-form-header h3 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -7570,7 +7552,7 @@ section,
   padding-left: 15px;
 }
 
-.contact .contact-form-container h3:before {
+.contact .contact-form-header h3:before {
   content: "";
   position: absolute;
   left: 0;
@@ -7588,9 +7570,9 @@ section,
   color: var(--default-color);
 }
 
-.contact .contact-form-container .php-email-form .form-control {
+.contact .contact-form-container .contact-form .form-control {
   height: auto;
-  padding: 14px 20px;
+  padding: 6px 20px;
   border-radius: 10px;
   background-color: color-mix(in srgb, var(--background-color), #f5f8fd 30%);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -7598,21 +7580,21 @@ section,
   transition: all 0.3s ease;
 }
 
-.contact .contact-form-container .php-email-form .form-control:focus {
+.contact .contact-form-container .contact-form .form-control:focus {
   background-color: var(--surface-color);
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.contact .contact-form-container .php-email-form .form-control::placeholder {
+.contact .contact-form-container .contact-form .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 60%);
 }
 
-.contact .contact-form-container .php-email-form textarea.form-control {
-  min-height: 140px;
+.contact .contact-form-container .contact-form textarea.form-control {
+  min-height: 85px;
 }
 
-.contact .contact-form-container .php-email-form .form-submit {
+.contact .contact-form-container .contact-form .form-submit {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7622,13 +7604,13 @@ section,
 }
 
 @media (max-width: 576px) {
-  .contact .contact-form-container .php-email-form .form-submit {
+  .contact .contact-form-container .contact-form .form-submit {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 
-.contact .contact-form-container .php-email-form button {
+.contact .contact-form-container .contact-form button {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   border: none;
@@ -7640,18 +7622,18 @@ section,
   transition: all 0.3s ease;
 }
 
-.contact .contact-form-container .php-email-form button:hover {
+.contact .contact-form-container .contact-form button:hover {
   background-color: color-mix(in srgb, var(--accent-color), #000 15%);
   transform: translateY(-2px);
   box-shadow: 0 6px 15px color-mix(in srgb, var(--accent-color), transparent 75%);
 }
 
-.contact .contact-form-container .php-email-form .social-links {
+.contact .contact-form-container .contact-form .social-links {
   display: flex;
   gap: 12px;
 }
 
-.contact .contact-form-container .php-email-form .social-links a {
+.contact .contact-form-container .contact-form .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7664,7 +7646,7 @@ section,
   transition: all 0.3s ease;
 }
 
-.contact .contact-form-container .php-email-form .social-links a:hover {
+.contact .contact-form-container .contact-form .social-links a:hover {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   transform: translateY(-3px);
@@ -7675,7 +7657,7 @@ section,
     padding: 25px 20px;
   }
 
-  .contact .contact-form-container h3 {
+  .contact .contact-form-header h3 {
     font-size: 22px;
   }
 }
@@ -8391,6 +8373,9 @@ section,
 .auth-menu{
   margin-bottom: 0px;
 }
+.auth-menu a{
+  color: #ffffff;
+}
 .highlight-text {
       font-weight: bold;
       font-size: 22px;
@@ -8593,4 +8578,11 @@ section,
 }
 .alumni.home-embedded{
   background-color: #d9d9d9;
+}
+
+.bg-theme-light-yellow{
+  background-color: #FCEDCB !important;
+}
+.bg-theme-light-grey{
+  background-color: #E6E5E5 !important;
 }

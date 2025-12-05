@@ -10,16 +10,17 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ url('/') }}" class="active">Home</a></li>
-          <li><a href="students-life.html">Membership</a></li>
-          <li><a href="news.html">Gallery of Growth</a></li>
-          <li><a href="events.html">division</a></li>
+          <li><a href="{{ route('about') }}">About Us</a></li>
+          <li><a href="{{ route(name: 'membership') }}">Membership</a></li>
+          <li><a href="{{ route('gallery.index') }}">Gallery of Growth</a></li>
+          <li><a href="javascript:;">Division of Learning</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <ul class="auth-menu">
         <li>
-            <a href="#">Sign In</a>
+            <a href="{{ route(name: 'login') }}">Sign In</a>
         </li>
       </ul>
 

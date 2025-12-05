@@ -97,7 +97,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/education/campus-5.webp" alt="Campus" class="img-fluid rounded">
+              <img src="assets/img/home-infographic.gif" alt="Campus" class="img-fluid rounded">
             </div>
           </div>
 
@@ -110,12 +110,12 @@
             <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
 
               <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
-                <div class="mission">
+                <div class="mission bg-warning">
                   <h3>Our Mission</h3>
                   <p>We create inclusive educational resources that reflect the voices and experiences of BIPOC communities. Our goal is to support student growth and promote equity in classrooms and beyond.</p>
                 </div>
 
-                <div class="vision">
+                <div class="vision bg-success">
                   <h3>Our Vision</h3>
                   <p>We envision schools where every student feels seen and supported. Through collaboration and advocacy, we aim to create lasting change driven by diversity and community leadership.</p>
                 </div>
@@ -300,8 +300,6 @@
       </div>
 
     </section><!-- /Students Life Block Section -->
-
-    <section class="pt-0">
 
     <section id="leadership" class="leadership section division-of-learning py-4">
 

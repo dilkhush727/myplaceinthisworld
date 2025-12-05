@@ -8,6 +8,18 @@ use App\Models\SchoolMembership;
 
 class MembershipController extends Controller
 {
+
+    public function manage()
+    {
+        $school = auth()->user()->school;
+
+        $memberships = $school->memberships()
+            ->orderBy('type')
+            ->get();
+
+        return view('school.memberships.manage', compact('school', 'memberships'));
+    }
+
     /**
      * Upgrade membership page
      */
