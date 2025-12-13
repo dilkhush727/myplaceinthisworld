@@ -288,8 +288,8 @@ path:hover, circle:hover {
         </div>
 
         <div class="row mt-5 py-4 bg-light">
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                <img src="assets/img/white-texture.png">
+          <div class="col-lg-12" data-aos="fade-left" data-aos-delay="200">
+                <img src="assets/img/white-texture.png" class="w-100">
           </div>
         </div>
         <div class="container">
@@ -318,29 +318,32 @@ path:hover, circle:hover {
     </section>
 
     <script>
-    // Show info on hover and follow mouse
-    $("path, circle").on('mousemove', function (e) {
-        $('#infoBubble')
-        .css({
-            display: 'block',
-            top: e.pageY + 10,   // 10px below cursor
-            left: e.pageX + 10   // 10px to the right of cursor
-        })
-        .html($(this).data('info')); // uses your existing data-info
+    // Show info on hover and follow mouse (vanilla JS - no jQuery needed)
+    var infoBubble = document.getElementById('infoBubble');
+    var pathsAndCircles = document.querySelectorAll('path, circle');
+    
+    pathsAndCircles.forEach(function(el) {
+        el.addEventListener('mousemove', function(e) {
+            infoBubble.style.display = 'block';
+            infoBubble.style.top = (e.pageY + 10) + 'px';
+            infoBubble.style.left = (e.pageX + 10) + 'px';
+            infoBubble.innerHTML = this.getAttribute('data-info') || '';
+        });
+        
+        el.addEventListener('mouseleave', function() {
+            infoBubble.style.display = 'none';
+        });
     });
 
-    // Hide when mouse leaves the country
-    $("path, circle").on('mouseleave', function () {
-        $('#infoBubble').css('display', 'none');
-    });
-
-    // Keep your iOS link fix as-is
+    // Keep your iOS link fix using vanilla JS
     var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if (ios) {
-        $('a').on('click touchend', function() { 
-        var link = $(this).attr('href');   
-        window.open(link,'_blank');
-        return false;
+        document.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.getAttribute('href'), '_blank');
+                return false;
+            });
         });
     }
     </script>
