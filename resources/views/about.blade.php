@@ -3,6 +3,9 @@
 @section('title', 'About Us')
 
 @section('content')
+<!-- Tooltip for map - must be at top level -->
+<div id="infoBubble"></div>
+
 <div class="container-fluid px-0 pt-5 bg-theme-light-yellow">
 
 <style>
@@ -28,15 +31,18 @@ path:hover, circle:hover {
 }
 #infoBubble {
   display: none;
-  position: absolute; /* was fixed */
+  position: fixed; /* changed to fixed so it stays visible */
   top: 0;
   left: 0;
   background-color: #ffffff;
   border: 2px solid #BF0A30;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   font-family: arial;
   pointer-events: none; /* so it doesn't block mouse events */
+  z-index: 9999; /* ensure it's on top */
+  max-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
   .my-legend .legend-title {
@@ -116,7 +122,6 @@ path:hover, circle:hover {
             <h4>Map of Africa</h4>
             <p>This interactive tool invites you to explore the African continent! Hover over any country to uncover its name and unique history.</p>
               
-            <div id="infoBubble"></div>
             <div id="info-box"></div>
 
             <div class='my-legend'>
@@ -318,34 +323,57 @@ path:hover, circle:hover {
     </section>
 
     <script>
-    // Show info on hover and follow mouse (vanilla JS - no jQuery needed)
-    var infoBubble = document.getElementById('infoBubble');
-    var pathsAndCircles = document.querySelectorAll('path, circle');
-    
-    pathsAndCircles.forEach(function(el) {
-        el.addEventListener('mousemove', function(e) {
-            infoBubble.style.display = 'block';
-            infoBubble.style.top = (e.pageY + 10) + 'px';
-            infoBubble.style.left = (e.pageX + 10) + 'px';
-            infoBubble.innerHTML = this.getAttribute('data-info') || '';
-        });
+    // Wait for DOM to fully load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show info on hover and follow mouse (vanilla JS - no jQuery needed)
+        var infoBubble = document.getElementById('infoBubble');
+        var pathsAndCircles = document.querySelectorAll('#g5 path, #g5 circle');
         
-        el.addEventListener('mouseleave', function() {
-            infoBubble.style.display = 'none';
-        });
-    });
-
-    // Keep your iOS link fix using vanilla JS
-    var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    if (ios) {
-        document.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.open(this.getAttribute('href'), '_blank');
-                return false;
+        console.log('Tooltip initialized!');
+        console.log('InfoBubble element:', infoBubble);
+        console.log('Found', pathsAndCircles.length, 'map elements');
+        
+        if (!infoBubble) {
+            console.error('infoBubble element not found!');
+            return;
+        }
+        
+        pathsAndCircles.forEach(function(el) {
+            el.addEventListener('mouseenter', function(e) {
+                var info = this.getAttribute('data-info');
+                console.log('Hovered country:', this.id, 'Info:', info);
+                if (info) {
+                    infoBubble.style.display = 'block';
+                    infoBubble.style.top = (e.clientY + 15) + 'px';
+                    infoBubble.style.left = (e.clientX + 15) + 'px';
+                    infoBubble.innerHTML = info;
+                }
+            });
+            
+            el.addEventListener('mousemove', function(e) {
+                if (infoBubble.style.display === 'block') {
+                    infoBubble.style.top = (e.clientY + 15) + 'px';
+                    infoBubble.style.left = (e.clientX + 15) + 'px';
+                }
+            });
+            
+            el.addEventListener('mouseleave', function() {
+                infoBubble.style.display = 'none';
             });
         });
-    }
+
+        // Keep your iOS link fix using vanilla JS
+        var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (ios) {
+            document.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open(this.getAttribute('href'), '_blank');
+                    return false;
+                });
+            });
+        }
+    });
     </script>
 
 
