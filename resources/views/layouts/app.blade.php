@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- Page-specific meta (optional) --}}
     @yield('meta')
@@ -47,6 +48,12 @@
         @yield('content')
     </main>
 
+    {{-- Chat widget placed before footer to avoid footer interference --}}
+    @if(!request()->routeIs('chat.index'))
+        @include('chat-widget')
+    @endif
+
     @include('includes.frontend.footer')
+
 </body>
 </html>

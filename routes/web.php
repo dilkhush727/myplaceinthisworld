@@ -13,6 +13,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\School\TicketController as SchoolTicketController;
 use App\Http\Controllers\Teacher\TicketController as TeacherTicketController;
+use App\Http\Controllers\ChatController;
 
 
 Route::get('/', function () {
@@ -198,6 +199,10 @@ Route::post('/gallery/like', [App\Http\Controllers\GalleryLikeController::class,
     
 Route::view('/membership', 'membership')->name('membership');
 Route::view('/terms-and-conditions', 'terms-and-conditions')->name('terms-and-conditions');
+
+// Chatbot routes
+Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+Route::post('/chat/message', [ChatController::class, 'sendMessage'])->name('chat.message');
 
 
 require __DIR__.'/auth.php';
