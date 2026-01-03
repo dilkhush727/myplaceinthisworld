@@ -9,20 +9,31 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{{ url('/') }}" class="active">Home</a></li>
-          <li><a href="{{ route('about') }}">About Us</a></li>
-          <li><a href="{{ route(name: 'membership') }}">Membership</a></li>
-          <li><a href="{{ route('gallery.index') }}">Gallery of Growth</a></li>
-          <li><a href="javascript:;">Division of Learning</a></li>
+          <li><a href="{{ url('/') }}" class="{{ Route::currentRouteName() == 'home' ? 'active' : '' }}">Home</a></li>
+          <li><a href="{{ route('about') }}" class="{{ Route::currentRouteName() == 'about' ? 'active' : '' }}">About Us</a></li>
+          <li><a href="{{ route('membership') }}" class="{{ Route::currentRouteName() == 'membership' ? 'active' : '' }}">Membership</a></li>
+          <li><a href="{{ route('gallery.index') }}" class="{{ Route::currentRouteName() == 'gallery.index' ? 'active' : '' }}">Gallery of Growth</a></li>
+          <li><a href="{{ route('division.of.learning') }}" class="{{ Route::currentRouteName() == 'division.of.learning' ? 'active' : '' }}">Division of Learning</a></li>
         </ul>
+
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <ul class="auth-menu">
-        <li>
-            <a href="{{ route(name: 'login') }}">Sign In</a>
-        </li>
+        @guest
+            <li>
+                <a href="{{ route('login') }}">Sign In/Up</a>
+            </li>
+        @endguest
+
+        @auth
+            <li>
+                <a href="{{ route('dashboard') }}">Dashboard</a>
+            </li>
+        @endauth
       </ul>
+
+      @include('partials.lang-switcher')
 
     </div>
   </header>

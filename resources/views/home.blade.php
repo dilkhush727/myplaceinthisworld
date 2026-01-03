@@ -16,7 +16,7 @@
               <h1>Inspiring Excellence Through Education</h1>
               <p>At My Place in This World, we believe education is the key to unlocking potential and fostering a future where every student thrives. Our carefully crafted programs emphasize equity, diversity, and inclusion, aiming to empower students from all backgrounds to achieve academic success and personal growth.</p>
               <div class="action-buttons">
-                <a href="#" class="btn-primary">Start Your Journey</a>
+                <a href="{{ route('register') }}" class="btn-primary">Start Your Journey</a>
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
@@ -68,25 +68,6 @@
         </div>
       </div>
 
-      <!-- <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
-        <div class="container">
-          <div class="event-content">
-            <div class="event-date">
-              <span class="day">15</span>
-              <span class="month">NOV</span>
-            </div>
-            <div class="event-info">
-              <h3>Spring Semester Open House</h3>
-              <p>Join us to explore campus facilities, meet our faculty, and learn about scholarship opportunities.</p>
-            </div>
-            <div class="event-action">
-              <a href="#" class="btn-event">RSVP Now</a>
-              <span class="countdown">Starts in 3 weeks</span>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
@@ -123,55 +104,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="row mt-5">
-          <div class="col-lg-12">
-            <div class="core-values" data-aos="fade-up" data-aos-delay="500">
-              <h3 class="text-center mb-4">Core Values</h3>
-              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col">
-                  <div class="value-card">
-                    <div class="value-icon">
-                      <i class="bi bi-book"></i>
-                    </div>
-                    <h4>Academic Excellence</h4>
-                    <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="value-card">
-                    <div class="value-icon">
-                      <i class="bi bi-people"></i>
-                    </div>
-                    <h4>Community Engagement</h4>
-                    <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="value-card">
-                    <div class="value-icon">
-                      <i class="bi bi-lightbulb"></i>
-                    </div>
-                    <h4>Innovation</h4>
-                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="value-card">
-                    <div class="value-icon">
-                      <i class="bi bi-globe"></i>
-                    </div>
-                    <h4>Global Perspective</h4>
-                    <p>Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
       </div>
 
@@ -213,89 +145,12 @@
               
               <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">My Place in This World curriculum aligns with these findings and aims to bring positive life outcomes, especially for BIPOC students.</p>
 
-              <!-- <div class="info-grid" data-aos="fade-up" data-aos-delay="500">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-calendar-event"></i>
-                  </div>
-                  <div class="info-text">
-                    <strong>Year-Round Events</strong>
-                    <span>Interactive programming throughout the year reinforces belonging and personal growth, helping students stay engaged and confident.</span>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-award"></i>
-                  </div>
-                  <div class="info-text">
-                    <strong>Achievement Programs</strong>
-                    <span>Custom-built activities promote self-affirmation, goal setting, and academic success — especially tailored for BIPOC youth.</span>
-                  </div>
-                </div>
-              </div> -->
-
               <div class="cta-section" data-aos="fade-up" data-aos-delay="600">
-                <a href="student-activities.html" class="btn-primary cta-warning">Learn More</a>
+                <a href="{{ route(name: 'about') }}" class="btn-primary cta-warning">Learn More</a>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- <div class="activities-showcase">
-          <div class="row g-4">
-            <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
-              <div class="featured-activity">
-                <div class="activity-media">
-                  <img src="assets/img/education/activities-2.webp" alt="Featured Activity" class="img-fluid">
-                  <div class="activity-overlay">
-                    <div class="overlay-content">
-                      <h4>Student Organizations</h4>
-                      <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                      <a href="#" class="overlay-btn">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
-              <div class="activities-list">
-                <div class="activity-item" data-aos="slide-up" data-aos-delay="350">
-                  <div class="activity-thumb">
-                    <img src="assets/img/education/activities-6.webp" alt="Research Projects" class="img-fluid">
-                  </div>
-                  <div class="activity-info">
-                    <h6>Research Projects</h6>
-                    <p>Sed ut perspiciatis unde omnis natus error</p>
-                  </div>
-                </div>
-
-                <div class="activity-item" data-aos="slide-up" data-aos-delay="400">
-                  <div class="activity-thumb">
-                    <img src="assets/img/education/activities-1.webp" alt="Community Service" class="img-fluid">
-                  </div>
-                  <div class="activity-info">
-                    <h6>Community Service</h6>
-                    <p>At vero eos et accusamus et iusto odio</p>
-                  </div>
-                </div>
-
-                <div class="activity-item" data-aos="slide-up" data-aos-delay="450">
-                  <div class="activity-thumb">
-                    <img src="assets/img/education/activities-4.webp" alt="Innovation Labs" class="img-fluid">
-                  </div>
-                  <div class="activity-info">
-                    <h6>Innovation Labs</h6>
-                    <p>Temporibus autem quibusdam officiis debitis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
       </div>
 
@@ -333,7 +188,7 @@
                       <li>Learn some important facts that contribute to it being a “majestic” place in this world</li>
                       <li>Explore what it means to be an African King or Queen before transatlantic slavery</li>
                     </ul>
-                    <a class="learn-link" href="/membership/">
+                    <a class="learn-link" href="{{ route('membership') }}">
                       <button class="btn btn-dark">Learn More</button>
                     </a>
                   </div>
@@ -358,7 +213,7 @@
                       <li>Explore the influence and contributions of African royalty before transatlantic slavery and up to the present</li>
                       <li>Make connections to their own experiences and current environment</li>
                     </ul>
-                    <a class="learn-link" href="/membership/">
+                    <a class="learn-link" href="{{ route('membership') }}">
                       <button class="btn btn-dark">Learn More</button>
                     </a>
                   </div>
@@ -382,7 +237,7 @@
                       <li>Explore the influence and contributions of African royalty before transatlantic slavery and up to the present</li>
                       <li>Develop subject-specific curricular skills as they make connections to their lives, current events, and present-day Black leaders</li>
                     </ul>
-                    <a class="learn-link" href="/membership/">
+                    <a class="learn-link" href="{{ route('membership') }}">
                       <button class="btn btn-dark">Learn More</button>
                     </a>
                   </div>
@@ -549,7 +404,7 @@
               <p>Who really gets to participate meaningfully in the classroom? Not just who's physically there but whose stories, ideas and perspectives actually shape the learning? By thoughtfully including the histories, knowledge and contributions of Black and African communities, we create richer, more complete learning environments for everyone. All curriculum should prepare students for a world that values truth, excellence and shared humanity.</p>
             </div>
             <div class="text-center">
-                <a href="#" class="btn btn-primary">Say Hi!</a>
+                <a href="{{ route('contact.show') }}" class="btn btn-primary">Say Hi!</a>
               </div>
           </div>
         </div>

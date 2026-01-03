@@ -26,4 +26,6 @@ class TicketReply extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function contactMessage() { return $this->belongsTo(\App\Models\ContactMessage::class, 'contact_message_id'); }
 }

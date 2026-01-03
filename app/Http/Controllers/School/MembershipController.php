@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SchoolMembership;
 
+use App\Services\StripeService;
+use Illuminate\Support\Facades\Log;
+
+
 class MembershipController extends Controller
 {
 
@@ -37,39 +41,56 @@ class MembershipController extends Controller
     /**
      * PURCHASE new membership (Primary or JI)
      */
-    public function purchase(Request $request)
+    public function purchase(Request $request, StripeService $stripeService)
     {
-        $request->validate([
-            'type'           => 'required|in:primary,ji',
+        $user   = auth()->user();
+        $school = $user->school;
+
+        if (! $school) {
+            abort(403, 'No school associated with this user.');
+        }
+
+        // Validate input from the Upgrade page forms
+        $data = $request->validate([
+            'type'           => 'required|in:primary,ji',     // HS is always free, no Stripe
             'billing_period' => 'required|in:monthly,annual',
         ]);
 
-        $school = auth()->user()->school;
+        $type          = $data['type'];
+        $billingPeriod = $data['billing_period'];
 
-        // Prevent duplicate active add-ons
-        if ($school->hasActiveMembership($request->type)) {
-            return back()->with('error', ucfirst($request->type) . ' membership is already active.');
+        // Get the correct Stripe Price ID from config
+        $priceId = StripeService::getPriceId($type, $billingPeriod);
+
+        if (! $priceId) {
+            return back()->with('error', 'Invalid membership plan selection.');
         }
 
-        // Calculate expiry
-        $startsAt = now();
-        $endsAt = $request->billing_period === 'annual'
-            ? now()->addYear()
-            : now()->addMonth();
+        // Ensure the school has a Stripe Customer
+        $customerId = $stripeService->getOrCreateCustomerForSchool($school);
 
-        // Create membership row
-        SchoolMembership::create([
-            'school_id'      => $school->id,
-            'type'           => $request->type,
-            'billing_period' => $request->billing_period,
-            'is_free'        => false,
-            'status'         => SchoolMembership::STATUS_ACTIVE,
-            'starts_at'      => $startsAt,
-            'ends_at'        => $endsAt,
-        ]);
+        // Success & cancel URLs (back to Manage Memberships)
+        $successUrl = route('school.memberships.manage');
+        $cancelUrl  = route('school.memberships.manage');
 
-        return redirect()->route('school.dashboard')
-            ->with('success', ucfirst($request->type) . ' membership purchased successfully!');
+        try {
+            // Create Stripe Checkout Session for subscription
+            $checkoutUrl = $stripeService->createSubscriptionCheckoutSession(
+                $customerId,
+                $priceId,
+                $successUrl,
+                $cancelUrl
+            );
+        } catch (\Throwable $e) {
+            Log::error('Stripe Checkout session failed', [
+                'error' => $e->getMessage(),
+            ]);
+
+            return back()->with('error', 'There was an error starting the payment process. Please try again or contact support.');
+        }
+
+        // Redirect the school to Stripe Checkout
+        return redirect()->away($checkoutUrl);
     }
 
 

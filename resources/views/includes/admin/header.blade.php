@@ -19,51 +19,6 @@
 
     <div class="ms-auto">
       <ul class="list-unstyled">
-        {{-- Notifications --}}
-        <li class="dropdown pc-h-item">
-          <a class="pc-head-link head-link-secondary dropdown-toggle arrow-none me-0"
-             data-bs-toggle="dropdown"
-             href="#"
-             role="button"
-             aria-haspopup="false"
-             aria-expanded="false">
-            <i class="ti ti-bell"></i>
-          </a>
-          <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown">
-            <div class="dropdown-header">
-              <a href="#!" class="link-primary float-end text-decoration-underline">Mark as all read</a>
-              <h5>
-                All Notification
-                <span class="badge bg-warning rounded-pill ms-1">01</span>
-              </h5>
-            </div>
-            <div class="dropdown-header px-0 text-wrap header-notification-scroll position-relative"
-                 style="max-height: calc(100vh - 215px)">
-              <div class="list-group list-group-flush w-100">
-                {{-- Example notification item --}}
-                <div class="list-group-item list-group-item-action">
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <div class="user-avtar bg-light-success"><i class="ti ti-building-store"></i></div>
-                    </div>
-                    <div class="flex-grow-1 ms-1">
-                      <span class="float-end text-muted">3 min ago</span>
-                      <h5>Store Verification Done</h5>
-                      <p class="text-body fs-6">We have successfully received your request.</p>
-                      <div class="badge rounded-pill bg-light-danger">Unread</div>
-                    </div>
-                  </div>
-                </div>
-                {{-- ...more items or hook it to your DB later --}}
-              </div>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="text-center py-2">
-              <a href="#!" class="link-primary">Mark as all read</a>
-            </div>
-          </div>
-        </li>
-
         {{-- User profile --}}
         <li class="dropdown pc-h-item header-user-profile">
           <a class="pc-head-link head-link-primary dropdown-toggle arrow-none me-0"
@@ -72,22 +27,21 @@
              role="button"
              aria-haspopup="false"
              aria-expanded="false">
-            <img src="{{ asset('assets/admin/images/user/avatar-0.png') }}" alt="user-image" class="user-avtar" />
+            <img src="{{ auth()->user()->profile_photo_url }}" alt="user-image" class="rounded-circle js-profile-avatar user-avtar" height="34px" />
             <span><i class="ti ti-settings"></i></span>
           </a>
           <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
             <div class="dropdown-header">
               <h4>
                 {{-- You can use auth user here --}}
-                Hello,
                 <span class="small text-muted">{{ auth()->user()->name ?? 'Admin' }}</span>
               </h4>
-              <p class="text-muted">Project Admin</p>
+              <p class="text-muted">{{ auth()->user()->designation ?? 'Admin' }}</p>
               <hr />
               <div class="profile-notification-scroll position-relative"
                    style="max-height: calc(100vh - 280px)">
                 {{-- You can remove this "Buy" card --}}
-                <a href="#" class="dropdown-item">
+                <a href="{{ route('profile.edit') }}" class="dropdown-item">
                   <i class="ti ti-settings"></i>
                   <span>Account Settings</span>
                 </a>

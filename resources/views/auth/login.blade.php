@@ -1,47 +1,75 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+{{-- resources/views/auth/login.blade.php --}}
+@extends('layouts.auth')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('title', 'Login')
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+@section('content')
+  <h1 class="auth-title">Good to see you again!</h1>
+  <p class="auth-subtitle">
+    Unlock a world of education with a single click!
+  </p>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+  @if (session('status'))
+    <div class="alert alert-success mb-3">{{ session('status') }}</div>
+  @endif
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+  <form method="POST" action="{{ route('login') }}">
+    @csrf
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+    {{-- Email --}}
+    <div class="mb-3">
+      <label for="email" class="form-label fw-semibold">Email Address</label>
+      <div class="input-icon">
+        <input id="email"
+               type="email"
+               name="email"
+               value="{{ old('email') }}"
+               required
+               autofocus
+               autocomplete="username"
+               class="form-control auth-input @error('email') is-invalid @enderror"
+               placeholder="name@example.com">
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+        @error('email')
+          <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+      </div>
+    </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+    {{-- Password --}}
+    <div class="mb-2">
+      <label for="password" class="form-label fw-semibold">Password</label>
+      <div class="input-icon">
+        <input id="password"
+               type="password"
+               name="password"
+               required
+               autocomplete="current-password"
+               class="form-control auth-input @error('password') is-invalid @enderror"
+               placeholder="••••••••">
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+        @error('password')
+          <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="remember_me" name="remember">
+        <label class="form-check-label" for="remember_me">Remember me</label>
+      </div>
+
+      @if (Route::has('password.request'))
+        <a class="auth-link" href="{{ route('password.request') }}">Forgot Password?</a>
+      @endif
+    </div>
+
+    <button type="submit" class="btn btn-auth w-100">Login</button>
+
+    <div class="signup-line">
+      Don’t have an account?
+      <a href="{{ route('register') }}">Sign Up For Free</a>
+    </div>
+  </form>
+@endsection

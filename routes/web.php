@@ -10,18 +10,58 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\School\TeacherController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\School\TicketController as SchoolTicketController;
 use App\Http\Controllers\Teacher\TicketController as TeacherTicketController;
+
+use App\Http\Controllers\Admin\CourseController as AdminCourseController;
+use App\Http\Controllers\Admin\LessonController as AdminLessonController;
+use App\Http\Controllers\Admin\TaskController as AdminTaskController;
+
+use App\Http\Controllers\LearningCourseController;
+
+use App\Http\Controllers\Admin\LearningProgressController;
+
+use App\Http\Controllers\School\LearningProgressController as SchoolLearningProgressController;
+use App\Http\Controllers\Teacher\LearningProgressController as TeacherLearningProgressController;
+
+use App\Http\Controllers\Admin\SchoolMembershipController;
+
+use App\Http\Controllers\StripeWebhookController;
+
+use App\Http\Controllers\ChatbotController;
+
+use App\Http\Controllers\School\DashboardController;
+use App\Http\Controllers\Admin\AdminUserController;
 
 
 Route::get('/', function () {
     return view('home');
 });
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    $user = auth()->user();
+
+    if ($user->hasRole('admin')) {
+        return redirect()->route('admin.dashboard');
+    }
+
+    if ($user->hasRole('school')) {
+        return redirect()->route('school.dashboard');
+    }
+
+    if ($user->hasRole('teacher')) {
+        return redirect()->route('teacher.dashboard');
+    }
+
+    abort(403);
+})->middleware(['auth'])->name('dashboard');
+
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
@@ -43,6 +83,87 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/tickets/{ticket}', [TicketController::class, 'show'])->name('admin.tickets.show');
     Route::post('/tickets/{ticket}/reply', [TicketController::class, 'reply'])->name('admin.tickets.reply');
     Route::patch('/tickets/{ticket}/status', [TicketController::class, 'updateStatus'])->name('admin.tickets.updateStatus');
+
+    // ⭐ Admin Courses (Divisions of Learning)
+    Route::resource('courses', AdminCourseController::class)
+        ->names('admin.courses')
+        ->except(['show']);
+
+    // ⭐ Lessons for a Course
+    Route::prefix('courses/{course}')->group(function () {
+        // ⭐ LESSONS
+        Route::get('/lessons', [AdminLessonController::class, 'index'])->name('admin.courses.lessons.index');
+        Route::get('/lessons/create', [AdminLessonController::class, 'create'])->name('admin.courses.lessons.create');
+        Route::post('/lessons', [AdminLessonController::class, 'store'])->name('admin.courses.lessons.store');
+        Route::get('/lessons/{lesson}/edit', [AdminLessonController::class, 'edit'])->name('admin.courses.lessons.edit');
+        Route::put('/lessons/{lesson}', [AdminLessonController::class, 'update'])->name('admin.courses.lessons.update');
+        Route::delete('/lessons/{lesson}', [AdminLessonController::class, 'destroy'])->name('admin.courses.lessons.destroy');
+
+        // ⭐ TASKS inside a lesson
+        Route::prefix('lessons/{lesson}')->group(function () {
+            Route::get('/tasks', [AdminTaskController::class, 'index'])
+                ->name('admin.courses.lessons.tasks.index');
+
+            Route::get('/tasks/create', [AdminTaskController::class, 'create'])
+                ->name('admin.courses.lessons.tasks.create');
+
+            Route::post('/tasks', [AdminTaskController::class, 'store'])
+                ->name('admin.courses.lessons.tasks.store');
+
+            Route::get('/tasks/{task}/edit', [AdminTaskController::class, 'edit'])
+                ->name('admin.courses.lessons.tasks.edit');
+
+            Route::put('/tasks/{task}', [AdminTaskController::class, 'update'])
+                ->name('admin.courses.lessons.tasks.update');
+
+            Route::delete('/tasks/{task}', [AdminTaskController::class, 'destroy'])
+                ->name('admin.courses.lessons.tasks.destroy');
+        });
+    });
+
+    // ⭐ Learning progress dashboard
+    Route::get('/learning-progress', [LearningProgressController::class, 'index'])
+        ->name('admin.learning-progress.index');
+
+    // ⭐ Course drilldown
+    Route::get('/learning-progress/courses/{course}', [LearningProgressController::class, 'showCourse'])
+        ->name('admin.learning-progress.course');
+
+    // ⭐ Admin membership management
+    Route::get('/memberships', [SchoolMembershipController::class, 'index'])
+        ->name('admin.memberships.index');
+
+    Route::get('/memberships/schools/{school}', [SchoolMembershipController::class, 'show'])
+        ->name('admin.memberships.show');
+
+    Route::post('/memberships/schools/{school}/grant', [SchoolMembershipController::class, 'grant'])
+        ->name('admin.memberships.grant');
+
+    Route::post('/memberships/{membership}/status', [SchoolMembershipController::class, 'updateStatus'])
+        ->name('admin.memberships.updateStatus');
+
+    // ⭐ Admin Contact Messages
+    Route::get('/contacts', [AdminContactController::class, 'index'])->name('admin.contacts.index');
+    Route::get('/contacts/{contactMessage}', [AdminContactController::class, 'show'])->name('admin.contacts.show');
+
+    Route::patch('/contacts/{contactMessage}/status', [AdminContactController::class, 'updateStatus'])
+        ->name('admin.contacts.status'); // ✅ FIXED
+
+    Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+    Route::get('/users/{user}', [AdminUserController::class, 'show'])->name('admin.users.show');
+
+});
+
+Route::middleware(['auth'])
+    ->prefix('school')
+    ->name('school.')
+    ->group(function () {
+        Route::get('/dashboard', [SchoolDashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/school/dashboard', [DashboardController::class, 'index'])
+        ->name('school.dashboard');
 });
 
 Route::middleware(['auth', 'role:school'])->prefix('school')->group(function () {
@@ -114,6 +235,15 @@ Route::middleware(['auth', 'role:school'])->prefix('school')->group(function () 
     Route::get('/tickets', [SchoolTicketController::class, 'index'])->name('school.tickets.index');
     Route::get('/tickets/{ticket}', [SchoolTicketController::class, 'show'])->name('school.tickets.show');
     Route::post('/tickets/{ticket}/reply', [SchoolTicketController::class, 'reply'])->name('school.tickets.reply');
+
+    // ⭐ Learning progress for this school
+    Route::get('/learning-progress', [SchoolLearningProgressController::class, 'index'])
+        ->name('school.learning-progress.index');
+
+    // ⭐ Course drilldown
+    Route::get('/learning-progress/courses/{course}', [SchoolLearningProgressController::class, 'showCourse'])
+        ->name('school.learning-progress.course');
+        
 });
 
 // Route::post('/membership/purchase', 
@@ -145,40 +275,73 @@ Route::middleware(['auth', 'role:teacher'])->prefix('teacher')->group(function (
     Route::get('/tickets', [TeacherTicketController::class, 'index'])->name('teacher.tickets.index');
     Route::get('/tickets/{ticket}', [TeacherTicketController::class, 'show'])->name('teacher.tickets.show');
     Route::post('/tickets/{ticket}/reply', [TeacherTicketController::class, 'reply'])->name('teacher.tickets.reply');
+
+    // ⭐ My Learning progress
+    Route::get('/learning-progress', [TeacherLearningProgressController::class, 'index'])
+        ->name('teacher.learning-progress.index');
+        
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    // Update profile info (name, email, phone, etc.)
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    // Update password (separate form)
+    Route::patch('/profile/password', [ProfileController::class, 'updatePassword'])
+        ->name('profile.password.update');
+
+    // Update profile photo (AJAX)
+    Route::post('/profile/photo', [ProfileController::class, 'updatePhoto'])
+        ->name('profile.photo.update');
+
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'role:school|teacher'])
+Route::middleware(['auth', 'role:admin|school|teacher'])
     ->prefix('divisions')
     ->group(function () {
     Route::get('/', [DivisionController::class, 'index'])->name('divisions.index');
     Route::get('/primary', [DivisionController::class, 'primary'])->name('divisions.primary');
     Route::get('/junior-intermediate', [DivisionController::class, 'juniorIntermediate'])->name('divisions.ji');
     Route::get('/high-school', [DivisionController::class, 'highSchool'])->name('divisions.highschool');
+
+    // Course player
+    Route::get('/courses/{course}', [LearningCourseController::class, 'show'])
+        ->name('courses.show');
+
+    Route::get('/courses/{course}/tasks/{task}', [LearningCourseController::class, 'showTask'])
+        ->name('courses.tasks.show');
+
+    Route::post('/courses/{course}/tasks/{task}/toggle-complete',
+        [LearningCourseController::class, 'toggleTaskCompletion'])
+        ->name('courses.tasks.toggle-complete');
+
+    // ✅ Save notes (AJAX)
+    Route::post('/courses/{course}/tasks/{task}/notes',
+        [LearningCourseController::class, 'saveNotes'])
+        ->name('courses.tasks.notes.save');
+
 });
 
-Route::get('/redirect', function () {
-    $user = auth()->user();
+// Route::get('/redirect', function () {
+//     $user = auth()->user();
 
-    if ($user->hasRole('admin')) {
-        return redirect('/admin/dashboard');
-    }
+//     if ($user->hasRole('admin')) {
+//         return redirect('/admin/dashboard');
+//     }
 
-    if ($user->hasRole('school')) {
-        return redirect('/school/dashboard');
-    }
+//     if ($user->hasRole('school')) {
+//         return redirect('/school/dashboard');
+//     }
 
-    if ($user->hasRole('teacher')) {
-        return redirect('/teacher/dashboard');
-    }
+//     if ($user->hasRole('teacher')) {
+//         return redirect('/teacher/dashboard');
+//     }
 
-    return redirect('/');
-})->middleware('auth');
+//     return redirect('/');
+// })->middleware('auth');
 
 // Contact Us page
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
@@ -199,5 +362,21 @@ Route::post('/gallery/like', [App\Http\Controllers\GalleryLikeController::class,
 Route::view('/membership', 'membership')->name('membership');
 Route::view('/terms-and-conditions', 'terms-and-conditions')->name('terms-and-conditions');
 
+// Public Division of Learning landing page
+Route::view('/division-of-learning', 'division-of-learning')
+    ->name('division.of.learning');
+
+// Stripe Webhook endpoint
+Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
+    ->name('stripe.webhook');
+
+
+Route::prefix('chatbot')->middleware(['web', 'throttle:30,1'])->group(function () {
+    Route::post('/session', [ChatbotController::class, 'createSession'])->name('chatbot.session');
+    Route::post('/message', [ChatbotController::class, 'sendMessage'])->name('chatbot.message');
+});
+
+
+Route::view('/chatbot-test', 'chatbot.test')->name('chatbot.test');
 
 require __DIR__.'/auth.php';

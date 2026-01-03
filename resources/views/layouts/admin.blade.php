@@ -18,7 +18,7 @@
     <meta name="author" content="codedthemes" />
 
     {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('assets/admin/images/favicon.svg') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('favicon.png') }}">
 
     {{-- Google Font --}}
     <link rel="stylesheet"
@@ -84,5 +84,10 @@
 
     {{-- Page-specific JS --}}
     @stack('scripts')
+
+    @once
+      @include('partials.translate-scripts')
+    @endonce
+
   </body>
 </html>

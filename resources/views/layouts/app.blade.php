@@ -15,6 +15,10 @@
         @endif
     </title>
 
+    <link rel="icon" href="{{ asset('favicon.png') }}">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -47,6 +51,14 @@
         @yield('content')
     </main>
 
+    @include('partials.chatbot-widget')
+    <script src="{{ asset('assets/js/chatbot.js') }}"></script>
+
     @include('includes.frontend.footer')
+
+    @once
+        @include('partials.translate-scripts')
+    @endonce
+
 </body>
 </html>
