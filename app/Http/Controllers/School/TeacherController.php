@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\TeacherAddedToSchoolNotification;
 
 class TeacherController extends Controller
 {
@@ -46,6 +47,17 @@ class TeacherController extends Controller
 
         // Assign teacher role
         $teacher->assignRole('teacher');
+
+        $teacher->assignRole('teacher');
+
+        // since you don't want teacher email verification:
+        $teacher->forceFill(['email_verified_at' => now()])->save();
+
+        $teacher->notify(new TeacherAddedToSchoolNotification(
+            schoolName: $school->name ?? 'Your School',
+            tempPassword: $request->password,
+            loginUrl: route('login')
+        ));
 
         return redirect()
             ->route('school.teachers.index')
@@ -124,7 +136,8 @@ class TeacherController extends Controller
             ]
         );
 
-        $teacher->password = $validated['password'];
+        // $teacher->password = $validated['password'];
+        $teacher->password = Hash::make($validated['password']);
         $teacher->save();
 
         return back()->with('success', 'Password updated successfully.');

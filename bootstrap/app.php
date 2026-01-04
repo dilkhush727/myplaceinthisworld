@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
+use App\Http\Middleware\EnsureVerifiedUnlessTeacher;
+
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -17,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
             // Spatie Permission middleware (CORRECT PATH)
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+            'verified.unlessTeacher' => EnsureVerifiedUnlessTeacher::class,
         ]);
 
     })

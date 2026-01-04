@@ -60,10 +60,10 @@ Route::get('/dashboard', function () {
     }
 
     abort(403);
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified.unlessTeacher'])->name('dashboard');
 
 
-Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     // ⭐ Gallery Routes
@@ -166,7 +166,7 @@ Route::middleware(['auth'])->group(function () {
         ->name('school.dashboard');
 });
 
-Route::middleware(['auth', 'role:school'])->prefix('school')->group(function () {
+Route::middleware(['auth', 'verified', 'role:school'])->prefix('school')->group(function () {
 
     Route::get('/dashboard', [SchoolDashboardController::class, 'index'])
         ->name('school.dashboard');
