@@ -2,13 +2,13 @@
 
 @php use Illuminate\Support\Str; @endphp
 
-@section('title', 'Course Progress – ' . $course->title)
+@section('title', __('labels.course') . ' Progress – ' . $course->title)
 
 @section('content')
 <div class="container-fluid py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
-      <h1 class="h4 mb-1">Course Progress</h1>
+      <h1 class="h4 mb-1">{{ __('labels.course') }} Progress</h1>
       <p class="text-muted mb-0">
         {{ $course->title }} &mdash;
         @switch($course->division)
@@ -38,7 +38,7 @@
         @endif
       </div>
       <div class="text-end">
-        <div class="small text-muted">Total tasks</div>
+        <div class="small text-muted">Total {{ __('labels.tasks') }}</div>
         <div class="h5 mb-0">{{ $totalTasks }}</div>
         <a href="{{ route('courses.show', $course->id) }}" target="_blank" class="btn btn-sm btn-primary mt-2">
           Open course player

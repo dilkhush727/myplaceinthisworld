@@ -45,7 +45,7 @@
                   </p>
                 @else
                   <p class="mb-4 text-muted" style="font-size:0.9rem;">
-                    Course description coming soon.
+                    {{ __('labels.course') }} description coming soon.
                   </p>
                 @endif
 

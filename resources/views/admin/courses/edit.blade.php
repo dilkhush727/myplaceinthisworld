@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Course')
+@section('title', 'Edit ' . __('labels.course'))
 
 @section('content')
 <div class="container py-4">
-  <h1 class="h4 mb-3">Edit Course</h1>
+  <h1 class="h4 mb-3">Edit {{ __('labels.course') }}</h1>
 
   <form method="POST" action="{{ route('admin.courses.update', $course) }}">
     @csrf
@@ -62,7 +62,7 @@
       </label>
     </div>
 
-    <button class="btn btn-primary" type="submit">Update Course</button>
+    <button class="btn btn-primary" type="submit">Update {{ __('labels.course') }}</button>
     <a href="{{ route('admin.courses.index') }}" class="btn btn-secondary ms-2">Cancel</a>
   </form>
 </div>

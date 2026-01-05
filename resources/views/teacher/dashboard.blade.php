@@ -21,9 +21,9 @@
     <div class="col-xl-3 col-md-6">
       <div class="card">
         <div class="card-body">
-          <div class="text-muted">Tasks To Do</div>
+          <div class="text-muted">{{ __('labels.tasks') }} To Do</div>
           <div class="h2 mb-0">{{ $toDoCount }}</div>
-          <div class="small text-muted mt-1">Based on your available tasks</div>
+          <div class="small text-muted mt-1">Based on your available {{ __('labels.tasks') }}</div>
         </div>
       </div>
     </div>
@@ -92,10 +92,12 @@
                     @if($courseId && $taskId)
                     <a class="fw-semibold"
                         href="{{ route('courses.tasks.show', ['course' => $courseId, 'task' => $taskId]) }}">
-                        Completed: {{ $task->title }} (Lesson: {{ $lesson->title }})
+                        Completed: {{ $task->title }} ({{ __('labels.lesson') }}: {{ $lesson->title }})
                     </a>
                     @else
-                    <div class="fw-semibold">Completed: {{ $task->title ?? 'Task' }}</div>
+                    <div class="fw-semibold">
+                      Completed: {{ $task->title ?? __('labels.task') }}
+                    </div>
                     @endif
 
                     <div class="text-muted small">{{ optional($time)->diffForHumans() }}</div>

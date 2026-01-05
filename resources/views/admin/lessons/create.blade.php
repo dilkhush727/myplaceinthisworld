@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Lesson – '.$course->title)
+@section('title', 'Add ' . __('labels.lesson') . ' – '.$course->title)
 
 @section('content')
 <div class="container py-4">
-  <h1 class="h4 mb-3">Add Lesson – {{ $course->title }}</h1>
+  <h1 class="h4 mb-3">Add {{ __('labels.lesson') }} – {{ $course->title }}</h1>
 
   <form method="POST" action="{{ route('admin.courses.lessons.store', $course) }}">
     @csrf
@@ -31,7 +31,7 @@
       <div class="form-text">Lower numbers appear first in the sidebar.</div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Save Lesson</button>
+    <button class="btn btn-primary" type="submit">Save {{ __('labels.lesson') }}</button>
     <a href="{{ route('admin.courses.lessons.index', $course) }}" class="btn btn-secondary ms-2">Cancel</a>
   </form>
 </div>

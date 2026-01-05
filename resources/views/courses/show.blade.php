@@ -23,9 +23,9 @@
 
     <div class="card shadow-sm" style="min-width: 260px;">
       <div class="card-body">
-        <div class="fw-bold mb-1">Course Progress</div>
+        <div class="fw-bold mb-1">{{ __('labels.course') }} Progress</div>
         <div class="small text-muted mb-2" id="course-progress-text">
-          {{ $completedTasks }} / {{ $totalTasks }} tasks complete
+          {{ $completedTasks }} / {{ $totalTasks }} {{ __('labels.tasks') }} complete
           ({{ $completionPercent }}%)
         </div>
         <div class="progress mb-2" style="height: 6px;">
@@ -46,7 +46,7 @@
     <div class="col-md-4 col-lg-3 mb-4">
       <div class="card h-100">
         <div class="card-header fw-bold">
-          Course Content
+          {{ __('labels.course') }} Content
         </div>
         <div class="card-body p-0">
           <div class="list-group list-group-flush" id="course-task-list">

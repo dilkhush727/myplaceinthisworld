@@ -1,25 +1,25 @@
 @extends('layouts.admin')
 
-@section('title', 'Tasks – '.$lesson->title.' ('.$course->title.')')
+@section('title', __('labels.tasks') . ' – '.$lesson->title.' ('.$course->title.')')
 
 @section('content')
 <div class="container py-4">
 
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
-      <h1 class="h4 mb-1">Tasks – {{ $lesson->title }}</h1>
+      <h1 class="h4 mb-1">{{ __('labels.tasks') }} – {{ $lesson->title }}</h1>
       <div class="text-muted">
-        Course: {{ $course->title }} • Division: {{ ucfirst($course->division) }}
+        {{ __('labels.course') }}: {{ $course->title }} • Division: {{ ucfirst($course->division) }}
       </div>
     </div>
     <div>
       <a href="{{ route('admin.courses.lessons.index', $course) }}"
          class="btn btn-outline-secondary btn-sm me-2">
-        &larr; Back to Lessons
+        &larr; Back to {{ __('labels.lessons') }}
       </a>
       <a href="{{ route('admin.courses.lessons.tasks.create', [$course, $lesson]) }}"
          class="btn btn-primary">
-        + Add Task
+        + Add {{ __('labels.task') }}
       </a>
     </div>
   </div>

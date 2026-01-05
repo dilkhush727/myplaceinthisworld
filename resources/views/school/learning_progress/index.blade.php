@@ -37,9 +37,9 @@
           <table class="table align-middle">
             <thead>
               <tr>
-                <th>Course</th>
+                <th>{{ __('labels.course') }}</th>
                 <th>Division</th>
-                <th class="text-center">Total Tasks</th>
+                <th class="text-center">Total {{ __('labels.tasks') }}</th>
                 <th class="text-center">Teachers with Activity</th>
                 <th class="text-center">Total Completions</th>
                 <th class="text-center">Avg Completion</th>

@@ -1,13 +1,13 @@
 @extends('layouts.admin') {{-- change to your admin layout if you have one --}}
 
-@section('title', 'Courses')
+@section('title', __('labels.courses'))
 
 @section('content')
 <div class="container py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="h4 mb-0">Courses</h1>
+    <h1 class="h4 mb-0">{{ __('labels.courses') }}</h1>
     <a href="{{ route('admin.courses.create') }}" class="btn btn-primary">
-      + Add Course
+      + Add {{ __('labels.course') }}
     </a>
   </div>
 
@@ -47,7 +47,7 @@
             <td class="text-end">
                 <a href="{{ route('admin.courses.lessons.index', $course) }}"
                     class="btn btn-sm btn-outline-secondary me-1">
-                    Lessons
+                    {{ __('labels.lessons') }}
                 </a>
                 <a href="{{ route('admin.courses.edit', $course) }}" class="btn btn-sm btn-outline-primary me-1">
                     Edit

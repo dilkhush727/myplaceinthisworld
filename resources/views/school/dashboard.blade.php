@@ -125,7 +125,7 @@
             </div>
         </div>
 
-        {{-- Lessons --}}
+        {{-- {{ __('labels.lessons') }} --}}
         <div class="col-xl-4 col-md-6">
             <div class="card dashnum-card overflow-hidden">
                 <span class="round bg-info small"></span>
@@ -144,7 +144,7 @@
             </div>
         </div>
 
-        {{-- Tasks --}}
+        {{-- {{ __('labels.tasks') }} --}}
         <div class="col-xl-4 col-md-12">
             <div class="card dashnum-card overflow-hidden">
                 <span class="round bg-success small"></span>
@@ -169,12 +169,12 @@
     {{-- PROGRESS + COMPLETIONS --}}
     <div class="row g-3 mt-1">
 
-        {{-- Completed Tasks --}}
+        {{-- Completed {{ __('labels.tasks') }} --}}
         <div class="col-xl-6 col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <h5 class="mb-0">Tasks Completed</h5>
+                        <h5 class="mb-0">{{ __('labels.tasks') }} Completed</h5>
                         <span class="badge bg-light text-dark">School-wide</span>
                     </div>
 
@@ -219,7 +219,7 @@
                         </div>
                         <div class="col-6">
                             <div class="p-3 border rounded">
-                                <div class="text-muted">Lessons</div>
+                                <div class="text-muted">{{ __('labels.lessons') }}</div>
                                 <div class="h4 mb-0">{{ $lessonsCount }}</div>
                             </div>
                         </div>

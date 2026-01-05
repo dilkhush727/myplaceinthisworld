@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Task – '.$lesson->title)
+@section('title', 'Add '.__('labels.task').' – '.$lesson->title)
 
 @section('content')
 <div class="container py-4">
-  <h1 class="h4 mb-3">Add Task – {{ $lesson->title }}</h1>
+  <h1 class="h4 mb-3">Add {{ __('labels.task') }} – {{ $lesson->title }}</h1>
 
   <form method="POST" action="{{ route('admin.courses.lessons.tasks.store', [$course, $lesson]) }}" enctype="multipart/form-data">
     @csrf
@@ -32,7 +32,7 @@
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Task Content (Body)</label>
+      <label class="form-label">{{ __('labels.task') }} Content (Body)</label>
       <textarea name="body" rows="6" class="form-control">{{ old('body') }}</textarea>
       <div class="form-text">
         You can paste HTML or plain text here. Later we can switch to a WYSIWYG editor.
@@ -99,7 +99,7 @@
     </button>
 
     <div class="mt-3">
-      <button class="btn btn-primary" type="submit">Save Task</button>
+      <button class="btn btn-primary" type="submit">Save {{ __('labels.task') }}</button>
       <a href="{{ route('admin.courses.lessons.tasks.index', [$course, $lesson]) }}"
          class="btn btn-secondary ms-2">Cancel</a>
     </div>

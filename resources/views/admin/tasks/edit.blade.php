@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Task – '.$lesson->title)
+@section('title', 'Edit '.__('labels.task').' – '.$lesson->title)
 
 @section('content')
 <div class="container py-4">
-  <h1 class="h4 mb-3">Edit Task – {{ $lesson->title }}</h1>
+  <h1 class="h4 mb-3">Edit {{ __('labels.task') }} – {{ $lesson->title }}</h1>
 
   <form method="POST"
         action="{{ route('admin.courses.lessons.tasks.update', [$course, $lesson, $task]) }}"

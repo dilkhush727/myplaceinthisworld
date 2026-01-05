@@ -260,7 +260,7 @@
       <div class="card">
         <div class="card-header">
           <strong>Division Content</strong>
-          <div class="text-muted small">Courses / Lessons / Tasks grouped by division/type column (auto-detected)</div>
+          <div class="text-muted small">{{ __('labels.courses') }} / {{ __('labels.lessons') }} / {{ __('labels.tasks') }} grouped by division/type column (auto-detected)</div>
         </div>
 
         <div class="card-body">
@@ -269,9 +269,9 @@
               <div class="col-xl-3 col-md-6">
                 <div class="border rounded p-3 h-100">
                   <div class="fw-bold mb-2">{{ $d['division'] }}</div>
-                  <div class="d-flex justify-content-between"><span class="text-muted">Courses</span><span class="fw-semibold">{{ $d['courses'] }}</span></div>
-                  <div class="d-flex justify-content-between"><span class="text-muted">Lessons</span><span class="fw-semibold">{{ $d['lessons'] }}</span></div>
-                  <div class="d-flex justify-content-between"><span class="text-muted">Tasks</span><span class="fw-semibold">{{ $d['tasks'] }}</span></div>
+                  <div class="d-flex justify-content-between"><span class="text-muted">{{ __('labels.courses') }}</span><span class="fw-semibold">{{ $d['courses'] }}</span></div>
+                  <div class="d-flex justify-content-between"><span class="text-muted">{{ __('labels.lessons') }}</span><span class="fw-semibold">{{ $d['lessons'] }}</span></div>
+                  <div class="d-flex justify-content-between"><span class="text-muted">{{ __('labels.tasks') }}</span><span class="fw-semibold">{{ $d['tasks'] }}</span></div>
                 </div>
               </div>
             @endforeach

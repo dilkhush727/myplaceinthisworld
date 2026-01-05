@@ -64,7 +64,7 @@
 
               <div class="mt-auto">
                 <div class="small text-muted mb-1">
-                  {{ $completedTasks }} / {{ $totalTasks }} tasks complete
+                  {{ $completedTasks }} / {{ $totalTasks }} {{ __('labels.tasks') }} complete
                   ({{ $percent }}%)
                 </div>
                 <div class="progress mb-2" style="height: 6px;">
@@ -93,7 +93,7 @@
 
                 <a href="{{ route('courses.show', $course->id) }}"
                    class="btn btn-primary w-100">
-                  {{ $percent > 0 ? 'Continue Course' : 'Start Course' }}
+                  {{ $percent > 0 ? 'Continue ' . __('labels.course') : 'Start ' . __('labels.course') }}
                 </a>
               </div>
             </div>

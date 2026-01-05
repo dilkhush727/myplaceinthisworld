@@ -1,21 +1,21 @@
 @extends('layouts.admin')
 
-@section('title', 'Lessons for '.$course->title)
+@section('title', __('labels.lessons') . ' for '.$course->title)
 
 @section('content')
 <div class="container py-4">
 
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
-      <h1 class="h4 mb-1">Lessons – {{ $course->title }}</h1>
+      <h1 class="h4 mb-1">{{ __('labels.lessons') }} – {{ $course->title }}</h1>
       <div class="text-muted text-capitalize">Division: {{ $course->division }}</div>
     </div>
     <div>
       <a href="{{ route('admin.courses.index') }}" class="btn btn-outline-secondary btn-sm me-2">
-        &larr; Back to Courses
+        &larr; Back to {{ __('labels.courses') }}
       </a>
       <a href="{{ route('admin.courses.lessons.create', $course) }}" class="btn btn-primary">
-        + Add Lesson
+        + Add {{ __('labels.lesson') }}
       </a>
     </div>
   </div>
@@ -46,7 +46,7 @@
             <td class="text-end">
               <a href="{{ route('admin.courses.lessons.tasks.index', [$course, $lesson]) }}"
                 class="btn btn-sm btn-outline-secondary me-1">
-                Tasks
+                {{ __('labels.tasks') }}
               </a>
               <a href="{{ route('admin.courses.lessons.edit', [$course, $lesson]) }}"
                 class="btn btn-sm btn-outline-primary me-1">
