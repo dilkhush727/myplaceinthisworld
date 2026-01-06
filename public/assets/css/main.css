@@ -982,6 +982,10 @@ section,
   margin: 0;
 }
 
+.feature-card small{
+  font-size: 14px;;
+}
+
 .hero .upcoming-event {
   background: var(--heading-color);
   color: var(--contrast-color);
@@ -8461,8 +8465,9 @@ section,
   background-color: #000000!important;
 }
 .featured-by.feature-cards-wrapper .feature-card{
-  background: #202020 !important;
+  background: #ffffff !important;
   padding: 1rem;
+  box-shadow: 0px 2px 9px 0px #380000;
 }
 .featured-by.feature-cards-wrapper .feature-card img{
   max-width: 60%;

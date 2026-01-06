@@ -32,35 +32,55 @@
         </div>
       </div>
 
-      <div class="feature-cards-wrapper featured-by bg-dark" data-aos="fade-up" data-aos-delay="300">
+      <div class="feature-cards-wrapper featured-by bg-danger" data-aos="fade-up" data-aos-delay="300">
         <div class="container">
           <div class="row gy-4">
-            <h2 class="text-white pt-2">As featured by:</h2>
-            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="feature-card align-items-center">
-                <a href="https://www.cbc.ca/news/canada/kitchener-waterloo/guelph-black-heritage-society-lorraine-harris-curriculum-1.5906779" class="text-center" target="_blank">
-                <img src="assets/img/CBC-logo.png" class="img-fluid">
-                </a>
-              </div>
-            </div>
+            <h2 class="text-white pt-2 text-center">FEATURED IN</h2>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
                 <a href="https://www.ctvnews.ca/kitchener/article/black-heritage-curriculum-set-to-roll-out-in-waterloo-region-catholic-schools/" class="text-center" target="_blank">
-                <img src="assets/img/CTV-logo.png" class="img-fluid">
+                <img src="assets/img/featured-in/ctv.png" class="img-fluid">
+
+                <div>
+                  <h5><strong>CTV Collaboration</strong></h5>
+                  <small>We partnered with CTV to feature student stories and key milestones through interviews and event coverage, boosting trust, and engagement across Canada.</small>
+                </div>
                 </a>
               </div>
             </div>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
                 <a href="javascript:;" class="text-center">
-                <img src="assets/img/ontario-logo.png" class="img-fluid">
+                <img src="assets/img/featured-in/ontario.png" class="img-fluid">
+
+                <div>
+                  <h5><strong>Ontario Government</strong></h5>
+                  <small>We supported Ontario initiatives with clear, accessible program content and resources aligned with provincial standards, improving communication and participation.</small>
+                </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-card align-items-center">
+                <a href="https://www.cbc.ca/news/canada/kitchener-waterloo/guelph-black-heritage-society-lorraine-harris-curriculum-1.5906779" class="text-center" target="_blank">
+                <img src="assets/img/featured-in/cbc.png" class="img-fluid">
+
+                <div>
+                  <h5><strong>CBC Collaboration</strong></h5>
+                  <small>We worked with CBC on interviews and storytelling to share major updates, expand reach, and strengthen credibility through trusted national coverage.</small>
+                </div>
                 </a>
               </div>
             </div>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
                 <a href="https://blogs1.conestogac.on.ca/news/2024/03/capstone_project_creates_marke.php" class="text-center" target="_blank">
-                <img src="assets/img/conestoga-logo.svg" class="img-fluid">
+                <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
+
+                <div>
+                  <h5><strong>Conestoga Learning</strong></h5>
+                  <small>We collaborated with Conestoga to build practical learning modules and assessments that support real classrooms and develop job-ready skills.</small>
+                </div>
                 </a>
               </div>
             </div>
