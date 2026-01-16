@@ -33,9 +33,16 @@
 
     <div class="mb-3">
       <label class="form-label">{{ __('labels.task') }} Content (Body)</label>
-      <textarea name="body" rows="6" class="form-control">{{ old('body') }}</textarea>
+
+      <textarea
+        id="step-body-editor"
+        name="body"
+        rows="12"
+        class="form-control"
+      >{{ old('body') }}</textarea>
+
       <div class="form-text">
-        You can paste HTML or plain text here. Later we can switch to a WYSIWYG editor.
+        Use the editor to format text (headings, lists, links, colors). HTML will be saved automatically.
       </div>
     </div>
 

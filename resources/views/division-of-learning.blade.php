@@ -17,113 +17,89 @@
       </a>
     </div>
 
-    <div class="row g-4 justify-content-center">
+    <div class="dol-v2">
+      <div class="row g-4 justify-content-center">
 
-      {{-- PRIMARY --}}
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-3"
-             style="border-radius:32px; border-color:#ffbe0b; box-shadow:0 12px 28px rgba(0,0,0,0.08);">
-          <div class="card-body d-flex flex-column p-4">
-
-            <div class="mb-4" style="border-radius:26px; overflow:hidden;">
-              <img src="{{ asset('assets/img/primary.webp') }}"
-                   alt="Primary illustration"
-                   class="img-fluid w-100"
-                   style="object-fit:cover; height:200px;">
+        {{-- PRIMARY --}}
+        <div class="col-md-6 col-lg-4">
+          <div class="dol-card dol-primary">
+            <div class="dol-avatar">
+              <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
             </div>
 
-            <h3 class="h4 fw-bold text-center mb-3">Primary</h3>
+            <div class="dol-paper"></div>
 
-            <p class="mb-4" style="font-size:0.95rem; line-height:1.6;">
-              Primary students will become familiar with some African Kings and Queens. The hands-on
-              activities will engage students as they begin to learn about African heritage through
-              the lens of African Kings and Queens. This curriculum will also give students a sense of
-              connectedness, create a new understanding of Black people and culture, and develop a
-              sense of belonging, especially for Black students.
-            </p>
+            <div class="dol-body">
+              <h3>Primary</h3>
+              <p class="dol-grade">Grade (1-3)</p>
 
-            <div class="mt-auto text-center">
-              <a href="{{ route('register') }}"
-                 class="btn w-100 rounded-pill py-2"
-                 style="background:#fff7e0; color:#e0a400; font-weight:600; border:none;">
-                Subscription Required
-              </a>
+              <p class="dol-text">
+                Primary students will become familiar with some African Kings and Queens. The hands-on
+                activities will engage students as they begin to learn about African heritage through
+                the lens of African Kings and Queens. This curriculum will also give students a sense of
+                connectedness, create a new understanding of Black people and culture, and develop a
+                sense of belonging, especially for Black students.
+              </p>
+
+              <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
             </div>
-
           </div>
         </div>
-      </div>
 
-      {{-- JUNIOR / INTERMEDIATE --}}
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-3"
-             style="border-radius:32px; border-color:#00a676; box-shadow:0 12px 28px rgba(0,0,0,0.08);">
-          <div class="card-body d-flex flex-column p-4">
-
-            <div class="mb-4" style="border-radius:26px; overflow:hidden;">
-              <img src="{{ asset('assets/img/junior.webp') }}"
-                   alt="Junior/Intermediate illustration"
-                   class="img-fluid w-100"
-                   style="object-fit:cover; height:200px;">
+        {{-- JUNIOR / INTERMEDIATE --}}
+        <div class="col-md-6 col-lg-4">
+          <div class="dol-card dol-junior">
+            <div class="dol-avatar">
+              <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior/Intermediate" class="img-fluid">
             </div>
 
-            <h3 class="h4 fw-bold text-center mb-3">Junior/Intermediate</h3>
+            <div class="dol-paper"></div>
 
-            <p class="mb-4" style="font-size:0.95rem; line-height:1.6;">
-              As Junior/Intermediate students get to know the African Kings and Queens presented,
-              the hands-on activities will engage them. The familiar learning platforms and the use
-              of social media tools will keep them motivated. This curriculum will also give students
-              a sense of connectedness, create a new understanding of Black people and culture, and
-              develop a sense of belonging, especially for Black students.
-            </p>
+            <div class="dol-body">
+              <h3>Junior/Intermediate</h3>
+              <p class="dol-grade">Grade (4-6)</p>
 
-            <div class="mt-auto text-center">
-              <a href="{{ route('register') }}"
-                 class="btn w-100 rounded-pill py-2"
-                 style="background:#e2fff4; color:#00a676; font-weight:600; border:none;">
-                Subscription Required
-              </a>
+              <p class="dol-text">
+                As Junior/Intermediate students get to know the African Kings and Queens presented,
+                the hands-on activities will engage them. The familiar learning platforms and the use
+                of social media tools will keep them motivated. This curriculum will also give students
+                a sense of connectedness, create a new understanding of Black people and culture, and
+                develop a sense of belonging, especially for Black students.
+              </p>
+
+              <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
             </div>
-
           </div>
         </div>
-      </div>
 
-      {{-- HIGH SCHOOL --}}
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-3"
-             style="border-radius:32px; border-color:#e63946; box-shadow:0 12px 28px rgba(0,0,0,0.08);">
-          <div class="card-body d-flex flex-column p-4">
-
-            <div class="mb-4" style="border-radius:26px; overflow:hidden;">
-              <img src="{{ asset('assets/img/highschool.webp') }}"
-                   alt="High School illustration"
-                   class="img-fluid w-100"
-                   style="object-fit:cover; height:200px;">
+        {{-- HIGH SCHOOL --}}
+        <div class="col-md-6 col-lg-4">
+          <div class="dol-card dol-high">
+            <div class="dol-avatar">
+              <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
             </div>
 
-            <h3 class="h4 fw-bold text-center mb-3">High School</h3>
+            <div class="dol-paper"></div>
 
-            <p class="mb-4" style="font-size:0.95rem; line-height:1.6;">
-              The High School curriculum goes deeper and touches on rich content and sometimes
-              controversial issues related to African Kings and Queens and their heritage. Students
-              will engage in critical thinking and make relevant connections to their own environment
-              and lived experiences and to global competencies.
-            </p>
+            <div class="dol-body">
+              <h3>High School</h3>
+              <p class="dol-grade">Grade (9-12)</p>
 
-            <div class="mt-auto text-center">
-              <a href="{{ route('login') }}"
-                 class="btn w-100 rounded-pill py-2"
-                 style="background:#ffe5e8; color:#e63946; font-weight:600; border:none;">
-                Login Required
-              </a>
+              <p class="dol-text">
+                The High School curriculum goes deeper and touches on rich content and sometimes
+                controversial issues related to African Kings and Queens and their heritage. Students
+                will engage in critical thinking and make relevant connections to their own environment
+                and lived experiences and to global competencies.
+              </p>
+
+              <a href="{{ route('login') }}" class="dol-btn">Login Required</a>
             </div>
-
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
+
   </div>
 </section>
 

@@ -37,7 +37,17 @@
 
     <div class="mb-3">
       <label class="form-label">Task Content (Body)</label>
-      <textarea name="body" rows="6" class="form-control">{{ old('body', $task->body) }}</textarea>
+
+      <textarea
+        id="step-body-editor"
+        name="body"
+        rows="12"
+        class="form-control"
+      >{{ old('body', $task->body) }}</textarea>
+
+      @error('body')
+        <div class="text-danger small mt-1">{{ $message }}</div>
+      @enderror
     </div>
 
     {{-- RESOURCES SECTION --}}

@@ -3,6 +3,43 @@
 @section('title', $course->title)
 
 @section('content')
+
+
+<style>
+  @media (min-width: 768px) {
+
+  /* Sticky LEFT column */
+  .col-md-4.col-lg-3.mb-4 {
+    position: sticky;
+    top: 85px;
+    height: calc(100vh - 80px);
+    align-self: flex-start;
+  }
+
+  /* Card fills the column */
+  .col-md-4.col-lg-3.mb-4 .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header stays fixed */
+  .col-md-4.col-lg-3.mb-4 .card-header {
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+  }
+
+  /* THIS is where scrolling happens */
+  .col-md-4.col-lg-3.mb-4 .card-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+</style>
+
+
 <div class="container-fluid py-4">
 
   {{-- Flash message --}}

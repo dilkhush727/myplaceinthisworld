@@ -58,6 +58,15 @@
   --contrast-color: #b6b6b6;
 }
 
+.btn-danger{
+  background-color: #B20000 !important;
+  border-color: #B20000 !important;
+}
+.btn-danger:hover{
+  background-color: #8b0000 !important;
+  border-color: #8b0000 !important;
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -494,7 +503,7 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  /* border: 2px solid color-mix(in srgb, var(--default-color), transparent 50%); */
   font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-right: 10px;
@@ -8629,4 +8638,153 @@ section,
 .form-control:focus {
   border-color: #000 !important;
   box-shadow: none !important;
+}
+
+
+
+/* ============================
+   DOL V2 (FIXED)
+   - White panel stays white
+   - Back paper flips/tilts only
+   - Paper never becomes text background
+============================ */
+
+/* Card wrapper (outer border frame) */
+.dol-v2{
+  margin-top: 110px;
+}
+.dol-v2 .dol-card{
+  position: relative;
+  border-radius: 32px;
+  /* min-height: 540px; */
+
+  /* IMPORTANT: outer frame is transparent */
+  background: transparent;
+
+  /* space between border and inner white panel */
+  padding: 20px;
+
+  /* no rotation on hover */
+  /* box-shadow: 0 12px 28px rgba(0,0,0,0.10); */
+  transition: box-shadow 0.35s ease;
+  overflow: visible;
+}
+
+/* Border colors */
+/* .dol-v2 .dol-primary{ border: 3px solid #ffbe0b; }
+.dol-v2 .dol-junior { border: 3px solid #00a676; }
+.dol-v2 .dol-high   { border: 3px solid #e63946; } */
+
+/* ✅ Back paper (behind the white panel) */
+.dol-v2 .dol-paper{
+  position: absolute;
+  inset: 20px;                 /* same-ish size as inner panel */
+  border-radius: 28px;
+  z-index: 0;
+  pointer-events: none;
+
+  opacity: 0;                  /* hidden by default */
+  transform: rotate(0deg) scale(0.98);
+  transition: transform 0.45s ease, opacity 0.35s ease;
+}
+
+/* Paper colors */
+.dol-v2 .dol-primary .dol-paper{ background: #ffbe0b; }
+.dol-v2 .dol-junior  .dol-paper{ background: #00a676; }
+.dol-v2 .dol-high    .dol-paper{ background: #e63946; }
+
+/* ✅ Inner WHITE panel that contains text */
+.dol-v2 .dol-body{
+  position: relative;
+  z-index: 2;
+
+  background: #fff;            /* ✅ keeps text on white */
+  border-radius: 28px;
+
+  padding: 110px 26px 22px;    /* top space for avatar */
+  min-height: 510px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titles */
+.dol-v2 .dol-body h3{
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.dol-v2 .dol-grade{
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.dol-v2 .dol-text{
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ✅ Avatar (symmetric box) */
+.dol-v2 .dol-avatar{
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 210px;
+
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dol-v2 .dol-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Button */
+.dol-v2 .dol-btn{
+  margin-top: auto;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dol-v2 .dol-primary .dol-btn{ background:#fff7e0; color:#e0a400; }
+.dol-v2 .dol-junior  .dol-btn{ background:#e2fff4; color:#00a676; }
+.dol-v2 .dol-high    .dol-btn{ background:#ffe5e8; color:#e63946; }
+
+/* ✅ Hover: ONLY paper tilts, front stays straight */
+.dol-v2 .dol-card:hover{
+  /* box-shadow: 0 20px 40px rgba(0,0,0,0.14); */
+}
+
+.dol-v2 .dol-card:hover .dol-paper{
+  opacity: 1;
+  transform: rotate(-10deg) scale(1);
+}
+
+/* Responsive */
+@media (max-width: 991px){
+  .dol-v2 .dol-avatar{
+    width: 160px;
+    height: 195px;
+    top: -85px;
+  }
+  .dol-v2 .dol-body{
+    padding-top: 105px;
+    min-height: 500px;
+  }
 }

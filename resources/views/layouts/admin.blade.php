@@ -25,7 +25,11 @@
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           id="main-font-link" />
 
-    {{-- Icon Fonts --}}
+    <!-- @vite(['resources/css/main.css', 'resources/js/main.js']) -->
+
+    <script src="https://cdn.tiny.cloud/1/{{ env('TINYMCE_API_KEY') }}/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+          {{-- Icon Fonts --}}
     <link rel="stylesheet" href="{{ asset('assets/admin/fonts/phosphor/duotone/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/admin/fonts/tabler-icons.min.css') }}" />
     <link rel="stylesheet href="{{ asset('assets/admin/fonts/feather.css') }}" />
@@ -81,6 +85,33 @@
       layout_rtl_change('false');
       preset_change('preset-1');
     </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!document.querySelector('#step-body-editor')) return;
+
+      tinymce.init({
+        selector: '#step-body-editor',
+        height: 500,
+        menubar: false,
+        branding: false,
+
+        plugins: [
+          'lists', 'link', 'table', 'code', 'fullscreen',
+          'autolink', 'wordcount', 'charmap', 'searchreplace'
+        ],
+
+        toolbar: [
+          'undo redo | blocks | bold italic underline | forecolor backcolor |',
+          'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |',
+          'link table charmap | removeformat | code fullscreen'
+        ].join(' '),
+
+        block_formats: 'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4'
+      });
+    });
+    </script>
+
 
     {{-- Page-specific JS --}}
     @stack('scripts')

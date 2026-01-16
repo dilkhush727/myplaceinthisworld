@@ -30,11 +30,12 @@
 
           <div class="task-body" style="min-height: 200px;">
             @if($currentTask->body)
-              {!! nl2br(e($currentTask->body)) !!}
+              {!! $currentTask->body !!}
             @else
               <p class="text-muted">No content has been added for this task yet.</p>
             @endif
           </div>
+
 
           {{-- Resources --}}
           @if($currentTask->resources && $currentTask->resources->count())
