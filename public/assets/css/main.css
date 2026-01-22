@@ -683,7 +683,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 40px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -3096,6 +3096,42 @@ section,
 .history .core-values .value-card p {
   font-size: 0.95rem;
   margin-bottom: 0;
+}
+
+/* wrapper */
+.our-story-wrap{
+  position: relative;
+  overflow: hidden; /* clips side images inside section */
+}
+
+/* side images */
+.our-story-wrap .story-side{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;      /* adjust */
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.our-story-wrap .story-side-left{ left: 0; }
+.our-story-wrap .story-side-right{ right: 0; }
+
+/* keep content above the side images */
+.our-story-wrap .container{
+  position: relative;
+  z-index: 5;
+}
+
+/* add breathing room for strips on desktop */
+@media (min-width: 992px){
+  .our-story-wrap .container{
+    padding-left: 170px;
+    padding-right: 170px;
+  }
 }
 
 /*--------------------------------------------------------------

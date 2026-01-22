@@ -91,43 +91,50 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section our-story-wrap position-relative overflow-hidden">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      {{-- LEFT SIDE IMAGE --}}
+      <img
+        src="{{ asset('assets/img/column-left.png') }}"
+        alt=""
+        class="story-side story-side-left d-none d-lg-block"
+        aria-hidden="true"
+      >
 
+      {{-- RIGHT SIDE IMAGE --}}
+      <img
+        src="{{ asset('assets/img/column-right.png') }}"
+        alt=""
+        class="story-side story-side-right d-none d-lg-block"
+        aria-hidden="true"
+      >
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/home-infographic.gif" alt="Campus" class="img-fluid rounded">
+              <img src="{{ asset('assets/img/home-infographic.png') }}" alt="Campus" class="img-fluid rounded">
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <h3>Our Story</h3>
-              <h2>Educating Minds, Inspiring Hearts</h2>
-              <p>As members of the BIPOC (Black, Indigenous, and People of Colour) community, our goal is to provide rich and relevant resources that promote equity, diversity, and inclusion. This work supports students and helps build a foundation for the best outcomes.</p>
+              <h2>OUR STORY</h2>
+              <h3 class="text-danger"><strong>EDUCATING MINDS. INSPIRING HEARTS.</strong></h3>
             </div>
-            <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
 
-              <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
-                <div class="mission bg-warning">
-                  <h3>Our Mission</h3>
-                  <p>We create inclusive educational resources that reflect the voices and experiences of BIPOC communities. Our goal is to support student growth and promote equity in classrooms and beyond.</p>
-                </div>
-
-                <div class="vision bg-success">
-                  <h3>Our Vision</h3>
-                  <p>We envision schools where every student feels seen and supported. Through collaboration and advocacy, we aim to create lasting change driven by diversity and community leadership.</p>
-                </div>
+            <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
+              <div class="mission bg-warning p-4 rounded-5">
+                <p class="mb-0">As members of the BIPOC (Black, Indigenous, and People of Colour) community, our goal is to provide rich and relevant resources that promote equity, diversity, and inclusion. This work supports students and helps build a foundation for the best outcomes.</p>
               </div>
             </div>
+
           </div>
         </div>
-
       </div>
 
     </section><!-- /About Section -->
+
 
     <!-- Students Life Block Section -->
     <section id="students-life-block" class="students-life-block custom-section section">
