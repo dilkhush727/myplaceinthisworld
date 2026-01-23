@@ -1189,53 +1189,6 @@ section,
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.about .about-image .mission-vision {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .about .about-image .mission-vision {
-    grid-template-columns: 1fr;
-  }
-}
-
-.about .about-image .mission-vision .mission,
-.about .about-image .mission-vision .vision {
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-}
-
-.about .about-image .mission-vision .mission h3,
-.about .about-image .mission-vision .vision h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  font-weight: 600;
-  position: relative;
-  padding-left: 15px;
-}
-
-.about .about-image .mission-vision .mission h3:before,
-.about .about-image .mission-vision .vision h3:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 5px;
-  height: 20px;
-  background-color: var(--accent-color);
-  border-radius: 3px;
-}
-
-.about .about-image .mission-vision .mission p,
-.about .about-image .mission-vision .vision p {
-  margin-bottom: 0;
-  font-size: 0.95rem;
-}
-
 .about .core-values {
   margin-top: 30px;
 }
@@ -2069,7 +2022,7 @@ section,
   position: relative;
   margin-top: 25px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .testimonials .swiper-button-prev,
@@ -3004,6 +2957,91 @@ section,
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+
+/* ===== Mission Section (Figma style) ===== */
+.mission-section{
+  background: #F4C34A; /* warm yellow like figma */
+  padding: 90px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top & bottom patterns */
+.texture-pattern{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: unset;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.texture-pattern-top{ top: 10px; }
+.texture-pattern-bottom{ bottom: 10px; }
+
+/* Side illustrations */
+.mission-illustration{
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mission-illustration-left{
+  left: 40px;
+  bottom: 40px;
+  width: 280px;           /* adjust */
+  max-width: 30vw;
+}
+
+.mission-illustration-right{
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;           /* adjust */
+  max-width: 32vw;
+}
+
+/* Keep content above background assets */
+.mission-section .container{
+  z-index: 3;
+}
+
+/* Cards + heading */
+.mission-heading{
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0b1f2a;
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 36px;
+}
+
+.mission-card{
+  border-radius: 18px;
+  padding: 26px 28px;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 15px;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.18);
+}
+
+.mission-card-red{ background: #C61C23; }
+.mission-card-green{ background: #3E9A77; }
+
+/* Center the 2 cards like figma */
+.mission-grid{
+  margin-top: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px){
+  .mission-section{ padding: 70px 0; }
+  .mission-heading{ font-size: 28px; }
+  .texture-pattern{ height: 44px; }
 }
 
 @media (max-width: 768px) {
@@ -4323,6 +4361,27 @@ section,
 
 .students-life .athletics-programs .swiper-slide {
   padding-bottom: 60px;
+}
+
+.slider-video-block{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.slider-content{
+  width: 42%;
+  color: #fff;
+}
+.slider-content i{
+  font-size: 50px;
+}
+.slider-content p{
+  font-size: 20px;
+}
+
+.slider-video{
+  width: 50%;
 }
 
 .students-life .athletics-programs .swiper-pagination {
@@ -8509,6 +8568,9 @@ section,
 .bg-dark{
   background-color: #000000!important;
 }
+.bg-red{
+  background-color: #CC2028 !important;
+}
 .featured-by.feature-cards-wrapper .feature-card{
   background: #ffffff !important;
   padding: 1rem;
@@ -8534,7 +8596,31 @@ section,
   background: #fef4cc;
 }
 
+.division-of-learning-home{
+  background-color: #3E9B76;
+}
+.dol-home-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
+.dol-home-cards .dol-card{
+  min-width: 0;
+}
+
+.division-of-learning-home .dol-v2 .dol-body{
+  width: 280px;
+  padding: 20px; 
+  min-height: 350px;
+}
+.dol-home-image-bottom-left{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: auto;
+}
 
 
 
@@ -8619,11 +8705,9 @@ section,
 .leadership.division-of-learning .team-card:hover .card-back ul{
   text-align: left;
 }
-.home-grey-bg{
-  background-image: url(../img/grey-bg.svg);
-}
 .alumni.home-embedded{
-  background-color: #d9d9d9;
+  background-color: #FFC53D;
+  padding: 80px 0;
 }
 
 .bg-theme-light-yellow{
@@ -8726,7 +8810,7 @@ section,
 
 /* Paper colors */
 .dol-v2 .dol-primary .dol-paper{ background: #ffbe0b; }
-.dol-v2 .dol-junior  .dol-paper{ background: #00a676; }
+.dol-v2 .dol-junior  .dol-paper{ background: #000000; }
 .dol-v2 .dol-high    .dol-paper{ background: #e63946; }
 
 /* ✅ Inner WHITE panel that contains text */
@@ -8746,7 +8830,7 @@ section,
 
 /* Titles */
 .dol-v2 .dol-body h3{
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 800;
   text-align: center;
   margin-bottom: 6px;
@@ -8759,7 +8843,7 @@ section,
 }
 
 .dol-v2 .dol-text{
-  font-size: 0.95rem;
+  font-size: 14px;
   line-height: 1.7;
   margin-bottom: 0;
 }
@@ -8798,9 +8882,9 @@ section,
   text-decoration: none;
 }
 
-.dol-v2 .dol-primary .dol-btn{ background:#fff7e0; color:#e0a400; }
-.dol-v2 .dol-junior  .dol-btn{ background:#e2fff4; color:#00a676; }
-.dol-v2 .dol-high    .dol-btn{ background:#ffe5e8; color:#e63946; }
+.dol-v2 .dol-primary .dol-btn{ background:#FFC53D; color:#000; }
+.dol-v2 .dol-junior  .dol-btn{ background:#399773; color:#fff; }
+.dol-v2 .dol-high    .dol-btn{ background:#CC2028; color:#fff; }
 
 /* ✅ Hover: ONLY paper tilts, front stays straight */
 .dol-v2 .dol-card:hover{

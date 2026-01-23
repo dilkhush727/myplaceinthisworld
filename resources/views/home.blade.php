@@ -113,7 +113,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <img src="{{ asset('assets/img/home-infographic.png') }}" alt="Campus" class="img-fluid rounded">
+              <img src="{{ asset('assets/img/home-infographic.png') }}" alt="Campus" class="img-fluid rounded-5">
             </div>
           </div>
 
@@ -134,6 +134,80 @@
       </div>
 
     </section><!-- /About Section -->
+
+
+
+    
+
+    <!-- Mission Section (Figma style) -->
+    <section id="our_mission" class="mission-section position-relative">
+      <!-- TOP PATTERN -->
+      <img
+        src="{{ asset('assets/img/mission/pattern-top.png') }}"
+        class="texture-pattern texture-pattern-top"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <!-- BOTTOM PATTERN -->
+      <img
+        src="{{ asset('assets/img/mission/pattern-bottom.png') }}"
+        class="texture-pattern texture-pattern-bottom"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <!-- LEFT CHARACTER -->
+      <img
+        src="{{ asset('assets/img/mission/character-left.png') }}"
+        class="mission-illustration mission-illustration-left d-none d-lg-block"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <!-- RIGHT HAND/Africa -->
+      <img
+        src="{{ asset('assets/img/mission/hand-africa.png') }}"
+        class="mission-illustration mission-illustration-right d-none d-lg-block"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 m-auto">
+            <div class="row g-4 justify-content-center mission-grid">
+
+              <!-- MISSION -->
+              <div class="col-12 col-md-6">
+                <h2 class="mission-heading">OUR MISSION</h2>
+                <div class="mission-card mission-card-red" data-aos="zoom-in" data-aos-delay="200">
+                  <p class="mb-0">
+                    We create inclusive educational resources that reflect the voices and experiences of
+                    BIPOC communities. Our goal is to support student growth and promote equity in classrooms
+                    and beyond.
+                  </p>
+                </div>
+              </div>
+
+              <!-- VISION -->
+              <div class="col-12 col-md-6">
+                <h2 class="mission-heading">OUR VISION</h2>
+                <div class="mission-card mission-card-green" data-aos="zoom-in" data-aos-delay="300">
+                  <p class="mb-0">
+                    We envision schools where every student feels seen and supported. Through collaboration
+                    and advocacy, we aim to create lasting change driven by diversity and community leadership.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Mission Section -->
+     
 
 
     <!-- Students Life Block Section -->
@@ -183,7 +257,7 @@
 
     </section><!-- /Students Life Block Section -->
 
-    <section id="leadership" class="leadership section division-of-learning py-4">
+    <!-- <section id="leadership" class="leadership section division-of-learning py-4">
 
       <div class="dol-texture mb-5">
         <div class="dol-textured-img1"></div>
@@ -280,18 +354,111 @@
         <div class="dol-textured-img2"></div>
       </div>
 
+    </section> -->
+
+
+
+
+    <section class="division-of-learning-home py-5 position-relative">
+      <div class="container-fluid">
+
+        <div class="dol-v2 mt-0">
+          <div class="row g-4 justify-content-center">
+
+            <!-- TOP PATTERN -->
+            <img
+              src="{{ asset('assets/img/star-boy-ladder.png') }}"
+              class="dol-home-image-bottom-left"
+              aria-hidden="true"
+            >
+            
+              <div class="col-md-12">
+                <h3 class="text-center"><strong>DIVISION OF LEARNING</strong></h3>
+                <div class="dol-home-cards">
+                  {{-- PRIMARY --}}
+                  <div class="dol-card dol-primary">
+                    <!-- <div class="dol-avatar">
+                      <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
+                    </div> -->
+
+                    <div class="dol-paper"></div>
+
+                    <div class="dol-body">
+                      <h3 class="mb-3">Primary</h3>
+                      <!-- <p class="dol-grade">Grade (1-3)</p> -->
+
+                      <p class="dol-text">
+                        Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This builds connection, identity, and belonging. Students begin to see themselves in the learning |
+                        <a href="{{ route('membership') }}" class="text-success"><strong>More...</strong></a>
+                      </p>
+
+                      <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
+                    </div>
+                  </div>
+
+                  {{-- JUNIOR / INTERMEDIATE --}}
+                  <div class="dol-card dol-junior">
+                    <!-- <div class="dol-avatar">
+                      <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior/Intermediate" class="img-fluid">
+                    </div> -->
+
+                    <div class="dol-paper"></div>
+
+                    <div class="dol-body">
+                      <h3 class="mb-3">Junior/Intermediate</h3>
+                      <!-- <p class="dol-grade">Grade (4-6)</p> -->
+
+                      <p class="dol-text">
+                        Junior/Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. This builds connection, identity, and belonging. Students reflect and share ideas with confidence |
+                        <a href="{{ route('membership') }}" class="text-success"><strong>More...</strong></a>
+                      </p>
+
+                      <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
+                    </div>
+                  </div>
+
+                  {{-- HIGH SCHOOL --}}
+                  <div class="dol-card dol-high">
+                    <!-- <div class="dol-avatar">
+                      <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
+                    </div> -->
+
+                    <div class="dol-paper"></div>
+
+                    <div class="dol-body">
+                      <h3 class="mb-3">High School</h3>
+                      <!-- <p class="dol-grade">Grade (9-12)</p> -->
+
+                      <p class="dol-text">
+                        High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully. This builds connection, identity, and belonging. Students make meaningful links to real life |
+                        <a href="{{ route('membership') }}" class="text-success"><strong>More...</strong></a>
+                      </p>
+
+                      <a href="{{ route('login') }}" class="dol-btn">Login Required</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+      </div>
     </section>
 
+
+
+
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <section id="testimonials" class="testimonials section py-0">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Our team believes that the best advocacy comes from the people who will benefit from using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.</p>
+      <div class="container-fluid py-4 bg-dark section-title" data-aos="fade-up">
+        <h2 class="text-white mb-0">TESTIMONIALS</h2>
+        <p class="text-white">Our team believes that the best advocacy comes from the people who will benefit from<br>using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.</p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container-fluid bg-red pt-4" data-aos="fade-up" data-aos-delay="100">
 
         <div class="testimonial-slider swiper init-swiper">
           <script type="application/json" class="swiper-config">
@@ -306,7 +473,7 @@
               },
               "breakpoints": {
                 "768": {
-                  "slidesPerView": 2
+                  "slidesPerView": 1
                 },
                 "1200": {
                   "slidesPerView": 1
@@ -319,68 +486,110 @@
 
             <!-- Video Slide 1 -->
             <div class="swiper-slide">
-              <div data-aos="zoom-in" data-aos-delay="200">
-                  <iframe width="100%" height="500" 
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="200">
+                  <iframe width="100%" height="350" 
                     src="https://www.youtube.com/embed/uqbY-uwcIkQ" 
                     title="YouTube video" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen loading="lazy"></iframe>
                 </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>This learning helps me understand where I come from, how the world connects and how my thinking can grow.</p>
+                  <h3>Marcia Smellie</h3>
+                </div>
+              </div>
             </div>
 
             <!-- Video Slide 2 -->
             <div class="swiper-slide">
-              <div data-aos="zoom-in" data-aos-delay="300">
-                  <iframe width="100%" height="500" 
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="300">
+                  <iframe width="100%" height="350" 
                     src="https://www.youtube.com/embed/N581ErKKz8I" 
                     title="YouTube video" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen loading="lazy"></iframe>
                 </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>Resources that support thoughtful, curriculum-aligned instruction and deeper student understanding.</p>
+                  <h3>Taanya Solanki</h3>
+                </div>
+              </div>
             </div>
 
             <!-- Video Slide 3 -->
             <div class="swiper-slide">
-              <div data-aos="zoom-in" data-aos-delay="400">
-                  <iframe width="100%" height="500" 
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="400">
+                  <iframe width="100%" height="350" 
                     src="https://www.youtube.com/embed/6baO9pc0_RE" 
                     title="YouTube video" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen loading="lazy"></iframe>
                 </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>Education that fosters positive allyship and creates a more knowledgeable, resilient student.</p>
+                  <h3>Jennifer Colacrai</h3>
+                </div>
+              </div>
             </div>
 
             <!-- Video Slide 4 -->
             <div class="swiper-slide">
-              <div data-aos="zoom-in" data-aos-delay="500">
-                  <iframe width="100%" height="500" 
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="500">
+                  <iframe width="100%" height="350" 
                     src="https://www.youtube.com/embed/tLUb8ze5aJM" 
                     title="YouTube video" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen loading="lazy"></iframe>
                 </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>Learning that helps me see history more clearly, feel proud of who I am, and respect others' stories.</p>
+                  <h3>Mela Gebremichael</h3>
+                </div>
+              </div>
             </div>
 
             <!-- Video Slide 5 -->
             <div class="swiper-slide">
-              <div data-aos="zoom-in" data-aos-delay="600">
-                  <iframe width="100%" height="500" 
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="600">
+                  <iframe width="100%" height="350" 
                     src="https://www.youtube.com/embed/Cv-LW8i57HA" 
                     title="YouTube video" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen loading="lazy"></iframe>
                 </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>Lessons that spark curiosity, build confidence, and connect classroom learning to real life.</p>
+                  <h3>Sharon Adie</h3>
+                </div>
+              </div>
             </div>
 
             <!-- Video Slide 6 -->
             <div class="swiper-slide">
-              <div data-aos="zoom-in" data-aos-delay="700">
-                  <iframe width="100%" height="500" 
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="700">
+                  <iframe width="100%" height="350" 
                     src="https://www.youtube.com/embed/LAxrIqtau_w" 
                     title="YouTube video" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen loading="lazy"></iframe>
                 </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>Resources that make conversations easier, encourage critical thinking, and strengthen belonging for every student.</p>
+                  <h3>Brenda Tibingana</h3>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -396,23 +605,28 @@
       </div>
 
     </section><!-- /Testimonials Section -->
-    
-    <section class="section home-grey-bg pb-0">
-      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
-          <div class="col-lg-6 aos-init aos-animate">
-            <img src="assets/img/texture-img.png" class="img-fluid mb-4">
-          </div>
-          <div class="col-lg-6 aos-init aos-animate"></div>
-        </div>
-      </div>
-    </section>
         
     <!-- Stats Section -->
-    <section id="alumni" class="alumni section home-embedded pt-0">
+    <section id="alumni" class="alumni section home-embedded position-relative">
+
+      <!-- TOP PATTERN -->
+      <img
+        src="{{ asset('assets/img/mission/pattern-top.png') }}"
+        class="texture-pattern texture-pattern-top opacity-50"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <!-- BOTTOM PATTERN -->
+      <img
+        src="{{ asset('assets/img/mission/pattern-bottom.png') }}"
+        class="texture-pattern texture-pattern-bottom opacity-50"
+        alt=""
+        aria-hidden="true"
+      >
 
       <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="row mb-5">
+        <div class="row">
           <div class="col-lg-6 aos-init aos-animate mb-3" data-aos="fade-up" data-aos-delay="300">
             <div class="alumni-video">
               <div class="ratio ratio-16x9">
@@ -427,11 +641,11 @@
           </div>
           <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
             <div class="alumni-intro">
-              <h2>How to Include Everyone in Education</h2>
-              <p>Who really gets to participate meaningfully in the classroom? Not just who's physically there but whose stories, ideas and perspectives actually shape the learning? By thoughtfully including the histories, knowledge and contributions of Black and African communities, we create richer, more complete learning environments for everyone. All curriculum should prepare students for a world that values truth, excellence and shared humanity.</p>
+              <h2><strong>How to Include Everyone in Education</strong></h2>
+              <p>Our team believes that the best advocacy comes from the people who will benefit from using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.</p>
             </div>
             <div class="text-center">
-                <a href="{{ route('contact.show') }}" class="btn btn-primary">Say Hi!</a>
+                <a href="{{ route('contact.show') }}" class="btn btn-danger">Say Hi!</a>
               </div>
           </div>
         </div>
