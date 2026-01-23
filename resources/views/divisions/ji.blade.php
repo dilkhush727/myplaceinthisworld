@@ -39,7 +39,7 @@
                 <h2 class="h5 fw-bold mb-2">{{ $course->title }}</h2>
 
                 @if($course->summary)
-                  <p class="mb-4" style="font-size:0.9rem; line-height:1.6;">
+                  <p class="mb-4" style="font-size:0.9rem; line-height:1.6;;height: 210px;overflow-y: auto;">
                     {{ $course->summary }}
                   </p>
                 @else

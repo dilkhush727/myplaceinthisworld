@@ -8581,10 +8581,6 @@ section,
   height: auto;
 }
 
-.section.about{
-      background-image: url(../img/hand-prints.svg);
-}
-
 .custom-section.students-life-block{
   background: #c42420;
 }
