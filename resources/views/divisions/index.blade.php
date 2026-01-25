@@ -1,23 +1,26 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container py-5">
+<div class="container pb-5">
 
-    <h1 class="mb-4">Divisions of Learning</h1>
+    <h1 class="mb-5 pb-5">Divisions of Learning</h1>
 
-    <p class="mb-4">
-        School: <strong>{{ $school->name }}</strong>
-    </p>
-
-    <div class="row g-4">
+    <div class="row g-4 justify-content-center dol-v2 mt-5">
 
         {{-- Primary Division --}}
         <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Primary</h5>
+            <div class="card h-100 dol-card dol-primary">
+                <div class="dol-avatar">
+                    <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
+                </div>
+                <div class="dol-paper"></div>
+                <div class="card-body d-flex flex-column dol-body">
+                    <div class="text-center mb-2">
+                        <h4 class="card-title"><strong>Primary</strong></h4>
+                        <h5>Grade (1-3)</h5>
+                    </div>
                     <p class="card-text flex-grow-1">
-                        Access teaching and learning resources for the Primary division.
+                        Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.
                     </p>
 
                     @php
@@ -25,15 +28,15 @@
                     @endphp
 
                     @if($hasPrimary)
-                        <span class="badge bg-success mb-2">Active</span>
-                        <a href="{{ route('divisions.primary') }}" class="btn btn-primary">
+                        <span class="badge bg-success">Active</span>
+                        <a href="{{ route('divisions.primary') }}" class="btn btn-success">
                             View Primary Resources
                         </a>
                     @else
-                        <span class="badge bg-secondary mb-2">Locked</span>
+                        <span class="badge bg-danger">Locked</span>
 
                         @if(auth()->user()->hasRole('school'))
-                            <a href="{{ route('school.memberships.manage') }}" class="btn btn-outline-primary">
+                            <a href="{{ route('school.memberships.manage') }}" class="btn btn-outline-danger">
                                 Unlock Primary
                             </a>
                         @else
@@ -48,11 +51,18 @@
 
         {{-- Junior–Intermediate Division --}}
         <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Junior–Intermediate</h5>
+            <div class="card h-100 dol-card dol-junior">
+                <div class="dol-avatar">
+                    <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior" class="img-fluid">
+                </div>
+                <div class="dol-paper"></div>
+                <div class="card-body d-flex flex-column dol-body">
+                    <div class="text-center mb-2">
+                        <h4 class="card-title"><strong>Junior/Intermediate</strong></h4>
+                        <h5>Grade (4-6)</h5>
+                    </div>
                     <p class="card-text flex-grow-1">
-                        Access resources tailored for the Junior–Intermediate division.
+                        As Junior/Intermediate students get to know the African Kings and Queens presented, the hands-on activities will engage them. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.
                     </p>
 
                     @php
@@ -60,15 +70,15 @@
                     @endphp
 
                     @if($hasJi)
-                        <span class="badge bg-success mb-2">Active</span>
-                        <a href="{{ route('divisions.ji') }}" class="btn btn-primary">
+                        <span class="badge bg-success">Active</span>
+                        <a href="{{ route('divisions.ji') }}" class="btn btn-success">
                             View JI Resources
                         </a>
                     @else
-                        <span class="badge bg-secondary mb-2">Locked</span>
+                        <span class="badge bg-danger">Locked</span>
 
                         @if(auth()->user()->hasRole('school'))
-                            <a href="{{ route('school.memberships.manage') }}" class="btn btn-outline-primary">
+                            <a href="{{ route('school.memberships.manage') }}" class="btn btn-outline-danger">
                                 Unlock JI
                             </a>
                         @else
@@ -84,11 +94,18 @@
 
         {{-- High School Division --}}
         <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">High School</h5>
+            <div class="card h-100 dol-card dol-high">
+                <div class="dol-avatar">
+                    <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
+                </div>
+                <div class="dol-paper"></div>
+                <div class="card-body d-flex flex-column dol-body">
+                    <div class="text-center mb-2">
+                        <h4 class="card-title"><strong>High School</strong></h4>
+                        <h5>Grade (9-12)</h5>
+                    </div>
                     <p class="card-text flex-grow-1">
-                        Access all High School teaching and learning resources.
+                        The High School curriculum goes deeper and touches on rich content and sometimes controversial issues related to African Kings and Queens and their heritage. Students will engage in critical thinking and make relevant connections to their own environment and lived experiences and to global competencies.
                     </p>
 
                     @php
@@ -96,8 +113,8 @@
                     @endphp
 
                     @if($hasHs)
-                        <span class="badge bg-success mb-2">Active (Included)</span>
-                        <a href="{{ route('divisions.highschool') }}" class="btn btn-primary">
+                        <span class="badge bg-success">Active (Included)</span>
+                        <a href="{{ route('divisions.highschool') }}" class="btn btn-success">
                             View High School Resources
                         </a>
                     @else
