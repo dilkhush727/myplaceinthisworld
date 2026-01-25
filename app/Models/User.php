@@ -66,4 +66,17 @@ class User extends Authenticatable implements MustVerifyEmail
         return asset('assets/admin/images/user/avatar-2.jpg');
     }
 
+    public function canAccessDivision(string $divisionKey): bool
+    {
+        if ($this->hasRole('admin')) return true;
+
+        // ✅ PUT YOUR EXISTING LOGIC HERE
+        // Example patterns (use the one that matches your project):
+        // return $this->schoolMembership?->isActive() && $this->schoolMembership?->division === $divisionKey;
+        // return $this->activeMembership?->hasDivision($divisionKey);
+        // return $this->school?->activeMembership?->hasDivision($divisionKey);
+
+        return false; // replace
+    }
+
 }

@@ -3,6 +3,19 @@
 @section('title', 'Junior / Intermediate Division')
 
 @section('content')
+
+<!-- Bootstrap Section with Flex Buttons -->
+<section>
+  <div class="container">
+    <div class="d-flex justify-content-center gap-3">
+      <a href="{{ route('divisions.ji.materials') }}" class="btn btn-dark rounded-pill px-4">Materials</a>
+      <a href="{{ route('divisions.ji.biographies') }}" class="btn btn-dark rounded-pill px-4">Biographies</a>
+      <a href="{{ route('divisions.ji.glossary') }}" class="btn btn-dark rounded-pill px-4">Glossary of Terms</a>
+    </div>
+  </div>
+</section>
+
+
 <section class="py-5">
   <div class="container">
 

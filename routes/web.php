@@ -323,6 +323,34 @@ Route::middleware(['auth', 'role:admin|school|teacher'])
         [LearningCourseController::class, 'saveNotes'])
         ->name('courses.tasks.notes.save');
 
+    // ✅ High School static pages (requires HS subscription)
+    Route::prefix('high-school')->name('divisions.highschool.')->group(function () {
+        Route::view('/materials', 'divisions.high-school.materials')->name('materials');
+        Route::view('/biographies', 'divisions.high-school.biographies')->name('biographies');
+        Route::view('/glossary', 'divisions.high-school.glossary')->name('glossary');
+    });
+
+    // ✅ PRIMARY static pages (subscription-gated if you want)
+    Route::prefix('primary')
+    // ->middleware('division.subscribed:primary')  // enable if Primary is paid
+    ->name('divisions.primary.')
+    ->group(function () {
+        Route::view('/materials', 'divisions.primary.materials')->name('materials');
+        Route::view('/biographies', 'divisions.primary.biographies')->name('biographies');
+        Route::view('/glossary', 'divisions.primary.glossary')->name('glossary');
+    });
+
+    // ✅ JUNIOR / INTERMEDIATE static pages (subscription-gated if you want)
+    Route::prefix('junior-intermediate')
+    // ->middleware('division.subscribed:junior_intermediate')  // enable if JI is paid
+    ->name('divisions.ji.')
+    ->group(function () {
+        Route::view('/materials', 'divisions.junior-intermediate.materials')->name('materials');
+        Route::view('/biographies', 'divisions.junior-intermediate.biographies')->name('biographies');
+        Route::view('/glossary', 'divisions.junior-intermediate.glossary')->name('glossary');
+    });
+
+
 });
 
 // Route::get('/redirect', function () {
