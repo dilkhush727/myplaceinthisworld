@@ -50,6 +50,7 @@
   .lang-btn-div button{
     border: none;
     border-radius: 5px;
+    padding: 2px 15px;
   }
   .lang-btn-div .shadow{
     border: solid 1px #eaeaea;

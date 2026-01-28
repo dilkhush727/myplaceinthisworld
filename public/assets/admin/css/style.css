@@ -27,6 +27,7 @@ File: style.css
   --pc-card-box-shadow: none;
   --pc-header-submenu-background: #ffffff;
   --pc-header-submenu-color: #111936;
+  --theme-yellow: #FFC53D;
 }
 
 body {
@@ -5016,10 +5017,10 @@ textarea.form-control-lg {
   --bs-list-group-action-active-color: #212529;
   --bs-list-group-action-active-bg: #e9ecef;
   --bs-list-group-disabled-color: #dee2e6;
-  --bs-list-group-disabled-bg: #ffffff;
-  --bs-list-group-active-color: #ffffff;
-  --bs-list-group-active-bg: var(--bs-primary);
-  --bs-list-group-active-border-color: var(--bs-primary);
+  --bs-list-group-disabled-bg: #000000;
+  --bs-list-group-active-color: #000000;
+  --bs-list-group-active-bg: var(--theme-yellow);
+  --bs-list-group-active-border-color: var(--theme-yellow);
   display: flex;
   flex-direction: column;
   padding-left: 0;

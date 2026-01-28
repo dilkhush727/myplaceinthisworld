@@ -14,6 +14,15 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link"
+                  id="resources-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#task-resources"
+                  type="button" role="tab">
+            Resources
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link"
                   id="notes-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#task-notes"
@@ -36,11 +45,28 @@
             @endif
           </div>
 
+          {{-- Mark complete / incomplete --}}
+          <form method="POST"
+                action="{{ route('courses.tasks.toggle-complete', [$course->id, $currentTask->id]) }}"
+                class="mt-4 d-inline"
+                id="task-complete-form">
+            @csrf
+            <button type="submit"
+                    id="task-complete-button"
+                    class="btn {{ $currentTaskIsCompleted ? 'btn-outline-secondary' : 'btn-success' }}">
+                {{ $currentTaskIsCompleted ? 'Mark as Incomplete' : 'Mark as Complete' }}
+            </button>
+            </form>
 
-          {{-- Resources --}}
+        </div>
+
+        {{-- Resources tab --}}
+        <div class="tab-pane fade" id="task-resources" role="tabpanel">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="h5 mb-0">Resources</h2>
+          </div>
+          
           @if($currentTask->resources && $currentTask->resources->count())
-            <hr class="my-4">
-            <h3 class="h5 mb-3">Resources</h3>
             <ul class="list-group mb-3">
               @foreach($currentTask->resources as $resource)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -65,20 +91,7 @@
               @endforeach
             </ul>
           @endif
-
-          {{-- Mark complete / incomplete --}}
-          <form method="POST"
-                action="{{ route('courses.tasks.toggle-complete', [$course->id, $currentTask->id]) }}"
-                class="mt-4 d-inline"
-                id="task-complete-form">
-            @csrf
-            <button type="submit"
-                    id="task-complete-button"
-                    class="btn {{ $currentTaskIsCompleted ? 'btn-outline-secondary' : 'btn-success' }}">
-                {{ $currentTaskIsCompleted ? 'Mark as Incomplete' : 'Mark as Complete' }}
-            </button>
-            </form>
-
+          
         </div>
 
         {{-- Notes tab --}}

@@ -16,11 +16,13 @@
     body { background:#f6f7fb; }
 
     .auth-shell{
-        min-height:100vh;
-        display:flex;
-        align-items:center;
-        padding:24px;
-        background-image: url(assets/img/hand-prints.svg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 24px;
+      background: linear-gradient(#d0000096, #d0000096), url(assets/img/texture2.png);
+      background-size: contain;
+      background-position: center;
     }
 
     .auth-card{
@@ -31,16 +33,18 @@
       overflow:hidden;
       box-shadow:0 18px 45px rgba(0,0,0,.10);
       background:#fff;
+      background-image: url(assets/img/hand-prints.svg);
     }
 
     .auth-left{
       position:relative;
       min-height:520px;
       background:#fff;
+      text-align: center
     }
 
     .auth-left img{
-      width:100%;
+      width:70%;
       height:100%;
       object-fit:cover;
     }
@@ -70,15 +74,7 @@
     .auth-right{
       padding:42px 46px;
       position:relative;
-      background:#fff;
-    }
-
-    .auth-topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    margin-bottom:18px;
+      background:#ffffff85;
     }
 
     .auth-navlink{
@@ -100,7 +96,7 @@
       display:flex;
       align-items:center;
       gap:12px;
-      margin:10px 0 18px;
+      margin:10px;
     }
 
     .brand-badge{
@@ -116,7 +112,7 @@
       font-size:2rem;
       font-weight:800;
       margin:10px 0 6px;
-      color:#0f172a;
+      color:#CC2028;
     }
 
     .auth-subtitle{
@@ -197,35 +193,30 @@
 
   <div class="auth-shell">
     <div class="auth-card">
+      
+    <header>
+          {{-- Logo / brand --}}
+      <div class="brand-row">
+        <div class="brand-badge">
+            <a href="{{ url('/') }}">
+                <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="Logo">
+            </a>
+        </div>
+        <div class="fw-bold" style="line-height:1.1;">
+          My Place<br>In This World
+        </div>
+      </div>
+    </header>
+
       <div class="row g-0">
         {{-- LEFT IMAGE --}}
         <div class="col-lg-7 d-none d-lg-block auth-left">
           {{-- change this image path to your own --}}
-          <img src="{{ asset('assets/img/auth-side.svg') }}" class="img-fluid" alt="Auth side image">
+          <img src="{{ asset('assets/img/login-image.png') }}" class="img-fluid" alt="Auth side image">
         </div>
 
         {{-- RIGHT FORM --}}
         <div class="col-lg-5 auth-right">
-            <div class="auth-topbar">
-                <nav class="d-md-flex align-items-center gap-3">
-                    <a href="{{ url('/') }}" class="auth-navlink">Home</a>
-                    <a href="{{ url('/about') }}" class="auth-navlink">About Us</a>
-                    <a href="{{ url('/membership') }}" class="auth-navlink">Membership</a>
-                </nav>
-            </div>
-
-
-          {{-- Logo / brand --}}
-          <div class="brand-row">
-            <div class="brand-badge">
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="Logo">
-                </a>
-            </div>
-            <div class="fw-bold" style="line-height:1.1;">
-              My Place<br>In This World
-            </div>
-          </div>
 
           @yield('content')
         </div>

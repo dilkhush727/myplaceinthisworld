@@ -6,9 +6,9 @@
 
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
-    <div class="m-headerOLD bg-dark text-center">
+    <div class="m-headerOLD text-center">
       <a href="{{ url('/') }}" class="b-brand text-primary">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="" width="190" class="logo img-fluid" />
+        <img src="{{ asset('assets/img/logo-light.png') }}" alt="" width="190" class="logo img-fluid" />
       </a>
     </div>
 

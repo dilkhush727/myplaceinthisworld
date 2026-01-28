@@ -70,9 +70,6 @@
                id="course-progress-bar"
                style="width: {{ $completionPercent }}%;"></div>
         </div>
-        <button class="btn btn-sm btn-outline-secondary" type="button" disabled>
-          Mark course complete (coming soon)
-        </button>
       </div>
     </div>
   </div>
