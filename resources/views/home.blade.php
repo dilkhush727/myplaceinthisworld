@@ -16,7 +16,7 @@
               <h1>Inspiring Excellence Through Education</h1>
               <p>At My Place in This World, we believe education is the key to unlocking potential and fostering a future where every student thrives. Our carefully crafted programs emphasize equity, diversity, and inclusion, aiming to empower students from all backgrounds to achieve academic success and personal growth.</p>
               <div class="action-buttons">
-                <a href="{{ route('register') }}" class="btn-primary">Start Your Journey</a>
+                <a href="{{ route('register') }}" class="btn-danger">Start Your Journey</a>
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
@@ -42,7 +42,7 @@
                 <img src="assets/img/featured-in/ctv.png" class="img-fluid">
 
                 <div>
-                  <h5><strong>CTV Collaboration</strong></h5>
+                  <h5>CTV Collaboration</h5>
                   <small>We partnered with CTV to feature student stories and key milestones through interviews and event coverage, boosting trust, and engagement across Canada.</small>
                 </div>
                 </a>
@@ -54,7 +54,7 @@
                 <img src="assets/img/featured-in/ontario.png" class="img-fluid">
 
                 <div>
-                  <h5><strong>Ontario Government</strong></h5>
+                  <h5>Ontario Government</h5>
                   <small>We supported Ontario initiatives with clear, accessible program content and resources aligned with provincial standards, improving communication and participation.</small>
                 </div>
                 </a>
@@ -66,7 +66,7 @@
                 <img src="assets/img/featured-in/cbc.png" class="img-fluid">
 
                 <div>
-                  <h5><strong>CBC Collaboration</strong></h5>
+                  <h5>CBC Collaboration</h5>
                   <small>We worked with CBC on interviews and storytelling to share major updates, expand reach, and strengthen credibility through trusted national coverage.</small>
                 </div>
                 </a>
@@ -78,7 +78,7 @@
                 <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
 
                 <div>
-                  <h5><strong>Conestoga Learning</strong></h5>
+                  <h5>Conestoga Learning</h5>
                   <small>We collaborated with Conestoga to build practical learning modules and assessments that support real classrooms and develop job-ready skills.</small>
                 </div>
                 </a>

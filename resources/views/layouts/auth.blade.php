@@ -33,7 +33,7 @@
       overflow:hidden;
       box-shadow:0 18px 45px rgba(0,0,0,.10);
       background:#fff;
-      background-image: url(assets/img/hand-prints.svg);
+      /* background-image: url(assets/img/hand-prints.svg); */
     }
 
     .auth-left{
@@ -76,6 +76,14 @@
       position:relative;
       background:#ffffff85;
     }
+    .auth-right .hand-img{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      opacity: 0.5;
+      top: 0;
+    }
 
     .auth-navlink{
     font-size:.9rem;
@@ -100,12 +108,7 @@
     }
 
     .brand-badge{
-        width: 110px;
-        border-radius: 12px;
-        background: #111;
-        display: inline-flex;
-        align-items: center;
-        padding: 5px 10px;
+      width: 180px;
     }
 
     .auth-title{
@@ -199,26 +202,25 @@
       <div class="brand-row">
         <div class="brand-badge">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="Logo">
+                <img src="{{ asset('assets/img/logo-light.png') }}" class="img-fluid" alt="Logo">
             </a>
-        </div>
-        <div class="fw-bold" style="line-height:1.1;">
-          My Place<br>In This World
         </div>
       </div>
     </header>
 
       <div class="row g-0">
         {{-- LEFT IMAGE --}}
-        <div class="col-lg-7 d-none d-lg-block auth-left">
+        <div class="col-lg-6 d-none d-lg-block auth-left">
           {{-- change this image path to your own --}}
           <img src="{{ asset('assets/img/login-image.png') }}" class="img-fluid" alt="Auth side image">
         </div>
 
         {{-- RIGHT FORM --}}
-        <div class="col-lg-5 auth-right">
+        <div class="col-lg-6 auth-right">
 
           @yield('content')
+          
+          <img src="{{ asset('assets/img/hand-1.png') }}" alt="Hand prints" class="img-fluid hand-img">
         </div>
       </div>
     </div>

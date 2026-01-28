@@ -67,6 +67,7 @@
 .btn-danger{
   background-color: #B20000 !important;
   border-color: #B20000 !important;
+  color: #ffffff !important;
 }
 .btn-danger:hover{
   background-color: #8b0000 !important;
@@ -2998,7 +2999,7 @@ section,
 
 .mission-illustration-left{
   left: 40px;
-  bottom: 40px;
+  bottom: -30px;
   width: 280px;           /* adjust */
   max-width: 30vw;
 }
@@ -3033,6 +3034,7 @@ section,
   line-height: 1.6;
   font-size: 15px;
   box-shadow: 0 12px 20px rgba(0,0,0,0.18);
+  min-height: 220px;
 }
 
 .mission-card-red{ background: #C61C23; }
