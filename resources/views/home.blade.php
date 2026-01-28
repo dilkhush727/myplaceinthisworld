@@ -20,7 +20,7 @@
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/img/banner-imgs/slide3.svg" alt="Education" class="img-fluid main-image">
+              <img src="assets/img/banner-imgs/slide3.svg" alt="A Black student with curly hair and glasses smiles while reading a paper at a desk in a classroom, with other students working in the background." class="img-fluid main-image">
               <div class="image-overlay">
                 <div class="badge-accredited">
                   <i class="bi bi-patch-check-fill"></i>
@@ -113,7 +113,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <img src="{{ asset('assets/img/home-infographic.png') }}" alt="Campus" class="img-fluid rounded-5">
+              <img src="{{ asset('assets/img/home-infographic.png') }}" alt="An illustrated classroom scene shows a Black teacher wearing African-inspired clothing holding a colorful map of Africa while smiling students sit around a table. The students read books, look at a laptop displaying portraits of diverse Black children, and engage in discussion in a bright classroom decorated with Pan-African colors and symbols." class="img-fluid rounded-5">
             </div>
           </div>
 
@@ -224,7 +224,7 @@
         <div class="row align-items-center g-5 mb-5">
           <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
             <div class="hero-image-wrapper">
-              <img src="assets/img/kids-studying.png" alt="Student Life" class="img-fluid main-image">
+              <img src="assets/img/kids-studying.png" alt="Three young Black children sit side by side, focused on writing or drawing at a table, against a bold red background with abstract green shapes." class="img-fluid main-image">
               <div class="floating-card" data-aos="zoom-in" data-aos-delay="400">
                 <div class="card-icon">
                   <i class="bi bi-people-fill"></i>
@@ -369,8 +369,8 @@
             <img
               src="{{ asset('assets/img/star-boy-ladder.png') }}"
               class="dol-home-image-bottom-left"
-              aria-hidden="true"
-            >
+              alt="Illustration of a smiling Black child wearing a patterned Kente-style scarf, pointing upward toward a line of stars connected like a constellation, with a ladder reaching up toward the stars against a green background."
+              aria-hidden="true" >
             
               <div class="col-md-12">
                 <h3 class="text-center"><strong>DIVISION OF LEARNING</strong></h3>

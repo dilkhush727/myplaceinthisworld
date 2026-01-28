@@ -13,10 +13,16 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
-:root {
+/* :root {
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Poppins",  sans-serif;
+} */
+
+:root{
+  --default-font: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "Tilt Warp", system-ui, sans-serif;
+  --nav-font: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -3727,32 +3733,32 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), var(--heading-color) 20%);
 }
 
-.admissions .deadlines-card {
+.deadlines-card {
   background-color: var(--surface-color);
   padding: 2.5rem;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
 }
 
-.admissions .deadlines-card .deadlines-grid {
+.deadlines-card .deadlines-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
 @media (max-width: 992px) {
-  .admissions .deadlines-card .deadlines-grid {
+  .deadlines-card .deadlines-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 576px) {
-  .admissions .deadlines-card .deadlines-grid {
+  .deadlines-card .deadlines-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.admissions .deadlines-card .deadline-item {
+.deadlines-card .deadline-item {
   text-align: center;
   padding: 1.5rem;
   border-radius: 8px;
@@ -3760,28 +3766,56 @@ section,
   transition: all 0.3s ease;
 }
 
-.admissions .deadlines-card .deadline-item:hover {
+.deadlines-card .deadline-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.admissions .deadlines-card .deadline-item .deadline-date {
+.deadlines-card .deadline-item .deadline-date {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent-color);
   margin-bottom: 0.8rem;
 }
 
-.admissions .deadlines-card .deadline-item h4 {
+.deadlines-card .deadline-item h4 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
-.admissions .deadlines-card .deadline-item p {
+.deadlines-card .deadline-item p {
   font-size: 0.9rem;
   margin-bottom: 0;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
 }
+
+
+
+  .educators-journey{ background:#CC2028; }
+
+  .journey-item{ width: 140px; }
+
+  .journey-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .journey-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display:block;
+  }
+
+  .journey-label{
+    font-size: 0.9rem;
+    line-height: 1.15;
+  }
+
+  @media (max-width: 575.98px){
+    .journey-item{ width: 46%; } /* 2 per row on phones */
+  }
 
 .admissions .campus-visit {
   padding-bottom: 1rem;
@@ -8702,7 +8736,7 @@ section,
   text-align: left;
 }
 .alumni.home-embedded{
-  background-color: #FFC53D;
+  background-color: #CC2028;
   padding: 80px 0;
 }
 
