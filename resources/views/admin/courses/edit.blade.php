@@ -57,7 +57,7 @@
 
     {{-- Upload new image --}}
     <div class="mb-3">
-      <label class="form-label">Replace Image (optional)</label>
+      <label class="form-label">Replace Image</label>
       <input
         type="file"
         name="image"
