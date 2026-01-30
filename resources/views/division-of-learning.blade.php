@@ -161,7 +161,7 @@
                 English
               </div>
               <div class="p-0" style="background:#000;">
-                <video id="teacherVideoEn" controls playsinline preload="none"
+                <video id="teacherVideoEn" controls playsinline 
                        style="width:100%; height:auto; max-height:75vh; display:block;">
                   <source src="{{ asset('assets/videos/teacher-instructional-en.mp4') }}" type="video/mp4">
                   Your browser does not support the video tag.
