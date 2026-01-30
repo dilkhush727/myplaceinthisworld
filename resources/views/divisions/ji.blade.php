@@ -35,12 +35,12 @@
 
                 <div class="mb-3 position-relative" style="border-radius:22px; overflow:hidden;">
                   @if($course->image_path)
-                    <img src="{{ asset($course->image_path) }}"
-                         alt="{{ $course->title }}"
-                         class="img-fluid w-100"
-                         style="height:190px; object-fit:cover;">
+                    <img src="{{ Storage::url($course->image_path) }}"
+                        alt="{{ $course->title }}"
+                        class="img-fluid w-100"
+                        style="height:190px; object-fit:cover;">
                   @else
-                    <div style="background:#00a676; height:190px;"></div>
+                    <div style="background:#e63946; height:190px;"></div>
                   @endif
 
                   <span class="badge bg-success position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill"

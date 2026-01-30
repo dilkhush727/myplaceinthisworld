@@ -6,7 +6,7 @@
 <div class="container py-4">
   <h1 class="h4 mb-3">Edit {{ __('labels.course') }}</h1>
 
-  <form method="POST" action="{{ route('admin.courses.update', $course) }}">
+  <form method="POST" action="{{ route('admin.courses.update', $course) }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -42,10 +42,41 @@
       <textarea name="summary" rows="3" class="form-control">{{ old('summary', $course->summary) }}</textarea>
     </div>
 
+    {{-- Current image preview --}}
+    @if($course->image_path)
+      <div class="mb-3">
+        <label class="form-label d-block">Current Image</label>
+        <img
+          src="{{ Storage::url($course->image_path) }}"
+          alt="{{ $course->title }}"
+          class="img-thumbnail"
+          style="max-width: 260px;"
+        >
+      </div>
+    @endif
+
+    {{-- Upload new image --}}
     <div class="mb-3">
-      <label class="form-label">Image Path (optional)</label>
-      <input type="text" name="image_path" value="{{ old('image_path', $course->image_path) }}" class="form-control">
+      <label class="form-label">Replace Image (optional)</label>
+      <input
+        type="file"
+        name="image"
+        accept="image/*"
+        class="form-control @error('image') is-invalid @enderror"
+      >
+      @error('image') <div class="invalid-feedback">{{ $message }}</div> @enderror
+      <div class="form-text">JPG, PNG, WEBP up to 2MB.</div>
     </div>
+
+    {{-- Optional: remove image --}}
+    @if($course->image_path)
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="1" id="remove_image" name="remove_image">
+        <label class="form-check-label" for="remove_image">
+          Remove current image
+        </label>
+      </div>
+    @endif
 
     <div class="mb-3">
       <label class="form-label">Estimated Minutes (optional)</label>

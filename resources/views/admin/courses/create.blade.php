@@ -6,7 +6,7 @@
 <div class="container py-4">
   <h1 class="h4 mb-3">Add {{ __('labels.course') }}</h1>
 
-  <form method="POST" action="{{ route('admin.courses.store') }}">
+  <form method="POST" action="{{ route('admin.courses.store') }}" enctype="multipart/form-data">
     @csrf
 
     <div class="mb-3">
@@ -40,10 +40,22 @@
       <textarea name="summary" rows="3" class="form-control">{{ old('summary') }}</textarea>
     </div>
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label class="form-label">Image Path (optional)</label>
       <input type="text" name="image_path" value="{{ old('image_path') }}" class="form-control">
       <div class="form-text">Later we can switch this to real image upload.</div>
+    </div> -->
+
+    <div class="mb-3">
+      <label class="form-label">Course Image</label>
+      <input
+        type="file"
+        name="image"
+        accept="image/*"
+        class="form-control @error('image') is-invalid @enderror"
+      >
+      @error('image') <div class="invalid-feedback">{{ $message }}</div> @enderror
+      <div class="form-text">JPG, PNG, WEBP up to 2MB.</div>
     </div>
 
     <div class="mb-3">

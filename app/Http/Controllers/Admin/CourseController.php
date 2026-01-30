@@ -34,9 +34,11 @@ class CourseController extends Controller
             'title'             => 'required|string|max:255',
             'slug'              => 'nullable|string|max:255|unique:courses,slug',
             'summary'           => 'nullable|string',
-            'image_path'        => 'nullable|string|max:255',
             'estimated_minutes' => 'nullable|integer|min:0',
             'is_published'      => 'sometimes|boolean',
+
+            // NEW: file upload
+            'image'             => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         if (empty($data['slug'])) {
@@ -45,12 +47,19 @@ class CourseController extends Controller
 
         $data['is_published'] = $request->boolean('is_published');
 
+        // NEW: store file and save into image_path column
+        if ($request->hasFile('image')) {
+            $data['image_path'] = $request->file('image')->store('courses', 'public');
+            // e.g. "courses/abc123.webp"
+        }
+
         Course::create($data);
 
         return redirect()
             ->route('admin.courses.index')
             ->with('success', 'Course created successfully.');
     }
+
 
     public function edit(Course $course)
     {
@@ -70,9 +79,11 @@ class CourseController extends Controller
             'title'             => 'required|string|max:255',
             'slug'              => 'nullable|string|max:255|unique:courses,slug,' . $course->id,
             'summary'           => 'nullable|string',
-            'image_path'        => 'nullable|string|max:255',
             'estimated_minutes' => 'nullable|integer|min:0',
             'is_published'      => 'sometimes|boolean',
+
+            // NEW: file upload
+            'image'             => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         if (empty($data['slug'])) {
@@ -80,6 +91,11 @@ class CourseController extends Controller
         }
 
         $data['is_published'] = $request->boolean('is_published');
+
+        // NEW: upload replacement image
+        if ($request->hasFile('image')) {
+            $data['image_path'] = $request->file('image')->store('courses', 'public');
+        }
 
         $course->update($data);
 
