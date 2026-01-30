@@ -29,6 +29,13 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         // return redirect()->intended(route('dashboard', absolute: false));
+
+        // 1) If user was redirected to login from a protected page,
+        // Laravel stored that URL as "intended". Go there first.
+        if ($request->session()->has('url.intended')) {
+            return redirect()->intended(); // goes to /divisions/high-school when clicked from that button
+        }
+        
         return $this->redirectUser();
     }
     

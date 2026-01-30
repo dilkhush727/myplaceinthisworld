@@ -8,7 +8,7 @@
 
     <!-- Section Title -->
     <div class="container section-title pb-0 aos-init aos-animatepb-0" data-aos="fade-up">
-      <h2>Contact Us</h2>
+      <h2 class="mb-0">Contact Us</h2>
     </div><!-- End Section Title -->
 
   </section>
@@ -30,15 +30,6 @@
 
           
           <div class="contact-cards-container" data-aos="fade-up" data-aos-delay="300">
-            <div class="contact-card">
-              <div class="icon-box">
-                <i class="bi bi-geo-alt"></i>
-              </div>
-              <div class="contact-text">
-                <h4>Location</h4>
-                <p>8721 Broadway Avenue, New York, NY 10023</p>
-              </div>
-            </div>
 
             <div class="contact-card">
               <div class="icon-box">
@@ -46,7 +37,7 @@
               </div>
               <div class="contact-text">
                 <h4>Email</h4>
-                <p><a href="mailto:lorraine@myplaceinthisworld">lorraine@myplaceinthisworld</a></p>
+                <p><a href="mailto:team@myplaceinthisworld.ca">team@myplaceinthisworld.ca</a></p>
               </div>
             </div>
 

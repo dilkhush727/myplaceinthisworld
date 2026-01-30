@@ -8,7 +8,7 @@
   <div class="navbar-wrapper">
     <div class="m-headerOLD text-center">
       <a href="{{ url('/') }}" class="b-brand text-primary">
-        <img src="{{ asset('assets/img/logo-light.png') }}" alt="" width="190" class="logo img-fluid" />
+        <img src="{{ asset('assets/img/logo-light.png') }}" alt="" width="190" class="logo img-fluid mt-2" />
       </a>
     </div>
 

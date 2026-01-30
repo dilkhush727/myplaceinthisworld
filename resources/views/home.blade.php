@@ -40,10 +40,10 @@
               <div class="feature-card align-items-center">
                 <a href="https://www.ctvnews.ca/kitchener/article/black-heritage-curriculum-set-to-roll-out-in-waterloo-region-catholic-schools/" class="text-center" target="_blank">
                 <img src="assets/img/featured-in/ctv.png" class="img-fluid">
-
-                <div>
                   <h5>CTV Collaboration</h5>
-                  <small>We partnered with CTV to feature student stories and key milestones through interviews and event coverage, boosting trust, and engagement across Canada.</small>
+
+                <div class="text-justify">
+                  <small>Featured by CTV News for showcasing a curriculum that builds pride, representation and year-round engagement with Black history beyond a single month. </small>
                 </div>
                 </a>
               </div>
@@ -53,9 +53,9 @@
                 <a href="javascript:;" class="text-center">
                 <img src="assets/img/featured-in/ontario.png" class="img-fluid">
 
-                <div>
                   <h5>Ontario Government</h5>
-                  <small>We supported Ontario initiatives with clear, accessible program content and resources aligned with provincial standards, improving communication and participation.</small>
+                <div class="text-justify">
+                  <small>Endorsed and aligned with the Ontario Ministry of Education, with careful design ensuring curriculum expectations are met and educational standards are fully supported.</small>
                 </div>
                 </a>
               </div>
@@ -65,9 +65,9 @@
                 <a href="https://www.cbc.ca/news/canada/kitchener-waterloo/guelph-black-heritage-society-lorraine-harris-curriculum-1.5906779" class="text-center" target="_blank">
                 <img src="assets/img/featured-in/cbc.png" class="img-fluid">
 
-                <div>
                   <h5>CBC Collaboration</h5>
-                  <small>We worked with CBC on interviews and storytelling to share major updates, expand reach, and strengthen credibility through trusted national coverage.</small>
+                <div class="text-justify">
+                  <small>Featured by CBC News, highlighting how My Place in This World reframes Black history by centering African kings, queens and pre-colonial excellence.</small>
                 </div>
                 </a>
               </div>
@@ -77,9 +77,9 @@
                 <a href="https://blogs1.conestogac.on.ca/news/2024/03/capstone_project_creates_marke.php" class="text-center" target="_blank">
                 <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
 
-                <div>
                   <h5>Conestoga Learning</h5>
-                  <small>We collaborated with Conestoga to build practical learning modules and assessments that support real classrooms and develop job-ready skills.</small>
+                <div class="text-justify">
+                  <small>Partnered with Conestoga College students, who developed a full marketing and communications strategy to amplify our mission and long-term impact.</small>
                 </div>
                 </a>
               </div>
@@ -112,15 +112,15 @@
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
-            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <img src="{{ asset('assets/img/home-infographic.png') }}" alt="An illustrated classroom scene shows a Black teacher wearing African-inspired clothing holding a colorful map of Africa while smiling students sit around a table. The students read books, look at a laptop displaying portraits of diverse Black children, and engage in discussion in a bright classroom decorated with Pan-African colors and symbols." class="img-fluid rounded-5">
+            <div class="about-content text-center" data-aos="fade-up" data-aos-delay="200">
+              <img src="{{ asset('assets/img/home-infographic.gif') }}" alt="An illustrated classroom scene shows a Black teacher wearing African-inspired clothing holding a colorful map of Africa while smiling students sit around a table. The students read books, look at a laptop displaying portraits of diverse Black children, and engage in discussion in a bright classroom decorated with Pan-African colors and symbols." class="img-fluid rounded-5">
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
               <h2>OUR STORY</h2>
-              <h3 class="text-danger"><strong>EDUCATING MINDS. INSPIRING HEARTS.</strong></h3>
+              <h3 class="text-red"><strong>EDUCATING MINDS. INSPIRING HEARTS.</strong></h3>
             </div>
 
             <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
@@ -181,7 +181,7 @@
               <!-- MISSION -->
               <div class="col-12 col-md-6">
                 <h2 class="mission-heading">OUR MISSION</h2>
-                <div class="mission-card mission-card-red" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mission-card mission-card-red text-justify" data-aos="zoom-in" data-aos-delay="200">
                   <p class="mb-0">
                     We create inclusive educational resources that reflect the voices and experiences of
                     BIPOC communities. Our goal is to support student growth and promote equity in classrooms
@@ -193,7 +193,7 @@
               <!-- VISION -->
               <div class="col-12 col-md-6">
                 <h2 class="mission-heading">OUR VISION</h2>
-                <div class="mission-card mission-card-green" data-aos="zoom-in" data-aos-delay="300">
+                <div class="mission-card mission-card-green text-justify" data-aos="zoom-in" data-aos-delay="300">
                   <p class="mb-0">
                     We envision schools where every student feels seen and supported. Through collaboration
                     and advocacy, we aim to create lasting change driven by diversity and community leadership.
@@ -239,7 +239,7 @@
 
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
             <div class="content-wrapper">
-              <h2 data-aos="fade-up" data-aos-delay="400" class="text-white">What does research say about "My Place"?</h2>
+              <h2 data-aos="fade-up" data-aos-delay="400" class="text-white fw-normal">What does research say about "My Place"?</h2>
               <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">There's emerging research suggesting “values affirmation intervention and social belonging interventions markedly improve academic performance and health of stigmatized racial groups.”</p>
 
               <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">This is summarized in a 2019 Harvard article by Williams, Lawrence, and Davis. It concludes self-affirmation enhances coping with stress, improves health behaviour, and boosts academic success.</p>
@@ -373,7 +373,7 @@
               aria-hidden="true" >
             
               <div class="col-md-12">
-                <h3 class="text-center"><strong>DIVISION OF LEARNING</strong></h3>
+                <h3 class="text-center text-white"><strong>DIVISION OF LEARNING</strong></h3>
                 <div class="dol-home-cards">
                   {{-- PRIMARY --}}
                   <div class="dol-card dol-primary">
@@ -388,11 +388,9 @@
                       <!-- <p class="dol-grade">Grade (1-3)</p> -->
 
                       <p class="dol-text">
-                        Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This builds connection, identity, and belonging. Students begin to see themselves in the learning |
-                        <a href="{{ route('membership') }}" class="text-success"><strong>More...</strong></a>
+                        Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This stage will build connection, identity and belonging. Students begin to see themselves in the learning.
                       </p>
-
-                      <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
+                      <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
                     </div>
                   </div>
 
@@ -409,11 +407,9 @@
                       <!-- <p class="dol-grade">Grade (4-6)</p> -->
 
                       <p class="dol-text">
-                        Junior/Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. This builds connection, identity, and belonging. Students reflect and share ideas with confidence |
-                        <a href="{{ route('membership') }}" class="text-success"><strong>More...</strong></a>
+                        Junior Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. The foundation of connection, identity and belonging is strengthened through broader applications.
                       </p>
-
-                      <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
+                      <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
                     </div>
                   </div>
 
@@ -430,11 +426,10 @@
                       <!-- <p class="dol-grade">Grade (9-12)</p> -->
 
                       <p class="dol-text">
-                        High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully. This builds connection, identity, and belonging. Students make meaningful links to real life |
-                        <a href="{{ route('membership') }}" class="text-success"><strong>More...</strong></a>
+                        High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully.  This is the final step in students affirming their identities and belonging.
                       </p>
 
-                      <a href="{{ route('login') }}" class="dol-btn">Login Required</a>
+                      <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
                     </div>
                   </div>
                 </div>
@@ -496,7 +491,7 @@
                 </div>
                 <div class="slider-content">
                   <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>This learning helps me understand where I come from, how the world connects and how my thinking can grow.</p>
+                  <p>We have an opportunity to connect all youth and in particular Black youth with positive stories and images about Black History, not just for February, but for the whole year.</p>
                   <h3>Marcia Smellie</h3>
                 </div>
               </div>
@@ -514,7 +509,7 @@
                 </div>
                 <div class="slider-content">
                   <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>Resources that support thoughtful, curriculum-aligned instruction and deeper student understanding.</p>
+                  <p>The diversity of these activities and the multiple entry points for students of all academic abilities, make this specific resource, very user friendly, fun, but perhaps most important, engaging for all grade levels.</p>
                   <h3>Taanya Solanki</h3>
                 </div>
               </div>
@@ -532,7 +527,7 @@
                 </div>
                 <div class="slider-content">
                   <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>Education that fosters positive allyship and creates a more knowledgeable, resilient student.</p>
+                  <p>It was incredible also to witness everyone in the class eager to participate within Black and African music and culture.</p>
                   <h3>Jennifer Colacrai</h3>
                 </div>
               </div>
@@ -550,7 +545,7 @@
                 </div>
                 <div class="slider-content">
                   <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>Learning that helps me see history more clearly, feel proud of who I am, and respect others' stories.</p>
+                  <p>All I ever heard about was slavery, and so many sad stories. Now I understand that there is so much more.</p>
                   <h3>Mela Gebremichael</h3>
                 </div>
               </div>
@@ -568,7 +563,7 @@
                 </div>
                 <div class="slider-content">
                   <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>Lessons that spark curiosity, build confidence, and connect classroom learning to real life.</p>
+                  <p>It's important to have a curriculum that responds to our equity, diversity and inclusion goals in a tangible way.</p>
                   <h3>Sharon Adie</h3>
                 </div>
               </div>
@@ -586,8 +581,26 @@
                 </div>
                 <div class="slider-content">
                   <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>Resources that make conversations easier, encourage critical thinking, and strengthen belonging for every student.</p>
+                  <p>My Place in this World offers the opportunity for boys such as mine to be able to understand African history and understand what their ancestors contributed to the global society.</p>
                   <h3>Brenda Tibingana</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video Slide 7 -->
+            <div class="swiper-slide">
+              <div class="slider-video-block">
+                <div class="slider-video" data-aos="zoom-in" data-aos-delay="800">
+                  <iframe width="100%" height="350" 
+                    src="https://www.youtube.com/embed/AtIbONPhGiU?si=UmzOk98BdQzG5Bq_" 
+                    title="YouTube video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="slider-content">
+                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+                  <p>It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and inspires children to reach their full potential. Every child deserves to know who they are and that they have a place in this world.</p>
+                  <h3>Karl Subban</h3>
                 </div>
               </div>
             </div>

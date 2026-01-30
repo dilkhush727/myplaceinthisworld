@@ -29,7 +29,7 @@
 :root { 
   --background-color: #f1f5f7; /* Background color for the entire website, including individual sections */
   --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #011e2c; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -157,6 +157,7 @@ h6 {
   background: #ffffff;
   border-radius: 12px;
   padding: 5px 10px;
+  min-height: 25%;
 }
 
 /*--------------------------------------------------------------
@@ -713,14 +714,14 @@ section,
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
 }
 
-.section-title h2:before {
+/* .section-title h2:before {
   content: "";
   position: absolute;
   display: block;
@@ -731,9 +732,9 @@ section,
   right: 0;
   bottom: 1px;
   margin: auto;
-}
+} */
 
-.section-title h2::after {
+/* .section-title h2::after {
   content: "";
   position: absolute;
   display: block;
@@ -744,7 +745,7 @@ section,
   right: 0;
   bottom: 0;
   margin: auto;
-}
+} */
 
 .section-title p {
   margin-bottom: 0;
@@ -3021,7 +3022,7 @@ section,
 .mission-heading{
   font-weight: 800;
   letter-spacing: 1px;
-  color: #0b1f2a;
+  color: #000000;
   text-align: center;
   margin-bottom: 14px;
   font-size: 36px;
@@ -7628,6 +7629,7 @@ section,
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+  min-height: 73%;
 }
 
 .contact .contact-card {
@@ -7635,10 +7637,11 @@ section,
   padding: 20px;
   border-radius: 12px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 25%;
 }
 
 .contact .contact-card:hover {
@@ -7647,8 +7650,8 @@ section,
 }
 
 .contact .contact-card .icon-box {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   border-radius: 10px;
@@ -7658,19 +7661,19 @@ section,
 }
 
 .contact .contact-card .icon-box i {
-  font-size: 22px;
+  font-size: 50px;
   color: var(--accent-color);
 }
 
 .contact .contact-card .contact-text h4 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 22px;
+  /* font-weight: 600; */
   margin-bottom: 8px;
   color: var(--heading-color);
 }
 
 .contact .contact-card .contact-text p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--default-color);
   margin-bottom: 0;
@@ -7684,8 +7687,7 @@ section,
 }
 
 .contact .contact-form-header h3 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 26px;
   margin-bottom: 15px;
   color: var(--heading-color);
   position: relative;
@@ -8601,6 +8603,23 @@ section,
   }
 }
 
+.pattern-right{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.membership-video{
+  border: solid 10px #f4a321;
+}
+
 .bg-dark{
   background-color: #000000!important;
 }
@@ -8644,7 +8663,7 @@ section,
 .division-of-learning-home .dol-v2 .dol-body{
   width: 280px;
   padding: 20px; 
-  min-height: 350px;
+  min-height: 370px;
 }
 .dol-home-image-bottom-left{
   position: absolute;
@@ -8842,7 +8861,7 @@ section,
 
 /* Paper colors */
 .dol-v2 .dol-primary .dol-paper{ background: #ffbe0b; }
-.dol-v2 .dol-junior  .dol-paper{ background: #000000; }
+.dol-v2 .dol-junior  .dol-paper{ background: #399773; }
 .dol-v2 .dol-high    .dol-paper{ background: #e63946; }
 
 /* ✅ Inner WHITE panel that contains text */
@@ -8939,4 +8958,11 @@ section,
     padding-top: 105px;
     min-height: 500px;
   }
+}
+.text-justify{
+  text-align: justify;
+  text-justify: inter-word;
+}
+.text-red{
+  color: red!important;
 }

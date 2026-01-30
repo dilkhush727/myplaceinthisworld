@@ -92,7 +92,8 @@
                 and lived experiences and to global competencies.
               </p>
 
-              <a href="{{ route('login') }}" class="dol-btn">Login Required</a>
+              <a href="{{ route('divisions.highschool') }}" class="dol-btn">Login Required</a>
+
             </div>
           </div>
         </div>
@@ -109,8 +110,7 @@
     <div class="modal-content" style="border-radius:18px; overflow:hidden;">
 
       {{-- Header with gradient + close --}}
-      <div class="modal-header border-0"
-           style="background:linear-gradient(90deg,#d7263d 0%,#f5a623 100%); color:#fff;">
+      <div class="modal-header border-0 bg-red">
         <h5 class="modal-title fw-bold text-white" id="instructionalVideosModalLabel" style="font-size:1.35rem;">
           Teacher Instructional Video
         </h5>
@@ -161,7 +161,7 @@
                 English
               </div>
               <div class="p-0" style="background:#000;">
-                <video id="teacherVideoEn" controls playsinline
+                <video id="teacherVideoEn" controls playsinline preload="none"
                        style="width:100%; height:auto; max-height:75vh; display:block;">
                   <source src="{{ asset('assets/videos/teacher-instructional-en.mp4') }}" type="video/mp4">
                   Your browser does not support the video tag.

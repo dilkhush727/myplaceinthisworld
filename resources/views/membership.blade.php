@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
-<section id="alumni" class="alumni section home-embedded pt-0 pb-0">
+<section id="alumni" class="alumni section home-embedded pt-0 pb-0 bg-red position-relative">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
     <div class="row g-0 align-items-center">
@@ -24,7 +24,7 @@
       <!-- MIDDLE TEXT -->
       <div class="col-12 col-md-9 col-lg-6 d-flex align-items-center justify-content-center text-white px-3 px-lg-4">
         <div class="text-center py-4 py-lg-0">
-          <h2 class="text-white mb-3">Membership</h2>
+          <h2 class="text-white mb-3">MEMBERSHIP</h2>
           <p class="mb-0">
             Your membership includes access to division-specific Placemats, supporting videos,
             biographies, scripts (where applicable), blackline masters (where applicable), assessments,
@@ -41,13 +41,17 @@
               src="https://www.youtube.com/embed/rftRnyOGkC0"
               title="YouTube video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              class="rounded-3 z-3 membership-video"
               allowfullscreen></iframe>
           </div>
         </div>
       </div>
-
     </div>
   </div>
+  
+
+  <img class="pattern-right d-none d-lg-block" src="http://127.0.0.1:8000/assets/img/texture2.png" alt="" aria-hidden="true">
+
 </section>
 
 <section id="campus-facilities" class="campus-facilities section py-3">
@@ -64,7 +68,7 @@
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <p class="mb-0">Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
+                <p class="mb-0 bg-white py-3 px-4 rounded-4">Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
 
                 <div class="row mt-4">
                     <div class="col-lg-12">
@@ -78,13 +82,13 @@
                               </div>
                           </div>
 
-                          <div class="journdey-item">
+                          <div class="learning-item">
                               <div class="learning-icon mx-auto">
                               <img src="{{ asset('assets/img/membership/p-learn-2.png') }}" alt="Open Mind" class="learning-img">
                               </div>
                           </div>
 
-                          <div class="journedy-item">
+                          <div class="learning-item">
                               <div class="learning-icon mx-auto">
                               <img src="{{ asset('assets/img/membership/p-learn-3.png') }}" alt="Cultural Sensitivity and Awareness" class="learning-img">
                               </div>
@@ -95,16 +99,16 @@
                     </div>
                 </div>
 
-                <div class="tour-features mb-0">
-                  <div class="tour-feature">
+                <div class="tour-features my-3">
+                  <div class="tour-feature d-flex justify-content-between">
                     <strong>Number of Activities: 20</strong>
                     <strong>Number of tasks per Activity: 1-6</strong>
                   </div>
                 </div>
                 <div class="tour-actions">
-                    <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn btn-success">
+                    <!-- <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn btn-success">
                         Sample Activity
-                    </a>
+                    </a> -->
                     <a href="{{ route(name: 'register') }}" class="btn btn-danger">Get Started</a>
                 </div>
               </div>
@@ -121,7 +125,7 @@
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <p class="mb-0">As Junior/Intermediate students get to know the African Kings and Queens presented, the hands-on activities will engage them. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
+                <p class="mb-0 bg-white py-3 px-4 rounded-4">As Junior/Intermediate students get to know the African Kings and Queens presented, the hands-on activities will engage them. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
 
                 <div class="row mt-4">
                     <div class="col-lg-12">
@@ -135,7 +139,7 @@
                               </div>
                           </div>
 
-                          <div class="journdey-item">
+                          <div class="learning-item">
                               <div class="learning-icon mx-auto">
                               <img src="{{ asset('assets/img/membership/j-learn-2.png') }}" alt="Open Mind" class="learning-img">
                               </div>
@@ -146,16 +150,16 @@
                     </div>
                 </div>
 
-                <div class="tour-features mb-0">
-                  <div class="tour-feature">
+                <div class="tour-features my-3">
+                  <div class="tour-feature d-flex justify-content-between">
                     <strong>Number of Activities: 20</strong>
                     <strong>Number of tasks per Activity: 1-6</strong>
                   </div>
                 </div>
                 <div class="tour-actions">
-                    <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn btn-success">
+                    <!-- <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn btn-success">
                     Sample Activity
-                    </a>
+                    </a> -->
                     <a href="{{ route(name: 'register') }}" class="btn btn-warning">Get Started</a>
                 </div>
               </div>
@@ -172,7 +176,7 @@
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <p class="mb-0">The High School curriculum goes deeper and touches on the rich content and sometimes controversial issues related to African Kings and Queens and their heritage. Students will engage in critical thinking and make relevant connections to their own environment and lived experiences and to global competencies. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of contentedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
+                <p class="mb-0 bg-white py-3 px-4 rounded-4">The High School curriculum goes deeper and touches on the rich content and sometimes controversial issues related to African Kings and Queens and their heritage. Students will engage in critical thinking and make relevant connections to their own environment and lived experiences and to global competencies. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of contentedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
 
                 <div class="row mt-4">
                     <div class="col-lg-12">
@@ -186,13 +190,13 @@
                               </div>
                           </div>
 
-                          <div class="journdey-item">
+                          <div class="learning-item">
                               <div class="learning-icon mx-auto">
                               <img src="{{ asset('assets/img/membership/hs-learn-2.png') }}" alt="Open Mind" class="learning-img">
                               </div>
                           </div>
 
-                          <div class="journedy-item">
+                          <div class="learning-item">
                               <div class="learning-icon mx-auto">
                               <img src="{{ asset('assets/img/membership/hs-learn-3.png') }}" alt="Cultural Sensitivity and Awareness" class="learning-img">
                               </div>
@@ -203,8 +207,8 @@
                     </div>
                 </div>
 
-                <div class="tour-features mb-0">
-                  <div class="tour-feature">
+                <div class="tour-features my-3">
+                  <div class="tour-feature d-flex justify-content-between">
                     <strong>Number of Activities: 30</strong>
                     <strong>Number of tasks per Activity: 1-6</strong>
                   </div>
@@ -241,6 +245,11 @@
      }
      .tour-visual, .tour-content{
       padding: 30px;
+     }
+     .learning-item{
+      background: #ffffff;
+      padding: 10px 15px;
+      border-radius: 5px;
      }
 </style>
 

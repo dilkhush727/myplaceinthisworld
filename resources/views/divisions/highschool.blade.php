@@ -52,7 +52,7 @@
 
                 <h2 class="h5 fw-bold mb-2">{{ $course->title }}</h2>
 
-                @if($course->summary)
+                <!-- @if($course->summary)
                   <p class="mb-4" style="font-size:0.9rem; line-height:1.6;height: 210px;overflow-y: auto;">
                     {{ $course->summary }}
                   </p>
@@ -60,7 +60,7 @@
                   <p class="mb-4 text-muted" style="font-size:0.9rem;">
                     {{ __('labels.course') }} description coming soon.
                   </p>
-                @endif
+                @endif -->
 
                 <div class="mt-auto pt-2">
                   <a href="{{ route('courses.show', $course->id) }}"
