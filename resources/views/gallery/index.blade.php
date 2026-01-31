@@ -40,8 +40,14 @@
                 </div>
 
               <div class="gallery-details">
-                <div class="mt-auto gallery-likes">
-                  <i class="bi bi-heart-fill lh-1"></i><span class="lh-1">{{ $gallery->likeCount() }}</span>
+                <div>
+                  <div class="mt-auto gallery-likes">
+                    <i class="bi bi-heart-fill lh-1"></i><span class="lh-1">{{ $gallery->likeCount() }}</span>
+                  </div>
+
+                  <div style="font-size:12px; margin-top:6px;">
+                    {{ $gallery->user?->name ?? 'Unknown' }}<br>{{ $gallery->created_at?->format('M d, Y') }}
+                  </div>
                 </div>
               </div>
 
@@ -113,6 +119,12 @@
 
                                   </div>
                                   <h6 class="mb-0">{{ $gallery->name }}</h6>
+                                  <p class="mb-1 text-muted" style="font-size:12px;">
+                                    Posted by
+                                    <strong>{{ $gallery->user?->name ?? 'Unknown' }}</strong>
+                                    • {{ $gallery->created_at?->format('M d, Y') }}
+                                    {{-- or: {{ $gallery->created_at?->diffForHumans() }} --}}
+                                  </p>
                                   <p class="mb-0 text-12">{{ $gallery->content }}</p>
                                 </div>
                         
@@ -215,8 +227,8 @@
 }
 .gallery-likes{
   display: flex;
-  align-items: center;
   gap: 4px;
+  justify-content: center;
 }
 .athletics-card{
   text-align: center
@@ -251,7 +263,8 @@
   background-color: #fff
 }
 .athletics-content .gallery-likes{
-  font-size: 25px
+  font-size: 25px;
+  justify-content: flex-start;
 }
 .athletics-content .gallery-likes .bi{
   color: red;

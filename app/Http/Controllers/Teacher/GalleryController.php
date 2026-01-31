@@ -19,7 +19,7 @@ class GalleryController extends Controller
 
         $galleries = Gallery::where('user_id', $teacherId)
             ->latest()
-            ->with('images')
+            ->with(['images', 'user'])
             ->paginate(12);
 
         return view('teacher.gallery.index', compact('galleries'));

@@ -1886,7 +1886,7 @@ section,
 
 .testimonials .testimonial-slider {
   position: relative;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .testimonials .testimonial-slider .swiper-wrapper {
@@ -2028,7 +2028,6 @@ section,
 
 .testimonials .swiper-navigation {
   position: relative;
-  margin-top: 25px;
   display: flex;
   justify-content: center;
 }
@@ -4419,6 +4418,139 @@ section,
 
 .slider-video{
   width: 50%;
+}
+
+
+/* Layout for each slide: left video frame + right text */
+.slider-video-block{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px;
+}
+
+.slider-video{ flex: 0 0 52%; }
+.slider-content{ flex: 0 0 44%; color: #fff; }
+
+/* FRAME WRAP */
+.polaroid-wrap{
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* frame image sits above video */
+.polaroid-frame{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 20;
+  pointer-events: none; /* allows clicking video play */
+}
+
+/* Video window area (tuned for your slider-frame.png) */
+.polaroid-screen{
+  position: absolute;
+  overflow: hidden;
+
+  top: 23.15%;
+  left: 12.9%;
+  width: 75%;
+  height: 47.8%;
+
+  border-radius: 6px;
+
+  /* make sure video is always clickable */
+  z-index: 30;
+}
+
+/* Fill the screen */
+.polaroid-screen iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  transform: scale(1.03);
+  transform-origin: center;
+}
+
+/* Quote icon and name */
+.slider-content h1 i{ font-size: 70px; color: #000; }
+.slider-content p{ font-size: 22px; line-height: 1.6; margin-bottom: 18px; }
+.slider-content h3{ font-size: 32px; font-weight: 800; color: #000; }
+
+/* Swiper container safety */
+.testimonial-slider.swiper{
+  overflow: hidden;
+}
+
+/* FADE MODE CLICK FIXES + STACKING */
+#testimonials .swiper-slide{
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none; /* non-active slides can't block clicks */
+}
+
+#testimonials .swiper-slide.swiper-slide-active{
+  opacity: 1;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Bottom centered arrows like your screenshot */
+.swiper-navigation{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 0 30px;
+
+  /* IMPORTANT: don't let the nav wrapper block video clicks */
+  pointer-events: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+  position: static !important;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #000;
+
+  /* allow clicking arrows */
+  pointer-events: auto;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after{
+  font-size: 22px;
+  color: #fff;
+}
+
+/* Optional: avoid any weird transform overlays affecting iframe clicks */
+#testimonials .slider-video{
+  transform: none !important;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 991.98px){
+  .slider-video-block{
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+  .slider-video,
+  .slider-content{
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .slider-content{
+    max-width: 750px;
+    margin: 0 auto;
+  }
 }
 
 .students-life .athletics-programs .swiper-pagination {
@@ -7556,6 +7688,48 @@ section,
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: var(--contrast-color);
+}
+
+
+.tv-wrap{
+  position: relative;
+  width: 100%;
+  max-width: 700px;        /* optional */
+  margin: 0 auto;          /* center it */
+}
+
+/* TV frame image (top layer) */
+.tv-frame{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.tv-frame{
+  pointer-events: none; /* lets clicks go through to the video */
+}
+/* This is the "screen window" area that crops the video */
+.tv-screen{
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+
+  /* IMPORTANT: adjust these 4 values to match your TV PNG screen area */
+  top: 12%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+
+  border-radius: 18px; /* optional if screen has rounded corners */
+}
+
+/* Fill the screen area */
+.tv-screen iframe{
+  width: 100%;
+  height: 86%;
+  border: 0;
+  display: block;
 }
 
 @media (max-width: 992px) {

@@ -445,180 +445,299 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section py-0">
+<section id="testimonials" class="testimonials section py-0">
 
-      <!-- Section Title -->
-      <div class="container-fluid py-4 bg-dark section-title" data-aos="fade-up">
-        <h2 class="text-white mb-0">TESTIMONIALS</h2>
-        <p class="text-white">Our team believes that the best advocacy comes from the people who will benefit from<br>using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container-fluid py-4 bg-dark section-title" data-aos="fade-up">
+    <h2 class="text-white mb-0">TESTIMONIALS</h2>
+    <p class="text-white">
+      Our team believes that the best advocacy comes from the people who will benefit from<br>
+      using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.
+    </p>
+  </div><!-- End Section Title -->
 
-      <div class="container-fluid bg-red pt-4" data-aos="fade-up" data-aos-delay="100">
+  <div class="container-fluid bg-red pt-4" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="testimonial-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "slidesPerView": 1,
-              "spaceBetween": 30,
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              },
-              "breakpoints": {
-                "768": {
-                  "slidesPerView": 1
-                },
-                "1200": {
-                  "slidesPerView": 1
-                }
-              }
-            }
-          </script>
+    <div class="testimonial-slider swiper init-swiper">
 
-          <div class="swiper-wrapper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 500,
+          "slidesPerView": 1,
+          "spaceBetween": 0,
 
-            <!-- Video Slide 1 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="200">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/uqbY-uwcIkQ" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
+          "effect": "fade",
+          "fadeEffect": { "crossFade": true },
+
+          "navigation": {
+            "nextEl": ".swiper-button-next",
+            "prevEl": ".swiper-button-prev"
+          },
+
+          "breakpoints": {
+            "768": { "slidesPerView": 1 },
+            "1200": { "slidesPerView": 1 }
+          }
+        }
+      </script>
+
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="200">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/uqbY-uwcIkQ?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
                 </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>We have an opportunity to connect all youth and in particular Black youth with positive stories and images about Black History, not just for February, but for the whole year.</p>
-                  <h3>Marcia Smellie</h3>
-                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
               </div>
             </div>
 
-            <!-- Video Slide 2 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="300">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/N581ErKKz8I" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>The diversity of these activities and the multiple entry points for students of all academic abilities, make this specific resource, very user friendly, fun, but perhaps most important, engaging for all grade levels.</p>
-                  <h3>Taanya Solanki</h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video Slide 3 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="400">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/6baO9pc0_RE" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>It was incredible also to witness everyone in the class eager to participate within Black and African music and culture.</p>
-                  <h3>Jennifer Colacrai</h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video Slide 4 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="500">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/tLUb8ze5aJM" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>All I ever heard about was slavery, and so many sad stories. Now I understand that there is so much more.</p>
-                  <h3>Mela Gebremichael</h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video Slide 5 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="600">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/Cv-LW8i57HA" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>It's important to have a curriculum that responds to our equity, diversity and inclusion goals in a tangible way.</p>
-                  <h3>Sharon Adie</h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video Slide 6 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="700">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/LAxrIqtau_w" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>My Place in this World offers the opportunity for boys such as mine to be able to understand African history and understand what their ancestors contributed to the global society.</p>
-                  <h3>Brenda Tibingana</h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video Slide 7 -->
-            <div class="swiper-slide">
-              <div class="slider-video-block">
-                <div class="slider-video" data-aos="zoom-in" data-aos-delay="800">
-                  <iframe width="100%" height="350" 
-                    src="https://www.youtube.com/embed/AtIbONPhGiU?si=UmzOk98BdQzG5Bq_" 
-                    title="YouTube video" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="slider-content">
-                  <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-                  <p>It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and inspires children to reach their full potential. Every child deserves to know who they are and that they have a place in this world.</p>
-                  <h3>Karl Subban</h3>
-                </div>
-              </div>
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                We have an opportunity to connect all youth and in particular Black youth with positive
+                stories and images about Black History, not just for February, but for the whole year.
+              </p>
+              <h3>Marcia Smellie</h3>
             </div>
 
           </div>
-
-
-          <div class="swiper-navigation">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-
         </div>
 
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="300">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/N581ErKKz8I?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                The diversity of these activities and the multiple entry points for students of all academic
+                abilities, make this specific resource, very user friendly, fun, but perhaps most important,
+                engaging for all grade levels.
+              </p>
+              <h3>Taanya Solanki</h3>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="400">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/6baO9pc0_RE?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                It was incredible also to witness everyone in the class eager to participate within Black and
+                African music and culture.
+              </p>
+              <h3>Jennifer Colacrai</h3>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="500">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/tLUb8ze5aJM?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                All I ever heard about was slavery, and so many sad stories. Now I understand that there is so
+                much more.
+              </p>
+              <h3>Mela Gebremichael</h3>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="600">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/Cv-LW8i57HA?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                It's important to have a curriculum that responds to our equity, diversity and inclusion goals
+                in a tangible way.
+              </p>
+              <h3>Sharon Adie</h3>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="700">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/LAxrIqtau_w?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                My Place in this World offers the opportunity for boys such as mine to be able to understand
+                African history and understand what their ancestors contributed to the global society.
+              </p>
+              <h3>Brenda Tibingana</h3>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="swiper-slide">
+          <div class="slider-video-block">
+
+            <div class="slider-video" data-aos="zoom-in" data-aos-delay="800">
+              <div class="polaroid-wrap">
+                <div class="polaroid-screen">
+                  <iframe
+                    src="https://www.youtube.com/embed/AtIbONPhGiU?rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+                </div>
+
+                <img
+                  src="{{ asset('assets/img/slider-frame.png') }}"
+                  class="polaroid-frame"
+                  alt="Video frame">
+              </div>
+            </div>
+
+            <div class="slider-content">
+              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
+              <p>
+                It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and
+                inspires children to reach their full potential. Every child deserves to know who they are and
+                that they have a place in this world.
+              </p>
+              <h3>Karl Subban</h3>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /swiper-wrapper -->
+
+      <div class="swiper-navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
 
-    </section><!-- /Testimonials Section -->
-        
+    </div><!-- /testimonial-slider -->
+
+  </div><!-- /container-fluid -->
+
+</section><!-- /Testimonials Section -->
+
+
     <!-- Stats Section -->
     <section id="alumni" class="alumni section home-embedded position-relative">
 
@@ -640,16 +759,22 @@
 
       <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
-          <div class="col-lg-6 aos-init aos-animate mb-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="alumni-video">
-              <div class="ratio ratio-16x9">
-                <iframe 
-                  src="https://www.youtube.com/embed/I6ja642TOLo" 
-                  title="YouTube video" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </iframe>
+          <div class="col-lg-6 mb-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="tv-wrap">
+              <!-- VIDEO (goes inside the screen area) -->
+              <div class="tv-screen">
+                <iframe
+                src="https://www.youtube.com/embed/I6ja642TOLo?rel=0"
+                title="YouTube video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin">
+              </iframe>
+
               </div>
+
+              <!-- TV FRAME IMAGE (on top) -->
+              <img src="{{ asset('assets/img/tv-frame.png') }}" class="tv-frame" alt="TV Frame">
             </div>
           </div>
           <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
@@ -668,5 +793,28 @@
     </section>
 
   </main>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const swiperEl = document.querySelector('#testimonials .init-swiper');
+  if (!swiperEl) return;
+
+  // Wait until your theme creates the Swiper instance (it sets swiperEl.swiper)
+  const waitForSwiper = setInterval(() => {
+    if (!swiperEl.swiper) return;
+
+    clearInterval(waitForSwiper);
+    const sw = swiperEl.swiper;
+
+    // Stop videos when slide starts changing
+    sw.on('slideChangeTransitionStart', () => {
+      swiperEl.querySelectorAll('iframe').forEach((ifr) => {
+        const src = ifr.getAttribute('src');
+        if (src) ifr.setAttribute('src', src); // reloads iframe => stops playback
+      });
+    });
+  }, 100);
+});
+</script>
 
 @endsection
