@@ -19,7 +19,8 @@ class LearningCourseController extends Controller
             'lessons.tasks.resources',
         ]);
 
-        $currentTask = optional($course->lessons->first())->tasks->first();
+        // $currentTask = optional($course->lessons->first())->tasks->first();
+        $currentTask = $course->lessons->first()?->tasks->first();
 
         return $this->renderCourseView($course, $currentTask);
     }

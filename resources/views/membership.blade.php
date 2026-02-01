@@ -23,7 +23,7 @@
 
       <!-- MIDDLE TEXT -->
       <div class="col-12 col-md-9 col-lg-6 d-flex align-items-center justify-content-center text-white px-3 px-lg-4">
-        <div class="text-center py-4 py-lg-0">
+        <div class="py-4 py-lg-0">
           <h2 class="text-white mb-3">MEMBERSHIP</h2>
           <p class="mb-0">
             Your membership includes access to division-specific Placemats, supporting videos,
@@ -68,7 +68,7 @@
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <p class="mb-0 bg-white py-3 px-4 rounded-4">Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
+                <p class="mb-0 bg-white py-3 px-4 rounded-4">Where Students Will Learn is placed is incorrect. It should be above the information in the white box. They can't post the title at the bottom of what is said that students will learn. Fix all divisions.</p>
 
                 <div class="row mt-4">
                     <div class="col-lg-12">
@@ -142,6 +142,12 @@
                           <div class="learning-item">
                               <div class="learning-icon mx-auto">
                               <img src="{{ asset('assets/img/membership/j-learn-2.png') }}" alt="Open Mind" class="learning-img">
+                              </div>
+                          </div>
+
+                          <div class="learning-item">
+                              <div class="learning-icon mx-auto">
+                              <img src="{{ asset('assets/img/membership/j-learn-3.png') }}" alt="Open Mind" class="learning-img">
                               </div>
                           </div>
 
@@ -247,8 +253,8 @@
       padding: 30px;
      }
      .learning-item{
-      background: #ffffff;
-      padding: 10px 15px;
+      /* background: #ffffff;
+      padding: 10px 15px; */
       border-radius: 5px;
      }
 </style>

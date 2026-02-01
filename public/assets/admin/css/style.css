@@ -22503,6 +22503,14 @@ select.form-control[data-multiselectsplitter-firstselect-selector], select.form-
   border-radius: 0 28px 0 28px;
 }
 
+#task-panel-container h2,
+#task-panel-container h3,
+#task-panel-container h4,
+#task-panel-container h5,
+#task-panel-container p{
+  font-size: 14px !important;
+}
+
 /**  =====================
   23. Icon layouts css end
 ==========================  **/

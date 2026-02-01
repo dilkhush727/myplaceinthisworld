@@ -128,7 +128,7 @@
             <path id="Mauritius" data-info="<div>Country: Mauritius</div><div>Capital: Port Luis </div>" dataBubble="<div>Country: Mauritius</div><div>Capital: Ports </div>"fill="#008000" d="m 1190.3051,999.5389 0.757,14.712 c -4.398,2.2 -7.667,4.4 -11.413,6.601 -4.11,-0.103 -6.742,-1.181 -7.393,-4.471 -1.037,-5.241 -0.446,-8.811 2.463,-13.216 2.114,-3.203 5.937,-7.245 8.501,-7.674 1.319,-0.221 3.267,1.759 4.404,3.429 l 2.681,0.619 z"  style="fill:#ffb81c;stroke:#000000;stroke-linecap:round" inkscape:connector-curvature="0"/>
             <!-- Cabo Verde (Cape Verde) -->
             <circle id="Cabo_Verde"
-                    cx="120" cy="340" r="8"
+                    cx="10" cy="340" r="8"
                     fill="#ce2129"
                     data-info="<div>Country: Cabo Verde</div><div>Capital: Praia</div>" />
 
@@ -241,116 +241,260 @@
     </div>
 </section>
 
-<section class="founders-section py-0 bg-white">
 
-    <div class="container-fluid position-relative">
 
-        {{-- ========== LORRAINE (card left, image right) ========== --}}
-        <div class="founder-block founder-lorraine mb-5">
-            <div class="row align-items-center bg-secondary bg-opacity-10 g-4">
 
-                {{-- LEFT: Card --}}
-                <div class="col-12 col-lg-7">
-                <div class="founder-card founder-card--red m-auto">
-                    <div class="founder-card__inner">
-                    <div class="founder-name">LORRAINE HARRIS</div>
-                    <div class="founder-role">Co-Founder and Co-Creator of My Place In This World</div>
+<section class="founders-decks py-5 bg-white">
+  <div class="container-fluid">
 
-                    <div class="founder-tags">
-                        Forward Thinking, Visionary, Innovator, Authentic, Risk Taker, Resilient
-                    </div>
+    <!-- ===== Deck 1 (RED) ===== -->
+    <div class="row align-items-center mb-5 position-relative">
+      <div class="col-12 col-lg-7">
 
-                    <p>
-                        Co-Founder and co-creator of My Place in This World, administrator Lorraine Harris has been working in the field of education for over 25 years. Lorraine is a wife and mother. She holds degrees in Education, Music, and Psychology. Lorraine has been the recipient of many awards, both locally and provincially, for her participation in various community outreach projects, sharing her gifts, time, and talents in the performing arts. Most recently she was the recipient of the Ontario Volunteer Service Award for 2020 in her region.
-                    </p>
-                    </div>
-                </div>
-                </div>
+        <div class="deck deck--red" data-card-deck>
+          <div class="deck-stage">
+            <!-- TOP / MID / BACK are assigned by JS -->
+            <article class="deck-card">
+              <div class="deck-name">LORRAINE HARRIS</div>
+              <div class="deck-role mb-0">Co-Founder and Co-Creator of My Place In This World</div>
+              <div class="deck-tags">Forward Thinking, Visionary, Innovator, Authentic, Risk Taker, Resilient</div>
+              <p>
+                Co-Founder and co-creator of My Place in This World, administrator Lorraine Harris has been working in the field of education for over 25 years. Lorraine is a wife and mother. She holds degrees in Education, Music, and Psychology. Lorraine has been the recipient of many awards, both locally and provincially, for her participation in various community outreach projects, sharing her gifts, time, and talents in the performing arts. Most recently she was the recipient of the Ontario Volunteer Service Award for 2020 in her region.
+              </p>
+            </article>
 
-                {{-- RIGHT: Image + side pattern --}}
-                <div class="col-12 col-lg-5 text-center">
+            <article class="deck-card">
+              <p>
+                Lorraine's experience working at the elementary, secondary, and university levels has equipped her with a diverse skill set. Lorraine has supported multiple schools and served diverse student populations. She has demonstrated an excellent ability to lead, support, and collaborate with teachers to ensure strategies are in place to support equity in student learning. She's a visionary with a keen ability to create engaging activities to help students grasp key curriculum content. Lorraine has created both published and unpublished resources currently being used in her board.
+              </p>
+            </article>
 
-                <div class="founder-photo-wrap m-auto">
-                    <img class="founder-photo"
-                        src="{{ asset('assets/img/lorraine-harris.png') }}"
-                        alt="Lorraine Harris">
-                </div>
-                </div>
+            <article class="deck-card">
+              <p>
+                Lorraine is an innovator with the foresight to see firsthand the need for curriculum content that empowers all students—and particularly in this current environment—Black students and others in the BIPOC community. In doing so, they develop a positive self-concept and a sense of truly belonging, of having a place in this world.
+              </p>
+            </article>
+          </div>
 
-            </div>
+          <div class="deck-controls red">
+            <button class="deck-btn" type="button" data-prev aria-label="Previous">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="deck-btn" type="button" data-next aria-label="Next">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
-      
-        <img class="founder-pattern d-none d-lg-block"
-               src="{{ asset('assets/img/texture2.png') }}"
-               alt="" aria-hidden="true">
 
+      </div>
+
+      <div class="col-12 col-lg-5 text-center">
+        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/lorraine-harris.png') }}" alt="Lorraine Harris">
+      </div>
+      <img class="founder-pattern d-none d-lg-block" src="{{ asset('assets/img/texture-3.png') }}" alt="" aria-hidden="true">
     </div>
 
-    <div class="container-fluid position-relative">
 
-        {{-- ========== MICHAEL (image left, card right) ========== --}}
-        <div class="founder-block founder-michael">
-        <div class="row align-items-center g-4 flex-lg-row-reverse">
+    <!-- ===== Deck 2 (GREEN) ===== -->
+    <div class="row align-items-center flex-lg-row-reverse position-relative">
+      <div class="col-12 col-lg-7">
 
-            {{-- RIGHT: Card --}}
-            <div class="col-12 col-lg-7">
-            <div class="founder-card founder-card--green m-auto">
-                <div class="founder-card__inner">
-                <div class="founder-name">MICHAEL HARRIS</div>
-                <div class="founder-role">Co-Founder and Co-Creator of My Place In This World</div>
+        <div class="deck deck--green" data-card-deck>
+          <div class="deck-stage">
+            <article class="deck-card">
+              <div class="deck-name">MICHAEL HARRIS</div>
+              <div class="deck-role mb-0">Co-Founder and Co-Creator of My Place In This World</div>
+              <div class="deck-tags">Visionary, Purpose-Driven, Strategic, Mentor, Cultural Architect</div>
+              <p>
+                Michael Harris is a co-founder and co-creator of My Place In This World- and the conceiver of its central concept, blueprint, direction and message. With a successful career in business and financial services, and a background in communication, Michael used his strategic expertise to ensure the curriculum would be both culturally impactful and systematically strong.
+              </p>
+            </article>
 
-                <div class="founder-tags">
-                    Visionary, Purpose-Driven, Strategic, Grounded in Heritage, Mentor, Cultural Architect
-                </div>
+            <article class="deck-card">
+              <p>
+                The idea for My Place came about during a conversation with Lorraine Harris, who was lamenting the plight of Black youth in schools; how so many felt detached and alienated from the idea of success. Michael asked her, “What if we can build a resource that would connect the children to their heritage of success and achievement before slavery and colonization?” Lorraine, a brilliant resource writer, immediately began crafting the curriculum, bringing their vision to life.
+              </p>
+            </article>
 
-                <p>
-                    Co-Founder and co-creator of My Place in This World, administrator Lorraine Harris has been working in the field of education for over 25 years. Lorraine is a wife and mother. She holds degrees in Education, Music, and Psychology. Lorraine has been the recipient of many awards, both locally and provincially, for her participation in various community outreach projects, sharing her gifts, time, and talents in the performing arts. Most recently she was the recipient of the Ontario Volunteer Service Award for 2020 in her region.
-                </p>
-                </div>
-            </div>
-            </div>
+            <article class="deck-card">
+              <p>
+                From the beginning, Michael believed that Black history must be presented as a narrative of excellence, innovation and leadership, not confined to stories of oppression. His aim was to inspire a “can do” mindset that rejects glass ceilings and connects youth to a lineage of limitless achievement. He also sought to create allyship between Black and non-Black youth rooted in mutual respect and shared learning.
+              </p>
+            </article>
 
-            {{-- LEFT: Image + side pattern --}}
-            <div class="col-12 col-lg-5 text-center position-relative">
+            <article class="deck-card">
+              <p>
+                Under his direction, My Place In This World has grown into a resource recognized by numerous organizations- including the Government of Ontario- for its outstanding contribution to education in the province. Michael's vision continues to guide the program's mission: to strengthen character, grow self-esteem and link expectations to outcomes rooted in the glorious heritage of African and diasporic achievement.
+              </p>
+            </article>
+          </div>
 
-            <div class="founder-photo-wrap m-auto">
-                <img class="founder-photo"
-                    src="{{ asset('assets/img/michael-harris.png') }}"
-                    alt="Michael Harris">
-            </div>
-            </div>
-
+          <div class="deck-controls green">
+            <button class="deck-btn" type="button" data-prev aria-label="Previous">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="deck-btn" type="button" data-next aria-label="Next">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
-        </div>
-        
-        <img class="founder-pattern founder-pattern--left d-none d-lg-block" src="{{ asset('assets/img/texture2.png') }}" aria-hidden="true">
 
+      </div>
+
+      <div class="col-12 col-lg-5 text-center">
+        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/michael-harris.png') }}" alt="Michael Harris">
+      </div>
+      <img class="founder-pattern founder-pattern--left d-none d-lg-block" src="{{ asset('assets/img/texture-3.png') }}" alt="" aria-hidden="true">
     </div>
 
+  </div>
 </section>
 
 <style>
-    /* overall spacing feel like screenshot */
-.founders-section{
-  overflow: hidden;
-}
+  /* ===== Pepper-like stacked deck ===== */
+  .deck{
+    --accent: #b10f16;
+    --paper: #f7f6f0; /* warm off-white like Pepper */
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .deck--red{ --accent:#b10f16; }
+  .deck--green{ --accent:#0a6a45; }
 
-/* photo area */
-.founder-photo-wrap{
-  position: relative;
-  width: min(420px, 100%);
-}
+  /* stage reserves height (JS sets it to top card height) */
+  .deck-stage{
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+  }
 
-.founder-photo{
-  position: relative;
-  z-index: 1;
-  width: 90%;
-  height: auto;
-  display: block;
-}
+  .deck-card{
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 28px 28px;
+    background: var(--paper);
+    box-shadow: 0 18px 40px rgba(0,0,0,.18);
+    transition: transform .55s ease, opacity .55s ease, filter .55s ease;
+    will-change: transform, opacity;
+    overflow: hidden;
+  }
 
-/* side pattern strip */
-.founder-pattern{
+  /* Only 3 cards visible. Others are hidden. */
+  .deck-card.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(60px) scale(.96);
+  }
+
+  /* Top card */
+  .deck-card.is-top{
+    z-index: 3;
+    opacity: 1;
+    transform: translate3d(0vw, 0vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    pointer-events: auto;
+  }
+
+  /* Middle card (behind) */
+  .deck-card.is-mid{
+    z-index: 2;
+    opacity: .90;
+    transform: translate3d(0vw, 0vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(3deg) skew(0deg, 0deg);
+    filter: saturate(.95);
+  }
+
+  /* Back card (furthest) */
+  .deck-card.is-back{
+    z-index: 1;
+    opacity: .6;
+    transform: translate3d(0vw, 0vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(6deg) skew(0deg, 0deg);
+    filter: saturate(.9);
+  }
+
+  /* Accent strip “shadow paper” feel */
+  .deck-card.is-mid::after,
+  .deck-card.is-back::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius: 24px;
+    background: var(--accent);
+    /* opacity: .18; */
+    z-index: -1;
+  }
+
+  /* Text styles */
+  .deck-name{
+    font-weight: 800;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .deck-role{
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  .deck-tags{
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 14px;
+  }
+  .deck-card p{
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #111;
+    margin: 0;
+  }
+
+  /* Controls */
+  .deck-controls{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 50px;
+  }
+  .deck-controls.red .deck-btn{
+    background: #b10f16;
+    color: #fff;
+  }
+  .deck-controls.green .deck-btn{
+    background: #0a6a45;
+    color: #fff;
+  }
+  .deck-btn{
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+  }
+  .deck-btn i{ font-size: 22px; }
+
+  /* Mobile */
+  @media (max-width: 991.98px){
+    .deck-card{ padding: 20px; }
+  }
+
+  /* When top card is leaving (NEXT) */
+  .deck-card.is-leaving-next{
+    transform: translateX(-140px) translateY(30px) rotate(-10deg) !important;
+    opacity: 0 !important;
+  }
+
+  /* When top card is leaving (PREV) */
+  .deck-card.is-leaving-prev{
+    transform: translateX(140px) translateY(30px) rotate(10deg) !important;
+    opacity: 0 !important;
+  }
+
+
+  .founder-pattern {
     position: absolute;
     right: 0;
     top: 0;
@@ -358,104 +502,140 @@
     width: 140px;
     height: 100%;
     object-fit: cover;
-    opacity: 0.6;
+    opacity: 0.8;
     pointer-events: none;
     z-index: 1;
 }
-
-.founder-pattern--left{
-  left: 0;
-  right: auto;
-  height: 100%;
-}
-
-/* ===== layered card ===== */
-.founder-card{
-  position: relative;
-  max-width: 560px;
-}
-
-.founder-card__inner{
-  background: #fff;
-  border-radius: 18px;
-  padding: 22px 22px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
-  position: relative;
-  z-index: 2;
-}
-
-/* colored “back paper” layers */
-.founder-card::before,
-.founder-card::after{
-  content:"";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  z-index: 1;
-}
-
-.founder-card::before{
-  transform: rotate(-2.5deg) translate(-10px, 10px);
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
-}
-
-.founder-card::after{
-  transform: rotate(1.7deg) translate(10px, 14px);
-  opacity: 0.35;
-  z-index: 0;
-}
-
-/* red + green variants */
-.founder-card--red::before{ 
-        background: #b10f16;
-    height: 110%;
-    top: -20px;
- }
-.founder-card--red::after{  
-        height: 110%;
-    background: #b10f16;
-    top: -20px;
- }
-
-.founder-card--green::before{ 
-    background:#0a6a45;
-    height: 110%;
-    top: -20px; }
-.founder-card--green::after{  
-    background:#0a6a45;
-    height: 110%;
-    top: -20px; }
-
-/* text styles */
-.founder-name{
-  font-weight: 800;
-  letter-spacing: .5px;
-  color: #d11f2a;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-}
-
-.founder-role{
-  font-weight: 600;
-  font-size: 0.85rem;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.founder-tags{
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin-bottom: 12px;
-  color:#111;
-}
-
-.founder-card__inner p{
-  font-size: 0.9rem;
-  line-height: 1.35;
-  margin-bottom: 0;
+.founder-pattern--left {
+    left: 0;
+    right: auto;
+    height: 100%;
 }
 
 </style>
+
+<script>
+  (function () {
+
+    const ANIM_MS = 520;
+
+    function initDeck(deckEl){
+      const stage = deckEl.querySelector('.deck-stage');
+      const prevBtn = deckEl.querySelector('[data-prev]');
+      const nextBtn = deckEl.querySelector('[data-next]');
+      let busy = false;
+
+      function getCards(){
+        return Array.from(deckEl.querySelectorAll('.deck-card'));
+      }
+
+      function applyStack(){
+        const cards = getCards();
+
+        cards.forEach(c => c.classList.remove('is-top','is-mid','is-back','is-hidden'));
+
+        cards.forEach((card, i) => {
+          if (i === 0) card.classList.add('is-top');
+          else if (i === 1) card.classList.add('is-mid');
+          else if (i === 2) card.classList.add('is-back');
+          else card.classList.add('is-hidden');
+        });
+
+        // keep stage height stable
+        const top = cards[0];
+        if (top){
+          stage.style.height = top.offsetHeight + 'px';
+        }
+      }
+
+      function next(){
+        if (busy) return;
+        busy = true;
+
+        const cards = getCards();
+        if (cards.length < 2) { busy = false; return; }
+
+        const top = cards[0];
+
+        // animate whole card out
+        top.classList.add('is-leaving-next');
+
+        setTimeout(() => {
+          top.classList.remove('is-leaving-next');
+
+          // move to end
+          stage.appendChild(top);
+
+          applyStack();
+          busy = false;
+        }, ANIM_MS);
+      }
+
+      function prev(){
+        if (busy) return;
+        busy = true;
+
+        const cards = getCards();
+        if (cards.length < 2) { busy = false; return; }
+
+        const top = cards[0];
+        top.classList.add('is-leaving-prev');
+
+        setTimeout(() => {
+          top.classList.remove('is-leaving-prev');
+
+          // move last card to front
+          const last = cards[cards.length - 1];
+          stage.insertBefore(last, cards[0]);
+
+          applyStack();
+          busy = false;
+        }, ANIM_MS);
+      }
+
+      // ---- Scroll / trackpad support ----
+      let wheelLock = false;
+
+      function onWheel(e){
+        // Only trigger when cursor is over this deck
+        // (prevents scrolling the page from constantly changing cards)
+        if (wheelLock || busy) return;
+
+        const delta = e.deltaY;
+
+        // small deltas happen with trackpads — set a threshold
+        if (Math.abs(delta) < 12) return;
+
+        wheelLock = true;
+
+        if (delta > 0) next();
+        else prev();
+
+        // release lock after a short delay
+        setTimeout(() => { wheelLock = false; }, 650);
+
+        // optional: prevent page scroll while interacting with deck
+        e.preventDefault();
+      }
+
+      // IMPORTANT: use { passive:false } so preventDefault works
+      deckEl.addEventListener('wheel', onWheel, { passive: false });
+
+      nextBtn && nextBtn.addEventListener('click', next);
+      prevBtn && prevBtn.addEventListener('click', prev);
+
+      applyStack();
+      window.addEventListener('resize', applyStack);
+    }
+
+    document.querySelectorAll('[data-card-deck]').forEach(initDeck);
+  })();
+</script>
+
+
+
+
+
 
 <style>
     #africa{

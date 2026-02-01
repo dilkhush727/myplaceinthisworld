@@ -44,9 +44,9 @@
     }
 
     .auth-left img{
-      width:70%;
+      width:50%;
       height:100%;
-      object-fit:cover;
+      object-fit:contain;
     }
 
     /* subtle gold lines bottom-left */

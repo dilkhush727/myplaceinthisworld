@@ -832,19 +832,19 @@ section,
   letter-spacing: 0.5px;
 }
 
-.hero .hero-wrapper .hero-content .action-buttons {
+.hero .hero-wrapper .action-buttons {
   display: flex;
   gap: 15px;
 }
 
 @media (max-width: 992px) {
-  .hero .hero-wrapper .hero-content .action-buttons {
+  .hero .hero-wrapper .action-buttons {
     justify-content: center;
     flex-wrap: wrap;
   }
 }
 
-.hero .hero-wrapper .hero-content .action-buttons a {
+.hero .hero-wrapper .action-buttons a {
   padding: 14px 28px;
   font-weight: 600;
   border-radius: 8px;
@@ -854,30 +854,30 @@ section,
 }
 
 @media (max-width: 576px) {
-  .hero .hero-wrapper .hero-content .action-buttons a {
+  .hero .hero-wrapper .action-buttons a {
     width: 100%;
   }
 }
 
-.hero .hero-wrapper .hero-content .action-buttons .btn-primary {
+.hero .hero-wrapper .action-buttons .btn-primary {
   background: var(--accent-color);
   color: var(--contrast-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero .hero-wrapper .hero-content .action-buttons .btn-primary:hover {
+.hero .hero-wrapper .action-buttons .btn-primary:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.hero .hero-wrapper .hero-content .action-buttons .btn-secondary {
+.hero .hero-wrapper .action-buttons .btn-secondary {
   background: var(--surface-color);
   color: var(--default-color);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 
-.hero .hero-wrapper .hero-content .action-buttons .btn-secondary:hover {
+.hero .hero-wrapper .action-buttons .btn-secondary:hover {
   color: var(--heading-color);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -3034,7 +3034,7 @@ section,
   line-height: 1.6;
   font-size: 15px;
   box-shadow: 0 12px 20px rgba(0,0,0,0.18);
-  min-height: 220px;
+  min-height: 2px;
 }
 
 .mission-card-red{ background: #C61C23; }
@@ -8837,7 +8837,7 @@ section,
 .division-of-learning-home .dol-v2 .dol-body{
   width: 280px;
   padding: 20px; 
-  min-height: 370px;
+  min-height: 345px;
 }
 .dol-home-image-bottom-left{
   position: absolute;
@@ -9007,7 +9007,7 @@ section,
   background: transparent;
 
   /* space between border and inner white panel */
-  padding: 20px;
+  margin: 20px;
 
   /* no rotation on hover */
   /* box-shadow: 0 12px 28px rgba(0,0,0,0.10); */
@@ -9023,7 +9023,7 @@ section,
 /* ✅ Back paper (behind the white panel) */
 .dol-v2 .dol-paper{
   position: absolute;
-  inset: 20px;                 /* same-ish size as inner panel */
+  inset: 0;                 /* same-ish size as inner panel */
   border-radius: 28px;
   z-index: 0;
   pointer-events: none;
@@ -9037,6 +9037,8 @@ section,
 .dol-v2 .dol-primary .dol-paper{ background: #ffbe0b; }
 .dol-v2 .dol-junior  .dol-paper{ background: #399773; }
 .dol-v2 .dol-high    .dol-paper{ background: #e63946; }
+
+.dol-home-cards .dol-junior  .dol-paper{ background: #0f6343; }
 
 /* ✅ Inner WHITE panel that contains text */
 .dol-v2 .dol-body{
@@ -9076,7 +9078,7 @@ section,
 /* ✅ Avatar (symmetric box) */
 .dol-v2 .dol-avatar{
   position: absolute;
-  top: -90px;
+  top: -120px;
   left: 50%;
   transform: translateX(-50%);
   width: 170px;
@@ -9086,6 +9088,42 @@ section,
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+.dol-home-cards .dol-avatar{
+  top: unset;
+  bottom: 0px;
+}
+
+/* Default state */
+.dol-home-cards .dol-card .dol-body-content{
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity .2s ease, max-height .2s ease, visibility .2s ease;
+}
+
+.dol-home-cards .dol-card .dol-avatar{
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+/* Hover state */
+.dol-home-cards .dol-card:hover .dol-avatar{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dol-home-cards .dol-card:hover .dol-body-content{
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px; /* enough room for your text + button */
+}
+
+.dol-home-cards .dol-body-content .dol-btn{
+  margin-top: 20px;
 }
 
 .dol-v2 .dol-avatar img{

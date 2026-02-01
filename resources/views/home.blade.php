@@ -14,10 +14,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
               <h1>Inspiring Excellence Through Education</h1>
-              <p>At My Place in This World, we believe education is the key to unlocking potential and fostering a future where every student thrives. Our carefully crafted programs emphasize equity, diversity, and inclusion, aiming to empower students from all backgrounds to achieve academic success and personal growth.</p>
-              <div class="action-buttons">
-                <a href="{{ route('register') }}" class="btn-danger">Start Your Journey</a>
-              </div>
+              <p><strong>At My Place in This World,</strong> we believe education is the key to unlocking and fostering every student's potential. We also believe that when students understand where they come from, they develop a stronger sense of identity, confidence, and connection to the world around them. Our thoughtfully crafted educational resources build a strong sense of belonging and pride for Black students while cultivating respect, understanding, and allyship among their non-Black peers.</p>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
               <img src="assets/img/banner-imgs/slide3.svg" alt="A Black student with curly hair and glasses smiles while reading a paper at a desk in a classroom, with other students working in the background." class="img-fluid main-image">
@@ -26,6 +23,12 @@
                   <i class="bi bi-patch-check-fill"></i>
                   <span>Accredited Excellence</span>
                 </div>
+              </div>
+            </div>
+            <div class="col-lg-12 hero-media" data-aos="zoom-in" data-aos-delay="300">
+              <p>By celebrating our glorious past of Black excellence and achievement prior to slavery and colonialism where Blacks made significant contributions to world civilization; we take a strengths-based, hopeful, and non-blaming approach that honors heritage, builds confidence, and supports a mindset of excellence for all learners. Through this shared understanding of history and humanity, we create learning environments where every student feels valued, empowered, and positioned for success.</p>
+              <div class="action-buttons">
+                <a href="{{ route('register') }}" class="btn-danger">Start Your Journey</a>
               </div>
             </div>
           </div>
@@ -38,11 +41,14 @@
             <h2 class="text-white pt-2 text-center">FEATURED IN</h2>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
-                <a href="https://www.ctvnews.ca/kitchener/article/black-heritage-curriculum-set-to-roll-out-in-waterloo-region-catholic-schools/" class="text-center" target="_blank">
-                <img src="assets/img/featured-in/ctv.png" class="img-fluid">
-                  <h5>CTV Collaboration</h5>
+                <a href="https://www.ctvnews.ca/kitchener/article/black-heritage-curriculum-set-to-roll-out-in-waterloo-region-catholic-schools/" target="_blank">
 
-                <div class="text-justify">
+                <div class="text-center">
+                  <img src="assets/img/featured-in/ctv.png" class="img-fluid">
+                  <h5>CTV Collaboration</h5>
+                </div>
+
+                <div>
                   <small>Featured by CTV News for showcasing a curriculum that builds pride, representation and year-round engagement with Black history beyond a single month. </small>
                 </div>
                 </a>
@@ -50,11 +56,12 @@
             </div>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
-                <a href="javascript:;" class="text-center">
-                <img src="assets/img/featured-in/ontario.png" class="img-fluid">
-
-                  <h5>Ontario Government</h5>
-                <div class="text-justify">
+                <a href="javascript:;" target="_blank">
+                  <div class="text-center">
+                    <img src="assets/img/featured-in/ontario.png" class="img-fluid">
+                    <h5>Ontario Government</h5>
+                  </div>
+                <div>
                   <small>Endorsed and aligned with the Ontario Ministry of Education, with careful design ensuring curriculum expectations are met and educational standards are fully supported.</small>
                 </div>
                 </a>
@@ -62,11 +69,13 @@
             </div>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
-                <a href="https://www.cbc.ca/news/canada/kitchener-waterloo/guelph-black-heritage-society-lorraine-harris-curriculum-1.5906779" class="text-center" target="_blank">
-                <img src="assets/img/featured-in/cbc.png" class="img-fluid">
+                <a href="https://www.cbc.ca/news/canada/kitchener-waterloo/guelph-black-heritage-society-lorraine-harris-curriculum-1.5906779" target="_blank">
 
+                <div class="text-center">
+                  <img src="assets/img/featured-in/cbc.png" class="img-fluid">
                   <h5>CBC Collaboration</h5>
-                <div class="text-justify">
+                </div>
+                <div>
                   <small>Featured by CBC News, highlighting how My Place in This World reframes Black history by centering African kings, queens and pre-colonial excellence.</small>
                 </div>
                 </a>
@@ -74,11 +83,12 @@
             </div>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
-                <a href="https://blogs1.conestogac.on.ca/news/2024/03/capstone_project_creates_marke.php" class="text-center" target="_blank">
-                <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
-
-                  <h5>Conestoga Learning</h5>
-                <div class="text-justify">
+                <a href="https://blogs1.conestogac.on.ca/news/2024/03/capstone_project_creates_marke.php" target="_blank">
+                  <div class="text-center">
+                    <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
+                    <h5>Conestoga Learning</h5>
+                  </div>
+                <div>
                   <small>Partnered with Conestoga College students, who developed a full marketing and communications strategy to amplify our mission and long-term impact.</small>
                 </div>
                 </a>
@@ -181,11 +191,9 @@
               <!-- MISSION -->
               <div class="col-12 col-md-6">
                 <h2 class="mission-heading">OUR MISSION</h2>
-                <div class="mission-card mission-card-red text-justify" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mission-card mission-card-red" data-aos="zoom-in" data-aos-delay="200">
                   <p class="mb-0">
-                    We create inclusive educational resources that reflect the voices and experiences of
-                    BIPOC communities. Our goal is to support student growth and promote equity in classrooms
-                    and beyond.
+                    We create educational resources that build identity, belonging, and pride by highlighting the significant contributions of Black people to world civilization through a positive, non-blaming approach that fosters respect and allyship among all students.
                   </p>
                 </div>
               </div>
@@ -193,10 +201,9 @@
               <!-- VISION -->
               <div class="col-12 col-md-6">
                 <h2 class="mission-heading">OUR VISION</h2>
-                <div class="mission-card mission-card-green text-justify" data-aos="zoom-in" data-aos-delay="300">
+                <div class="mission-card mission-card-green" data-aos="zoom-in" data-aos-delay="300">
                   <p class="mb-0">
-                    We envision schools where every student feels seen and supported. Through collaboration
-                    and advocacy, we aim to create lasting change driven by diversity and community leadership.
+                    A world where every student knows their roots, feels valued and connected, and thrives with confidence, purpose, shared humanity, with a can-do mindset.
                   </p>
                 </div>
               </div>
@@ -267,7 +274,7 @@
 
         <div class="leadership-section aos-init aos-animate" data-aos="fade-up">
           <div class="section-header text-center">
-            <h2 class="title">Division Of Learning</h2>
+            <h2 class="title">S</h2>
           </div>
 
           <div class="dol-card-block">
@@ -373,63 +380,67 @@
               aria-hidden="true" >
             
               <div class="col-md-12">
-                <h3 class="text-center text-white"><strong>DIVISION OF LEARNING</strong></h3>
+                <h3 class="text-center text-white"><strong>DIVISIONS OF LEARNING</strong></h3>
                 <div class="dol-home-cards">
                   {{-- PRIMARY --}}
                   <div class="dol-card dol-primary">
-                    <!-- <div class="dol-avatar">
+                    <div class="dol-avatar">
                       <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
-                    </div> -->
+                    </div>
 
                     <div class="dol-paper"></div>
 
                     <div class="dol-body">
                       <h3 class="mb-3">Primary</h3>
                       <!-- <p class="dol-grade">Grade (1-3)</p> -->
-
-                      <p class="dol-text">
-                        Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This stage will build connection, identity and belonging. Students begin to see themselves in the learning.
-                      </p>
-                      <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                      <div class="dol-body-content">
+                        <p class="dol-text">
+                          Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This stage will build connection, identity and belonging. Students begin to see themselves in the learning.
+                        </p>
+                        <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                      </div>
                     </div>
                   </div>
 
                   {{-- JUNIOR / INTERMEDIATE --}}
                   <div class="dol-card dol-junior">
-                    <!-- <div class="dol-avatar">
+                    <div class="dol-avatar">
                       <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior/Intermediate" class="img-fluid">
-                    </div> -->
+                    </div>
 
                     <div class="dol-paper"></div>
 
                     <div class="dol-body">
                       <h3 class="mb-3">Junior/Intermediate</h3>
-                      <!-- <p class="dol-grade">Grade (4-6)</p> -->
+                      <div class="dol-body-content">
+                        <!-- <p class="dol-grade">Grade (4-6)</p> -->
 
-                      <p class="dol-text">
-                        Junior Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. The foundation of connection, identity and belonging is strengthened through broader applications.
-                      </p>
-                      <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                        <p class="dol-text">
+                          Junior Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. The foundation of connection, identity and belonging is strengthened through broader applications.
+                        </p>
+                        <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                      </div>
                     </div>
                   </div>
 
                   {{-- HIGH SCHOOL --}}
                   <div class="dol-card dol-high">
-                    <!-- <div class="dol-avatar">
+                    <div class="dol-avatar">
                       <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
-                    </div> -->
+                    </div>
 
                     <div class="dol-paper"></div>
 
                     <div class="dol-body">
                       <h3 class="mb-3">High School</h3>
                       <!-- <p class="dol-grade">Grade (9-12)</p> -->
+                      <div class="dol-body-content">
+                        <p class="dol-text">
+                          High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully.  This is the final step in students affirming their identities and belonging.
+                        </p>
 
-                      <p class="dol-text">
-                        High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully.  This is the final step in students affirming their identities and belonging.
-                      </p>
-
-                      <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                        <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -506,9 +517,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 We have an opportunity to connect all youth and in particular Black youth with positive
                 stories and images about Black History, not just for February, but for the whole year.
               </p>
@@ -540,9 +549,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 The diversity of these activities and the multiple entry points for students of all academic
                 abilities, make this specific resource, very user friendly, fun, but perhaps most important,
                 engaging for all grade levels.
@@ -575,9 +582,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 It was incredible also to witness everyone in the class eager to participate within Black and
                 African music and culture.
               </p>
@@ -609,9 +614,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 All I ever heard about was slavery, and so many sad stories. Now I understand that there is so
                 much more.
               </p>
@@ -643,9 +646,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 It's important to have a curriculum that responds to our equity, diversity and inclusion goals
                 in a tangible way.
               </p>
@@ -677,9 +678,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 My Place in this World offers the opportunity for boys such as mine to be able to understand
                 African history and understand what their ancestors contributed to the global society.
               </p>
@@ -711,9 +710,7 @@
               </div>
             </div>
 
-            <div class="slider-content">
-              <h1 class="mt-3"><i class="bi bi-quote"></i></h1>
-              <p>
+            <div class="slider-content"><p>
                 It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and
                 inspires children to reach their full potential. Every child deserves to know who they are and
                 that they have a place in this world.
@@ -758,7 +755,7 @@
       >
 
       <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-lg-6 mb-3" data-aos="fade-up" data-aos-delay="300">
             <div class="tv-wrap">
               <!-- VIDEO (goes inside the screen area) -->
@@ -780,7 +777,7 @@
           <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
             <div class="alumni-intro">
               <h2><strong>How to Include Everyone in Education</strong></h2>
-              <p>Our team believes that the best advocacy comes from the people who will benefit from using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.</p>
+              <p>Please watch this important video then click “Say Hi”</p>
             </div>
             <div class="text-center">
                 <a href="{{ route('contact.show') }}" class="btn btn-danger">Say Hi!</a>

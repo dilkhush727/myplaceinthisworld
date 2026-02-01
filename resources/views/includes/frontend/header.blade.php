@@ -13,7 +13,7 @@
           <li><a href="{{ route('about') }}" class="{{ Route::currentRouteName() == 'about' ? 'active' : '' }}">About Us</a></li>
           <li><a href="{{ route('membership') }}" class="{{ Route::currentRouteName() == 'membership' ? 'active' : '' }}">Membership</a></li>
           <li><a href="{{ route('gallery.index') }}" class="{{ Route::currentRouteName() == 'gallery.index' ? 'active' : '' }}">Gallery of Growth</a></li>
-          <li><a href="{{ route('division.of.learning') }}" class="{{ Route::currentRouteName() == 'division.of.learning' ? 'active' : '' }}">Division of Learning</a></li>
+          <li><a href="{{ route('division.of.learning') }}" class="{{ Route::currentRouteName() == 'division.of.learning' ? 'active' : '' }}">Divisions of Learning</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
