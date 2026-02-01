@@ -3034,7 +3034,7 @@ section,
   line-height: 1.6;
   font-size: 15px;
   box-shadow: 0 12px 20px rgba(0,0,0,0.18);
-  min-height: 2px;
+  min-height: 245px;
 }
 
 .mission-card-red{ background: #C61C23; }
