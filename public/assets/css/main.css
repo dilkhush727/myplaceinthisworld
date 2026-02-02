@@ -9183,6 +9183,10 @@ section,
   .dol-home-cards .dol-avatar {
     top: unset;
   }
+  
+  .dol-home-image-bottom-left{
+    display: none;
+  }
 }
 .text-justify{
   text-align: justify;
