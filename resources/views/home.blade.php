@@ -767,7 +767,7 @@
               </div>
 
               <!-- TV FRAME IMAGE (on top) -->
-              <img src="{{ asset('assets/img/tv-frame.png') }}" class="tv-frame" alt="TV Frame">
+              <img src="{{ asset('assets/img/tv-frame.svg') }}" class="tv-frame" alt="TV Frame">
             </div>
           </div>
           <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">

@@ -22503,6 +22503,19 @@ select.form-control[data-multiselectsplitter-firstselect-selector], select.form-
   border-radius: 0 28px 0 28px;
 }
 
+
+.btn-danger{
+  background-color: #B20000 !important;
+  border-color: #B20000 !important;
+  color: #ffffff !important;
+}
+.btn-danger:hover{
+  background-color: #8b0000 !important;
+  border-color: #8b0000 !important;
+}
+.bg-red{
+  background-color: #CC2028 !important;
+}
 #task-panel-container h2,
 #task-panel-container h3,
 #task-panel-container h4,

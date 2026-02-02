@@ -2998,8 +2998,9 @@ section,
 }
 
 .mission-illustration-left{
-  left: 40px;
-  bottom: -2px;
+      left: 10px;
+    bottom: -2px;
+        width: 30%;
 }
 
 .mission-illustration-right{
@@ -7713,14 +7714,10 @@ section,
   position: absolute;
   z-index: 1;
   overflow: hidden;
-
-  /* IMPORTANT: adjust these 4 values to match your TV PNG screen area */
-  top: 12%;
-  left: 10%;
-  width: 80%;
-  height: 70%;
-
-  border-radius: 18px; /* optional if screen has rounded corners */
+  top: 23%;
+  left: 8%;
+  width: 84%;
+  height: 50%;
 }
 
 /* Fill the screen area */

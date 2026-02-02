@@ -40,7 +40,7 @@
                         class="img-fluid w-100"
                         style="height:190px; object-fit:cover;">
                   @else
-                    <div style="background:#e63946; height:190px;"></div>
+                    <div style="background:#CC2028; height:190px;"></div>
                   @endif
 
                   <span class="badge bg-success position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill"
@@ -49,7 +49,7 @@
                   </span>
                 </div>
 
-                <h2 class="h5 fw-bold mb-2">{{ $course->title }}</h2>
+                <h2 class="h5 fw-bold mb-2 text-center">{{ $course->title }}</h2>
 
                 <!-- @if($course->summary)
                   <p class="mb-4" style="font-size:0.9rem; line-height:1.6;;height: 210px;overflow-y: auto;">
