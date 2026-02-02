@@ -9180,6 +9180,9 @@ section,
     padding-top: 105px;
     min-height: 500px;
   }
+  .dol-home-cards .dol-avatar {
+    top: unset;
+  }
 }
 .text-justify{
   text-align: justify;
