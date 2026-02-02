@@ -10,7 +10,7 @@
     <div class="text-center mb-5">
       <a href="#"
          class="btn btn-lg rounded-pill px-5 py-3"
-         style="background-color:#d7263d; color:#fff; font-weight:600; box-shadow:0 10px 20px rgba(0,0,0,0.18);"
+         style="background-color:#CC2028; color:#fff; font-weight:600; box-shadow:0 10px 20px rgba(0,0,0,0.18);"
          data-bs-toggle="modal"
          data-bs-target="#instructionalVideosModal">
         Teacher Instructional Video
@@ -24,7 +24,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="dol-card dol-primary">
             <div class="dol-avatar">
-              <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
+              <img src="{{ asset('assets/img/person/primary-avatar.svg') }}" alt="Primary" class="img-fluid">
             </div>
 
             <div class="dol-paper"></div>
@@ -50,7 +50,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="dol-card dol-junior">
             <div class="dol-avatar">
-              <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior/Intermediate" class="img-fluid">
+              <img src="{{ asset('assets/img/person/junior-avatar.svg') }}" alt="Junior/Intermediate" class="img-fluid">
             </div>
 
             <div class="dol-paper"></div>
@@ -76,7 +76,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="dol-card dol-high">
             <div class="dol-avatar">
-              <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
+              <img src="{{ asset('assets/img/person/high-avatar.svg') }}" alt="High School" class="img-fluid">
             </div>
 
             <div class="dol-paper"></div>

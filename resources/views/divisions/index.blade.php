@@ -11,7 +11,7 @@
         <div class="col-md-4">
             <div class="card h-100 dol-card dol-primary">
                 <div class="dol-avatar">
-                    <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
+                    <img src="{{ asset('assets/img/person/primary-avatar.svg') }}" alt="Primary" class="img-fluid">
                 </div>
                 <div class="dol-paper"></div>
                 <div class="card-body d-flex flex-column dol-body">
@@ -53,7 +53,7 @@
         <div class="col-md-4">
             <div class="card h-100 dol-card dol-junior">
                 <div class="dol-avatar">
-                    <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior" class="img-fluid">
+                    <img src="{{ asset('assets/img/person/junior-avatar.svg') }}" alt="Junior" class="img-fluid">
                 </div>
                 <div class="dol-paper"></div>
                 <div class="card-body d-flex flex-column dol-body">
@@ -96,7 +96,7 @@
         <div class="col-md-4">
             <div class="card h-100 dol-card dol-high">
                 <div class="dol-avatar">
-                    <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
+                    <img src="{{ asset('assets/img/person/high-avatar.svg') }}" alt="High School" class="img-fluid">
                 </div>
                 <div class="dol-paper"></div>
                 <div class="card-body d-flex flex-column dol-body">

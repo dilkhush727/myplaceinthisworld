@@ -3000,7 +3000,7 @@ section,
 .mission-illustration-left{
       left: 10px;
     bottom: -2px;
-        width: 30%;
+        width: 24%;
 }
 
 .mission-illustration-right{
@@ -7711,13 +7711,13 @@ section,
 }
 /* This is the "screen window" area that crops the video */
 .tv-screen{
-  position: absolute;
-  z-index: 1;
-  overflow: hidden;
-  top: 23%;
-  left: 8%;
-  width: 84%;
-  height: 50%;
+      position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    top: 8%;
+    left: 6%;
+    width: 88%;
+    height: 77%;
 }
 
 /* Fill the screen area */
@@ -8750,7 +8750,7 @@ section,
 .header-texture .textured-img{
   background-image: url(../img/textured-header.svg);
   height: 42px;
-  background-size: cover;
+  background-size: contain;
 }
 
 .footer-texture{
@@ -8760,7 +8760,7 @@ section,
 .footer-texture .textured-img{
   background-image: url(../img/textured-footer.svg);
   height: 54px;
-  background-size: cover;
+  background-size: contain;
 }
 @media (max-width: 767px) {
   .header-texture .textured-img, .footer-texture .textured-img{
@@ -8823,7 +8823,7 @@ section,
 .dol-home-cards{
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .dol-home-cards .dol-card{

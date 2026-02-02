@@ -150,12 +150,6 @@
                     fill="#ce2129"
                     data-info="<div>Country: Seychelles</div><div>Capital: Victoria</div>" />
 
-                    <!-- Cabo Verde (Cape Verde) -->
-<circle id="Cabo_Verde"
-        cx="120" cy="340" r="8"
-        fill="#ce2129"
-        style="stroke:#000000;stroke-linecap:round"
-        data-info="<div>Country: Cabo Verde</div><div>Capital: Praia</div>" />
 
             </g>
 
@@ -183,56 +177,56 @@
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/hand.png') }}" alt="Willingness" class="journey-img">
+            <img src="{{ asset('assets/img/icons/hand.svg') }}" alt="Willingness" class="journey-img">
             </div>
             <div class="journey-label mt-3">Willingness</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/brain.png') }}" alt="Open Mind" class="journey-img">
+            <img src="{{ asset('assets/img/icons/brain.svg') }}" alt="Open Mind" class="journey-img">
             </div>
             <div class="journey-label mt-3">Open Mind</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/heart.png') }}" alt="Cultural Sensitivity and Awareness" class="journey-img">
+            <img src="{{ asset('assets/img/icons/heart.svg') }}" alt="Cultural Sensitivity and Awareness" class="journey-img">
             </div>
             <div class="journey-label mt-3">Cultural Sensitivity<br>and Awareness</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/question.png') }}" alt="Don't Assume" class="journey-img">
+            <img src="{{ asset('assets/img/icons/question.svg') }}" alt="Don't Assume" class="journey-img">
             </div>
             <div class="journey-label mt-3">Don't Assume (they<br>know, they don't know)</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/light2.png') }}" alt="Stay focused on Big Ideas" class="journey-img">
+            <img src="{{ asset('assets/img/icons/light2.svg') }}" alt="Stay focused on Big Ideas" class="journey-img">
             </div>
             <div class="journey-label mt-3">Stay focused on Big<br>Ideas (changing the narrative)</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/thumbsup.png') }}" alt="Validate (the Black Experience)" class="journey-img">
+            <img src="{{ asset('assets/img/icons/thumbsup.svg') }}" alt="Validate (the Black Experience)" class="journey-img">
             </div>
             <div class="journey-label mt-3">Validate (the Black<br>Experience)</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/king.png') }}" alt="Know Your Purpose" class="journey-img">
+            <img src="{{ asset('assets/img/icons/king.svg') }}" alt="Know Your Purpose" class="journey-img">
             </div>
             <div class="journey-label mt-3">Know Your Purpose</div>
         </div>
 
         <div class="journey-item">
             <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/people.png') }}" alt="Benefit All" class="journey-img">
+            <img src="{{ asset('assets/img/icons/people.svg') }}" alt="Benefit All" class="journey-img">
             </div>
             <div class="journey-label mt-3">Benefit All</div>
         </div>
@@ -244,11 +238,11 @@
 
 
 
-<section class="founders-decks py-5 bg-white">
+<section class="founders-decks pt-5 pb-0 bg-white">
   <div class="container-fluid">
 
     <!-- ===== Deck 1 (RED) ===== -->
-    <div class="row align-items-center mb-5 position-relative">
+    <div class="row align-items-center position-relative" style="border-bottom: solid 2px #c6c6c6;">
       <div class="col-12 col-lg-7">
 
         <div class="deck deck--red" data-card-deck>
@@ -296,7 +290,7 @@
 
 
     <!-- ===== Deck 2 (GREEN) ===== -->
-    <div class="row align-items-center flex-lg-row-reverse position-relative">
+    <div class="row align-items-center flex-lg-row-reverse position-relative" style="border-bottom: solid 2px #c6c6c6;">
       <div class="col-12 col-lg-7">
 
         <div class="deck deck--green" data-card-deck>

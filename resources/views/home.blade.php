@@ -16,15 +16,27 @@
               <h1>Inspiring Excellence Through Education</h1>
               <p><strong>At My Place in This World,</strong> we believe education is the key to unlocking and fostering every student's potential. We also believe that when students understand where they come from, they develop a stronger sense of identity, confidence, and connection to the world around them. Our thoughtfully crafted educational resources build a strong sense of belonging and pride for Black students while cultivating respect, understanding, and allyship among their non-Black peers.</p>
             </div>
-            <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/img/banner-imgs/slide3.svg" alt="A Black student with curly hair and glasses smiles while reading a paper at a desk in a classroom, with other students working in the background." class="img-fluid main-image">
-              <div class="image-overlay">
+           <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
+
+              <div class="ratio ratio-16x9 hero-video">
+                <iframe
+                  src="https://www.youtube.com/embed/VNfctvEShVY?rel=0&modestbranding=1"
+                  title="YouTube video"
+                  class="rounded-5"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <!-- <div class="image-overlay">
                 <div class="badge-accredited">
                   <i class="bi bi-patch-check-fill"></i>
                   <span>Accredited Excellence</span>
                 </div>
-              </div>
+              </div> -->
+
             </div>
+
             <div class="col-lg-12 hero-media" data-aos="zoom-in" data-aos-delay="300">
               <p>By celebrating our glorious past of Black excellence and achievement prior to slavery and colonialism where Blacks made significant contributions to world civilization; we take a strengths-based, hopeful, and non-blaming approach that honors heritage, builds confidence, and supports a mindset of excellence for all learners. Through this shared understanding of history and humanity, we create learning environments where every student feels valued, empowered, and positioned for success.</p>
               <div class="action-buttons">
@@ -513,10 +525,13 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 We have an opportunity to connect all youth and in particular Black youth with positive
                 stories and images about Black History, not just for February, but for the whole year.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Marcia Smellie</h3>
             </div>
 
@@ -545,11 +560,14 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 The diversity of these activities and the multiple entry points for students of all academic
                 abilities, make this specific resource, very user friendly, fun, but perhaps most important,
                 engaging for all grade levels.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Taanya Solanki</h3>
             </div>
 
@@ -578,10 +596,13 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 It was incredible also to witness everyone in the class eager to participate within Black and
                 African music and culture.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Jennifer Colacrai</h3>
             </div>
 
@@ -610,10 +631,13 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 All I ever heard about was slavery, and so many sad stories. Now I understand that there is so
                 much more.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Mela Gebremichael</h3>
             </div>
 
@@ -642,10 +666,13 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 It's important to have a curriculum that responds to our equity, diversity and inclusion goals
                 in a tangible way.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Sharon Adie</h3>
             </div>
 
@@ -674,10 +701,13 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 My Place in this World offers the opportunity for boys such as mine to be able to understand
                 African history and understand what their ancestors contributed to the global society.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Brenda Tibingana</h3>
             </div>
 
@@ -706,11 +736,14 @@
               </div>
             </div>
 
-            <div class="slider-content"><p>
+            <div class="slider-content">
+              <i class="bi bi-quote"></i>
+              <p class="mb-0">
                 It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and
                 inspires children to reach their full potential. Every child deserves to know who they are and
                 that they have a place in this world.
               </p>
+              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Karl Subban</h3>
             </div>
 
