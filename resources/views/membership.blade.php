@@ -63,7 +63,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
               <div class="tour-visual text-center">
-                <img src="assets/img/membership/member-primary.svg" class="img-fluid rounded-circle">
+                <img src="assets/img/membership/member-primary.svg" class="img-fluid rounded-circle" alt="A young Black girl with curly hair concentrates while writing or drawing on paper with a pencil.">
               </div>
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
@@ -122,7 +122,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
               <div class="tour-visual text-center">
-                <img src="assets/img/membership/member-junior.svg" class="img-fluid rounded-circle">
+                <img src="assets/img/membership/member-junior.svg" class="img-fluid rounded-circle" alt="A asian boy focuses intently while writing with a pencil on paper.">
               </div>
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
@@ -181,7 +181,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
               <div class="tour-visual text-center">
-                <img src="assets/img/membership/member-high-school.svg" class="img-fluid rounded-circle">
+                <img src="assets/img/membership/member-high-school.svg" class="img-fluid rounded-circle" alt="A young white female wearing glasses leans over a desk while writing with a pencil.">
               </div>
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">

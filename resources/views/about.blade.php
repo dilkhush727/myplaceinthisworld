@@ -64,7 +64,7 @@
             <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
 
             <h4>Map of Africa</h4>
-            <p>This interactive tool invites you to explore the African continent! Hover over any country to uncover its name and unique history.</p>
+            <p>This interactive tool invites you to explore the African continent! Hover over any country to uncover its name and capital.</p>
                 
             <div id="info-box"></div>
 
@@ -283,7 +283,7 @@
       </div>
 
       <div class="col-12 col-lg-5 text-center">
-        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/lorraine-harris.png') }}" alt="Lorraine Harris">
+        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/lorraine-harris.png') }}" alt="A smiling Black woman wears a colorful patterned outfit and headwrap, standing against a soft yellow background.">
       </div>
       <img class="founder-pattern d-none d-lg-block" src="{{ asset('assets/img/texture-3.png') }}" alt="" aria-hidden="true">
     </div>
@@ -336,7 +336,7 @@
       </div>
 
       <div class="col-12 col-lg-5 text-center">
-        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/michael-harris.png') }}" alt="Michael Harris">
+        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/michael-harris.png') }}" alt="A smiling Black man wearing a white button-up shirt stands against a yellow painted background, conveying warmth, approachability, and confidence.">
       </div>
       <img class="founder-pattern founder-pattern--left d-none d-lg-block" src="{{ asset('assets/img/texture-3.png') }}" alt="" aria-hidden="true">
     </div>

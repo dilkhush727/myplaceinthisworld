@@ -9,7 +9,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <!-- <li><a href="{{ url('/') }}" class="{{ Route::currentRouteName() == 'home' ? 'active' : '' }}">Home</a></li> -->
+          <li><a href="{{ url('/') }}" class="{{ Route::currentRouteName() == 'home' ? 'active' : '' }}">Home</a></li>
           <li><a href="{{ route('about') }}" class="{{ Route::currentRouteName() == 'about' ? 'active' : '' }}">About Us</a></li>
           <li><a href="{{ route('membership') }}" class="{{ Route::currentRouteName() == 'membership' ? 'active' : '' }}">Membership</a></li>
           <li><a href="{{ route('gallery.index') }}" class="{{ Route::currentRouteName() == 'gallery.index' ? 'active' : '' }}">Gallery of Growth</a></li>

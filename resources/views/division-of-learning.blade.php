@@ -160,12 +160,18 @@
               <div class="text-center py-3 fw-bold border-bottom" style="font-size:1.35rem;">
                 English
               </div>
+
+              {{-- YouTube Embed (EN) --}}
               <div class="p-0" style="background:#000;">
-                <video id="teacherVideoEn" controls playsinline 
-                       style="width:100%; height:auto; max-height:75vh; display:block;">
-                  <source src="{{ asset('assets/videos/teacher-instructional-en.mp4') }}" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    id="teacherVideoEn"
+                    src="https://www.youtube.com/embed/bIY5hxH1nIg?enablejsapi=1&rel=0&modestbranding=1"
+                    title="Teacher Instructional Video - English"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
               </div>
             </div>
 
@@ -174,12 +180,18 @@
               <div class="text-center py-3 fw-bold border-bottom" style="font-size:1.35rem;">
                 Francophone
               </div>
+
+              {{-- YouTube Embed (FR) --}}
               <div class="p-0" style="background:#000;">
-                <video id="teacherVideoFr" controls playsinline
-                       style="width:100%; height:auto; max-height:75vh; display:block;">
-                  <source src="{{ asset('assets/videos/teacher-instructional-fr.mp4') }}" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    id="teacherVideoFr"
+                    src="https://www.youtube.com/embed/3wlCVseX3cI?enablejsapi=1&rel=0&modestbranding=1"
+                    title="Teacher Instructional Video - French"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
               </div>
             </div>
 
@@ -198,8 +210,8 @@
     const modalEl = document.getElementById('instructionalVideosModal');
     const carouselEl = document.getElementById('teacherVideoCarousel');
 
-    const videoEn = document.getElementById('teacherVideoEn');
-    const videoFr = document.getElementById('teacherVideoFr');
+    const iframeEn = document.getElementById('teacherVideoEn');
+    const iframeFr = document.getElementById('teacherVideoFr');
 
     if (!modalEl || !carouselEl) return;
 
@@ -218,44 +230,40 @@
       });
     };
 
-    // Pause all videos
-    const pauseAll = () => {
-      [videoEn, videoFr].forEach(v => {
-        if (!v) return;
-        v.pause();
-        v.currentTime = 0;
-      });
+    // Stop a YouTube iframe (requires enablejsapi=1 in src)
+    const stopYouTube = (iframe) => {
+      if (!iframe || !iframe.contentWindow) return;
+      iframe.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }),
+        '*'
+      );
     };
 
-    // When modal opens: reset to first slide and autoplay English
+    const stopAll = () => {
+      stopYouTube(iframeEn);
+      stopYouTube(iframeFr);
+    };
+
+    // When modal opens: reset to first slide and stop everything
     modalEl.addEventListener('shown.bs.modal', () => {
-      pauseAll();
+      stopAll();
       setDotActive(0);
 
       // ensure carousel starts at 0
       const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl, { interval: false });
       carousel.to(0);
-
-      // try autoplay (may be blocked unless muted)
-      const p = videoEn?.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
     });
 
     // When modal closes: stop everything
     modalEl.addEventListener('hidden.bs.modal', () => {
-      pauseAll();
+      stopAll();
     });
 
-    // When slide changes: pause other video + update dots + autoplay current
+    // When slide changes: stop both + update dots
     carouselEl.addEventListener('slid.bs.carousel', (e) => {
       const idx = e.to;
       setDotActive(idx);
-
-      pauseAll();
-
-      const current = idx === 0 ? videoEn : videoFr;
-      const p = current?.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
+      stopAll();
     });
   });
 </script>

@@ -130,7 +130,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content text-center" data-aos="fade-up" data-aos-delay="200">
-              <img src="{{ asset('assets/img/home-infographic.gif') }}" alt="An illustrated classroom scene shows a Black teacher wearing African-inspired clothing holding a colorful map of Africa while smiling students sit around a table. The students read books, look at a laptop displaying portraits of diverse Black children, and engage in discussion in a bright classroom decorated with Pan-African colors and symbols." class="img-fluid rounded-5">
+              <img src="{{ asset('assets/img/home-infographic.gif') }}" alt="An adult educator stands at a table with a small, diverse group of children who are smiling, talking, and working together on an activity, suggesting collaborative learning and positive classroom engagement." class="img-fluid rounded-5">
             </div>
           </div>
 
@@ -178,7 +178,7 @@
       <img
         src="{{ asset('assets/img/mission/character-left.svg') }}"
         class="mission-illustration mission-illustration-left d-none d-lg-block"
-        alt=""
+        alt="A smiling Black woman with natural curly hair wears a white shirt and shoulder strap, holding a notebook, against a yellow background."
         aria-hidden="true"
       >
 
@@ -238,7 +238,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
             <div class="hero-image-wrapper">
-              <img src="assets/img/research-home.gif" alt="Three young Black children sit side by side, focused on writing or drawing at a table, against a bold red background with abstract green shapes." class="img-fluid main-image">
+              <img src="assets/img/research-home.gif" alt="A smiling Indian man wearing glasses and formal attire holds multiple stacks of books in both arms, symbolizing academic effort, learning, and research." class="img-fluid main-image">
               <div class="floating-card" data-aos="zoom-in" data-aos-delay="400">
                 <div class="card-icon">
                   <i class="bi bi-people-fill"></i>
@@ -384,7 +384,7 @@
             <img
               src="{{ asset('assets/img/star-boy.svg') }}"
               class="dol-home-image-bottom-left"
-              alt="Illustration of a smiling Black child wearing a patterned Kente-style scarf, pointing upward toward a line of stars connected like a constellation, with a ladder reaching up toward the stars against a green background."
+              alt="A young Black child stands on a ladder, reaching upward toward a glowing star, symbolizing aspiration, curiosity and the pursuit of knowledge."
               aria-hidden="true" >
             
               <div class="col-md-12">
