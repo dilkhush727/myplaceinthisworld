@@ -44,7 +44,6 @@
     }
 
     .auth-left img{
-      width:50%;
       height:100%;
       object-fit:contain;
     }
@@ -212,7 +211,7 @@
         {{-- LEFT IMAGE --}}
         <div class="col-lg-6 d-none d-lg-block auth-left">
           {{-- change this image path to your own --}}
-          <img src="{{ asset('assets/img/login-image.png') }}" class="img-fluid" alt="Auth side image">
+          <img src="{{ asset('assets/img/login-image.svg') }}" class="img-fluid" alt="Auth side image">
         </div>
 
         {{-- RIGHT FORM --}}

@@ -2999,9 +2999,7 @@ section,
 
 .mission-illustration-left{
   left: 40px;
-  bottom: -30px;
-  width: 280px;           /* adjust */
-  max-width: 30vw;
+  bottom: -2px;
 }
 
 .mission-illustration-right{
@@ -5349,7 +5347,7 @@ section,
 
 .campus-facilities .campus-tour-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--surface-color) 0%, color-mix(in srgb, var(--surface-color), var(--accent-color) 3%) 100%);
+  /* background: linear-gradient(135deg, var(--surface-color) 0%, color-mix(in srgb, var(--surface-color), var(--accent-color) 3%) 100%); */
   border-radius: 25px;
   margin-bottom: 5rem;
 }
@@ -5362,6 +5360,7 @@ section,
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  letter-spacing: 3.5px;
 }
 
 @media (max-width: 768px) {
@@ -9076,6 +9075,10 @@ section,
 }
 
 /* ✅ Avatar (symmetric box) */
+.dol-home-cards .dol-avatar{
+  width: 85% !important;
+}
+
 .dol-v2 .dol-avatar{
   position: absolute;
   top: -120px;
@@ -9132,6 +9135,16 @@ section,
   object-fit: contain;
   display: block;
 }
+
+.dol-home-cards .dol-card .dol-avatar img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.dol-home-cards .dol-card.dol-primary .dol-avatar img{width: 80%;}
+.dol-home-cards .dol-card.dol-junior .dol-avatar img{width: 95%;}
 
 /* Button */
 .dol-v2 .dol-btn{

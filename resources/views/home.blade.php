@@ -46,9 +46,7 @@
                 <div class="text-center">
                   <img src="assets/img/featured-in/ctv.png" class="img-fluid">
                   <h5>CTV Collaboration</h5>
-                </div>
-
-                <div>
+                  
                   <small>Featured by CTV News for showcasing a curriculum that builds pride, representation and year-round engagement with Black history beyond a single month. </small>
                 </div>
                 </a>
@@ -60,8 +58,7 @@
                   <div class="text-center">
                     <img src="assets/img/featured-in/ontario.png" class="img-fluid">
                     <h5>Ontario Government</h5>
-                  </div>
-                <div>
+                    
                   <small>Endorsed and aligned with the Ontario Ministry of Education, with careful design ensuring curriculum expectations are met and educational standards are fully supported.</small>
                 </div>
                 </a>
@@ -74,8 +71,7 @@
                 <div class="text-center">
                   <img src="assets/img/featured-in/cbc.png" class="img-fluid">
                   <h5>CBC Collaboration</h5>
-                </div>
-                <div>
+                  
                   <small>Featured by CBC News, highlighting how My Place in This World reframes Black history by centering African kings, queens and pre-colonial excellence.</small>
                 </div>
                 </a>
@@ -87,8 +83,7 @@
                   <div class="text-center">
                     <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
                     <h5>Conestoga Learning</h5>
-                  </div>
-                <div>
+                    
                   <small>Partnered with Conestoga College students, who developed a full marketing and communications strategy to amplify our mission and long-term impact.</small>
                 </div>
                 </a>
@@ -169,7 +164,7 @@
 
       <!-- LEFT CHARACTER -->
       <img
-        src="{{ asset('assets/img/mission/character-left.png') }}"
+        src="{{ asset('assets/img/mission/character-left.svg') }}"
         class="mission-illustration mission-illustration-left d-none d-lg-block"
         alt=""
         aria-hidden="true"
@@ -203,7 +198,7 @@
                 <h2 class="mission-heading">OUR VISION</h2>
                 <div class="mission-card mission-card-green" data-aos="zoom-in" data-aos-delay="300">
                   <p class="mb-0">
-                    A world where every student knows their roots, feels valued and connected, and thrives with confidence, purpose, shared humanity, with a can-do mindset.
+                    A world where every student knows their roots, feels valued and connected, and thrives with confidence, purpose, shared humanity, with a can-do mindset. We envision a school where every student feels seen, heard and celebrated within their learnning.
                   </p>
                 </div>
               </div>
@@ -221,17 +216,17 @@
     <section id="students-life-block" class="students-life-block custom-section section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title pb-0" data-aos="fade-up">
         <h2 class="mb-0 text-white">Research</h2>
         <!-- <p>What does research say about "My Place"?</p> -->
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row align-items-center g-5 mb-5">
+        <div class="row align-items-center g-5">
           <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
             <div class="hero-image-wrapper">
-              <img src="assets/img/kids-studying.png" alt="Three young Black children sit side by side, focused on writing or drawing at a table, against a bold red background with abstract green shapes." class="img-fluid main-image">
+              <img src="assets/img/research-home.gif" alt="Three young Black children sit side by side, focused on writing or drawing at a table, against a bold red background with abstract green shapes." class="img-fluid main-image">
               <div class="floating-card" data-aos="zoom-in" data-aos-delay="400">
                 <div class="card-icon">
                   <i class="bi bi-people-fill"></i>
@@ -242,6 +237,7 @@
                 </div>
               </div>
             </div>
+
           </div>
 
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
@@ -374,7 +370,7 @@
 
             <!-- TOP PATTERN -->
             <img
-              src="{{ asset('assets/img/star-boy-ladder.png') }}"
+              src="{{ asset('assets/img/star-boy.svg') }}"
               class="dol-home-image-bottom-left"
               alt="Illustration of a smiling Black child wearing a patterned Kente-style scarf, pointing upward toward a line of stars connected like a constellation, with a ladder reaching up toward the stars against a green background."
               aria-hidden="true" >
@@ -385,7 +381,7 @@
                   {{-- PRIMARY --}}
                   <div class="dol-card dol-primary">
                     <div class="dol-avatar">
-                      <img src="{{ asset('assets/img/person/primary-avatar.png') }}" alt="Primary" class="img-fluid">
+                      <img src="{{ asset('assets/img/person/primary-avatar.svg') }}" alt="Primary" class="img-fluid">
                     </div>
 
                     <div class="dol-paper"></div>
@@ -405,7 +401,7 @@
                   {{-- JUNIOR / INTERMEDIATE --}}
                   <div class="dol-card dol-junior">
                     <div class="dol-avatar">
-                      <img src="{{ asset('assets/img/person/junior-avatar.png') }}" alt="Junior/Intermediate" class="img-fluid">
+                      <img src="{{ asset('assets/img/person/junior-avatar.svg') }}" alt="Junior/Intermediate" class="img-fluid">
                     </div>
 
                     <div class="dol-paper"></div>
@@ -426,7 +422,7 @@
                   {{-- HIGH SCHOOL --}}
                   <div class="dol-card dol-high">
                     <div class="dol-avatar">
-                      <img src="{{ asset('assets/img/person/high-avatar.png') }}" alt="High School" class="img-fluid">
+                      <img src="{{ asset('assets/img/person/high-avatar.svg') }}" alt="High School" class="img-fluid">
                     </div>
 
                     <div class="dol-paper"></div>
