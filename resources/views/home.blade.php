@@ -262,7 +262,7 @@
               <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">My Place in This World curriculum aligns with these findings and aims to bring positive life outcomes, especially for BIPOC students.</p>
 
               <div class="cta-section" data-aos="fade-up" data-aos-delay="600">
-                <a href="{{ route(name: 'about') }}" class="btn-primary cta-warning">Learn More</a>
+                <a href="https://dash.harvard.edu/server/api/core/bitstreams/3adafce6-8d40-4b54-b966-d673334f1ddc/content" class="btn-primary cta-warning" target="_blank">Learn More</a>
               </div>
             </div>
           </div>
@@ -526,12 +526,10 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                We have an opportunity to connect all youth and in particular Black youth with positive
-                stories and images about Black History, not just for February, but for the whole year.
+                "We have an opportunity to connect all youth and in particular Black youth with positive
+                stories and images about Black History, not just for February, but for the whole year."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Marcia Smellie</h3>
             </div>
 
@@ -561,13 +559,11 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                The diversity of these activities and the multiple entry points for students of all academic
+                "The diversity of these activities and the multiple entry points for students of all academic
                 abilities, make this specific resource, very user friendly, fun, but perhaps most important,
-                engaging for all grade levels.
+                engaging for all grade levels."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Taanya Solanki</h3>
             </div>
 
@@ -597,12 +593,10 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                It was incredible also to witness everyone in the class eager to participate within Black and
-                African music and culture.
+                "It was incredible also to witness everyone in the class eager to participate within Black and
+                African music and culture."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Jennifer Colacrai</h3>
             </div>
 
@@ -632,12 +626,10 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                All I ever heard about was slavery, and so many sad stories. Now I understand that there is so
-                much more.
+                "All I ever heard about was slavery, and so many sad stories. Now I understand that there is so
+                much more."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Mela Gebremichael</h3>
             </div>
 
@@ -667,12 +659,10 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                It's important to have a curriculum that responds to our equity, diversity and inclusion goals
-                in a tangible way.
+                "It's important to have a curriculum that responds to our equity, diversity and inclusion goals
+                in a tangible way."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Sharon Adie</h3>
             </div>
 
@@ -702,12 +692,10 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                My Place in this World offers the opportunity for boys such as mine to be able to understand
-                African history and understand what their ancestors contributed to the global society.
+                "My Place in this World offers the opportunity for boys such as mine to be able to understand
+                African history and understand what their ancestors contributed to the global society."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Brenda Tibingana</h3>
             </div>
 
@@ -737,13 +725,11 @@
             </div>
 
             <div class="slider-content">
-              <i class="bi bi-quote"></i>
               <p class="mb-0">
-                It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and
+                "It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and
                 inspires children to reach their full potential. Every child deserves to know who they are and
-                that they have a place in this world.
+                that they have a place in this world."
               </p>
-              <i class="bi bi-quote" style="transform: scaleX(-1);display: inline-block;"></i>
               <h3>Karl Subban</h3>
             </div>
 

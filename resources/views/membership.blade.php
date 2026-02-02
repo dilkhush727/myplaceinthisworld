@@ -50,7 +50,7 @@
   </div>
   
 
-  <img class="pattern-right d-none d-lg-block" src="http://127.0.0.1:8000/assets/img/texture2.png" alt="" aria-hidden="true">
+  <!-- <img class="pattern-right d-none d-lg-block" src="http://127.0.0.1:8000/assets/img/texture2.png" alt="" aria-hidden="true"> -->
 
 </section>
 

@@ -41,7 +41,7 @@
                 sense of belonging, especially for Black students.
               </p>
 
-              <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
+              <a href="{{ route('register') }}" class="dol-btn">Learn Now</a>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
                 develop a sense of belonging, especially for Black students.
               </p>
 
-              <a href="{{ route('register') }}" class="dol-btn">Subscription Required</a>
+              <a href="{{ route('register') }}" class="dol-btn">Learn Now</a>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@
                 and lived experiences and to global competencies.
               </p>
 
-              <a href="{{ route('divisions.highschool') }}" class="dol-btn">Login Required</a>
+              <a href="{{ route('divisions.highschool') }}" class="dol-btn">Learn Now</a>
 
             </div>
           </div>

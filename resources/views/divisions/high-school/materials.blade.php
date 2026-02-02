@@ -533,6 +533,9 @@
           <a href="https://docs.google.com/forms/d/1jTB2O_Qt594p3j4I39AClq1hnFM9bqTHqCV_GCZejUc/copy" class="btn btn-outline-danger rounded-pill" target="_blank">
             Teacher Feedback Form
           </a>
+          <a href="https://docs.google.com/document/d/1gGXwMcJr5TS5sCM71waygUErclhA89tjLiVGZOeKJZs/copy" class="btn btn-outline-danger rounded-pill" target="_blank">
+            Assessment Rubric
+          </a>
           
         </div>
 
