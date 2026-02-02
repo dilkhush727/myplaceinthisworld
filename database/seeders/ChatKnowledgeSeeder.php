@@ -40,6 +40,7 @@ class ChatKnowledgeSeeder extends Seeder
                             'title' => $title,
                             'language' => $lang,
                             'content' => trim($chunk),
+                            'embedding' => null,
                         ]
                     );
                 }
@@ -57,6 +58,7 @@ class ChatKnowledgeSeeder extends Seeder
                     'title' => $title,
                     'language' => $lang,
                     'content' => $content,
+                    'embedding' => null,
                 ]
             );
         }
