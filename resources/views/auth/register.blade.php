@@ -32,6 +32,26 @@
       </div>
     </div>
 
+    {{-- School Name --}}
+    <div class="mb-3">
+      <label for="school_name" class="form-label fw-semibold">School Name</label>
+
+      <div class="input-icon">
+        <input id="school_name"
+              type="text"
+              name="school_name"
+              value="{{ old('school_name') }}"
+              required
+              autocomplete="organization"
+              class="form-control auth-input @error('school_name') is-invalid @enderror"
+              placeholder="Enter your school name">
+
+        @error('school_name')
+          <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+      </div>
+    </div>
+
     {{-- Email --}}
     <div class="mb-3">
       <label for="email" class="form-label fw-semibold">Email Address</label>

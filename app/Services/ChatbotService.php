@@ -11,39 +11,76 @@ class ChatbotService
         private ChatbotRetrievalService $retrieval
     ) {}
 
-    public function answer(string $userMessage, string $language = 'en'): array
+    public function answer(
+        string $userMessage,
+        string $language = 'en',
+        ?string $topicMessage = null,
+        ?string $previousAssistant = null,
+        bool $isContinuation = false
+    ): array
     {
         $language = $language ?: 'en';
 
         $persona = ChatKnowledgeDoc::where('key', "persona_rules_{$language}")->first();
 
-        $isDirect   = $this->isDirectRequest($userMessage);
-        $isGreeting = $this->isGreetingOrOnboarding($userMessage);
+        // Treat continuation as direct (so we respond immediately)
+        $isDirect = $this->isDirectRequest($userMessage) || $isContinuation;
 
-        // 1) Greeting: use persona onboarding behavior
-        if ($isGreeting) {
-            return $this->genericReply($userMessage, $language, $persona, mode: 'ONBOARDING');
-        }
+        // ✅ Use last meaningful topic for retrieval when user says "yes more details"
+        $retrievalQuery = ($isContinuation && $topicMessage) ? $topicMessage : $userMessage;
 
-        // 2) RAG attempt
-        $qVec = $this->openai->embed($userMessage);
+        // 1) RAG attempt
+        $qVec = $this->openai->embed($retrievalQuery);
         $top = $this->retrieval->topDocs($qVec, $language, 5);
         $bestScore = $top[0]['score'] ?? 0.0;
 
         $threshold = 0.30;
 
-        // 3) If no strong match => GENERAL KNOWLEDGE MODE for ANY question
-        if ($bestScore < $threshold) {
-            return $this->genericReply($userMessage, $language, $persona, mode: 'GENERAL_KNOWLEDGE');
+        // ✅ If this is a continuation but retrieval is weak, still expand previous assistant message
+        if ($isContinuation && $previousAssistant && $bestScore < $threshold) {
+            return $this->genericReply(
+                userMessage: $userMessage,
+                language: $language,
+                persona: $persona,
+                mode: 'CONTINUATION',
+                topicMessage: $topicMessage,
+                previousAssistant: $previousAssistant,
+                isContinuation: true
+            );
         }
 
-        // 4) If strong match => answer from docs only (RAG mode)
+        // 2) If no strong match => GENERAL KNOWLEDGE MODE
+        if ($bestScore < $threshold) {
+            return $this->genericReply(
+                userMessage: $userMessage,
+                language: $language,
+                persona: $persona,
+                mode: 'GENERAL_KNOWLEDGE',
+                topicMessage: $topicMessage,
+                previousAssistant: $previousAssistant,
+                isContinuation: $isContinuation
+            );
+        }
+
+        // 3) Strong match => answer from docs (RAG mode)
         $context = [];
         $sources = [];
 
         if ($persona) {
             $context[] = "### Persona Rules\n" . $persona->content;
             $sources[] = ['key' => $persona->key, 'title' => $persona->title, 'score' => null];
+        }
+
+        // ✅ Continuation anti-repeat guard (VERY IMPORTANT)
+        if ($isContinuation && $previousAssistant) {
+            $context[] =
+                "### Previous Assistant Message (DO NOT REPEAT VERBATIM)\n"
+                . $previousAssistant
+                . "\n\n"
+                . "RULES FOR CONTINUATION:\n"
+                . "- Do NOT restate the same activity title/summary again.\n"
+                . "- Add NEW details only (next layer): grade suggestion, learning goals, steps, assessment idea, materials/resources.\n"
+                . "- Keep it concise.\n";
         }
 
         foreach ($top as $row) {
@@ -58,18 +95,26 @@ class ChatbotService
             "MODE: RAG_ONLY",
             "STRICT RULES:",
             "- Answer ONLY using the provided CONTEXT.",
-            "- If the user asks something not supported by CONTEXT, say you can’t verify it and offer general help OR direct them to Contact Us.",
-            "- Do NOT guess details about this website, memberships, pricing, or specific activities unless they are explicitly present in CONTEXT.",
+            "- If the user asks something not supported by CONTEXT, say you can’t verify it and direct them to Contact Us.",
+            "- Do NOT guess details about this website, memberships, pricing, or specific activities unless explicitly present in CONTEXT.",
             "- Keep tone warm, friendly, informal, and educational.",
             "- Keep responses short (20–40 words) unless more explanation is clearly needed.",
-            "- If this is the FIRST message and DirectRequest=false, start by asking: how they are doing, what support they need, and English/French preference.",
             "- If DirectRequest=true, answer the request immediately (still warm tone).",
+            "- If IsContinuation=true (e.g., 'yes', 'more details', 'tell me more', 'continue'):",
+            "  * DO NOT ask a clarifying question.",
+            "  * DO NOT repeat the previous response.",
+            "  * Expand with NEW details only (grade level suggestion, steps, materials, assessment, learning outcomes) based on CONTEXT.",
             "",
             "CONTEXT:",
             implode("\n\n---\n\n", $context),
         ]);
 
-        $input = "DirectRequest=" . ($isDirect ? "true" : "false") . "\nUserMessage: " . $userMessage;
+        $input = implode("\n", array_filter([
+            "DirectRequest=" . ($isDirect ? "true" : "false"),
+            "IsContinuation=" . ($isContinuation ? "true" : "false"),
+            $topicMessage ? "TopicMessage: " . $topicMessage : null,
+            "UserMessage: " . $userMessage,
+        ]));
 
         $reply = $this->openai->respond($instructions, $input, 450);
 
@@ -82,12 +127,20 @@ class ChatbotService
     }
 
     /**
-     * General knowledge mode for anything (when no RAG match).
-     * Still avoids inventing website-specific facts.
+     * General knowledge / continuation mode.
+     * Still avoids inventing website-specific facts unless present in CONTEXT.
      */
-    private function genericReply(string $userMessage, string $language, ?ChatKnowledgeDoc $persona, string $mode = 'GENERAL_KNOWLEDGE'): array
+    private function genericReply(
+        string $userMessage,
+        string $language,
+        ?ChatKnowledgeDoc $persona,
+        string $mode = 'GENERAL_KNOWLEDGE',
+        ?string $topicMessage = null,
+        ?string $previousAssistant = null,
+        bool $isContinuation = false
+    ): array
     {
-        $isDirect = $this->isDirectRequest($userMessage);
+        $isDirect = $this->isDirectRequest($userMessage) || $isContinuation;
 
         $context = [];
         $sources = [];
@@ -95,6 +148,16 @@ class ChatbotService
         if ($persona) {
             $context[] = "### Persona Rules\n" . $persona->content;
             $sources[] = ['key' => $persona->key, 'title' => $persona->title, 'score' => null];
+        }
+
+        if ($isContinuation && $previousAssistant) {
+            $context[] =
+                "### Previous Assistant Message (DO NOT REPEAT VERBATIM)\n"
+                . $previousAssistant
+                . "\n\n"
+                . "RULES FOR CONTINUATION:\n"
+                . "- Do NOT restate the same title/summary again.\n"
+                . "- Add NEW details only.\n";
         }
 
         $instructions = implode("\n\n", [
@@ -107,13 +170,21 @@ class ChatbotService
             "- Keep tone warm, informal, and educational.",
             "- Keep responses short (20–40 words) unless more explanation is clearly needed.",
             "- Ask no more than two questions in a row before offering help.",
-            "- If this is the FIRST message and DirectRequest=false, ask: how they are doing, what support they need, and English/French preference.",
+            "- If IsContinuation=true:",
+            "  * DO NOT ask what they mean.",
+            "  * DO NOT repeat the previous assistant message.",
+            "  * Continue by adding NEW helpful details (steps, outcomes, materials, assessment).",
             "",
             "CONTEXT (may be empty):",
             implode("\n\n---\n\n", $context),
         ]);
 
-        $input = "DirectRequest=" . ($isDirect ? "true" : "false") . "\nUserMessage: " . $userMessage;
+        $input = implode("\n", array_filter([
+            "DirectRequest=" . ($isDirect ? "true" : "false"),
+            "IsContinuation=" . ($isContinuation ? "true" : "false"),
+            $topicMessage ? "TopicMessage: " . $topicMessage : null,
+            "UserMessage: " . $userMessage,
+        ]));
 
         $reply = $this->openai->respond($instructions, $input, 350);
 
@@ -125,6 +196,7 @@ class ChatbotService
         ];
     }
 
+    // (Not used right now, but kept)
     private function isGreetingOrOnboarding(string $msg): bool
     {
         $m = trim(mb_strtolower($msg));
@@ -151,8 +223,22 @@ class ChatbotService
         $m = trim(mb_strtolower($msg));
         if ($m === '') return false;
 
+        // Question mark = direct
         if (str_ends_with($m, '?')) return true;
 
+        // Continuation / confirmation phrases (treated as direct)
+        $continuations = [
+            'yes','yes please','yep','yeah','sure','ok','okay',
+            'more','more details','yes more details',
+            'tell me more','more info','more information',
+            'go on','continue','please continue','keep going'
+        ];
+
+        if (in_array($m, $continuations, true)) {
+            return true;
+        }
+
+        // Direct starters
         $starters = [
             'tell me','explain','what is','what are','how do','how to',
             'help me','give me','show me','can you','i need','i want',

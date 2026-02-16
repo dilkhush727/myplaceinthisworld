@@ -19,7 +19,7 @@
     bubble.style.whiteSpace = 'pre-wrap';
 
     if (role === 'user') {
-      bubble.classList.add('bg-success','text-white');
+      bubble.classList.add('bg-success', 'text-white');
     } else {
       bubble.classList.add('bg-white');
     }
@@ -50,15 +50,36 @@
 
   const ensureSession = async () => {
     let sid = localStorage.getItem(STORAGE_KEY);
-    if (sid) return sid;
+    if (sid) {
+      console.log('[Chatbot] session_id =', sid);
+      return sid;
+    }
 
     setStatus('Starting chat...');
     const data = await postJson('/chatbot/session', {});
     sid = data.session_id;
     localStorage.setItem(STORAGE_KEY, sid);
+    console.log('[Chatbot] session_id =', sid);
     setStatus('');
     return sid;
   };
+
+  // ✅ Reset button logic (clears session + UI)
+  const resetBtn = document.getElementById('chatbotResetBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      localStorage.removeItem(STORAGE_KEY);
+
+      messagesEl.innerHTML = `
+        <div class="text-muted small">
+          Hi! Ask me about High School activities or how to use the site.
+        </div>
+      `;
+
+      setStatus('Session reset. Say "hi" to start again.');
+      input.focus();
+    });
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -71,6 +92,9 @@
     try {
       setStatus('Thinking...');
       const sid = await ensureSession();
+
+      console.log('[Chatbot] sending', { session_id: sid, message: text });
+
       const data = await postJson('/chatbot/message', { session_id: sid, message: text });
       appendMsg('assistant', data.reply || 'Sorry — no reply.');
       setStatus('');
@@ -85,7 +109,7 @@
   const offcanvasEl = document.getElementById('chatbotOffcanvas');
   if (offcanvasEl) {
     offcanvasEl.addEventListener('shown.bs.offcanvas', async () => {
-      try { await ensureSession(); } catch(e) {}
+      try { await ensureSession(); } catch (e) {}
       input.focus();
     });
   }

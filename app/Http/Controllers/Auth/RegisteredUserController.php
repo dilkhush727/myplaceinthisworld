@@ -35,13 +35,14 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'school_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         // 1️⃣ Create a school entry for this user
         $school = School::create([
-            'name' => $request->name . "'s School",
+            'name' => $request->school_name,
         ]);
 
         // 2️⃣ Create user and link to school
