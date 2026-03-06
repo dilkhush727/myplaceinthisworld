@@ -79,7 +79,7 @@ class GalleryController extends Controller
     /**
      * Edit gallery (teacher can only edit their own)
      */
-    public function edit(Gallery $gallery)
+    public function edit($locate, Gallery $gallery)
     {
         if ($gallery->user_id !== auth()->id()) {
             abort(403, 'Unauthorized');
@@ -93,7 +93,7 @@ class GalleryController extends Controller
     /**
      * Update gallery (auto-reject after editing)
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $locate, Gallery $gallery)
     {
         if ($gallery->user_id !== auth()->id()) {
             abort(403, 'Unauthorized');
@@ -139,7 +139,7 @@ class GalleryController extends Controller
     /**
      * Delete gallery
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($locate, Gallery $gallery)
     {
         if ($gallery->user_id !== auth()->id()) {
             abort(403, 'Unauthorized');

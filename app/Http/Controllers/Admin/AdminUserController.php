@@ -41,7 +41,7 @@ class AdminUserController extends Controller
         return view('admin.users.index', compact('users', 'schools', 'role', 'schoolId', 'q'));
     }
 
-    public function show(User $user)
+    public function show($locate, User $user)
     {
         $user->load(['roles', 'school.memberships']);
 

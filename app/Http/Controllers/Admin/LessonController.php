@@ -25,7 +25,7 @@ class LessonController extends Controller
     }
 
     // Store new lesson
-    public function store(Request $request, Course $course)
+    public function store(Request $request, $locate, Course $course)
     {
         $data = $request->validate([
             'title'      => 'required|string|max:255',
@@ -48,7 +48,7 @@ class LessonController extends Controller
     }
 
     // Edit form
-    public function edit(Course $course, Lesson $lesson)
+    public function edit($locate, Course $course, Lesson $lesson)
     {
         // extra safety: ensure this lesson belongs to the course
         if ($lesson->course_id !== $course->id) {
@@ -59,7 +59,7 @@ class LessonController extends Controller
     }
 
     // Update lesson
-    public function update(Request $request, Course $course, Lesson $lesson)
+    public function update(Request $request, $locate, Course $course, Lesson $lesson)
     {
         if ($lesson->course_id !== $course->id) {
             abort(404);
@@ -85,7 +85,7 @@ class LessonController extends Controller
     }
 
     // Delete lesson
-    public function destroy(Course $course, Lesson $lesson)
+    public function destroy($locate, Course $course, Lesson $lesson)
     {
         if ($lesson->course_id !== $course->id) {
             abort(404);

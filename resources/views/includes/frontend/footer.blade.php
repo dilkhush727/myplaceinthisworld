@@ -7,7 +7,7 @@
       <div class="row gy-4 align-items-center">
         <div class="col-lg-2 col-md-12 footer-about">
           <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="My Place In This World">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="My Place In This World">
           </a>
         </div>
 
@@ -15,11 +15,21 @@
           
           <div class="d-flex justify-content-center align-items-center centered-content">
             <div class="content-wrapper text-center px-3">
-              <div class="highlight-text">CELEBRATION</div>
+              <div class="highlight-text">
+                  {{ t('home.highlight.celebration', 'CELEBRATION') }}
+              </div>
+
               <div class="dot-wrapper"><span class="dot"></span></div>
-              <div class="highlight-text">TRUTH</div>
+
+              <div class="highlight-text">
+                  {{ t('home.highlight.truth', 'TRUTH') }}
+              </div>
+
               <div class="dot-wrapper"><span class="dot"></span></div>
-              <div class="highlight-text">EMPOWERMENT</div>
+
+              <div class="highlight-text">
+                  {{ t('home.highlight.empowerment', 'EMPOWERMENT') }}
+              </div>
             </div>
           </div>
         
@@ -27,22 +37,31 @@
 
         <div class="col-lg-2 col-md-12 footer-links">
           <div>
-            <h3 class="mb-2">Follow us:</h3>
+            <h3 class="mb-2">
+                {{ t('footer.follow_us', 'Follow us:') }}
+            </h3>
             <div class="social-links d-flex mt-2">
               <a href="https://www.linkedin.com/in/my-place-in-this-world-3892b42b3/" target="_blank"><i class="bi bi-linkedin"></i></a>
               <a href="https://www.youtube.com/@myplaceinthisworld5850/featured" target="_blank"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
   
-          <a href="{{ route('contact.show') }}" class="btn btn-cta btn-danger mt-3">Contact Us</a>
+          <a href="{{ route('contact.show') }}" class="btn btn-cta btn-danger mt-3">
+              {{ t('common.contact_us', 'Contact Us') }}
+          </a>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <strong class="px-1 sitename">2021 MyPlaceinthisWorld</strong> <span>All Rights Reserved.</span>
-        | <a href="{{ route(name:'terms-and-conditions') }}" class="text-white">Terms and Conditions</a>
+      <p>
+        © <strong class="px-1 sitename">2021 MyPlaceinthisWorld</strong>
+        <span>{{ t('footer.rights', 'All Rights Reserved.') }}</span>
+        |
+        <a href="{{ route(name:'terms-and-conditions') }}" class="text-white">
+            {{ t('footer.terms', 'Terms and Conditions') }}
+        </a>
       </p>
     </div>
 

@@ -11,11 +11,21 @@
 
     <div class="student-organizations" data-aos="fade-up" data-aos-delay="200">
       <div class="text-end">
-        <a href="{{ route('login') }}" class="btn btn-danger"><i class="bi bi-plus"></i>New Gallery</a>
+        <a href="{{ route('login') }}" class="btn btn-danger">
+          <i class="bi bi-plus"></i>
+          {{ t('pages.gallery.new_gallery', 'New Gallery') }}
+        </a>
       </div>
-      <h3 class="text-center fw-bold h1">Gallery of Growth</h3>
-      <p class="mb-5">Welcome to the Gallery of Growth! Here, you will find the many amazing moments that educators using My Place have been able to capture. Feel free to use this space as inspiration for your classroom or simply appreciate the work that teachers around Ontario are doing right now!</p>
+      <h3 class="text-center fw-bold h1">
+        {{ t('pages.gallery.title', 'Gallery of Growth') }}
+      </h3>
 
+      <p class="mb-5">
+        {{ t(
+            'pages.gallery.description',
+            'Welcome to the Gallery of Growth! Here, you will find the many amazing moments that educators using My Place have been able to capture. Feel free to use this space as inspiration for your classroom or simply appreciate the work that teachers around Ontario are doing right now!'
+        ) }}
+      </p>
       <div class="masonry">
         @if ($galleries->isEmpty())
           <div class="alert alert-info text-center">

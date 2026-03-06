@@ -51,7 +51,7 @@ class TicketController extends Controller
     }
 
     // Show single ticket with replies
-    public function show(ContactMessage $ticket)
+    public function show($locate, ContactMessage $ticket)
     {
         $ticket->load('replies');
 
@@ -59,7 +59,7 @@ class TicketController extends Controller
     }
 
     // Store admin reply + email user
-    public function reply(Request $request, ContactMessage $ticket)
+    public function reply(Request $request, $locate, ContactMessage $ticket)
     {
         $data = $request->validate([
             'message' => 'required|string',
@@ -88,12 +88,12 @@ class TicketController extends Controller
         Mail::to($ticket->email)->send(new TicketReplyMail($ticket, $reply));
 
         return redirect()
-            ->route('admin.tickets.show', $ticket)
+            ->route('admin.tickets.show', [$locate, $ticket])
             ->with('success', 'Reply sent successfully.');
     }
 
     // Change ticket status
-    public function updateStatus(Request $request, ContactMessage $ticket)
+    public function updateStatus(Request $request, $locate, ContactMessage $ticket)
     {
         $data = $request->validate([
             'status' => 'required|in:open,closed',
@@ -103,7 +103,7 @@ class TicketController extends Controller
         $ticket->save();
 
         return redirect()
-            ->route('admin.tickets.show', $ticket)
+            ->route('admin.tickets.show', [$locate, $ticket])
             ->with('success', 'Ticket status updated.');
     }
 }

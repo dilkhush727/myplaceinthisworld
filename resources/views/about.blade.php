@@ -3,6 +3,10 @@
 @section('title', 'About Us')
 
 @section('content')
+
+
+@inject('deepl', \App\Services\DeeplTranslator::class)
+
 <!-- Tooltip for map - must be at top level -->
 <div id="infoBubble"></div>
 
@@ -13,8 +17,8 @@
 
     <!-- Section Title -->
     <div class="container section-title aos-init aos-animate pb-0" data-aos="fade-up">
-    <h2>About The Content</h2>
-    <p>What is My Place?</p>
+    <h1>{{ t('pages.about.heading', 'About The Content') }}</h1>
+    <h4>{{ t('pages.about.subheading', 'What is My Place?') }}</h4>
     </div><!-- End Section Title -->
 
 </section>
@@ -26,46 +30,77 @@
 
     <div class="row g-5">
         <div class="col-lg-6">
-            <div data-aos="fade-up" data-aos-delay="200">
-  <h2><strong>My Place in This World: Restoring Pride, Purpose, and Wellness in Black Student Learning</strong></h2>
+          <div data-aos="fade-up" data-aos-delay="200">
 
-  <!-- Always visible -->
-  <p>
-    The negative, systemic, and generational impact of the slavery narrative continues to haunt many young Black students as they face high levels of depression, suicide, and a lack of self-worth. The content of this curriculum focuses on the positive impact of the majestic Kings and Queens of Africa prior to the transatlantic slave trade. This allows both Black and non-Black students to develop a new respect and admiration for the Black race and culture that may not have been possible through slavery narratives.
-  </p>
-  <p>
-      The activities on our website include many videos and reading pieces to support student learning. When there is significant new information, we often use videos for reading and writing requirements. As concepts are reinforced, we gradually introduce more complex texts and shift to more challenging curricular skills, such as reading primary documents and expressing critical and creative thinking skills through the creation of texts.
-    </p>
+            <h2>
+              <strong>
+                {{ t(
+                    'pages.about.main_title',
+                    'My Place in This World: Restoring Pride, Purpose, and Wellness in Black Student Learning'
+                ) }}
+              </strong>
+            </h2>
 
-    <p>
-      My Place in this World effectively aligns with provincial curriculum expectations, school-board wellness initiatives, CRRP goals (culturally relevant and responsive pedagogy), and equity action plans.
-    </p>
+            <!-- Always visible -->
+            <p>
+              {{ t(
+                  'pages.about.paragraph_1',
+                  'The negative, systemic, and generational impact of the slavery narrative continues to haunt many young Black students as they face high levels of depression, suicide, and a lack of self-worth. The content of this curriculum focuses on the positive impact of the majestic Kings and Queens of Africa prior to the transatlantic slave trade. This allows both Black and non-Black students to develop a new respect and admiration for the Black race and culture that may not have been possible through slavery narratives.'
+              ) }}
+            </p>
 
-  <!-- Hidden initially -->
-  <div id="moreContent" class="d-none">
-    <p>
-      The activities are cross-curricular and varied in terms of challenge. The learning outcomes for each Placemat evolve with the level of difficulty. The elementary activities are balanced, being both specific and inquiry-based. The high school activities follow the curriculum more explicitly with a focus on 21st-century graduate expectations. Students will find the activities engaging and experience focused learning. Our Teacher Support Line provides a forum for feedback, questions, and clarification.
-    </p>
+            <p>
+              {{ t(
+                  'pages.about.paragraph_2',
+                  'The activities on our website include many videos and reading pieces to support student learning. When there is significant new information, we often use videos for reading and writing requirements. As concepts are reinforced, we gradually introduce more complex texts and shift to more challenging curricular skills, such as reading primary documents and expressing critical and creative thinking skills through the creation of texts.'
+              ) }}
+            </p>
 
-    <p>
-      Finally, thank you to all those who contributed to My Place in This World.
-    </p>
-  </div>
+            <p>
+              {{ t(
+                  'pages.about.paragraph_3',
+                  'My Place in this World effectively aligns with provincial curriculum expectations, school-board wellness initiatives, CRRP goals (culturally relevant and responsive pedagogy), and equity action plans.'
+              ) }}
+            </p>
 
-  <!-- Button -->
-  <button id="toggleBtn" type="button" class="btn btn-outline-dark mt-2">
-    Read More
-  </button>
-</div>
+            <!-- Hidden initially -->
+            <div id="moreContent" class="d-none">
+              <p>
+                {{ t(
+                    'pages.about.paragraph_4',
+                    'The activities are cross-curricular and varied in terms of challenge. The learning outcomes for each Placemat evolve with the level of difficulty. The elementary activities are balanced, being both specific and inquiry-based. The high school activities follow the curriculum more explicitly with a focus on 21st-century graduate expectations. Students will find the activities engaging and experience focused learning. Our Teacher Support Line provides a forum for feedback, questions, and clarification.'
+                ) }}
+              </p>
 
+              <p>
+                {{ t(
+                    'pages.about.paragraph_5',
+                    'Finally, thank you to all those who contributed to My Place in This World.'
+                ) }}
+              </p>
+            </div>
+
+            <!-- Button -->
+            <button id="toggleBtn" type="button" class="btn btn-outline-dark mt-2">
+              {{ t('common.read_more', 'Read More') }}
+            </button>
+
+          </div>
         </div>
 
         <div class="col-lg-6">
             <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
 
-            <h4>Map of Africa</h4>
-            <p>This interactive tool invites you to explore the African continent! Hover over any country to uncover its name and capital.</p>
-                
+            <h4>
+              {{ t('pages.about.map_title', 'Map of Africa') }}
+            </h4>
+
+            <p>
+              {{ t(
+                  'pages.about.map_description',
+                  'This interactive tool invites you to explore the African continent! Hover over any country to uncover its name and capital.'
+              ) }}
+            </p>  
             <div id="info-box"></div>
 
             <div class='my-legend'>
@@ -167,72 +202,108 @@
 </section><!-- /History Section -->
 
 <section class="educators-journey py-5 text-white">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-2 text-white">Educator's Journey</h2>
-        <p class="text-center mb-5">
-        Here are some things educators are going to need to go on this journey:
-        </p>
+  <div class="container">
 
-        <div class="journey-wrap d-flex flex-wrap justify-content-center gap-4 text-center">
+    <h2 class="text-center fw-bold mb-2 text-white">
+      {{ t('pages.about.educators.title', "Educator's Journey") }}
+    </h2>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/hand.svg') }}" alt="Willingness" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Willingness</div>
+    <p class="text-center mb-5">
+      {{ t('pages.about.educators.subtitle', 'Here are some things educators are going to need to go on this journey:') }}
+    </p>
+
+    <div class="journey-wrap d-flex flex-wrap justify-content-center gap-4 text-center">
+
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/hand.svg') }}"
+               alt="{{ t('pages.about.educators.willingness_alt', 'Willingness') }}"
+               class="journey-img">
         </div>
-
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/brain.svg') }}" alt="Open Mind" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Open Mind</div>
+        <div class="journey-label mt-3">
+          {{ t('pages.about.educators.willingness', 'Willingness') }}
         </div>
+      </div>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/heart.svg') }}" alt="Cultural Sensitivity and Awareness" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Cultural Sensitivity<br>and Awareness</div>
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/brain.svg') }}"
+               alt="{{ t('pages.about.educators.open_mind_alt', 'Open Mind') }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {{ t('pages.about.educators.open_mind', 'Open Mind') }}
+        </div>
+      </div>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/question.svg') }}" alt="Don't Assume" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Don't Assume (they<br>know, they don't know)</div>
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/heart.svg') }}"
+               alt="{{ t('pages.about.educators.cultural_alt', 'Cultural Sensitivity and Awareness') }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {!! t('pages.about.educators.cultural', 'Cultural Sensitivity<br>and Awareness') !!}
+        </div>
+      </div>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/light2.svg') }}" alt="Stay focused on Big Ideas" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Stay focused on Big<br>Ideas (changing the narrative)</div>
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/question.svg') }}"
+               alt="{{ t('pages.about.educators.dont_assume_alt', "Don't Assume") }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {!! t('pages.about.educators.dont_assume', "Don't Assume (they<br>know, they don't know)") !!}
+        </div>
+      </div>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/thumbsup.svg') }}" alt="Validate (the Black Experience)" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Validate (the Black<br>Experience)</div>
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/light2.svg') }}"
+               alt="{{ t('pages.about.educators.big_ideas_alt', 'Stay focused on Big Ideas') }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {!! t('pages.about.educators.big_ideas', 'Stay focused on Big<br>Ideas (changing the narrative)') !!}
+        </div>
+      </div>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/king.svg') }}" alt="Know Your Purpose" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Know Your Purpose</div>
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/thumbsup.svg') }}"
+               alt="{{ t('pages.about.educators.validate_alt', 'Validate (the Black Experience)') }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {!! t('pages.about.educators.validate', 'Validate (the Black<br>Experience)') !!}
+        </div>
+      </div>
 
-        <div class="journey-item">
-            <div class="journey-icon mx-auto">
-            <img src="{{ asset('assets/img/icons/people.svg') }}" alt="Benefit All" class="journey-img">
-            </div>
-            <div class="journey-label mt-3">Benefit All</div>
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/king.svg') }}"
+               alt="{{ t('pages.about.educators.purpose_alt', 'Know Your Purpose') }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {{ t('pages.about.educators.purpose', 'Know Your Purpose') }}
+        </div>
+      </div>
 
+      <div class="journey-item">
+        <div class="journey-icon mx-auto">
+          <img src="{{ asset('assets/img/icons/people.svg') }}"
+               alt="{{ t('pages.about.educators.benefit_alt', 'Benefit All') }}"
+               class="journey-img">
         </div>
+        <div class="journey-label mt-3">
+          {{ t('pages.about.educators.benefit', 'Benefit All') }}
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
 
@@ -247,46 +318,70 @@
 
         <div class="deck deck--red" data-card-deck>
           <div class="deck-stage">
-            <!-- TOP / MID / BACK are assigned by JS -->
+
             <article class="deck-card">
-              <div class="deck-name">LORRAINE HARRIS</div>
-              <div class="deck-role mb-0">Co-Founder and Co-Creator of My Place In This World</div>
-              <div class="deck-tags">Forward Thinking, Visionary, Innovator, Authentic, Risk Taker, Resilient</div>
+              <div class="deck-name">
+                {{ t('pages.about.founders.lorraine.name', 'LORRAINE HARRIS') }}
+              </div>
+
+              <div class="deck-role mb-0">
+                {{ t('pages.about.founders.lorraine.role', 'Co-Founder and Co-Creator of My Place In This World') }}
+              </div>
+
+              <div class="deck-tags">
+                {{ t('pages.about.founders.lorraine.tags', 'Forward Thinking, Visionary, Innovator, Authentic, Risk Taker, Resilient') }}
+              </div>
+
               <p>
-                Co-Founder and co-creator of My Place in This World, administrator Lorraine Harris has been working in the field of education for over 25 years. Lorraine is a wife and mother. She holds degrees in Education, Music, and Psychology. Lorraine has been the recipient of many awards, both locally and provincially, for her participation in various community outreach projects, sharing her gifts, time, and talents in the performing arts. Most recently she was the recipient of the Ontario Volunteer Service Award for 2020 in her region.
+                {{ t('pages.about.founders.lorraine.bio_1',
+                'Co-Founder and co-creator of My Place in This World, administrator Lorraine Harris has been working in the field of education for over 25 years. Lorraine is a wife and mother. She holds degrees in Education, Music, and Psychology. Lorraine has been the recipient of many awards, both locally and provincially, for her participation in various community outreach projects, sharing her gifts, time, and talents in the performing arts. Most recently she was the recipient of the Ontario Volunteer Service Award for 2020 in her region.'
+                ) }}
               </p>
             </article>
 
             <article class="deck-card">
               <p>
-                Lorraine's experience working at the elementary, secondary, and university levels has equipped her with a diverse skill set. Lorraine has supported multiple schools and served diverse student populations. She has demonstrated an excellent ability to lead, support, and collaborate with teachers to ensure strategies are in place to support equity in student learning. She's a visionary with a keen ability to create engaging activities to help students grasp key curriculum content. Lorraine has created both published and unpublished resources currently being used in her board.
+                {{ t('pages.about.founders.lorraine.bio_2',
+                'Lorraine\'s experience working at the elementary, secondary, and university levels has equipped her with a diverse skill set. Lorraine has supported multiple schools and served diverse student populations. She has demonstrated an excellent ability to lead, support, and collaborate with teachers to ensure strategies are in place to support equity in student learning. She\'s a visionary with a keen ability to create engaging activities to help students grasp key curriculum content. Lorraine has created both published and unpublished resources currently being used in her board.'
+                ) }}
               </p>
             </article>
 
             <article class="deck-card">
               <p>
-                Lorraine is an innovator with the foresight to see firsthand the need for curriculum content that empowers all students—and particularly in this current environment—Black students and others in the BIPOC community. In doing so, they develop a positive self-concept and a sense of truly belonging, of having a place in this world.
+                {{ t('pages.about.founders.lorraine.bio_3',
+                'Lorraine is an innovator with the foresight to see firsthand the need for curriculum content that empowers all students—and particularly in this current environment—Black students and others in the BIPOC community. In doing so, they develop a positive self-concept and a sense of truly belonging, of having a place in this world.'
+                ) }}
               </p>
             </article>
+
           </div>
 
           <div class="deck-controls red">
-            <button class="deck-btn" type="button" data-prev aria-label="Previous">
+            <button class="deck-btn" type="button" data-prev aria-label="{{ t('common.previous', 'Previous') }}">
               <i class="bi bi-chevron-left"></i>
             </button>
-            <button class="deck-btn" type="button" data-next aria-label="Next">
+            <button class="deck-btn" type="button" data-next aria-label="{{ t('common.next', 'Next') }}">
               <i class="bi bi-chevron-right"></i>
             </button>
           </div>
-        </div>
 
+        </div>
       </div>
 
       <div class="col-12 col-lg-5 text-center">
-        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/lorraine-harris.png') }}" alt="A smiling Black woman wears a colorful patterned outfit and headwrap, standing against a soft yellow background.">
+        <img class="img-fluid"
+             style="max-width:420px"
+             src="{{ asset('assets/img/lorraine-harris.png') }}"
+             alt="{{ t('pages.about.founders.lorraine.image_alt', 'A smiling Black woman wears a colorful patterned outfit and headwrap, standing against a soft yellow background.') }}">
       </div>
-      <img class="founder-pattern d-none d-lg-block" src="{{ asset('assets/img/texture-3.png') }}" alt="" aria-hidden="true">
+
+      <img class="founder-pattern d-none d-lg-block"
+           src="{{ asset('assets/img/texture-3.png') }}"
+           alt=""
+           aria-hidden="true">
     </div>
+
 
 
     <!-- ===== Deck 2 (GREEN) ===== -->
@@ -295,50 +390,76 @@
 
         <div class="deck deck--green" data-card-deck>
           <div class="deck-stage">
+
             <article class="deck-card">
-              <div class="deck-name">MICHAEL HARRIS</div>
-              <div class="deck-role mb-0">Co-Founder and Co-Creator of My Place In This World</div>
-              <div class="deck-tags">Visionary, Purpose-Driven, Strategic, Mentor, Cultural Architect</div>
+              <div class="deck-name">
+                {{ t('pages.about.founders.michael.name', 'MICHAEL HARRIS') }}
+              </div>
+
+              <div class="deck-role mb-0">
+                {{ t('pages.about.founders.michael.role', 'Co-Founder and Co-Creator of My Place In This World') }}
+              </div>
+
+              <div class="deck-tags">
+                {{ t('pages.about.founders.michael.tags', 'Visionary, Purpose-Driven, Strategic, Mentor, Cultural Architect') }}
+              </div>
+
               <p>
-                Michael Harris is a co-founder and co-creator of My Place In This World- and the conceiver of its central concept, blueprint, direction and message. With a successful career in business and financial services, and a background in communication, Michael used his strategic expertise to ensure the curriculum would be both culturally impactful and systematically strong.
+                {{ t('pages.about.founders.michael.bio_1',
+                'Michael Harris is a co-founder and co-creator of My Place In This World and the conceiver of its central concept, blueprint, direction and message. With a successful career in business and financial services, and a background in communication, Michael used his strategic expertise to ensure the curriculum would be both culturally impactful and systematically strong.'
+                ) }}
               </p>
             </article>
 
             <article class="deck-card">
               <p>
-                The idea for My Place came about during a conversation with Lorraine Harris, who was lamenting the plight of Black youth in schools; how so many felt detached and alienated from the idea of success. Michael asked her, “What if we can build a resource that would connect the children to their heritage of success and achievement before slavery and colonization?” Lorraine, a brilliant resource writer, immediately began crafting the curriculum, bringing their vision to life.
+                {{ t('pages.about.founders.michael.bio_2',
+                'The idea for My Place came about during a conversation with Lorraine Harris, who was lamenting the plight of Black youth in schools; how so many felt detached and alienated from the idea of success. Michael asked her, “What if we can build a resource that would connect the children to their heritage of success and achievement before slavery and colonization?” Lorraine, a brilliant resource writer, immediately began crafting the curriculum, bringing their vision to life.'
+                ) }}
               </p>
             </article>
 
             <article class="deck-card">
               <p>
-                From the beginning, Michael believed that Black history must be presented as a narrative of excellence, innovation and leadership, not confined to stories of oppression. His aim was to inspire a “can do” mindset that rejects glass ceilings and connects youth to a lineage of limitless achievement. He also sought to create allyship between Black and non-Black youth rooted in mutual respect and shared learning.
+                {{ t('pages.about.founders.michael.bio_3',
+                'From the beginning, Michael believed that Black history must be presented as a narrative of excellence, innovation and leadership, not confined to stories of oppression. His aim was to inspire a “can do” mindset that rejects glass ceilings and connects youth to a lineage of limitless achievement. He also sought to create allyship between Black and non-Black youth rooted in mutual respect and shared learning.'
+                ) }}
               </p>
             </article>
 
             <article class="deck-card">
               <p>
-                Under his direction, My Place In This World has grown into a resource recognized by numerous organizations- including the Government of Ontario- for its outstanding contribution to education in the province. Michael's vision continues to guide the program's mission: to strengthen character, grow self-esteem and link expectations to outcomes rooted in the glorious heritage of African and diasporic achievement.
+                {{ t('pages.about.founders.michael.bio_4',
+                'Under his direction, My Place In This World has grown into a resource recognized by numerous organizations including the Government of Ontario for its outstanding contribution to education in the province. Michael\'s vision continues to guide the program\'s mission: to strengthen character, grow self-esteem and link expectations to outcomes rooted in the glorious heritage of African and diasporic achievement.'
+                ) }}
               </p>
             </article>
+
           </div>
 
           <div class="deck-controls green">
-            <button class="deck-btn" type="button" data-prev aria-label="Previous">
+            <button class="deck-btn" type="button" data-prev aria-label="{{ t('common.previous', 'Previous') }}">
               <i class="bi bi-chevron-left"></i>
             </button>
-            <button class="deck-btn" type="button" data-next aria-label="Next">
+            <button class="deck-btn" type="button" data-next aria-label="{{ t('common.next', 'Next') }}">
               <i class="bi bi-chevron-right"></i>
             </button>
           </div>
-        </div>
 
+        </div>
       </div>
 
       <div class="col-12 col-lg-5 text-center">
-        <img class="img-fluid" style="max-width:420px" src="{{ asset('assets/img/michael-harris.png') }}" alt="A smiling Black man wearing a white button-up shirt stands against a yellow painted background, conveying warmth, approachability, and confidence.">
+        <img class="img-fluid"
+             style="max-width:420px"
+             src="{{ asset('assets/img/michael-harris.png') }}"
+             alt="{{ t('pages.about.founders.michael.image_alt', 'A smiling Black man wearing a white button-up shirt stands against a yellow painted background, conveying warmth, approachability, and confidence.') }}">
       </div>
-      <img class="founder-pattern founder-pattern--left d-none d-lg-block" src="{{ asset('assets/img/texture-3.png') }}" alt="" aria-hidden="true">
+
+      <img class="founder-pattern founder-pattern--left d-none d-lg-block"
+           src="{{ asset('assets/img/texture-3.png') }}"
+           alt=""
+           aria-hidden="true">
     </div>
 
   </div>

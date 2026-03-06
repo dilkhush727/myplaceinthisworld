@@ -31,7 +31,7 @@ class GalleryController extends Controller
     /**
      * Store new gallery with images
      */
-    public function store(Request $request)
+    public function store($locate, Request $request)
     {
         $request->validate([
             'name'     => 'required|string|max:255',
@@ -74,7 +74,7 @@ class GalleryController extends Controller
     /**
      * Edit gallery
      */
-    public function edit(Gallery $gallery)
+    public function edit($locate, Gallery $gallery)
     {
         $gallery->load('images');
 
@@ -84,7 +84,7 @@ class GalleryController extends Controller
     /**
      * Update gallery
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $locate, Gallery $gallery)
     {
         $request->validate([
             'name'     => 'required|string|max:255',
@@ -125,7 +125,7 @@ class GalleryController extends Controller
     /**
      * Delete gallery and its images
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($locate, Gallery $gallery)
     {
         // Delete files
         foreach ($gallery->images as $image) {
@@ -141,7 +141,7 @@ class GalleryController extends Controller
     /**
      * Approve gallery
      */
-    public function approve(Gallery $gallery)
+    public function approve($locate, Gallery $gallery)
     {
         $gallery->update(['status' => 'approved']);
 
@@ -151,7 +151,7 @@ class GalleryController extends Controller
     /**
      * Reject gallery
      */
-    public function reject(Gallery $gallery)
+    public function reject($locate, Gallery $gallery)
     {
         $gallery->update(['status' => 'rejected']);
 

@@ -4,10 +4,12 @@
 <div class="container py-4">
 
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">My Gallery Submissions</h2>
+        <h2 class="fw-bold">
+            {{ t('gallery.my_submissions','My Gallery Submissions') }}
+        </h2>
 
         <a href="{{ route('teacher.gallery.create') }}" class="btn btn-primary">
-            + Add New Gallery
+            + {{ t('gallery.add_new','Add New Gallery') }}
         </a>
     </div>
 
@@ -22,11 +24,11 @@
             <table class="table table-hover mb-0">
                 <thead class="table-light">
                     <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Images</th>
-                        <th class="text-end">Actions</th>
+                        <th>{{ t('common.id','ID') }}</th>
+                        <th>{{ t('common.title','Title') }}</th>
+                        <th>{{ t('common.status','Status') }}</th>
+                        <th>{{ t('gallery.images','Images') }}</th>
+                        <th class="text-end">{{ t('common.actions','Actions') }}</th>
                     </tr>
                 </thead>
 
@@ -38,11 +40,19 @@
 
                             <td>
                                 @if($gallery->status === 'approved')
-                                    <span class="badge bg-success">Approved</span>
+                                    <span class="badge bg-success">
+                                        {{ t('gallery.approved','Approved') }}
+                                    </span>
+
                                 @elseif($gallery->status === 'pending')
-                                    <span class="badge bg-warning">Pending Review</span>
+                                    <span class="badge bg-warning">
+                                        {{ t('gallery.pending_review','Pending Review') }}
+                                    </span>
+
                                 @else
-                                    <span class="badge bg-danger">Rejected</span>
+                                    <span class="badge bg-danger">
+                                        {{ t('gallery.rejected','Rejected') }}
+                                    </span>
                                 @endif
                             </td>
 
@@ -53,17 +63,19 @@
                                 {{-- Edit --}}
                                 <a href="{{ route('teacher.gallery.edit', $gallery->id) }}" 
                                    class="btn btn-sm btn-primary">
-                                    Edit
+                                    {{ t('common.edit','Edit') }}
                                 </a>
 
                                 {{-- Delete --}}
                                 <form action="{{ route('teacher.gallery.destroy', $gallery->id) }}" 
-                                      method="POST" class="d-inline"
-                                      onsubmit="return confirm('Are you sure you want to delete this gallery?')">
+                                      method="POST"
+                                      class="d-inline"
+                                      onsubmit="return confirm('{{ t('gallery.delete_confirm','Are you sure you want to delete this gallery?') }}')">
                                     @csrf
                                     @method('DELETE')
+
                                     <button class="btn btn-sm btn-danger">
-                                        Delete
+                                        {{ t('common.delete','Delete') }}
                                     </button>
                                 </form>
 

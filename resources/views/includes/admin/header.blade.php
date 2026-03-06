@@ -31,34 +31,44 @@
             <span><i class="ti ti-settings"></i></span>
           </a>
           <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
-            <div class="dropdown-header">
-              <h4>
-                {{-- You can use auth user here --}}
-                <span class="small text-muted">{{ auth()->user()->name ?? 'Admin' }}</span>
-              </h4>
-              <p class="text-muted">{{ auth()->user()->designation ?? 'Admin' }}</p>
-              <hr />
-              <div class="profile-notification-scroll position-relative"
-                   style="max-height: calc(100vh - 280px)">
-                {{-- You can remove this "Buy" card --}}
-                <a href="{{ route('profile.edit') }}" class="dropdown-item">
-                  <i class="ti ti-settings"></i>
-                  <span>Account Settings</span>
-                </a>
+  <div class="dropdown-header">
+    <h4>
+      <span class="small text-muted">
+        {{ auth()->user()->name ?? t('admin.common.admin', 'Admin') }}
+      </span>
+    </h4>
 
-                <a href="javascript:;" class="dropdown-item">
-                  <form action="{{ route('logout') }}" method="POST" class="dropdown-item p-0 m-0">
-                    @csrf
-                    <button type="submit" class="btn p-0 m-0 text-start w-100">
-                      <i class="ti ti-logout"></i>
-                      <span>Logout</span>
-                    </button>
-                  </form>
-                </a>
-                
-              </div>
-            </div>
-          </div>
+    <p class="text-muted">
+      {{ auth()->user()->designation ?? t('admin.common.admin', 'Admin') }}
+    </p>
+
+    <hr />
+
+    <div class="profile-notification-scroll position-relative"
+         style="max-height: calc(100vh - 280px)">
+
+      <a href="{{ route('profile.edit') }}" class="dropdown-item">
+        <i class="ti ti-settings"></i>
+        <span>
+          {{ t('admin.profile.account_settings', 'Account Settings') }}
+        </span>
+      </a>
+
+      <a href="javascript:;" class="dropdown-item">
+        <form action="{{ route('logout') }}" method="POST" class="dropdown-item p-0 m-0">
+          @csrf
+          <button type="submit" class="btn p-0 m-0 text-start w-100">
+            <i class="ti ti-logout"></i>
+            <span>
+              {{ t('admin.common.logout', 'Logout') }}
+            </span>
+          </button>
+        </form>
+      </a>
+
+    </div>
+  </div>
+</div>
         </li>
       </ul>
     </div>

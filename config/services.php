@@ -58,5 +58,11 @@ return [
         'embedding_model' => env('OPENAI_EMBEDDING_MODEL', 'text-embedding-3-small'),
     ],
 
+    'deepl' => [
+        'key' => env('DEEPL_API_KEY'),
+        'is_free' => env('DEEPL_API_IS_FREE', true),
+        'source' => env('DEEPL_SOURCE_LANG', 'EN'),
+        'target' => env('DEEPL_TARGET_LANG', 'FR'),
+    ],
 
 ];

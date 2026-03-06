@@ -1,29 +1,34 @@
-@extends('layouts.admin') {{-- change if needed --}}
+@extends('layouts.admin')
 
-@section('title', 'Teacher Dashboard')
+@section('title', t('teacher.dashboard','Teacher Dashboard'))
 
 @section('content')
 <div class="container-fluid">
 
   <div class="d-flex align-items-center justify-content-between mb-4">
     <div>
-      <h2 class="mb-1">Teacher Dashboard</h2>
-      <p class="text-muted mb-0">Your shortcuts, progress, and what to do next.</p>
+      <h2 class="mb-1">{{ t('teacher.dashboard','Teacher Dashboard') }}</h2>
+      <p class="text-muted mb-0">{{ t('teacher.dashboard_subtitle','Your shortcuts, progress, and what to do next.') }}</p>
     </div>
     <div class="d-flex gap-2">
-      <a href="{{ route('divisions.index') }}" class="btn btn-primary">Division of Learning</a>
-      <a href="{{ route('teacher.tickets.index') }}" class="btn btn-light border">Support</a>
+      <a href="{{ route('divisions.index') }}" class="btn btn-primary">
+        {{ t('divisions.title','Division of Learning') }}
+      </a>
+      <a href="{{ route('teacher.tickets.index') }}" class="btn btn-light border">
+        {{ t('common.support','Support') }}
+      </a>
     </div>
   </div>
 
-  {{-- TOP KPI CARDS --}}
   <div class="row g-3 mb-3">
     <div class="col-xl-3 col-md-6">
       <div class="card">
         <div class="card-body">
-          <div class="text-muted">{{ __('labels.tasks') }} To Do</div>
+          <div class="text-muted">{{ __('labels.tasks') }} {{ t('teacher.todo','To Do') }}</div>
           <div class="h2 mb-0">{{ $toDoCount }}</div>
-          <div class="small text-muted mt-1">Based on your available {{ __('labels.tasks') }}</div>
+          <div class="small text-muted mt-1">
+            {{ t('teacher.based_on_tasks','Based on your available') }} {{ __('labels.tasks') }}
+          </div>
         </div>
       </div>
     </div>
@@ -31,9 +36,9 @@
     <div class="col-xl-3 col-md-6">
       <div class="card">
         <div class="card-body">
-          <div class="text-muted">Completed (This Month)</div>
+          <div class="text-muted">{{ t('teacher.completed_this_month','Completed (This Month)') }}</div>
           <div class="h2 mb-0">{{ $completedThisMonthCount }}</div>
-          <div class="small text-muted mt-1">Nice work — keep it going</div>
+          <div class="small text-muted mt-1">{{ t('teacher.keep_going','Nice work — keep it going') }}</div>
         </div>
       </div>
     </div>
@@ -41,9 +46,9 @@
     <div class="col-xl-3 col-md-6">
       <div class="card">
         <div class="card-body">
-          <div class="text-muted">My Notes</div>
+          <div class="text-muted">{{ t('teacher.my_notes','My Notes') }}</div>
           <div class="h2 mb-0">{{ $notesCount }}</div>
-          <div class="small text-muted mt-1">Notes you saved on tasks</div>
+          <div class="small text-muted mt-1">{{ t('teacher.notes_saved','Notes you saved on tasks') }}</div>
         </div>
       </div>
     </div>
@@ -51,30 +56,35 @@
     <div class="col-xl-3 col-md-6">
       <div class="card">
         <div class="card-body">
-          <div class="text-muted">Overall Progress</div>
+          <div class="text-muted">{{ t('teacher.overall_progress','Overall Progress') }}</div>
           <div class="h2 mb-2">{{ $completionRate }}%</div>
           <div class="progress" style="height:10px;">
             <div class="progress-bar" role="progressbar" style="width: {{ $completionRate }}%"></div>
           </div>
-          <div class="small text-muted mt-1">{{ $completedTotal }} done out of {{ $availableTasksCount }} tasks</div>
+          <div class="small text-muted mt-1">
+            {{ $completedTotal }} {{ t('common.done','done') }} {{ t('common.out_of','out of') }} {{ $availableTasksCount }} {{ __('labels.tasks') }}
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="row g-3">
-    {{-- CONTINUE LEARNING --}}
     <div class="col-lg-12">
-      {{-- RECENT ACTIVITIES (replaces Continue Learning) --}}
-      
+
         <div class="card">
             
             <div class="card-header d-flex align-items-center justify-content-between">
-                <h5 class="mb-0">Recent Activities</h5>
+                <h5 class="mb-0">{{ t('teacher.recent_activities','Recent Activities') }}</h5>
 
                 <div class="d-flex gap-2">
-                <a href="{{ route('teacher.learning-progress.index') }}" class="btn btn-sm btn-outline-primary">My Learning</a>
-                <a href="{{ url('/teacher/tickets') }}" class="btn btn-sm btn-outline-secondary">Support Tickets</a>
+                  <a href="{{ route('teacher.learning-progress.index') }}" class="btn btn-sm btn-outline-primary">
+                    {{ t('teacher.my_learning','My Learning') }}
+                  </a>
+
+                  <a href="{{ url('/teacher/tickets') }}" class="btn btn-sm btn-outline-secondary">
+                    {{ t('teacher.support_tickets','Support Tickets') }}
+                  </a>
                 </div>
             </div>
 
@@ -83,7 +93,7 @@
                 @php
                     $task = $c->task;
                     $lesson = $task?->lesson;
-                    $courseId = $lesson?->course_id;   // course_id is in lessons table
+                    $courseId = $lesson?->course_id;
                     $taskId = $task?->id;
                     $time = $c->completed_at ?? $c->created_at;
                 @endphp
@@ -92,18 +102,18 @@
                     @if($courseId && $taskId)
                     <a class="fw-semibold"
                         href="{{ route('courses.tasks.show', ['course' => $courseId, 'task' => $taskId]) }}">
-                        Completed: {{ $task->title }} ({{ __('labels.lesson') }}: {{ $lesson->title }})
+                        {{ t('teacher.completed','Completed') }}: {{ $task->title }} ({{ __('labels.lesson') }}: {{ $lesson->title }})
                     </a>
                     @else
                     <div class="fw-semibold">
-                      Completed: {{ $task->title ?? __('labels.task') }}
+                      {{ t('teacher.completed','Completed') }}: {{ $task->title ?? __('labels.task') }}
                     </div>
                     @endif
 
                     <div class="text-muted small">{{ optional($time)->diffForHumans() }}</div>
                 </div>
                 @empty
-                <p class="text-muted mb-0">No recent activity yet.</p>
+                <p class="text-muted mb-0">{{ t('teacher.no_activity','No recent activity yet.') }}</p>
                 @endforelse
             </div>
         </div>

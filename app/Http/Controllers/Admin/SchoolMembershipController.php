@@ -28,7 +28,7 @@ class SchoolMembershipController extends Controller
     /**
      * Show membership details for a single school.
      */
-    public function show(School $school)
+    public function show($locate, School $school)
     {
         $school->load(['memberships' => function ($q) {
             $q->orderBy('type')->orderByDesc('starts_at');
@@ -42,7 +42,7 @@ class SchoolMembershipController extends Controller
     /**
      * Admin: grant a membership to a school (or add a new term).
      */
-    public function grant(Request $request, School $school)
+    public function grant(Request $request, $locate, School $school)
     {
         $data = $request->validate([
             'type'           => 'required|in:primary,ji,highschool',
@@ -80,7 +80,7 @@ class SchoolMembershipController extends Controller
     /**
      * Admin: update status of a specific membership (active/cancelled/expired).
      */
-    public function updateStatus(Request $request, SchoolMembership $membership)
+    public function updateStatus(Request $request, $locate, SchoolMembership $membership)
     {
         $data = $request->validate([
             'status' => 'required|in:active,cancelled,expired',

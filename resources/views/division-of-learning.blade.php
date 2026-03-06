@@ -9,11 +9,13 @@
     {{-- Top button --}}
     <div class="text-center mb-5">
       <a href="#"
-         class="btn btn-lg rounded-pill px-5 py-3"
-         style="background-color:#CC2028; color:#fff; font-weight:600; box-shadow:0 10px 20px rgba(0,0,0,0.18);"
-         data-bs-toggle="modal"
-         data-bs-target="#instructionalVideosModal">
-        Teacher Instructional Video
+        class="btn btn-lg rounded-pill px-5 py-3"
+        style="background-color:#CC2028; color:#fff; font-weight:600; box-shadow:0 10px 20px rgba(0,0,0,0.18);"
+        data-bs-toggle="modal"
+        data-bs-target="#instructionalVideosModal">
+        
+        {{ t('pages.gallery.teacher_instructional_video', 'Teacher Instructional Video') }}
+
       </a>
     </div>
 
@@ -30,19 +32,27 @@
             <div class="dol-paper"></div>
 
             <div class="dol-body">
-              <h3>Primary</h3>
-              <p class="dol-grade">Grade (1-3)</p>
 
-              <p class="dol-text">
-                Primary students will become familiar with some African Kings and Queens. The hands-on
-                activities will engage students as they begin to learn about African heritage through
-                the lens of African Kings and Queens. This curriculum will also give students a sense of
-                connectedness, create a new understanding of Black people and culture, and develop a
-                sense of belonging, especially for Black students.
-              </p>
+  <h3>
+    {{ t('pages.divisions.primary.title', 'Primary') }}
+  </h3>
 
-              <a href="{{ route('register') }}" class="dol-btn">Learn Now</a>
-            </div>
+  <p class="dol-grade">
+    {{ t('pages.divisions.primary.grade', 'Grade (1-3)') }}
+  </p>
+
+  <p class="dol-text">
+    {{ t(
+        'pages.divisions.primary.description',
+        'Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.'
+    ) }}
+  </p>
+
+  <a href="{{ route('register') }}" class="dol-btn">
+    {{ t('common.learn_now', 'Learn Now') }}
+  </a>
+
+</div>
           </div>
         </div>
 
@@ -56,19 +66,27 @@
             <div class="dol-paper"></div>
 
             <div class="dol-body">
-              <h3>Junior/Intermediate</h3>
-              <p class="dol-grade">Grade (4-6)</p>
 
-              <p class="dol-text">
-                As Junior/Intermediate students get to know the African Kings and Queens presented,
-                the hands-on activities will engage them. The familiar learning platforms and the use
-                of social media tools will keep them motivated. This curriculum will also give students
-                a sense of connectedness, create a new understanding of Black people and culture, and
-                develop a sense of belonging, especially for Black students.
-              </p>
+  <h3>
+    {{ t('pages.divisions.junior.title', 'Junior/Intermediate') }}
+  </h3>
 
-              <a href="{{ route('register') }}" class="dol-btn">Learn Now</a>
-            </div>
+  <p class="dol-grade">
+    {{ t('pages.divisions.junior.grade', 'Grade (4-6)') }}
+  </p>
+
+  <p class="dol-text">
+    {{ t(
+        'pages.divisions.junior.description',
+        'As Junior/Intermediate students get to know the African Kings and Queens presented, the hands-on activities will engage them. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.'
+    ) }}
+  </p>
+
+  <a href="{{ route('register') }}" class="dol-btn">
+    {{ t('common.learn_now', 'Learn Now') }}
+  </a>
+
+</div>
           </div>
         </div>
 
@@ -82,19 +100,27 @@
             <div class="dol-paper"></div>
 
             <div class="dol-body">
-              <h3>High School</h3>
-              <p class="dol-grade">Grade (9-12)</p>
 
-              <p class="dol-text">
-                The High School curriculum goes deeper and touches on rich content and sometimes
-                controversial issues related to African Kings and Queens and their heritage. Students
-                will engage in critical thinking and make relevant connections to their own environment
-                and lived experiences and to global competencies.
-              </p>
+  <h3>
+    {{ t('pages.divisions.highschool.title', 'High School') }}
+  </h3>
 
-              <a href="{{ route('divisions.highschool') }}" class="dol-btn">Learn Now</a>
+  <p class="dol-grade">
+    {{ t('pages.divisions.highschool.grade', 'Grade (9-12)') }}
+  </p>
 
-            </div>
+  <p class="dol-text">
+    {{ t(
+        'pages.divisions.highschool.description',
+        'The High School curriculum goes deeper and touches on rich content and sometimes controversial issues related to African Kings and Queens and their heritage. Students will engage in critical thinking and make relevant connections to their own environment and lived experiences and to global competencies.'
+    ) }}
+  </p>
+
+  <a href="{{ route('divisions.highschool') }}" class="dol-btn">
+    {{ t('common.learn_now', 'Learn Now') }}
+  </a>
+
+</div>
           </div>
         </div>
 
@@ -111,8 +137,12 @@
 
       {{-- Header with gradient + close --}}
       <div class="modal-header border-0 bg-red">
-        <h5 class="modal-title fw-bold text-white" id="instructionalVideosModalLabel" style="font-size:1.35rem;">
-          Teacher Instructional Video
+        <h5 class="modal-title fw-bold text-white"
+            id="instructionalVideosModalLabel"
+            style="font-size:1.35rem;">
+
+          {{ t('pages.gallery.teacher_instructional_video', 'Teacher Instructional Video') }}
+
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>

@@ -1,12 +1,16 @@
 {{-- resources/views/auth/reset-password.blade.php --}}
 @extends('layouts.auth')
 
-@section('title', 'Reset Password')
+@section('title', t('auth.reset.page_title', 'Reset Password'))
 
 @section('content')
-  <h1 class="auth-title">Reset your password</h1>
+
+  <h1 class="auth-title">
+    {{ t('auth.reset.heading', 'Reset your password') }}
+  </h1>
+
   <p class="auth-subtitle">
-    Create a new password for your account.
+    {{ t('auth.reset.subtitle', 'Create a new password for your account.') }}
   </p>
 
   <form method="POST" action="{{ route('password.store') }}">
@@ -17,7 +21,10 @@
 
     {{-- Email --}}
     <div class="mb-3">
-      <label for="email" class="form-label fw-semibold">Email Address</label>
+      <label for="email" class="form-label fw-semibold">
+        {{ t('auth.reset.email_label', 'Email Address') }}
+      </label>
+
       <div class="input-icon">
         <input id="email"
                type="email"
@@ -27,7 +34,7 @@
                autofocus
                autocomplete="username"
                class="form-control auth-input @error('email') is-invalid @enderror"
-               placeholder="name@example.com">
+               placeholder="{{ t('auth.reset.email_placeholder', 'name@example.com') }}">
 
         @error('email')
           <div class="invalid-feedback d-block">{{ $message }}</div>
@@ -37,7 +44,10 @@
 
     {{-- New Password --}}
     <div class="mb-3">
-      <label for="password" class="form-label fw-semibold">New Password</label>
+      <label for="password" class="form-label fw-semibold">
+        {{ t('auth.reset.new_password_label', 'New Password') }}
+      </label>
+
       <div class="input-icon">
         <input id="password"
                type="password"
@@ -45,7 +55,7 @@
                required
                autocomplete="new-password"
                class="form-control auth-input @error('password') is-invalid @enderror"
-               placeholder="Create a new password">
+               placeholder="{{ t('auth.reset.new_password_placeholder', 'Create a new password') }}">
 
         @error('password')
           <div class="invalid-feedback d-block">{{ $message }}</div>
@@ -55,7 +65,10 @@
 
     {{-- Confirm Password --}}
     <div class="mb-4">
-      <label for="password_confirmation" class="form-label fw-semibold">Confirm New Password</label>
+      <label for="password_confirmation" class="form-label fw-semibold">
+        {{ t('auth.reset.confirm_password_label', 'Confirm New Password') }}
+      </label>
+
       <div class="input-icon">
         <input id="password_confirmation"
                type="password"
@@ -63,7 +76,7 @@
                required
                autocomplete="new-password"
                class="form-control auth-input @error('password_confirmation') is-invalid @enderror"
-               placeholder="Re-enter new password">
+               placeholder="{{ t('auth.reset.confirm_password_placeholder', 'Re-enter new password') }}">
 
         @error('password_confirmation')
           <div class="invalid-feedback d-block">{{ $message }}</div>
@@ -72,12 +85,16 @@
     </div>
 
     <button type="submit" class="btn btn-auth w-100">
-      Reset Password
+      {{ t('auth.reset.button', 'Reset Password') }}
     </button>
 
     <div class="signup-line">
-      Back to
-      <a href="{{ route('login') }}">Login</a>
+      {{ t('auth.reset.back_to', 'Back to') }}
+      <a href="{{ route('login') }}">
+        {{ t('auth.reset.login', 'Login') }}
+      </a>
     </div>
+
   </form>
+
 @endsection

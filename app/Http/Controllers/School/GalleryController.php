@@ -79,7 +79,7 @@ class GalleryController extends Controller
     /**
      * Edit a gallery (only their own)
      */
-    public function edit(Gallery $gallery)
+    public function edit($locate, Gallery $gallery)
     {
         $this->authorizeOwnership($gallery);
 
@@ -91,7 +91,7 @@ class GalleryController extends Controller
     /**
      * Update gallery (auto-rejected)
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $locate, Gallery $gallery)
     {
         $this->authorizeOwnership($gallery);
 
@@ -136,7 +136,7 @@ class GalleryController extends Controller
     /**
      * Delete gallery
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($locate, Gallery $gallery)
     {
         $this->authorizeOwnership($gallery);
 

@@ -32,12 +32,12 @@ class AdminContactController extends Controller
         return view('admin.contacts.index', compact('contacts', 'status'));
     }
 
-    public function show(ContactMessage $contactMessage)
+    public function show($locate, ContactMessage $contactMessage)
     {
         return view('admin.contacts.show', compact('contactMessage'));
     }
 
-    public function updateStatus(Request $request, ContactMessage $contactMessage)
+    public function updateStatus(Request $request, $locate, ContactMessage $contactMessage)
     {
         $request->validate([
             'ticket_status' => 'required|in:open,resolved,closed',

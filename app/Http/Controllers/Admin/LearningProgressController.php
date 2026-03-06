@@ -92,7 +92,7 @@ class LearningProgressController extends Controller
         ]);
     }
 
-    public function showCourse(Course $course)
+    public function showCourse($locate, Course $course)
     {
         // Load tasks for this course
         $course->load(['lessons', 'tasks']);

@@ -24,6 +24,8 @@ return Application::configure(basePath: dirname(__DIR__))
             // ✅ Your custom middleware
             'verified.unlessTeacher' => EnsureVerifiedUnlessTeacher::class,
             'division.subscribed' => EnsureDivisionSubscription::class,
+            
+            'setLocale' => \App\Http\Middleware\SetLocale::class,
         ]);
 
     })

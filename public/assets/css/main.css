@@ -98,7 +98,7 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: var(--nav-hover-color) !important;
   text-decoration: none;
 }
 
@@ -280,7 +280,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: var(--nav-hover-color) !important;
   }
 
   .navmenu .dropdown ul {

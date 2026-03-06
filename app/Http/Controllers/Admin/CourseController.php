@@ -27,7 +27,7 @@ class CourseController extends Controller
         return view('admin.courses.create', compact('divisions'));
     }
 
-    public function store(Request $request)
+    public function store($locate, Request $request)
     {
         $data = $request->validate([
             'division'          => 'required|in:primary,ji,highschool',
@@ -61,7 +61,7 @@ class CourseController extends Controller
     }
 
 
-    public function edit(Course $course)
+    public function edit($locate, Course $course)
     {
         $divisions = [
             'primary'    => 'Primary',
@@ -72,7 +72,7 @@ class CourseController extends Controller
         return view('admin.courses.edit', compact('course', 'divisions'));
     }
 
-    public function update(Request $request, Course $course)
+    public function update(Request $request, $locate, Course $course)
     {
         $data = $request->validate([
             'division'          => 'required|in:primary,ji,highschool',
@@ -104,7 +104,7 @@ class CourseController extends Controller
             ->with('success', 'Course updated successfully.');
     }
 
-    public function destroy(Course $course)
+    public function destroy($locate, Course $course)
     {
         $course->delete();
 

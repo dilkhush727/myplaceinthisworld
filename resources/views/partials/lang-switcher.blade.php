@@ -1,17 +1,28 @@
+@php
+  $currentLocale = request()->route('locale') ?? 'en';
+
+  $path = request()->path();
+  $pathWithoutLocale = preg_replace('#^(en|fr)(/)?#', '', $path);
+  $pathWithoutLocale = ltrim($pathWithoutLocale, '/');
+
+  $enUrl = url('en' . ($pathWithoutLocale ? '/' . $pathWithoutLocale : ''));
+  $frUrl = url('fr' . ($pathWithoutLocale ? '/' . $pathWithoutLocale : ''));
+@endphp
+
 <div class="dropdown lang-btn-div notranslate" translate="no">
   <button class="lang-pill dropdown-toggle notranslate" translate="no"
           type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span data-lang-label class="notranslate" translate="no">EN</span>
+    <span class="notranslate" translate="no">
+      {{ strtoupper($currentLocale) }}
+    </span>
   </button>
 
   <ul class="dropdown-menu dropdown-menu-end shadow notranslate" translate="no">
     <li>
-      <button class="dropdown-item notranslate" translate="no"
-              type="button" onclick="setSiteLanguage('en')">EN</button>
+      <a class="dropdown-item notranslate" translate="no" href="{{ $enUrl }}">EN</a>
     </li>
     <li>
-      <button class="dropdown-item notranslate" translate="no"
-              type="button" onclick="setSiteLanguage('fr')">FR</button>
+      <a class="dropdown-item notranslate" translate="no" href="{{ $frUrl }}">FR</a>
     </li>
   </ul>
 </div>

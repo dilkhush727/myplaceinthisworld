@@ -23,13 +23,19 @@
 
       <!-- MIDDLE TEXT -->
       <div class="col-12 col-md-9 col-lg-6 d-flex align-items-center justify-content-center text-white px-3 px-lg-4">
-        <div class=" text-center">
-          <h2 class="text-white mb-3">MEMBERSHIP</h2>
+        <div class="text-center">
+
+          <h2 class="text-white mb-3">
+            {{ t('pages.membership.title', 'MEMBERSHIP') }}
+          </h2>
+
           <p class="mb-0">
-            Your membership includes access to division-specific Placemats, supporting videos,
-            biographies, scripts (where applicable), blackline masters (where applicable), assessments,
-            our Teacher Support Line, and more.
+            {{ t(
+                'pages.membership.description',
+                'Your membership includes access to division-specific Placemats, supporting videos, biographies, scripts (where applicable), blackline masters (where applicable), assessments, our Teacher Support Line, and more.'
+            ) }}
           </p>
+
         </div>
       </div>
 
@@ -63,57 +69,92 @@
           <div class="row align-items-center">
             <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
               <div class="tour-visual text-center">
-                <img src="assets/img/membership/member-primary.svg" class="img-fluid rounded-circle" alt="A young Black girl with curly hair concentrates while writing or drawing on paper with a pencil.">
+                <img src="{{ asset('assets/img/membership/member-primary.svg') }}" class="img-fluid rounded-circle" alt="A young Black girl with curly hair concentrates while writing or drawing on paper with a pencil.">
               </div>
+              
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <div class="text-center">
-                    <h2 class="mb-0">Primary</h2>
-                    <p><small>(Grades 1-3)</small></p>
-                </div>
-                <p class="mb-0">Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
 
-                <div class="row mt-4">
-                    <div class="col-lg-12">
-                        <h5 class="mb-2"><strong>Students will:</strong></h5>
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Identify Africa as a continent of many countries</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Learn some important facts that contribute to it being a “majestic” place in this world</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Explore what it means to be an African King or a Queen before transatlantic slavery</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+  <div class="text-center">
+    <h2 class="mb-0">
+      {{ t('pages.membership.primary.title', 'Primary') }}
+    </h2>
+    <p>
+      <small>
+        {{ t('pages.membership.primary.grades', '(Grades 1-3)') }}
+      </small>
+    </p>
+  </div>
 
-                <div class="tour-features mb-0">
-                  <div class="tour-feature">
-                    <strong>Number of Activities: 20</strong>
-                    <strong>Number of tasks per Activity: 1-6</strong>
-                  </div>
-                </div>
-                <div class="tour-actions">
-                    <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn-primary">
-                        Sample Activity
-                    </a>
-                    <a href="{{ route(name: 'register') }}" class="btn-outline">Get Started</a>
-                </div>
-              </div>
+  <p class="mb-0">
+    {{ t(
+        'pages.membership.primary.description',
+        'Primary students will become familiar with some African Kings and Queens. The hands-on activities will engage students as they begin to learn about African heritage through the lens of African Kings and Queens. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.'
+    ) }}
+  </p>
+
+  <div class="row mt-4">
+    <div class="col-lg-12">
+
+      <h5 class="mb-2">
+        <strong>
+          {{ t('pages.membership.primary.students_will', 'Students will:') }}
+        </strong>
+      </h5>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t('pages.membership.primary.point_1', 'Identify Africa as a continent of many countries') }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t('pages.membership.primary.point_2', 'Learn some important facts that contribute to it being a “majestic” place in this world') }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t('pages.membership.primary.point_3', 'Explore what it means to be an African King or a Queen before transatlantic slavery') }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tour-features mb-0">
+    <div class="tour-feature">
+      <strong>
+        {{ t('pages.membership.primary.activities', 'Number of Activities: 20') }}
+      </strong>
+      <strong>
+        {{ t('pages.membership.primary.tasks', 'Number of tasks per Activity: 1-6') }}
+      </strong>
+    </div>
+  </div>
+
+  <div class="tour-actions">
+    <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn-primary">
+      {{ t('common.sample_activity', 'Sample Activity') }}
+    </a>
+
+    <a href="{{ route(name: 'register') }}" class="btn-outline">
+      {{ t('common.get_started', 'Get Started') }}
+    </a>
+  </div>
+
+</div>
             </div>
           </div>
         </div>
@@ -122,57 +163,101 @@
           <div class="row align-items-center">
             <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
               <div class="tour-visual text-center">
-                <img src="assets/img/membership/member-junior.svg" class="img-fluid rounded-circle" alt="A asian boy focuses intently while writing with a pencil on paper.">
+                <img src="{{ asset('assets/img/membership/member-junior.svg') }}" class="img-fluid rounded-circle" alt="A asian boy focuses intently while writing with a pencil on paper.">
               </div>
+              
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <div class="text-center">
-                    <h2 class="mb-0">Junior / Intermediate</h2>
-                    <p><small>(Grades 4-8)</small></p>
-                </div>
-                <p class="mb-0">As Junior/Intermediate students get to know the African Kings and Queens presented, the hands-on activities will engage them. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
 
-                <div class="row mt-4">
-                    <div class="col-lg-12">
-                        <h5 class="mb-2"><strong>Students will:</strong></h5>
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Identify the positive attributes of African experiences while debunking negative stereotypes</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Explore the influence and contributions of African royalty before transatlantic slavery and up to the present</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Make connections to their own experiences and current environment</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+  <div class="text-center">
+    <h2 class="mb-0">
+      {{ t('pages.membership.junior.title', 'Junior / Intermediate') }}
+    </h2>
+    <p>
+      <small>
+        {{ t('pages.membership.junior.grades', '(Grades 4-8)') }}
+      </small>
+    </p>
+  </div>
 
-                <div class="tour-features mb-0">
-                  <div class="tour-feature">
-                    <strong>Number of Activities: 20</strong>
-                    <strong>Number of tasks per Activity: 1-6</strong>
-                  </div>
-                </div>
-                <div class="tour-actions">
-                    <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn-primary">
-                    Sample Activity
-                    </a>
-                    <a href="{{ route(name: 'register') }}" class="btn-outline">Get Started</a>
-                </div>
-              </div>
+  <p class="mb-0">
+    {{ t(
+        'pages.membership.junior.description',
+        'As Junior/Intermediate students get to know the African Kings and Queens presented, the hands-on activities will engage them. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of connectedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.'
+    ) }}
+  </p>
+
+  <div class="row mt-4">
+    <div class="col-lg-12">
+
+      <h5 class="mb-2">
+        <strong>
+          {{ t('pages.membership.junior.students_will', 'Students will:') }}
+        </strong>
+      </h5>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t(
+                'pages.membership.junior.point_1',
+                'Identify the positive attributes of African experiences while debunking negative stereotypes'
+            ) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t(
+                'pages.membership.junior.point_2',
+                'Explore the influence and contributions of African royalty before transatlantic slavery and up to the present'
+            ) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t(
+                'pages.membership.junior.point_3',
+                'Make connections to their own experiences and current environment'
+            ) }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tour-features mb-0">
+    <div class="tour-feature">
+      <strong>
+        {{ t('pages.membership.junior.activities', 'Number of Activities: 20') }}
+      </strong>
+      <strong>
+        {{ t('pages.membership.junior.tasks', 'Number of tasks per Activity: 1-6') }}
+      </strong>
+    </div>
+  </div>
+
+  <div class="tour-actions">
+    <a data-fancybox href="https://www.youtube.com/watch?v=rftRnyOGkC0" class="btn-primary">
+      {{ t('common.sample_activity', 'Sample Activity') }}
+    </a>
+
+    <a href="{{ route(name: 'register') }}" class="btn-outline">
+      {{ t('common.get_started', 'Get Started') }}
+    </a>
+  </div>
+
+</div>
             </div>
           </div>
         </div>
@@ -181,61 +266,103 @@
           <div class="row align-items-center">
             <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
               <div class="tour-visual text-center">
-                <img src="assets/img/membership/member-high-school.svg" class="img-fluid rounded-circle" alt="A young white female wearing glasses leans over a desk while writing with a pencil.">
+                <img src="{{ asset('assets/img/membership/member-high-school.svg') }}" class="img-fluid rounded-circle" alt="A young white female wearing glasses leans over a desk while writing with a pencil.">
               </div>
             </div>
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="tour-content py-1">
-                <div class="text-center">
-                    <h2 class="mb-0">High School</h2>
-                    <p><small>(Grades 9-12)</small></p>
-                </div>
-                <p class="mb-0">The High School curriculum goes deeper and touches on the rich content and sometimes controversial issues related to African Kings and Queens and their heritage. Students will engage in critical thinking and make relevant connections to their own environment and lived experiences and to global competencies. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of contentedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.</p>
 
-                <div class="row mt-4">
-                    <div class="col-lg-12">
-                        <h5 class="mb-2"><strong>Students will:</strong></h5>
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Identify the positive attributes of African experiences while debunking negative stereotypes</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Explore the influence and contributions of African Royalty before transatlantic slavery and up to the present</div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-grid mb-0">
-                            <div class="info-item mb-2">
-                                <i class="bi bi-check"></i>
-                                <div class="info-text">Develop subject-specific curricular skills as they make connections to their lives, current events, and present-day Black leaders</div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+  <div class="text-center">
+    <h2 class="mb-0">
+      {{ t('pages.membership.highschool.title', 'High School') }}
+    </h2>
+    <p>
+      <small>
+        {{ t('pages.membership.highschool.grades', '(Grades 9-12)') }}
+      </small>
+    </p>
+  </div>
 
-                <div class="tour-features mb-0">
-                  <div class="tour-feature">
-                    <strong>Number of Activities: 30</strong>
-                    <strong>Number of tasks per Activity: 1-6</strong>
-                  </div>
-                </div>
-                <div class="tour-actions">
-                  <a href="{{ route(name: 'register') }}" class="btn-outline">Get Started</a>
-                </div>
-              </div>
+  <p class="mb-0">
+    {{ t(
+        'pages.membership.highschool.description',
+        'The High School curriculum goes deeper and touches on the rich content and sometimes controversial issues related to African Kings and Queens and their heritage. Students will engage in critical thinking and make relevant connections to their own environment and lived experiences and to global competencies. The familiar learning platforms and the use of social media tools will keep them motivated. This curriculum will also give students a sense of contentedness, create a new understanding of Black people and culture, and develop a sense of belonging, especially for Black students.'
+    ) }}
+  </p>
+
+  <div class="row mt-4">
+    <div class="col-lg-12">
+
+      <h5 class="mb-2">
+        <strong>
+          {{ t('pages.membership.highschool.students_will', 'Students will:') }}
+        </strong>
+      </h5>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t(
+                'pages.membership.highschool.point_1',
+                'Identify the positive attributes of African experiences while debunking negative stereotypes'
+            ) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t(
+                'pages.membership.highschool.point_2',
+                'Explore the influence and contributions of African Royalty before transatlantic slavery and up to the present'
+            ) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid mb-0">
+        <div class="info-item mb-2">
+          <i class="bi bi-check"></i>
+          <div class="info-text">
+            {{ t(
+                'pages.membership.highschool.point_3',
+                'Develop subject-specific curricular skills as they make connections to their lives, current events, and present-day Black leaders'
+            ) }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tour-features mb-0">
+    <div class="tour-feature">
+      <strong>
+        {{ t('pages.membership.highschool.activities', 'Number of Activities: 30') }}
+      </strong>
+      <strong>
+        {{ t('pages.membership.highschool.tasks', 'Number of tasks per Activity: 1-6') }}
+      </strong>
+    </div>
+  </div>
+
+  <div class="tour-actions">
+    <a href="{{ route(name: 'register') }}" class="btn-outline">
+      {{ t('common.get_started', 'Get Started') }}
+    </a>
+  </div>
+
+</div>
             </div>
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Campus Facilities Section -->
+</section><!-- /Campus Facilities Section -->
 
 <style>
     .membership-primary{

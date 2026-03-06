@@ -41,7 +41,7 @@ class MembershipController extends Controller
     /**
      * PURCHASE new membership (Primary or JI)
      */
-    public function purchase(Request $request, StripeService $stripeService)
+    public function purchase(Request $request, $locate, StripeService $stripeService)
     {
         $user   = auth()->user();
         $school = $user->school;

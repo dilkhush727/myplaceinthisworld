@@ -25,7 +25,7 @@ class ChatbotController extends Controller
         ]);
     }
 
-    public function sendMessage(Request $request, ChatbotService $bot)
+    public function sendMessage(Request $request, $locate, ChatbotService $bot)
     {
         $data = $request->validate([
             'session_id' => ['required', 'uuid', 'exists:chat_sessions,id'],

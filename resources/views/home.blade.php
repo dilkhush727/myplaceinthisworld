@@ -13,8 +13,19 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
-              <h1>Inspiring Excellence Through Education</h1>
-              <p><strong>At My Place in This World,</strong> we believe education is the key to unlocking and fostering every student's potential. We also believe that when students understand where they come from, they develop a stronger sense of identity, confidence, and connection to the world around them. Our thoughtfully crafted educational resources build a strong sense of belonging and pride for Black students while cultivating respect, understanding, and allyship among their non-Black peers.</p>
+              <h1>
+                  {{ t('pages.home.hero_title', 'Inspiring Excellence Through Education') }}
+              </h1>
+
+              <p>
+                  <strong>
+                      {{ t('pages.home.hero_intro_strong', 'At My Place in This World,') }}
+                  </strong>
+                  {{ t(
+                      'pages.home.hero_paragraph',
+                      "we believe education is the key to unlocking and fostering every student's potential. We also believe that when students understand where they come from, they develop a stronger sense of identity, confidence, and connection to the world around them. Our thoughtfully crafted educational resources build a strong sense of belonging and pride for Black students while cultivating respect, understanding, and allyship among their non-Black peers."
+                  ) }}
+              </p>
             </div>
            <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
 
@@ -38,9 +49,17 @@
             </div>
 
             <div class="col-lg-12 hero-media" data-aos="zoom-in" data-aos-delay="300">
-              <p>By celebrating our glorious past of Black excellence and achievement prior to slavery and colonialism where Blacks made significant contributions to world civilization; we take a strengths-based, hopeful, and non-blaming approach that honors heritage, builds confidence, and supports a mindset of excellence for all learners. Through this shared understanding of history and humanity, we create learning environments where every student feels valued, empowered, and positioned for success.</p>
+              <p>
+                  {{ t(
+                      'pages.home.hero_paragraph_2',
+                      'By celebrating our glorious past of Black excellence and achievement prior to slavery and colonialism where Blacks made significant contributions to world civilization; we take a strengths-based, hopeful, and non-blaming approach that honors heritage, builds confidence, and supports a mindset of excellence for all learners. Through this shared understanding of history and humanity, we create learning environments where every student feels valued, empowered, and positioned for success.'
+                  ) }}
+              </p>
+
               <div class="action-buttons">
-                <a href="{{ route('register') }}" class="btn-danger">Start Your Journey</a>
+                  <a href="{{ route('register') }}" class="btn-danger">
+                      {{ t('pages.home.hero_cta', 'Start Your Journey') }}
+                  </a>
               </div>
             </div>
           </div>
@@ -50,17 +69,24 @@
       <div class="feature-cards-wrapper featured-by bg-danger" data-aos="fade-up" data-aos-delay="300">
         <div class="container">
           <div class="row gy-4">
-            <h2 class="text-white pt-2 text-center">FEATURED IN</h2>
+            <h2 class="text-white pt-2 text-center">
+                {{ t('pages.home.featured_in', 'FEATURED IN') }}
+            </h2>
             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="feature-card align-items-center">
                 <a href="https://www.ctvnews.ca/kitchener/article/black-heritage-curriculum-set-to-roll-out-in-waterloo-region-catholic-schools/" target="_blank">
 
                 <div class="text-center">
                   <img src="assets/img/featured-in/ctv.png" class="img-fluid">
-                  <h5>CTV Collaboration</h5>
-                  
-                  <small>Featured by CTV News for showcasing a curriculum that builds pride, representation and year-round engagement with Black history beyond a single month. </small>
-                </div>
+                  <h5>
+    {{ t('pages.home.featured.ctv_title', 'CTV Collaboration') }}
+</h5>
+<small>
+    {{ t(
+        'pages.home.featured.ctv_desc',
+        'Featured by CTV News for showcasing a curriculum that builds pride, representation and year-round engagement with Black history beyond a single month.'
+    ) }}
+</small></div>
                 </a>
               </div>
             </div>
@@ -69,10 +95,15 @@
                 <a href="javascript:;" target="_blank">
                   <div class="text-center">
                     <img src="assets/img/featured-in/ontario.png" class="img-fluid">
-                    <h5>Ontario Government</h5>
-                    
-                  <small>Endorsed and aligned with the Ontario Ministry of Education, with careful design ensuring curriculum expectations are met and educational standards are fully supported.</small>
-                </div>
+                    <h5>
+    {{ t('pages.home.featured.ontario_title', 'Ontario Government') }}
+</h5>
+<small>
+    {{ t(
+        'pages.home.featured.ontario_desc',
+        'Endorsed and aligned with the Ontario Ministry of Education, with careful design ensuring curriculum expectations are met and educational standards are fully supported.'
+    ) }}
+</small></div>
                 </a>
               </div>
             </div>
@@ -82,10 +113,15 @@
 
                 <div class="text-center">
                   <img src="assets/img/featured-in/cbc.png" class="img-fluid">
-                  <h5>CBC Collaboration</h5>
-                  
-                  <small>Featured by CBC News, highlighting how My Place in This World reframes Black history by centering African kings, queens and pre-colonial excellence.</small>
-                </div>
+                  <h5>
+    {{ t('pages.home.featured.cbc_title', 'CBC Collaboration') }}
+</h5>
+<small>
+    {{ t(
+        'pages.home.featured.cbc_desc',
+        'Featured by CBC News, highlighting how My Place in This World reframes Black history by centering African kings, queens and pre-colonial excellence.'
+    ) }}
+</small></div>
                 </a>
               </div>
             </div>
@@ -94,10 +130,15 @@
                 <a href="https://blogs1.conestogac.on.ca/news/2024/03/capstone_project_creates_marke.php" target="_blank">
                   <div class="text-center">
                     <img src="assets/img/featured-in/conestoga.png" class="img-fluid">
-                    <h5>Conestoga Learning</h5>
-                    
-                  <small>Partnered with Conestoga College students, who developed a full marketing and communications strategy to amplify our mission and long-term impact.</small>
-                </div>
+                    <h5>
+    {{ t('pages.home.featured.conestoga_title', 'Conestoga Learning') }}
+</h5>
+<small>
+    {{ t(
+        'pages.home.featured.conestoga_desc',
+        'Partnered with Conestoga College students, who developed a full marketing and communications strategy to amplify our mission and long-term impact.'
+    ) }}
+</small></div>
                 </a>
               </div>
             </div>
@@ -136,16 +177,29 @@
 
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <h2>OUR STORY</h2>
-              <h3 class="text-red"><strong>EDUCATING MINDS. INSPIRING HEARTS.</strong></h3>
+
+              <h2>
+                {{ t('pages.home.our_story_title', 'OUR STORY') }}
+              </h2>
+
+              <h3 class="text-red">
+                <strong>
+                  {{ t('pages.home.our_story_subtitle', 'EDUCATING MINDS. INSPIRING HEARTS.') }}
+                </strong>
+              </h3>
+
             </div>
 
             <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
               <div class="mission bg-warning p-4 rounded-5">
-                <p class="mb-0">As members of the BIPOC (Black, Indigenous, and People of Colour) community, our goal is to provide rich and relevant resources that promote equity, diversity, and inclusion. This work supports students and helps build a foundation for the best outcomes.</p>
+                <p class="mb-0">
+                  {{ t(
+                      'pages.home.mission_text',
+                      'As members of the BIPOC (Black, Indigenous, and People of Colour) community, our goal is to provide rich and relevant resources that promote equity, diversity, and inclusion. This work supports students and helps build a foundation for the best outcomes.'
+                  ) }}
+                </p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -197,20 +251,32 @@
 
               <!-- MISSION -->
               <div class="col-12 col-md-6">
-                <h2 class="mission-heading">OUR MISSION</h2>
+                <h2 class="mission-heading">
+                  {{ t('pages.home.mission_heading', 'OUR MISSION') }}
+                </h2>
+
                 <div class="mission-card mission-card-red" data-aos="zoom-in" data-aos-delay="200">
                   <p class="mb-0">
-                    We create educational resources that build identity, belonging, and pride by highlighting the significant contributions of Black people to world civilization through a positive, non-blaming approach that fosters respect and allyship among all students.
+                    {{ t(
+                        'pages.home.mission_description',
+                        'We create educational resources that build identity, belonging, and pride by highlighting the significant contributions of Black people to world civilization through a positive, non-blaming approach that fosters respect and allyship among all students.'
+                    ) }}
                   </p>
                 </div>
               </div>
 
               <!-- VISION -->
               <div class="col-12 col-md-6">
-                <h2 class="mission-heading">OUR VISION</h2>
+                <h2 class="mission-heading">
+                  {{ t('pages.home.vision_heading', 'OUR VISION') }}
+                </h2>
+
                 <div class="mission-card mission-card-green" data-aos="zoom-in" data-aos-delay="300">
                   <p class="mb-0">
-                    A world where every student knows their roots, feels valued and connected, and thrives with confidence, purpose, shared humanity, with a can-do mindset. We envision a school where every student feels seen, heard and celebrated within their learnning.
+                    {{ t(
+                        'pages.home.vision_description',
+                        'A world where every student knows their roots, feels valued and connected, and thrives with confidence, purpose, shared humanity, with a can-do mindset. We envision a school where every student feels seen, heard and celebrated within their learnning.'
+                    ) }}
                   </p>
                 </div>
               </div>
@@ -229,7 +295,9 @@
 
       <!-- Section Title -->
       <div class="container section-title pb-0" data-aos="fade-up">
-        <h2 class="mb-0 text-white">Research</h2>
+        <h2 class="mb-0 text-white">
+            {{ t('pages.home.research_heading', 'Research') }}
+        </h2>
         <!-- <p>What does research say about "My Place"?</p> -->
       </div><!-- End Section Title -->
 
@@ -244,8 +312,10 @@
                   <i class="bi bi-people-fill"></i>
                 </div>
                 <div class="card-content">
-                  <span class="card-number">2500+</span>
-                  <span class="card-label">Active Students</span>
+                    <span class="card-number">2500+</span>
+                    <span class="card-label">
+                        {{ t('pages.home.active_students', 'Active Students') }}
+                    </span>
                 </div>
               </div>
             </div>
@@ -254,126 +324,48 @@
 
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
             <div class="content-wrapper">
-              <h2 data-aos="fade-up" data-aos-delay="400" class="text-white fw-normal">What does research say about "My Place"?</h2>
-              <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">There's emerging research suggesting “values affirmation intervention and social belonging interventions markedly improve academic performance and health of stigmatized racial groups.”</p>
 
-              <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">This is summarized in a 2019 Harvard article by Williams, Lawrence, and Davis. It concludes self-affirmation enhances coping with stress, improves health behaviour, and boosts academic success.</p>
-              
-              <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">My Place in This World curriculum aligns with these findings and aims to bring positive life outcomes, especially for BIPOC students.</p>
+              <h2 data-aos="fade-up" data-aos-delay="400" class="text-white fw-normal">
+                {{ t('pages.home.research.question', 'What does research say about "My Place"?') }}
+              </h2>
+
+              <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">
+                {{ t(
+                    'pages.home.research.paragraph_1',
+                    'There\'s emerging research suggesting “values affirmation intervention and social belonging interventions markedly improve academic performance and health of stigmatized racial groups.”'
+                ) }}
+              </p>
+
+              <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">
+                {{ t(
+                    'pages.home.research.paragraph_2',
+                    'This is summarized in a 2019 Harvard article by Williams, Lawrence, and Davis. It concludes self-affirmation enhances coping with stress, improves health behaviour, and boosts academic success.'
+                ) }}
+              </p>
+
+              <p class="lead-text text-white mb-2" data-aos="fade-up" data-aos-delay="450">
+                {{ t(
+                    'pages.home.research.paragraph_3',
+                    'My Place in This World curriculum aligns with these findings and aims to bring positive life outcomes, especially for BIPOC students.'
+                ) }}
+              </p>
 
               <div class="cta-section" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://dash.harvard.edu/server/api/core/bitstreams/3adafce6-8d40-4b54-b966-d673334f1ddc/content" class="btn-primary cta-warning" target="_blank">Learn More</a>
+                <a href="https://dash.harvard.edu/server/api/core/bitstreams/3adafce6-8d40-4b54-b966-d673334f1ddc/content"
+                  class="btn-primary cta-warning"
+                  target="_blank">
+                  {{ t('common.learn_more', 'Learn More') }}
+                </a>
               </div>
+
             </div>
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Students Life Block Section -->
-
-    <!-- <section id="leadership" class="leadership section division-of-learning py-4">
-
-      <div class="dol-texture mb-5">
-        <div class="dol-textured-img1"></div>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="leadership-section aos-init aos-animate" data-aos="fade-up">
-          <div class="section-header text-center">
-            <h2 class="title">S</h2>
-          </div>
-
-          <div class="dol-card-block">
-            
-              <div class="team-card primary-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="member-image">
-                      <img src="assets/img/person/person-m-4.webp" alt="Principal" class="img-fluid">
-                    </div>
-                    <div class="member-info">
-                      <h4>Primary</h4>
-                      <p>Grade(1-3)</p>
-                    </div>
-                  </div>
-                  <div class="card-back">
-                    <ul>
-                      <li>Identify Africa as a continent of many countries</li>
-                      <li>Learn some important facts that contribute to it being a “majestic” place in this world</li>
-                      <li>Explore what it means to be an African King or Queen before transatlantic slavery</li>
-                    </ul>
-                    <a class="learn-link" href="{{ route('membership') }}">
-                      <button class="btn btn-dark">Learn More</button>
-                    </a>
-                  </div>
-                </div>
-              
-              </div>
-
-              <div class="team-card junior-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="member-image">
-                      <img src="assets/img/person/person-f-6.webp" alt="Vice Principal" class="img-fluid">
-                    </div>
-                    <div class="member-info">
-                      <h4>Junior</h4>
-                      <p>Grade(4-6)</p>
-                    </div>
-                  </div>
-                  <div class="card-back">
-                    <ul>
-                      <li>Identify the positive attributes of African experiences while debunking negative stereotypes</li>
-                      <li>Explore the influence and contributions of African royalty before transatlantic slavery and up to the present</li>
-                      <li>Make connections to their own experiences and current environment</li>
-                    </ul>
-                    <a class="learn-link" href="{{ route('membership') }}">
-                      <button class="btn btn-dark">Learn More</button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="team-card high-school-card">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="member-image">
-                      <img src="assets/img/person/person-f-4.webp" alt="Counseling Head" class="img-fluid">
-                    </div>
-                    <div class="member-info">
-                      <h4>High School</h4>
-                      <p>Grade(9-12)</p>
-                    </div>
-                  </div>
-                  <div class="card-back">
-                    <ul>
-                      <li>Identify the positive attributes of African experiences while debunking negative stereotypes</li>
-                      <li>Explore the influence and contributions of African royalty before transatlantic slavery and up to the present</li>
-                      <li>Develop subject-specific curricular skills as they make connections to their lives, current events, and present-day Black leaders</li>
-                    </ul>
-                    <a class="learn-link" href="{{ route('membership') }}">
-                      <button class="btn btn-dark">Learn More</button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="dol-texture mt-5">
-        <div class="dol-textured-img2"></div>
-      </div>
-
-    </section> -->
-
-
-
-
+    </section>
+    
     <section class="division-of-learning-home py-5 position-relative">
       <div class="container-fluid">
 
@@ -388,69 +380,106 @@
               aria-hidden="true" >
             
               <div class="col-md-12">
-                <h3 class="text-center text-white"><strong>DIVISIONS OF LEARNING</strong></h3>
+                <h3 class="text-center text-white">
+                  <strong>
+                    {{ t('pages.home.divisions.title', 'DIVISIONS OF LEARNING') }}
+                  </strong>
+                </h3>
+
                 <div class="dol-home-cards">
+
                   {{-- PRIMARY --}}
                   <div class="dol-card dol-primary">
                     <div class="dol-avatar">
-                      <img src="{{ asset('assets/img/person/primary-avatar.svg') }}" alt="Primary" class="img-fluid">
+                      <img src="{{ asset('assets/img/person/primary-avatar.svg') }}"
+                          alt="{{ t('pages.home.divisions.primary_alt', 'Primary') }}"
+                          class="img-fluid">
                     </div>
 
                     <div class="dol-paper"></div>
 
                     <div class="dol-body">
-                      <h3 class="mb-3">Primary</h3>
-                      <!-- <p class="dol-grade">Grade (1-3)</p> -->
+                      <h3 class="mb-3">
+                        {{ t('pages.home.divisions.primary_title', 'Primary') }}
+                      </h3>
+
                       <div class="dol-body-content">
                         <p class="dol-text">
-                          Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This stage will build connection, identity and belonging. Students begin to see themselves in the learning.
+                          {{ t(
+                              'pages.home.divisions.primary_text',
+                              'Primary students explore African Kings and Queens through hands-on activities. They learn African heritage in an engaging, age-appropriate way. This stage will build connection, identity and belonging. Students begin to see themselves in the learning.'
+                          ) }}
                         </p>
-                        <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+
+                        <a href="{{ route('membership') }}" class="dol-btn">
+                          {{ t('common.learn_more', 'Learn More') }}
+                        </a>
                       </div>
                     </div>
                   </div>
+
 
                   {{-- JUNIOR / INTERMEDIATE --}}
                   <div class="dol-card dol-junior">
                     <div class="dol-avatar">
-                      <img src="{{ asset('assets/img/person/junior-avatar.svg') }}" alt="Junior/Intermediate" class="img-fluid">
+                      <img src="{{ asset('assets/img/person/junior-avatar.svg') }}"
+                          alt="{{ t('pages.home.divisions.junior_alt', 'Junior/Intermediate') }}"
+                          class="img-fluid">
                     </div>
 
                     <div class="dol-paper"></div>
 
                     <div class="dol-body">
-                      <h3 class="mb-3">Junior/Intermediate</h3>
-                      <div class="dol-body-content">
-                        <!-- <p class="dol-grade">Grade (4-6)</p> -->
+                      <h3 class="mb-3">
+                        {{ t('pages.home.divisions.junior_title', 'Junior/Intermediate') }}
+                      </h3>
 
+                      <div class="dol-body-content">
                         <p class="dol-text">
-                          Junior Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. The foundation of connection, identity and belonging is strengthened through broader applications.
+                          {{ t(
+                              'pages.home.divisions.junior_text',
+                              'Junior Intermediate students explore African Kings and Queens through interactive activities. Familiar learning tools keep them engaged and motivated. The foundation of connection, identity and belonging is strengthened through broader applications.'
+                          ) }}
                         </p>
-                        <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+
+                        <a href="{{ route('membership') }}" class="dol-btn">
+                          {{ t('common.learn_more', 'Learn More') }}
+                        </a>
                       </div>
                     </div>
                   </div>
+
 
                   {{-- HIGH SCHOOL --}}
                   <div class="dol-card dol-high">
                     <div class="dol-avatar">
-                      <img src="{{ asset('assets/img/person/high-avatar.svg') }}" alt="High School" class="img-fluid">
+                      <img src="{{ asset('assets/img/person/high-avatar.svg') }}"
+                          alt="{{ t('pages.home.divisions.high_alt', 'High School') }}"
+                          class="img-fluid">
                     </div>
 
                     <div class="dol-paper"></div>
 
                     <div class="dol-body">
-                      <h3 class="mb-3">High School</h3>
-                      <!-- <p class="dol-grade">Grade (9-12)</p> -->
+                      <h3 class="mb-3">
+                        {{ t('pages.home.divisions.high_title', 'High School') }}
+                      </h3>
+
                       <div class="dol-body-content">
                         <p class="dol-text">
-                          High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully.  This is the final step in students affirming their identities and belonging.
+                          {{ t(
+                              'pages.home.divisions.high_text',
+                              'High School students explore African Kings and Queens through deeper learning and discussion. They examine rich topics and sometimes challenging issues thoughtfully. This is the final step in students affirming their identities and belonging.'
+                          ) }}
                         </p>
 
-                        <a href="{{ route('membership') }}" class="dol-btn">Learn More</a>
+                        <a href="{{ route('membership') }}" class="dol-btn">
+                          {{ t('common.learn_more', 'Learn More') }}
+                        </a>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -460,19 +489,23 @@
       </div>
     </section>
 
-
-
-
     <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials section py-0">
 
   <!-- Section Title -->
   <div class="container-fluid py-4 bg-dark section-title" data-aos="fade-up">
-    <h2 class="text-white mb-0">TESTIMONIALS</h2>
+
+    <h2 class="text-white mb-0">
+      {{ t('pages.home.testimonials.title', 'TESTIMONIALS') }}
+    </h2>
+
     <p class="text-white">
-      Our team believes that the best advocacy comes from the people who will benefit from<br>
-      using this curriculum. Here's an opportunity to listen to what the key stakeholders are saying.
+      {!! t(
+          'pages.home.testimonials.description',
+          'Our team believes that the best advocacy comes from the people who will benefit from<br>using this curriculum. Here\'s an opportunity to listen to what the key stakeholders are saying.'
+      ) !!}
     </p>
+
   </div><!-- End Section Title -->
 
   <div class="container-fluid bg-red pt-4" data-aos="fade-up" data-aos-delay="100">
@@ -527,10 +560,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "We have an opportunity to connect all youth and in particular Black youth with positive
-                stories and images about Black History, not just for February, but for the whole year."
+                {{ t(
+                    'pages.home.testimonials.marcia_quote',
+                    '"We have an opportunity to connect all youth and in particular Black youth with positive stories and images about Black History, not just for February, but for the whole year."'
+                ) }}
               </p>
-              <h3>Marcia Smellie</h3>
+              <h3>{{ t('pages.home.testimonials.marcia_name', 'Marcia Smellie') }}</h3>
             </div>
 
           </div>
@@ -560,11 +595,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "The diversity of these activities and the multiple entry points for students of all academic
-                abilities, make this specific resource, very user friendly, fun, but perhaps most important,
-                engaging for all grade levels."
+                {{ t(
+                    'pages.home.testimonials.taanya_quote',
+                    '"The diversity of these activities and the multiple entry points for students of all academic abilities, make this specific resource, very user friendly, fun, but perhaps most important, engaging for all grade levels."'
+                ) }}
               </p>
-              <h3>Taanya Solanki</h3>
+              <h3>{{ t('pages.home.testimonials.taanya_name', 'Taanya Solanki') }}</h3>
             </div>
 
           </div>
@@ -594,10 +630,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "It was incredible also to witness everyone in the class eager to participate within Black and
-                African music and culture."
+                {{ t(
+                    'pages.home.testimonials.jennifer_quote',
+                    '"It was incredible also to witness everyone in the class eager to participate within Black and African music and culture."'
+                ) }}
               </p>
-              <h3>Jennifer Colacrai</h3>
+              <h3>{{ t('pages.home.testimonials.jennifer_name', 'Jennifer Colacrai') }}</h3>
             </div>
 
           </div>
@@ -627,10 +665,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "All I ever heard about was slavery, and so many sad stories. Now I understand that there is so
-                much more."
+                {{ t(
+                    'pages.home.testimonials.mela_quote',
+                    '"All I ever heard about was slavery, and so many sad stories. Now I understand that there is so much more."'
+                ) }}
               </p>
-              <h3>Mela Gebremichael</h3>
+              <h3>{{ t('pages.home.testimonials.mela_name', 'Mela Gebremichael') }}</h3>
             </div>
 
           </div>
@@ -660,10 +700,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "It's important to have a curriculum that responds to our equity, diversity and inclusion goals
-                in a tangible way."
+                {{ t(
+                    'pages.home.testimonials.sharon_quote',
+                    '"It\'s important to have a curriculum that responds to our equity, diversity and inclusion goals in a tangible way."'
+                ) }}
               </p>
-              <h3>Sharon Adie</h3>
+              <h3>{{ t('pages.home.testimonials.sharon_name', 'Sharon Adie') }}</h3>
             </div>
 
           </div>
@@ -693,10 +735,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "My Place in this World offers the opportunity for boys such as mine to be able to understand
-                African history and understand what their ancestors contributed to the global society."
+                {{ t(
+                    'pages.home.testimonials.brenda_quote',
+                    '"My Place in this World offers the opportunity for boys such as mine to be able to understand African history and understand what their ancestors contributed to the global society."'
+                ) }}
               </p>
-              <h3>Brenda Tibingana</h3>
+              <h3>{{ t('pages.home.testimonials.brenda_name', 'Brenda Tibingana') }}</h3>
             </div>
 
           </div>
@@ -726,11 +770,12 @@
 
             <div class="slider-content">
               <p class="mb-0">
-                "It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and
-                inspires children to reach their full potential. Every child deserves to know who they are and
-                that they have a place in this world."
+                {{ t(
+                    'pages.home.testimonials.karl_quote',
+                    '"It takes a village to raise our children. Also, it takes a curriculum that informs, teaches and inspires children to reach their full potential. Every child deserves to know who they are and that they have a place in this world."'
+                ) }}
               </p>
-              <h3>Karl Subban</h3>
+              <h3>{{ t('pages.home.testimonials.karl_name', 'Karl Subban') }}</h3>
             </div>
 
           </div>
@@ -791,12 +836,24 @@
           </div>
           <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
             <div class="alumni-intro">
-              <h2><strong>How to Include Everyone in Education</strong></h2>
-              <p>Please watch this important video then click “Say Hi”</p>
+
+              <h2>
+                <strong>
+                  {{ t('pages.home.include_everyone.title', 'How to Include Everyone in Education') }}
+                </strong>
+              </h2>
+
+              <p>
+                {{ t('pages.home.include_everyone.subtitle', 'Please watch this important video then click “Say Hi”') }}
+              </p>
+
             </div>
+
             <div class="text-center">
-                <a href="{{ route('contact.show') }}" class="btn btn-danger">Say Hi!</a>
-              </div>
+              <a href="{{ route('contact.show') }}" class="btn btn-danger">
+                {{ t('pages.home.include_everyone.cta', 'Say Hi!') }}
+              </a>
+            </div>
           </div>
         </div>
 

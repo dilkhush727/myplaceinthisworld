@@ -3,13 +3,16 @@
 @section('content')
 <div class="container py-5">
 
-    <h1 class="mb-4">Manage Memberships</h1>
+    <h1 class="mb-4">{{ t('school.memberships.manage_title', 'Manage Memberships') }}</h1>
 
-    <p class="mb-3">School: <strong>{{ $school->name }}</strong></p>
+    <p class="mb-3">
+        {{ t('school.memberships.school', 'School') }}:
+        <strong>{{ $school->name }}</strong>
+    </p>
 
     <div class="card shadow-sm">
         <div class="card-header">
-            <strong>Your Memberships</strong>
+            <strong>{{ t('school.memberships.your_memberships', 'Your Memberships') }}</strong>
         </div>
 
         <div class="card-body">
@@ -17,12 +20,12 @@
             <table class="table table-bordered align-middle">
                 <thead>
                     <tr>
-                        <th>Type</th>
-                        <th>Billing</th>
-                        <th>Status</th>
-                        <th>Starts At</th>
-                        <th>Ends At</th>
-                        <th>Actions</th>
+                        <th>{{ t('school.memberships.type', 'Type') }}</th>
+                        <th>{{ t('school.memberships.billing', 'Billing') }}</th>
+                        <th>{{ t('school.memberships.status', 'Status') }}</th>
+                        <th>{{ t('school.memberships.starts_at', 'Starts At') }}</th>
+                        <th>{{ t('school.memberships.ends_at', 'Ends At') }}</th>
+                        <th>{{ t('school.memberships.actions', 'Actions') }}</th>
                     </tr>
                 </thead>
 
@@ -33,7 +36,9 @@
 
                         <td>
                             @if($m->is_free)
-                                <span class="badge bg-success">Free</span>
+                                <span class="badge bg-success">
+                                    {{ t('school.memberships.free', 'Free') }}
+                                </span>
                             @else
                                 {{ ucfirst($m->billing_period) }}
                             @endif
@@ -41,11 +46,17 @@
 
                         <td>
                             @if($m->status === 'active')
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-success">
+                                    {{ t('school.memberships.active', 'Active') }}
+                                </span>
                             @elseif($m->status === 'cancelled')
-                                <span class="badge bg-danger">Cancelled</span>
+                                <span class="badge bg-danger">
+                                    {{ t('school.memberships.cancelled', 'Cancelled') }}
+                                </span>
                             @elseif($m->status === 'expired')
-                                <span class="badge bg-secondary">Expired</span>
+                                <span class="badge bg-secondary">
+                                    {{ t('school.memberships.expired', 'Expired') }}
+                                </span>
                             @endif
                         </td>
 
@@ -58,51 +69,52 @@
                         </td>
 
                         <td>
-                            {{-- SHOW ACTIONS FOR PAID MEMBERS ONLY --}}
                             @if(!$m->is_free && $m->status === 'active')
 
-                                {{-- RENEW --}}
                                 <form method="POST" action="{{ route('school.memberships.renew') }}" class="d-inline">
                                     @csrf
                                     <input type="hidden" name="type" value="{{ $m->type }}">
                                     <input type="hidden" name="billing_period" value="{{ $m->billing_period }}">
-
-                                    <button class="btn btn-sm btn-primary">Renew</button>
+                                    <button class="btn btn-sm btn-primary">
+                                        {{ t('school.memberships.renew', 'Renew') }}
+                                    </button>
                                 </form>
 
-                                {{-- CHANGE BILLING --}}
                                 <form method="POST" action="{{ route('school.memberships.changeBilling') }}" class="d-inline">
                                     @csrf
                                     <input type="hidden" name="type" value="{{ $m->type }}">
 
                                     @if($m->billing_period === 'monthly')
                                         <input type="hidden" name="billing_period" value="annual">
-                                        <button class="btn btn-sm btn-warning">Switch to Annual</button>
+                                        <button class="btn btn-sm btn-warning">
+                                            {{ t('school.memberships.switch_annual', 'Switch to Annual') }}
+                                        </button>
                                     @else
                                         <input type="hidden" name="billing_period" value="monthly">
-                                        <button class="btn btn-sm btn-warning">Switch to Monthly</button>
+                                        <button class="btn btn-sm btn-warning">
+                                            {{ t('school.memberships.switch_monthly', 'Switch to Monthly') }}
+                                        </button>
                                     @endif
                                 </form>
 
-                                {{-- CANCEL --}}
                                 <form method="POST" action="{{ route('school.memberships.cancel') }}" class="d-inline">
                                     @csrf
                                     <input type="hidden" name="type" value="{{ $m->type }}">
-                                    <button class="btn btn-sm btn-danger">Cancel</button>
+                                    <button class="btn btn-sm btn-danger">
+                                        {{ t('school.memberships.cancel', 'Cancel') }}
+                                    </button>
                                 </form>
 
                             @endif
-
                         </td>
                     </tr>
                 @empty
                     <tr>
                         <td colspan="6" class="text-center text-muted">
-                            No memberships found.
+                            {{ t('school.memberships.none', 'No memberships found.') }}
                         </td>
                     </tr>
                 @endforelse
-
                 </tbody>
             </table>
 
@@ -110,7 +122,7 @@
     </div>
 
     <a href="{{ route('school.memberships.upgrade') }}" class="btn btn-outline-primary mt-4">
-        Buy Additional Memberships
+        {{ t('school.memberships.buy_more', 'Buy Additional Memberships') }}
     </a>
 
 </div>

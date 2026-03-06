@@ -11,7 +11,7 @@
     {{-- VALIDATION ERRORS --}}
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>There were errors with your submission:</strong>
+            <strong>{{ t('common.form_errors', 'There were errors with your submission:') }}</strong>
             <ul class="mt-2 mb-0">
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -20,18 +20,17 @@
         </div>
     @endif
 
-
-    <h1 class="mb-4">Edit Teacher</h1>
+    <h1 class="mb-4">{{ t('school.teachers.edit_title', 'Edit Teacher') }}</h1>
 
     {{-- UPDATE PROFILE --}}
     <form action="{{ route('school.teachers.updateProfile', $teacher->id) }}" method="POST" class="mb-5">
         @csrf
         @method('PUT')
 
-        <h4>Teacher Details</h4>
+        <h4>{{ t('school.teachers.details', 'Teacher Details') }}</h4>
 
         <div class="mb-3">
-            <label class="form-label">Teacher Name</label>
+            <label class="form-label">{{ t('school.teachers.name', 'Teacher Name') }}</label>
             <input 
                 type="text" 
                 name="name" 
@@ -45,7 +44,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Teacher Email</label>
+            <label class="form-label">{{ t('school.teachers.email', 'Teacher Email') }}</label>
             <input 
                 type="email" 
                 name="email" 
@@ -58,19 +57,20 @@
             @enderror
         </div>
 
-        <button class="btn btn-primary">Save Details</button>
+        <button class="btn btn-primary">
+            {{ t('common.save_details', 'Save Details') }}
+        </button>
     </form>
-
 
     {{-- UPDATE PASSWORD --}}
     <form action="{{ route('school.teachers.updatePassword', $teacher->id) }}" method="POST">
         @csrf
         @method('PUT')
 
-        <h4>Change Password</h4>
+        <h4>{{ t('school.teachers.change_password', 'Change Password') }}</h4>
 
         <div class="mb-3">
-            <label class="form-label">New Password</label>
+            <label class="form-label">{{ t('school.teachers.new_password', 'New Password') }}</label>
             <input 
                 type="password" 
                 name="password" 
@@ -83,7 +83,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Confirm New Password</label>
+            <label class="form-label">{{ t('school.teachers.confirm_password', 'Confirm New Password') }}</label>
             <input 
                 type="password" 
                 name="password_confirmation" 
@@ -92,7 +92,9 @@
             >
         </div>
 
-        <button class="btn btn-warning">Update Password</button>
+        <button class="btn btn-warning">
+            {{ t('school.teachers.update_password', 'Update Password') }}
+        </button>
     </form>
 
 </div>

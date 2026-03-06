@@ -120,7 +120,7 @@ class LearningProgressController extends Controller
         ]);
     }
 
-    public function showCourse(Course $course)
+    public function showCourse($locate, Course $course)
     {
         $user   = auth()->user();
         $school = $user->school;

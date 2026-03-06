@@ -42,20 +42,21 @@ class AuthenticatedSessionController extends Controller
     protected function redirectUser()
     {
         $user = auth()->user();
+        $locale = request()->route('locale') ?? app()->getLocale();
 
         if ($user->hasRole('admin')) {
-            return redirect('/admin/dashboard');
+            return redirect()->route('admin.dashboard', ['locale' => $locale]);
         }
 
         if ($user->hasRole('school')) {
-            return redirect('/school/dashboard');
+            return redirect()->route('school.dashboard', ['locale' => $locale]);
         }
 
         if ($user->hasRole('teacher')) {
-            return redirect('/teacher/dashboard');
+            return redirect()->route('teacher.dashboard', ['locale' => $locale]);
         }
 
-        return redirect('/');
+        return redirect()->route('home', ['locale' => $locale]);
     }
 
     /**
@@ -69,6 +70,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        $locale = request()->route('locale') ?? app()->getLocale();
+        return redirect()->route('home', ['locale' => $locale]);
     }
 }

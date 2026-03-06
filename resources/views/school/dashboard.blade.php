@@ -1,6 +1,6 @@
-@extends('layouts.admin') {{-- change this if your school layout file is different --}}
+@extends('layouts.admin')
 
-@section('title', 'School Dashboard')
+@section('title', t('school.dashboard.title', 'School Dashboard'))
 
 @section('content')
 
@@ -8,14 +8,20 @@
 
     <div class="d-flex align-items-center justify-content-between mb-4">
         <div>
-            <h2 class="mb-1">School Dashboard</h2>
-            <p class="text-muted mb-0">Quick overview of your school activity and progress.</p>
+            <h2 class="mb-1">{{ t('school.dashboard.title', 'School Dashboard') }}</h2>
+            <p class="text-muted mb-0">
+                {{ t('school.dashboard.subtitle', 'Quick overview of your school activity and progress.') }}
+            </p>
         </div>
 
         {{-- Optional quick actions --}}
         <div class="d-flex gap-2">
-            <a href="{{ route('school.tickets.index') }}" class="btn btn-light border">View Tickets</a>
-            <a href="{{ route('divisions.index') }}" class="btn btn-primary">Division of Learning</a>
+            <a href="{{ route('school.tickets.index') }}" class="btn btn-light border">
+                {{ t('school.dashboard.view_tickets', 'View Tickets') }}
+            </a>
+            <a href="{{ route('divisions.index') }}" class="btn btn-primary">
+                {{ t('school.dashboard.division_learning', 'Division of Learning') }}
+            </a>
         </div>
     </div>
 
@@ -35,7 +41,9 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <span class="badge bg-light text-dark">Teachers</span>
+                            <span class="badge bg-light text-dark">
+                                {{ t('school.dashboard.teachers', 'Teachers') }}
+                            </span>
                         </div>
                     </div>
 
@@ -43,7 +51,10 @@
                         {{ $teachersCount }}
                         <i class="ti ti-arrow-up-right-circle opacity-50"></i>
                     </span>
-                    <p class="mb-0 opacity-75">Total teachers connected to your school</p>
+
+                    <p class="mb-0 opacity-75">
+                        {{ t('school.dashboard.total_teachers', 'Total teachers connected to your school') }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -61,7 +72,9 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <span class="badge bg-light text-dark">Memberships</span>
+                            <span class="badge bg-light text-dark">
+                                {{ t('school.dashboard.memberships', 'Memberships') }}
+                            </span>
                         </div>
                     </div>
 
@@ -69,7 +82,10 @@
                         {{ $activeMembershipsCount }}
                         <i class="ti ti-arrow-up-right-circle opacity-50"></i>
                     </span>
-                    <p class="mb-0 opacity-75">Active memberships running</p>
+
+                    <p class="mb-0 opacity-75">
+                        {{ t('school.dashboard.active_memberships', 'Active memberships running') }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -87,7 +103,9 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <span class="badge bg-light text-dark">Support</span>
+                            <span class="badge bg-light text-dark">
+                                {{ t('school.dashboard.support', 'Support') }}
+                            </span>
                         </div>
                     </div>
 
@@ -95,7 +113,10 @@
                         {{ $openTickets }}
                         <i class="ti ti-arrow-up-right-circle opacity-50"></i>
                     </span>
-                    <p class="mb-0 opacity-75">Open support tickets</p>
+
+                    <p class="mb-0 opacity-75">
+                        {{ t('school.dashboard.open_tickets', 'Open support tickets') }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -118,14 +139,16 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="mb-1">{{ $totalTickets }}</h4>
-                            <p class="mb-0 opacity-75 text-sm">Total tickets created</p>
+                            <p class="mb-0 opacity-75 text-sm">
+                                {{ t('school.dashboard.total_tickets', 'Total tickets created') }}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- {{ __('labels.lessons') }} --}}
+        {{-- Lessons --}}
         <div class="col-xl-4 col-md-6">
             <div class="card dashnum-card overflow-hidden">
                 <span class="round bg-info small"></span>
@@ -137,14 +160,16 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="mb-1">{{ $lessonsCount }}</h4>
-                            <p class="mb-0 opacity-75 text-sm">Total lessons available</p>
+                            <p class="mb-0 opacity-75 text-sm">
+                                {{ t('school.dashboard.total_lessons', 'Total lessons available') }}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- {{ __('labels.tasks') }} --}}
+        {{-- Tasks --}}
         <div class="col-xl-4 col-md-12">
             <div class="card dashnum-card overflow-hidden">
                 <span class="round bg-success small"></span>
@@ -156,7 +181,9 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="mb-1">{{ $tasksCount }}</h4>
-                            <p class="mb-0 opacity-75 text-sm">Total tasks available</p>
+                            <p class="mb-0 opacity-75 text-sm">
+                                {{ t('school.dashboard.total_tasks', 'Total tasks available') }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -169,72 +196,104 @@
     {{-- PROGRESS + COMPLETIONS --}}
     <div class="row g-3 mt-1">
 
-        {{-- Completed {{ __('labels.tasks') }} --}}
         <div class="col-xl-6 col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <h5 class="mb-0">{{ __('labels.tasks') }} Completed</h5>
-                        <span class="badge bg-light text-dark">School-wide</span>
+                        <h5 class="mb-0">
+                            {{ t('school.dashboard.tasks_completed', 'Tasks Completed') }}
+                        </h5>
+                        <span class="badge bg-light text-dark">
+                            {{ t('school.dashboard.school_wide', 'School-wide') }}
+                        </span>
                     </div>
 
                     <div class="d-flex align-items-end justify-content-between">
                         <div>
-                            <div class="text-muted">Completed</div>
+                            <div class="text-muted">
+                                {{ t('school.dashboard.completed', 'Completed') }}
+                            </div>
                             <div class="h2 mb-0">{{ $completedTasksCount }}</div>
                         </div>
+
                         <div class="text-end">
-                            <div class="text-muted">Completion Rate</div>
+                            <div class="text-muted">
+                                {{ t('school.dashboard.completion_rate', 'Completion Rate') }}
+                            </div>
                             <div class="h3 mb-0">{{ $completionRate }}%</div>
                         </div>
                     </div>
 
                     <div class="progress mt-3" style="height: 10px;">
-                        <div class="progress-bar" role="progressbar"
+                        <div class="progress-bar"
+                             role="progressbar"
                              style="width: {{ min(100, max(0, $completionRate)) }}%;"
-                             aria-valuenow="{{ $completionRate }}" aria-valuemin="0" aria-valuemax="100"></div>
+                             aria-valuenow="{{ $completionRate }}"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        {{-- Quick Summary Box --}}
+        {{-- Quick Summary --}}
         <div class="col-xl-6 col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="mb-3">Quick Summary</h5>
+                    <h5 class="mb-3">
+                        {{ t('school.dashboard.quick_summary', 'Quick Summary') }}
+                    </h5>
 
                     <div class="row g-3">
+
                         <div class="col-6">
                             <div class="p-3 border rounded">
-                                <div class="text-muted">Teachers</div>
+                                <div class="text-muted">
+                                    {{ t('school.dashboard.teachers', 'Teachers') }}
+                                </div>
                                 <div class="h4 mb-0">{{ $teachersCount }}</div>
                             </div>
                         </div>
+
                         <div class="col-6">
                             <div class="p-3 border rounded">
-                                <div class="text-muted">Open Tickets</div>
+                                <div class="text-muted">
+                                    {{ t('school.dashboard.open_tickets', 'Open Tickets') }}
+                                </div>
                                 <div class="h4 mb-0">{{ $openTickets }}</div>
                             </div>
                         </div>
+
                         <div class="col-6">
                             <div class="p-3 border rounded">
-                                <div class="text-muted">{{ __('labels.lessons') }}</div>
+                                <div class="text-muted">
+                                    {{ t('school.dashboard.lessons', 'Lessons') }}
+                                </div>
                                 <div class="h4 mb-0">{{ $lessonsCount }}</div>
                             </div>
                         </div>
+
                         <div class="col-6">
                             <div class="p-3 border rounded">
-                                <div class="text-muted">Memberships</div>
+                                <div class="text-muted">
+                                    {{ t('school.dashboard.memberships', 'Memberships') }}
+                                </div>
                                 <div class="h4 mb-0">{{ $activeMembershipsCount }}</div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="mt-4 d-flex gap-2">
-                        <a href="{{ route('school.teachers.index') }}" class="btn btn-outline-secondary w-50">Manage Teachers</a>
-                        <a href="{{ route('school.learning-progress.index') }}" class="btn btn-outline-primary w-50">Learning Progress</a>
+                        <a href="{{ route('school.teachers.index') }}" class="btn btn-outline-secondary w-50">
+                            {{ t('school.dashboard.manage_teachers', 'Manage Teachers') }}
+                        </a>
+
+                        <a href="{{ route('school.learning-progress.index') }}" class="btn btn-outline-primary w-50">
+                            {{ t('school.dashboard.learning_progress', 'Learning Progress') }}
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>

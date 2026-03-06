@@ -52,23 +52,35 @@
   {{-- Top bar --}}
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
-      <h1 class="h3 mb-1">{{ $course->title }}</h1>
+      <h1 class="h3 mb-1">
+        {{ t('db.course.title.'.$course->id, $course->title) }}
+      </h1>
+
       <div class="text-muted text-capitalize">
-        Division: {{ $course->division }}
+        {{ t('admin.courses.division', 'Division') }}:
+        {{ t('db.course.division.'.$course->id, $course->division) }}
       </div>
     </div>
 
     <div class="card shadow-sm" style="min-width: 260px;">
       <div class="card-body">
-        <div class="fw-bold mb-1">{{ __('labels.course') }} Progress</div>
+        <div class="fw-bold mb-1">
+          {{ t('admin.learning_progress.course_progress', 'Course Progress') }}
+        </div>
+
         <div class="small text-muted mb-2" id="course-progress-text">
-          {{ $completedTasks }} / {{ $totalTasks }} {{ __('labels.tasks') }} complete
+          {{ $completedTasks }} / {{ $totalTasks }}
+          {{ t('labels.tasks', 'Tasks') }}
+          {{ t('common.complete', 'complete') }}
           ({{ $completionPercent }}%)
         </div>
+
         <div class="progress mb-2" style="height: 6px;">
-          <div class="progress-bar" role="progressbar"
+          <div class="progress-bar"
+               role="progressbar"
                id="course-progress-bar"
-               style="width: {{ $completionPercent }}%;"></div>
+               style="width: {{ $completionPercent }}%;">
+          </div>
         </div>
       </div>
     </div>
@@ -76,56 +88,81 @@
 
   {{-- Layout: sidebar + content --}}
   <div class="row">
+
     {{-- Sidebar: lessons & tasks --}}
     <div class="col-md-4 col-lg-3 mb-4">
       <div class="card h-100">
+
         <div class="card-header fw-bold">
-          {{ __('labels.course') }} Content
+          {{ t('admin.courses.course_content', 'Course Content') }}
         </div>
+
         <div class="card-body p-0">
           <div class="list-group list-group-flush" id="course-task-list">
+
             @forelse($course->lessons as $lesson)
               @php
                 $lp = $lessonProgress[$lesson->id] ?? ['completed' => 0, 'total' => 0];
               @endphp
+
               <div class="list-group-item px-3 py-2 bg-light fw-semibold"
                    data-lesson-id="{{ $lesson->id }}">
+
                 <div class="d-flex justify-content-between align-items-center">
-                  <span>{{ $lesson->title }}</span>
+
+                  <span>
+                    {{ t('db.lesson.title.'.$lesson->id, $lesson->title) }}
+                  </span>
+
                   @if($lp['total'] > 0)
                     <small class="text-muted lesson-progress"
                            data-lesson-id="{{ $lesson->id }}">
                       {{ $lp['completed'] }} / {{ $lp['total'] }}
                     </small>
                   @endif
+
                 </div>
               </div>
 
               @forelse($lesson->tasks as $task)
+
                 @php
                   $isActive    = $currentTask && $currentTask->id === $task->id;
                   $isCompleted = in_array($task->id, $completedTaskIds ?? []);
                 @endphp
+
                 <a href="{{ route('courses.tasks.show', [$course->id, $task->id]) }}"
                    data-task-link="1"
                    data-task-id="{{ $task->id }}"
                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center
                           {{ $isActive ? 'active' : '' }}">
-                  <span>{{ $task->title }}</span>
+
+                  <span>
+                    {{ t('db.task.title.'.$task->id, $task->title) }}
+                  </span>
+
                   <span class="badge border-0 {{ $isCompleted ? 'bg-success' : 'bg-light text-muted' }}">
                     {!! $isCompleted ? '&#10003;' : '&#9711;' !!}
                   </span>
+
                 </a>
+
               @empty
+
                 <div class="list-group-item px-3 py-2 text-muted small">
-                  No tasks in this lesson yet.
+                  {{ t('courses.no_tasks_lesson', 'No tasks in this lesson yet.') }}
                 </div>
+
               @endforelse
+
             @empty
+
               <div class="list-group-item px-3 py-2 text-muted">
-                No lessons have been added to this course yet.
+                {{ t('courses.no_lessons_course', 'No lessons have been added to this course yet.') }}
               </div>
+
             @endforelse
+
           </div>
         </div>
       </div>
@@ -137,6 +174,7 @@
         @include('courses.partials.task_panel')
       </div>
     </div>
+
   </div>
 
 </div>

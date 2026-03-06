@@ -64,7 +64,7 @@ class TeacherController extends Controller
             ->with('success', 'Teacher added successfully!');
     }
 
-    public function destroy($id)
+    public function destroy($locate, $id)
     {
         $teacher = User::findOrFail($id);
 
@@ -85,7 +85,7 @@ class TeacherController extends Controller
             ->with('success', 'Teacher removed successfully.');
     }
 
-    public function edit($id)
+    public function edit($locate, $id)
     {
         $school = auth()->user()->school;
 
@@ -99,7 +99,7 @@ class TeacherController extends Controller
         return view('school.teachers.edit', compact('teacher'));
     }
 
-    public function updateProfile(Request $request, User $teacher)
+    public function updateProfile(Request $request, $locate, User $teacher)
     {
         $this->authorizeEdit($teacher);
 
@@ -121,7 +121,7 @@ class TeacherController extends Controller
         return back()->with('success', 'Teacher details updated successfully.');
     }
 
-    public function updatePassword(Request $request, User $teacher)
+    public function updatePassword(Request $request, $locate, User $teacher)
     {
         $this->authorizeEdit($teacher);
 

@@ -25,7 +25,7 @@ class TaskController extends Controller
     }
 
     // Show form to create a task
-    public function create(Course $course, Lesson $lesson)
+    public function create($locate, Course $course, Lesson $lesson)
     {
         if ($lesson->course_id !== $course->id) {
             abort(404);
@@ -35,7 +35,7 @@ class TaskController extends Controller
     }
 
     // Store new task
-    public function store(Request $request, Course $course, Lesson $lesson)
+    public function store(Request $request, $locate, Course $course, Lesson $lesson)
     {
         if ($lesson->course_id !== $course->id) {
             abort(404);
@@ -78,7 +78,7 @@ class TaskController extends Controller
     }
 
     // Edit form
-    public function edit(Course $course, Lesson $lesson, Task $task)
+    public function edit($locate, Course $course, Lesson $lesson, Task $task)
     {
         if ($lesson->course_id !== $course->id || $task->lesson_id !== $lesson->id) {
             abort(404);
@@ -91,7 +91,7 @@ class TaskController extends Controller
     }
 
     // Update task
-    public function update(Request $request, Course $course, Lesson $lesson, Task $task)
+    public function update(Request $request, $locate, Course $course, Lesson $lesson, Task $task)
     {
         if ($lesson->course_id !== $course->id || $task->lesson_id !== $lesson->id) {
             abort(404);
@@ -133,7 +133,7 @@ class TaskController extends Controller
     }
 
     // Delete task
-    public function destroy(Course $course, Lesson $lesson, Task $task)
+    public function destroy($locate, Course $course, Lesson $lesson, Task $task)
     {
         if ($lesson->course_id !== $course->id || $task->lesson_id !== $lesson->id) {
             abort(404);
@@ -149,7 +149,7 @@ class TaskController extends Controller
     /**
      * Create/update resources for a task from request arrays
      */
-    protected function syncResources(Request $request, Task $task): void
+    protected function syncResources(Request $request, $locate, Task $task): void
     {
         $types   = $request->input('resource_type', []);
         $titles  = $request->input('resource_title', []);

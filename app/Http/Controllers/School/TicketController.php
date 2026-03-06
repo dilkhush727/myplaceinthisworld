@@ -29,7 +29,7 @@ class TicketController extends Controller
     }
 
     // Show one ticket + its replies
-    public function show(ContactMessage $ticket)
+    public function show($locate, ContactMessage $ticket)
     {
         // Security: ensure it belongs to this school
         abort_unless($ticket->user_id === Auth::id(), 403);
@@ -40,7 +40,7 @@ class TicketController extends Controller
     }
 
     // School reply
-    public function reply(Request $request, ContactMessage $ticket)
+    public function reply(Request $request, $locate, ContactMessage $ticket)
     {
         abort_unless($ticket->user_id === Auth::id(), 403);
 

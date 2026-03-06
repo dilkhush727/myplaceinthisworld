@@ -31,7 +31,7 @@ class TicketController extends Controller
     /**
      * Show one ticket + its replies.
      */
-    public function show(ContactMessage $ticket)
+    public function show($locate, ContactMessage $ticket)
     {
         // Make sure this ticket belongs to this teacher
         abort_unless($ticket->user_id === Auth::id(), 403);
@@ -44,7 +44,7 @@ class TicketController extends Controller
     /**
      * Store a reply from the teacher.
      */
-    public function reply(Request $request, ContactMessage $ticket)
+    public function reply(Request $request, $locate, ContactMessage $ticket)
     {
         abort_unless($ticket->user_id === Auth::id(), 403);
 

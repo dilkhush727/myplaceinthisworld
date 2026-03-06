@@ -1,27 +1,29 @@
-@extends('layouts.admin') {{-- or layouts.admin if you share it --}}
+@extends('layouts.admin')
 
 @php use Illuminate\Support\Str; @endphp
 
-@section('title', __('labels.course') . ' Progress – ' . $course->title)
+@section('title', t('labels.course', 'Course') . ' ' . t('school.learning_progress.progress', 'Progress') . ' – ' . $course->title)
 
 @section('content')
 <div class="container-fluid py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
-      <h1 class="h4 mb-1">{{ __('labels.course') }} Progress</h1>
+      <h1 class="h4 mb-1">
+        {{ t('labels.course', 'Course') }} {{ t('school.learning_progress.progress', 'Progress') }}
+      </h1>
       <p class="text-muted mb-0">
         {{ $course->title }} &mdash;
         @switch($course->division)
-          @case('primary') Primary @break
-          @case('ji') Junior–Intermediate @break
-          @case('highschool') High School @break
+          @case('primary') {{ t('divisions.primary', 'Primary') }} @break
+          @case('ji') {{ t('divisions.ji', 'Junior–Intermediate') }} @break
+          @case('highschool') {{ t('divisions.highschool', 'High School') }} @break
           @default {{ ucfirst($course->division) }}
         @endswitch
       </p>
     </div>
 
     <a href="{{ route('school.learning-progress.index') }}" class="btn btn-outline-secondary btn-sm">
-      &larr; Back to Learning Progress
+      &larr; {{ t('school.learning_progress.back', 'Back to Learning Progress') }}
     </a>
   </div>
 
@@ -38,10 +40,13 @@
         @endif
       </div>
       <div class="text-end">
-        <div class="small text-muted">Total {{ __('labels.tasks') }}</div>
+        <div class="small text-muted">
+          {{ t('school.learning_progress.total_tasks', 'Total Tasks') }}
+        </div>
         <div class="h5 mb-0">{{ $totalTasks }}</div>
+
         <a href="{{ route('courses.show', $course->id) }}" target="_blank" class="btn btn-sm btn-primary mt-2">
-          Open course player
+          {{ t('school.learning_progress.open_course', 'Open course player') }}
         </a>
       </div>
     </div>
@@ -49,7 +54,7 @@
 
   @if($rows->isEmpty())
     <div class="alert alert-info">
-      Your teachers have no activity for this course yet.
+      {{ t('school.learning_progress.no_teacher_activity', 'Your teachers have no activity for this course yet.') }}
     </div>
   @else
     <div class="card">
@@ -58,11 +63,11 @@
           <table class="table align-middle">
             <thead>
               <tr>
-                <th>Teacher</th>
-                <th>Email</th>
-                <th class="text-center">Completed / Total</th>
-                <th class="text-center">Progress</th>
-                <th class="text-center">Last Activity</th>
+                <th>{{ t('school.learning_progress.teacher', 'Teacher') }}</th>
+                <th>{{ t('common.email', 'Email') }}</th>
+                <th class="text-center">{{ t('school.learning_progress.completed_total', 'Completed / Total') }}</th>
+                <th class="text-center">{{ t('school.learning_progress.progress', 'Progress') }}</th>
+                <th class="text-center">{{ t('school.learning_progress.last_activity', 'Last Activity') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -76,10 +81,15 @@
                 @endphp
                 <tr>
                   <td>{{ $user->name }}</td>
-                  <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
+
+                  <td>
+                    <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
+                  </td>
+
                   <td class="text-center">
                     {{ $completedTasks }} / {{ $totalTasks }}
                   </td>
+
                   <td class="text-center" style="min-width: 160px;">
                     <div class="d-flex flex-column align-items-center">
                       <div class="progress w-100 mb-1" style="height: 6px;">
@@ -90,13 +100,17 @@
                       <small>{{ $percent }}%</small>
                     </div>
                   </td>
+
                   <td class="text-center">
                     @if($lastActivity)
                       {{ \Carbon\Carbon::parse($lastActivity)->format('Y-m-d H:i') }}
                     @else
-                      <span class="text-muted">No activity</span>
+                      <span class="text-muted">
+                        {{ t('school.learning_progress.no_activity', 'No activity') }}
+                      </span>
                     @endif
                   </td>
+
                 </tr>
               @endforeach
             </tbody>
