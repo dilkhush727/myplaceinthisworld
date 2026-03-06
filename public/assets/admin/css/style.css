@@ -434,6 +434,10 @@ svg {
   vertical-align: middle;
 }
 
+nav svg{
+  width: 20px !important;
+}
+
 table {
   caption-side: bottom;
   border-collapse: collapse;

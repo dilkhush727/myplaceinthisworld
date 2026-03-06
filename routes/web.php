@@ -48,6 +48,19 @@ Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
 
 /*
 |--------------------------------------------------------------------------
+| Chatbot (localized URLs are OK)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('chatbot')->middleware(['web', 'throttle:30,1'])->group(function () {
+    Route::post('/session', [ChatbotController::class, 'createSession'])->name('chatbot.session');
+    Route::post('/message', [ChatbotController::class, 'sendMessage'])->name('chatbot.message');
+});
+
+Route::view('/chatbot-test', 'chatbot.test')->name('chatbot.test');
+
+
+/*
+|--------------------------------------------------------------------------
 | Locale group: /en/... and /fr/...
 |--------------------------------------------------------------------------
 */
@@ -412,18 +425,6 @@ Route::prefix('{locale}')
         // Public Division of Learning landing page
         Route::view('/division-of-learning', 'division-of-learning')
             ->name('division.of.learning');
-
-        /*
-        |--------------------------------------------------------------------------
-        | Chatbot (localized URLs are OK)
-        |--------------------------------------------------------------------------
-        */
-        Route::prefix('chatbot')->middleware(['web', 'throttle:30,1'])->group(function () {
-            Route::post('/session', [ChatbotController::class, 'createSession'])->name('chatbot.session');
-            Route::post('/message', [ChatbotController::class, 'sendMessage'])->name('chatbot.message');
-        });
-
-        Route::view('/chatbot-test', 'chatbot.test')->name('chatbot.test');
 
         /*
         |--------------------------------------------------------------------------
