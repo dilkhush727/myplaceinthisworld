@@ -28,6 +28,14 @@ return Application::configure(basePath: dirname(__DIR__))
             'setLocale' => \App\Http\Middleware\SetLocale::class,
         ]);
 
+        $middleware->redirectGuestsTo(function ($request) {
+
+            $locale = $request->route('locale') ?? 'en';
+
+            return route('login', ['locale' => $locale]);
+
+        });
+
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

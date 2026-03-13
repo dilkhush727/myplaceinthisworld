@@ -38,7 +38,22 @@ class DivisionController extends Controller
      */
     public function primary()
     {
-        $user   = auth()->user();
+        $user = auth()->user();
+
+        // Admin bypass
+        if ($user->hasRole('admin')) {
+
+            $courses = Course::published()
+                ->forDivision('primary')
+                ->orderBy('title')
+                ->get();
+
+            return view('divisions.primary', [
+                'school'  => null,
+                'courses' => $courses,
+            ]);
+        }
+
         $school = $user->school;
 
         if (!$school || !$school->hasActiveMembership(SchoolMembership::TYPE_PRIMARY)) {
@@ -63,7 +78,22 @@ class DivisionController extends Controller
      */
     public function juniorIntermediate()
     {
-        $user   = auth()->user();
+        $user = auth()->user();
+
+        // Admin bypass
+        if ($user->hasRole('admin')) {
+
+            $courses = Course::published()
+                ->forDivision('ji')
+                ->orderBy('title')
+                ->get();
+
+            return view('divisions.ji', [
+                'school'  => null,
+                'courses' => $courses,
+            ]);
+        }
+
         $school = $user->school;
 
         if (!$school || !$school->hasActiveMembership(SchoolMembership::TYPE_JI)) {
@@ -88,11 +118,26 @@ class DivisionController extends Controller
      */
     public function highSchool()
     {
-        $user   = auth()->user();
+        $user = auth()->user();
+
+        // ✅ Admins bypass membership checks
+        if ($user->hasRole('admin')) {
+
+            $courses = Course::published()
+                ->forDivision('highschool')
+                ->orderBy('title')
+                ->get();
+
+            return view('divisions.highschool', [
+                'school'  => null,
+                'courses' => $courses,
+            ]);
+        }
+
+        // School users
         $school = $user->school;
 
         if (!$school || !$school->hasActiveMembership(SchoolMembership::TYPE_HIGHSCHOOL)) {
-            // In theory this should never happen, since HS is free on registration
             return redirect()
                 ->route('school.memberships.manage')
                 ->with('error', 'High School membership is not active for this school.');

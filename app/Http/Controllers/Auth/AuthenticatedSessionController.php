@@ -33,16 +33,7 @@ class AuthenticatedSessionController extends Controller
         // 1) If user was redirected to login from a protected page,
         // Laravel stored that URL as "intended". Go there first.
         if ($request->session()->has('url.intended')) {
-
-            $intended = $request->session()->pull('url.intended');
-            $locale = request()->route('locale') ?? app()->getLocale();
-
-            // if locale missing, prepend it
-            if (!preg_match('#^/(en|fr)#', $intended)) {
-                $intended = '/' . $locale . $intended;
-            }
-
-            return redirect($intended);
+            return redirect()->to($request->session()->pull('url.intended'));
         }
         
         return $this->redirectUser();
