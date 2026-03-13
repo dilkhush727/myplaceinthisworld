@@ -70,6 +70,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         Auth::login($user);
 
-        return redirect()->intended('/school/dashboard');
+        $locale = request()->route('locale') ?? app()->getLocale();
+        return redirect()->route('school.dashboard', ['locale' => $locale]);
     }
 }

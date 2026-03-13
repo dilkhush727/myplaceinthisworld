@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 class TaskController extends Controller
 {
     // List tasks for one lesson
-    public function index(Course $course, Lesson $lesson)
+    public function index($locale, Course $course, Lesson $lesson)
     {
         if ($lesson->course_id !== $course->id) {
             abort(404);

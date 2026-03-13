@@ -27,7 +27,7 @@ class CourseController extends Controller
         return view('admin.courses.create', compact('divisions'));
     }
 
-    public function store($locate, Request $request)
+    public function store(Request $request)
     {
         $data = $request->validate([
             'division'          => 'required|in:primary,ji,highschool',

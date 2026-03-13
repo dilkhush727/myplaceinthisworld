@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class LessonController extends Controller
 {
     // List lessons for one course
-    public function index(Course $course)
+    public function index($locale, Course $course)
     {
         $lessons = $course->lessons()->orderBy('sort_order')->get();
 
@@ -19,7 +19,7 @@ class LessonController extends Controller
     }
 
     // Show form to create a lesson for a course
-    public function create(Course $course)
+    public function create($locale, Course $course)
     {
         return view('admin.lessons.create', compact('course'));
     }
